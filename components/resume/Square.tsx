@@ -6,13 +6,10 @@ interface Props {
     width: number;
     color: string;
     backgroundColor: string;
+    placeholder: string;
   };
 }
 
 export default function Square({ style, children }: PropsWithChildren<Props>) {
-  return (
-    <div>
-      <div className="square">{children}</div>
-    </div>
-  );
+  return <div className="square">{children}</div>;
 }
