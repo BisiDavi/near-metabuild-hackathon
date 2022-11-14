@@ -2,10 +2,10 @@ import navcontent from '@/json/nav.json';
 
 export default function Nav() {
   return (
-    <nav className="w-2/4">
-      <ul className="list-style-none flex items-center">
+    <nav className="flex w-3/4 justify-end">
+      <ul className="list-style-none flex items-center space-x-4">
         {navcontent.map((item) => (
-          <li key={item} className="">
+          <li key={item} className="hover:text-red-500">
             {item}
           </li>
         ))}
