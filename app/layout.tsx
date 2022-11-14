@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import Hero from '@/components/Hero';
 
 export default function RootLayout({
   children,
@@ -11,6 +12,7 @@ export default function RootLayout({
       <head />
       <body>
         <Header />
+        <Hero />
         <main className="container mx-auto py-6">{children}</main>
         <Footer />
       </body>
