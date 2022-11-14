@@ -1,2 +1,6 @@
-["Build CV & Earn", "Review CV & Earn", "Rate a CV and Earn", 
-"Jobs"]
+[
+  { "title": "Build CV & Earn", "link": "/cv/build" },
+  { "title": "Review CV & Earn", "link": "/cv/review" },
+  { "title": "Rate a CV and Earn", "link": "/cv/rate" },
+  { "title": "Jobs", "link": "/jobs" }
+]
