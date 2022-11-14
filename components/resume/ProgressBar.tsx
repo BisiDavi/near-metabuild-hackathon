@@ -4,10 +4,9 @@ interface Props {
     outerColor: string;
   };
   percentage: number;
-  text: string;
 }
 
-export default function ProgressBar({ style, percentage, text }: Props) {
+export default function ProgressBar({ style, percentage }: Props) {
   return (
     <div className="outer">
       <div className="progress"></div>

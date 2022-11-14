@@ -4,6 +4,7 @@ interface Props {
     type: 'title' | 'text';
     size: 'sm' | 'lg' | 'xl';
     color: string;
+    style: 'italics' | 'monospaced';
   };
 }
 export default function Text({ text, style }: Props) {
