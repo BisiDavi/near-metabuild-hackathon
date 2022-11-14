@@ -2,5 +2,27 @@
   "home": {
     "main": "Build Professional Resume and Earn 🪙 NEAR Tokens",
     "info": "Use our drag `n` drop resume builder to build Resume within 10 minutes and earn while at it."
-  }
+  },
+  "cards": [
+    {
+      "icon": "build",
+      "title": "Build CV with drag n drop builder.",
+      "text": "Build a professional resume template and publish. You earn NEAR token as people use your template, your template is ranked high based on template ratings."
+    },
+    {
+      "icon": "review",
+      "title": "Review CV's and Earn NEAR token.",
+      "text": "Are you a recruiter? Review users CV's and earn NEAR token, correct CV's and suggest tips to help them ace their interview."
+    },
+    {
+      "icon": "rate",
+      "title": "Rate CV template and Earn NEAR token.",
+      "text": "So you love that CV template after using it, rate the CV and earn NEAR token, help the CV template grow popularity."
+    },
+    {
+      "icon": "jobs",
+      "title": "Search, filter available jobs based on your profession.",
+      "text": "View Job listing based on your profession, Goodluck in your application"
+    }
+  ]
 }

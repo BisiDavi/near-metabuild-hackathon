@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/contract/target
 /.pnp
 .pnp.js
 
