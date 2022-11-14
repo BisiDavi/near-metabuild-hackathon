@@ -15,10 +15,13 @@ export default function HeroCards() {
       {cards.map((card) => (
         <li
           key={card.icon}
-          className="cards my-2.5 rounded-lg  border bg-white py-4 px-6 shadow-lg"
+          className="cards my-2.5 flex items-center rounded-lg border bg-white py-4 px-6 shadow-lg"
         >
-          <h4 className="my-0 font-bold">{card.title}</h4>
-          <p className="my-0">{card.text}</p>
+          <span className="w-10 text-3xl">❂</span>
+          <div className="w-11/12">
+            <h4 className="my-0 font-bold">{card.title}</h4>
+            <p className="my-0">{card.text}</p>
+          </div>
         </li>
       ))}
     </ul>
