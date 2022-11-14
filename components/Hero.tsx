@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="content bg-skyblue h-52">
-        <div className="container mx-auto flex flex-col py-10 text-center text-white">
+        <div className="container mx-auto flex flex-col py-20 text-center text-white">
           <h1 className="text-3xl">{heroContent.home.main} </h1>
           <h6 className="text-lg">{heroContent.home.info}</h6>
           <Link href="/cv/build">

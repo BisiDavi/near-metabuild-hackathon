@@ -1,5 +1,4 @@
 'use client';
-
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Provider } from 'react-redux';
 import { PropsWithChildren } from 'react';
@@ -8,9 +7,8 @@ import { persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
-import store from '@/redux/store';
 import Nprogress from '@/components/Nprogress';
-
+import store from '@/redux/store';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Providerlayout({ children }: PropsWithChildren<{}>) {
@@ -21,7 +19,7 @@ export default function Providerlayout({ children }: PropsWithChildren<{}>) {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <Nprogress color="#bd6a2c" />
+        <Nprogress color="red" />
         <QueryClientProvider client={queryClient} contextSharing={true}>
           <ToastContainer />
           {children}

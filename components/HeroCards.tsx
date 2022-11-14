@@ -11,7 +11,7 @@ export default function HeroCards() {
   );
   const cards = cardArray.length === 0 ? heroContent.cards : cardArray;
   return (
-    <ul className="mx-auto -mt-72 flex w-1/2 list-none flex-col">
+    <ul className="mx-auto -mt-64 flex w-1/2 list-none flex-col">
       {cards.map((card) => (
         <li
           key={card.icon}
