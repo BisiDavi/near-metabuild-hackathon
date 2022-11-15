@@ -19,7 +19,7 @@ export default function ResumeBuilder() {
     SEPARATOR: { top: 10, left: 0, id: 'SEPARATOR' },
     SQUARE: { top: 20, left: 0, id: 'SQUARE' },
     PROGRESSBAR: { top: 30, left: 0, id: 'PROGRESSBAR' },
-    TEXT: { top: 40, left: 0, id: 'PROGRESSBAR' },
+    TEXT: { top: 40, left: 0, id: 'TEXT' },
     PROFILEPICTURE: { top: 50, left: 0, id: 'PROFILEPICTURE' },
   });
   const moveBox = useCallback(
@@ -56,11 +56,7 @@ export default function ResumeBuilder() {
     >
       <div className="grid h-full w-1/12 grid-cols-1 grid-rows-6 rounded-l-lg border-r bg-white shadow">
         {Object.keys(elements).map((item) => {
-          const { left, top, id } = elements[item] as {
-            top: number;
-            left: number;
-            id: string;
-          };
+          const { left, top, id } = elements[item];
           return (
             <DragWrapper
               key={id}

@@ -2,13 +2,12 @@ import Image from 'next/image';
 
 interface Props {
   image: string;
-  name: string;
 }
 
-export default function ProfilePicture({ image, name }: Props) {
+export default function ProfilePicture({ image }: Props) {
   return (
-    <>
-      <Image src={image} alt={name} />
-    </>
+    <div className="rounded-full">
+      <Image src={image} alt={image} />
+    </div>
   );
 }

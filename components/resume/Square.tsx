@@ -11,5 +11,5 @@ interface Props {
 }
 
 export default function Square({ style, children }: PropsWithChildren<Props>) {
-  return <div className="square">{children}</div>;
+  return <div className="square" style={style}>{children}</div>;
 }
