@@ -1,25 +1,30 @@
 import { memo } from 'react';
 import { useDrag } from 'react-dnd';
 interface Props {
-  isDropped: boolean;
-  name: string;
+  id: string;
   type: string;
+  position: {
+    left: number;
+    top: number;
+  };
   style: {
     type: 'dotted' | 'bold';
     color: string;
   };
 }
 
-function SeparatorComponent({ style, name, type, isDropped }: Props) {
-  const [{ opacity }, drag] = useDrag(
+function SeparatorComponent({ style, id, position, type }: Props) {
+  const { left, top } = position;
+  const [{ opacity, isDragging }, drag] = useDrag(
     () => ({
       type,
-      item: { name },
+      item: { id, left, top },
       collect: (monitor) => ({
         opacity: monitor.isDragging() ? 0.4 : 1,
+        isDragging: monitor.isDragging(),
       }),
     }),
-    [name, type],
+    [id, left, top, type],
   );
 
   return (

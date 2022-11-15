@@ -6,9 +6,12 @@ import { useDrop, XYCoord } from 'react-dnd';
 import { DragItem } from '@/types/interfaces';
 
 export default function ResumeBuilder() {
-  const [elementName, setElementName] = useState('');
   const [elements, setElements] = useState({
-    [elementName]: { top: 0, left: 0, id: '' },
+    SEPARATOR: { top: 10, left: 0, id: 'SEPARATOR' },
+    SQUARE: { top: 20, left: 0, id: 'SQUARE' },
+    PROGRESSBAR: { top: 30, left: 0, id: 'PROGRESSBAR' },
+    TEXT: { top: 40, left: 0, id: 'PROGRESSBAR' },
+    PROFILEPICTURE: { top: 50, left: 0, id: 'PROFILEPICTURE' },
   });
   const moveBox = useCallback(
     (id: string, left: number, top: number) => {
@@ -38,8 +41,13 @@ export default function ResumeBuilder() {
   );
 
   return (
-    <section className="flex h-screen items-center rounded-lg border bg-white shadow">
-      <div className="grid h-full w-1/12 grid-cols-1 grid-rows-6 rounded-l-lg border-r bg-white shadow"></div>
+    <section
+      ref={drop}
+      className="flex h-screen items-center rounded-lg border bg-white shadow"
+    >
+      <div className="grid h-full w-1/12 grid-cols-1 grid-rows-6 rounded-l-lg border-r bg-white shadow">
+        
+      </div>
       <div className="relative h-full w-11/12 rounded-r-lg bg-white">
         <div className="border-r-none border-b-none absolute bottom-0 right-0 h-52 w-80 rounded-br-lg border bg-white"></div>
       </div>
