@@ -1,7 +1,8 @@
 'use client';
-import DragWrapper from '@/components/resume/DragWrapper';
-import displayElement from '@/lib/displayElement';
 import useResumeBuilder from '@/hooks/useResumeBuilder';
+import DragWrapper from '@/components/resume/DragWrapper';
+import ResumeDocument from '@/components/resume/ResumeDocument';
+import displayElement from '@/lib/displayElement';
 
 export default function ResumeBuilder() {
   const { drop, elements } = useResumeBuilder();
@@ -22,6 +23,7 @@ export default function ResumeBuilder() {
         })}
       </div>
       <div className="relative h-full w-11/12 rounded-r-lg bg-white">
+        <ResumeDocument />
         <div className="border-r-none border-b-none absolute bottom-0 right-0 h-52 w-80 rounded-br-lg border bg-white"></div>
       </div>
     </section>
