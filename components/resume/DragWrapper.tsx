@@ -27,7 +27,11 @@ function DragWrapperComponent({
   );
 
   return (
-    <div ref={drag} className="" style={{ opacity }}>
+    <div
+      ref={drag}
+      className="flex items-center justify-center border-b"
+      style={{ opacity }}
+    >
       {children}
     </div>
   );
