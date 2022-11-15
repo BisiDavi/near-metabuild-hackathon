@@ -5,3 +5,7 @@
 .bg-skyblue {
   background-color: #0099ff;
 }
+
+.resume-view .dragWrapper {
+  border: 1px solid gray;
+}
