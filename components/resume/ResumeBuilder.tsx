@@ -1,7 +1,7 @@
 'use client';
-import useResumeBuilder from '@/hooks/useResumeBuilder';
 import DragWrapper from '@/components/resume/DragWrapper';
 import ResumeDocument from '@/components/resume/ResumeDocument';
+import useResumeBuilder from '@/hooks/useResumeBuilder';
 import displayElement from '@/lib/displayElement';
 
 export default function ResumeBuilder() {
