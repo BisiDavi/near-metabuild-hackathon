@@ -7,6 +7,8 @@ import displayElement from '@/lib/displayElement';
 export default function ResumeBuilder() {
   const { drop, elements } = useResumeBuilder();
 
+  console.log('elements', elements);
+
   return (
     <section
       ref={drop}
@@ -17,13 +19,17 @@ export default function ResumeBuilder() {
           const { left, top, id } = elements[item];
           return (
             <DragWrapper key={id} id={id} position={{ left, top }}>
-              {displayElement(id, { style: {}, text: 'Hello David', src: '' })}
+              {displayElement(id, {
+                style: { color: 'red' },
+                text: 'Hello David',
+                src: '',
+              })}
             </DragWrapper>
           );
         })}
       </div>
       <div className="relative mx-auto flex h-full w-11/12 justify-center rounded-r-lg bg-white">
-        <ResumeDocument />
+        {/* <ResumeDocument /> */}
         <div className="border-r-none border-b-none absolute bottom-0 right-0 h-52 w-80 rounded-br-lg border bg-white"></div>
       </div>
     </section>

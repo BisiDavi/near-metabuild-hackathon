@@ -2,7 +2,6 @@ import { PDFViewer } from '@react-pdf/renderer';
 import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
 
 export default function ResumeDocument() {
-  // Create styles
   const styles = StyleSheet.create({
     page: {
       backgroundColor: '#E4E4E4',

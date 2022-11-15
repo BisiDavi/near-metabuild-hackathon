@@ -10,5 +10,9 @@ interface Props {
 export default function Text({ text, style }: Props) {
   const { type, size } = style;
   const textClassname = type === 'title' ? 'font-bold' : 'font-normal';
-  return <p className={`${textClassname} ${size}`}>{text}</p>;
+  return (
+    <p className={`${textClassname} ${size}`} style={style}>
+      {text}
+    </p>
+  );
 }
