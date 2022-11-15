@@ -2,24 +2,23 @@ import { PDFViewer } from '@react-pdf/renderer';
 import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
 
 export default function ResumeDocument() {
+  // Create styles
+  const styles = StyleSheet.create({
+    page: {
+      backgroundColor: '#E4E4E4',
+      width: '100%',
+    },
+    section: {
+      margin: 10,
+      padding: 10,
+      flexGrow: 1,
+    },
+  });
 
-// Create styles
-const styles = StyleSheet.create({
-  page: {
-    flexDirection: 'row',
-    backgroundColor: '#E4E4E4',
-  },
-  section: {
-    margin: 10,
-    padding: 10,
-    flexGrow: 1,
-  },
-});
-
-    return (
-    <PDFViewer>
+  return (
+    <PDFViewer width="90%" height="100%">
       <Document>
-        <Page size="A4" style={styles.page}>
+        <Page wrap={true} size="A4" style={styles.page}>
           <View style={styles.section}>
             <Text>Section #1</Text>
           </View>

@@ -22,7 +22,7 @@ export default function ResumeBuilder() {
           );
         })}
       </div>
-      <div className="relative h-full w-11/12 rounded-r-lg bg-white">
+      <div className="relative mx-auto flex h-full w-11/12 justify-center rounded-r-lg bg-white">
         <ResumeDocument />
         <div className="border-r-none border-b-none absolute bottom-0 right-0 h-52 w-80 rounded-br-lg border bg-white"></div>
       </div>
