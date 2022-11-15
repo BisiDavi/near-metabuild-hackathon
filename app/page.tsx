@@ -1,5 +1,9 @@
-import ResumeBoard from '@/components/resume/ResumeBoard';
+import ResumePDFBuilder from '@/components/resume/ResumePDFBuilder';
 
 export default function Page() {
-  return <ResumeBoard />;
+  return (
+    <>
+      <ResumePDFBuilder />
+    </>
+  );
 }

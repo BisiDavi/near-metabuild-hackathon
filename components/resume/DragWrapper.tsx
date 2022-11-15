@@ -29,7 +29,7 @@ function DragWrapperComponent({
   return (
     <div
       ref={drag}
-      className="dragWrapper relative z-40 flex cursor-move items-center border-b px-3"
+      className="dragWrapper relative z-40 flex cursor-move items-center border px-3"
       style={{ opacity, left, top }}
     >
       {children}
