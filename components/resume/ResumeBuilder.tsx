@@ -4,9 +4,18 @@ import { useCallback, useState } from 'react';
 import { useDrop, XYCoord } from 'react-dnd';
 
 import { DragItem } from '@/types/interfaces';
+import DragWrapper from '@/components/resume/DragWrapper';
+
+type elementsType = {
+  [key: string]: {
+    top: number;
+    left: number;
+    id: string;
+  };
+};
 
 export default function ResumeBuilder() {
-  const [elements, setElements] = useState({
+  const [elements, setElements] = useState<elementsType>({
     SEPARATOR: { top: 10, left: 0, id: 'SEPARATOR' },
     SQUARE: { top: 20, left: 0, id: 'SQUARE' },
     PROGRESSBAR: { top: 30, left: 0, id: 'PROGRESSBAR' },
@@ -46,7 +55,20 @@ export default function ResumeBuilder() {
       className="flex h-screen items-center rounded-lg border bg-white shadow"
     >
       <div className="grid h-full w-1/12 grid-cols-1 grid-rows-6 rounded-l-lg border-r bg-white shadow">
-        
+        {Object.keys(elements).map((item) => {
+          const { left, top, id } = elements[item] as {
+            top: number;
+            left: number;
+            id: string;
+          };
+          return (
+            <DragWrapper
+              key={id}
+              id={id}
+              position={{ left, top }}
+            ></DragWrapper>
+          );
+        })}
       </div>
       <div className="relative h-full w-11/12 rounded-r-lg bg-white">
         <div className="border-r-none border-b-none absolute bottom-0 right-0 h-52 w-80 rounded-br-lg border bg-white"></div>
