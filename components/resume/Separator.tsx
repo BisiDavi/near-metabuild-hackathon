@@ -15,7 +15,7 @@ interface Props {
 
 function SeparatorComponent({ style, id, position, type }: Props) {
   const { left, top } = position;
-  const [{ opacity, isDragging }, drag] = useDrag(
+  const [{ opacity }, drag] = useDrag(
     () => ({
       type,
       item: { id, left, top },
