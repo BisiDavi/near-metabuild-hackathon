@@ -13,6 +13,7 @@ function DragWrapperComponent({
   position,
   children,
 }: PropsWithChildren<Props>) {
+  console.log('id', id);
   const { left, top } = position;
   const [{ opacity }, drag] = useDrag(
     () => ({
@@ -29,7 +30,7 @@ function DragWrapperComponent({
   return (
     <div
       ref={drag}
-      className="flex items-center justify-center border-b"
+      className="flex items-center px-3 border-b"
       style={{ opacity, left, top }}
     >
       {children}
