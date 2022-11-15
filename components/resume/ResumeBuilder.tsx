@@ -3,11 +3,9 @@ import update from 'immutability-helper';
 import { useCallback, useState } from 'react';
 import { useDrop, XYCoord } from 'react-dnd';
 
-import ResumeBoardProvider from '@/providers/ResumeBoardProvider';
 import { DragItem } from '@/types/interfaces';
-import ResumeBuilder from './ResumeBuilder';
 
-export default function ResumeBoard() {
+export default function ResumeBuilder() {
   const [elementName, setElementName] = useState('');
   const [elements, setElements] = useState({
     [elementName]: { top: 0, left: 0, id: '' },
@@ -40,8 +38,11 @@ export default function ResumeBoard() {
   );
 
   return (
-    <ResumeBoardProvider>
-      <ResumeBuilder />
-    </ResumeBoardProvider>
+    <section className="flex h-screen items-center rounded-lg border bg-white shadow">
+      <div className="grid h-full w-1/12 grid-cols-1 grid-rows-6 rounded-l-lg border-r bg-white shadow"></div>
+      <div className="relative h-full w-11/12 rounded-r-lg bg-white">
+        <div className="border-r-none border-b-none absolute bottom-0 right-0 h-52 w-80 rounded-br-lg border bg-white"></div>
+      </div>
+    </section>
   );
 }
