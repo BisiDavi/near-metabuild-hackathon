@@ -20,7 +20,7 @@ export default function Providerlayout({ children }: PropsWithChildren<{}>) {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <Nprogress color="red" />
-        <QueryClientProvider client={queryClient} contextSharing={true}>
+        <QueryClientProvider client={queryClient}>
           <ToastContainer />
           {children}
           <ReactQueryDevtools initialIsOpen={false} />
