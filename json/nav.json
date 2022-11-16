@@ -1,6 +1,5 @@
 [
-  { "title": "Build CV & Earn", "link": "/cv/build" },
-  { "title": "Review CV & Earn", "link": "/cv/review" },
+  { "title": "Meet a Recruiter", "link": "/cv/recruiter" },
   { "title": "Rate a CV and Earn", "link": "/cv/rate" },
   { "title": "Jobs", "link": "/jobs" }
 ]

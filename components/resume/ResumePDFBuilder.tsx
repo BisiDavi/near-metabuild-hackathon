@@ -1,3 +1,4 @@
+'use client';
 import ResumeDocument from '@/components/resume/ResumeDocument';
 import ResumeEditor from '@/components/resume/ResumeEditor';
 
