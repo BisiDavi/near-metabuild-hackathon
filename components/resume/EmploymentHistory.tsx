@@ -1,6 +1,6 @@
 import { Text, View, StyleSheet } from '@react-pdf/renderer';
 
-export default function EmployHistory() {
+export default function EmploymentHistory() {
   const styles = StyleSheet.create({
     list: {
       display: 'flex',
