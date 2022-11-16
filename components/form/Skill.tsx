@@ -5,7 +5,7 @@ import { skillType } from '@/types';
 
 export default function Skill() {
   const [skills, setSkills] = useState<skillType>([
-    { name: 'skill-0', placeholder: 'skill,100%', type: 'input' },
+    { name: 'skill-0', placeholder: 'Skill 1, 100%', type: 'input' },
   ]);
 
   function addSkillsHandler() {
@@ -15,7 +15,7 @@ export default function Skill() {
         ...prevState,
         {
           name: `skill-${skillLength}`,
-          placeholder: 'skill,100%',
+          placeholder: `Skill ${skillLength}, 100%`,
           type: 'input',
         },
       ];
@@ -23,7 +23,10 @@ export default function Skill() {
   }
 
   return (
-    <div>
+    <>
+      <p className="text-xs">
+        Write a skill, and a percentage. <br /> eg. Multitasking Skill, 80%{' '}
+      </p>
       {skills.map((skill) => (
         <input
           key={skill.name}
@@ -33,11 +36,12 @@ export default function Skill() {
         />
       ))}
       <button
-        className="h-10 w-10 rounded-full bg-green-500 text-3xl text-white"
+        className="item-center flex h-10 w-10 justify-center rounded-full bg-green-500 text-3xl text-white"
+        type="button"
         onClick={addSkillsHandler}
       >
         +
       </button>
-    </div>
+    </>
   );
 }

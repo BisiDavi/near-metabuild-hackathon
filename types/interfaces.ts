@@ -17,3 +17,10 @@ export interface FormElementProps {
 export interface SelectProps {
   input: inputType;
 }
+
+export interface ButtonProps {
+  onClick: () => void;
+  className: string;
+  type: 'button' | 'submit' | 'reset';
+  text: string;
+}

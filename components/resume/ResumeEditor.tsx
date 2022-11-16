@@ -1,7 +1,8 @@
 'use client';
-import formContent from '@/json/form.json';
-import displayFormElement from '@/lib/displayFormElement';
 import useResumeEditor from '@/hooks/useResumeEditor';
+import Button from '@/components/Button';
+import displayFormElement from '@/lib/displayFormElement';
+import formContent from '@/json/form.json';
 
 export default function ResumeEditor() {
   const {
@@ -35,20 +36,18 @@ export default function ResumeEditor() {
           </div>
         ))}
         <div className="button-group mt-4 flex items-center justify-between text-white">
-          <button
+          <Button
             className="rounded bg-gray-500 px-4 py-1 hover:bg-opacity-80"
             type="button"
             onClick={prevStageHandler}
-          >
-            ← Previous
-          </button>
-          <button
+            text="← Previous"
+          />
+          <Button
             className="rounded bg-blue-500 px-4 py-1 hover:bg-opacity-80"
             type="button"
             onClick={nextStageHandler}
-          >
-            Next →
-          </button>
+            text="Next →"
+          />
         </div>
       </form>
     </aside>
