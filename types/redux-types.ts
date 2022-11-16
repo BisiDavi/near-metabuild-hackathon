@@ -1,3 +1,3 @@
 export type BuilderStateType = {
-  cv: { [key: string]: string };
+  cvs: { [key: string]: string };
 };

@@ -1,6 +1,5 @@
 import { useForm } from 'react-hook-form';
 import { useEffect } from 'react';
-import { yupResolver } from '@hookform/resolvers/yup';
 
 import Button from '@/components/Button';
 import displayFormElement from '@/lib/displayFormElement';
@@ -9,22 +8,10 @@ import { useAppDispatch, useAppSelector } from '@/hooks/useRedux';
 import { updateCV } from '@/redux/builder-slice';
 
 export default function Resumeform({ resume }: any) {
-  const { cv } = useAppSelector((state) => state.builder);
+  const { cvs } = useAppSelector((state) => state.builder);
   const dispatch = useAppDispatch();
 
-  console.log('cv', cv);
-
-  const { watch , register} = useForm({
-    // resolver: yupResolver(adminProductSchema),
-    mode: 'all',
-  });
-  const formData = watch();
-
-  useEffect(() => {
-    dispatch(updateCV(formData));
-  }, []);
-
-  console.log('formData', formData);
+  console.log('cv', cvs);
 
   const {
     formCurrentStage,
@@ -46,7 +33,7 @@ export default function Resumeform({ resume }: any) {
         <div key={index} className="flex w-full space-x-2">
           {formItem.map((item) => (
             <div key={item.name} className="w-full">
-              {displayFormElement(item, register)}
+              {displayFormElement(item)}
             </div>
           ))}
         </div>

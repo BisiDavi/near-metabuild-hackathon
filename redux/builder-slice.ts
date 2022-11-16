@@ -4,16 +4,16 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { BuilderStateType } from '@/types/redux-types';
 
 const initialState: BuilderStateType = {
-  cv: {},
+  cvs: {},
 };
 
 const CVSlice = createSlice({
   name: 'CV',
   initialState,
   reducers: {
-    updateCV(state, action: PayloadAction<BuilderStateType['cv']>) {
+    updateCV(state, action: PayloadAction<BuilderStateType['cvs']>) {
       console.log('action.payload', action.payload);
-      state.cv = action.payload;
+      state.cvs = action.payload;
     },
   },
 });

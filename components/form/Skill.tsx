@@ -3,7 +3,7 @@ import { useState, useCallback } from 'react';
 import { skillType } from '@/types';
 import Button from '@/components/Button';
 
-export default function Skill({ register }: any) {
+export default function Skill() {
   const [skills, setSkills] = useState<skillType>([
     { name: 'skill-1', placeholder: 'Skill 1, 100%', type: 'input' },
   ]);
@@ -49,7 +49,6 @@ export default function Skill({ register }: any) {
           <input
             className="my-2 h-10 w-full rounded-l-md border border-gray-300 p-2 focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
             placeholder={skill.placeholder}
-            {...register(skill.name)}
           />
           <Button
             className="item-center mt-2 flex h-10 w-10 justify-center rounded-r bg-red-500 text-3xl text-white"

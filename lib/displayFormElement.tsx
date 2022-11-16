@@ -6,19 +6,19 @@ import Skill from '@/components/form/Skill';
 import Textarea from '@/components/form/Textarea';
 import type { inputType } from '@/types';
 
-export default function displayFormElement(input: inputType, register: any) {
+export default function displayFormElement(input: inputType) {
   switch (input.type) {
     case 'input':
-      return <Input input={input} register={register} />;
+      return <Input input={input} />;
     case 'select':
-      return <Select input={input} register={register} />;
+      return <Select input={input} />;
     case 'selectCountry':
-      return <SelectCountry input={input} register={register} />;
+      return <SelectCountry input={input} />;
     case 'textarea':
-      return <Textarea input={input} register={register} />;
+      return <Textarea input={input} />;
     case 'file':
-      return <File input={input} register={register} />;
+      return <File input={input} />;
     case 'skill':
-      return <Skill register={register} />;
+      return <Skill />;
   }
 }
