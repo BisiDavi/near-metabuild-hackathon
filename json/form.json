@@ -45,6 +45,12 @@
           "placeholder": "Your House Address",
           "type": "input",
           "id": "address.address"
+        },
+        {
+          "name": "city",
+          "placeholder": "City",
+          "type": "input",
+          "id": "address.city"
         }
       ],
       [

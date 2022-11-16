@@ -34,13 +34,13 @@ function ResumeDocumentComponent() {
             <Text style={styles.role}>{dCvs.profile.role}</Text>
             <View style={styles.details}>
               <Text style={styles.heading}>Details</Text>
-              <Text style={styles.text}>{dCvs.address.address}</Text>
-              <Text style={styles.text}>
-                {dCvs.address.state}, {dCvs.address.zip}
+              <Text>{dCvs.address.address}</Text>
+              <Text>
+                {dCvs.address.city},{dCvs.address.state},{dCvs.address.zip}
               </Text>
-              <Text style={styles.text}>{dCvs.address.country}</Text>
-              <Text style={styles.text}>{dCvs.address.phone}</Text>
-              <Text style={styles.text}>{dCvs.address.email}</Text>
+              <Text>{dCvs.address.country}</Text>
+              <Text>{dCvs.address.phone}</Text>
+              <Text>{dCvs.address.email}</Text>
               <Text style={styles.heading}>Skills</Text>
               <ProgressBar
                 text="Excellent Communication Skills"
@@ -60,10 +60,10 @@ function ResumeDocumentComponent() {
             <Text style={styles.text}>{dCvs.profile.intro}</Text>
             <Text style={styles.heading}>Employment History</Text>
             <View>
-              <Text style={styles.text}>
+              <Text style={styles.subheading}>
                 Branch Customer Service Representative, AT&T Inc., Seattle
               </Text>
-              <Text style={styles.text}>AUGUST 2014 - SEPTEMBER 2020</Text>
+              <Text style={styles.date}>AUGUST 2014 - SEPTEMBER 2020</Text>
               <View style={styles.listGroup}>
                 <Text style={styles.text}>
                   - Maintained up to date knowledge of products and services.

@@ -24,6 +24,9 @@ export const resumeDocumentStyle = StyleSheet.create({
     marginVertical: 5,
     borderRadius: '50%',
   },
+  date: {
+    fontSize: 8,
+  },
   section: {
     margin: 10,
     padding: 10,
@@ -35,8 +38,9 @@ export const resumeDocumentStyle = StyleSheet.create({
     color: 'white',
   },
   details: {
-    padding: 20,
-    fontSize: 12,
+    fontSize: 10,
+    paddingVertical: 10,
+    lineHeight: 1.5,
   },
   text: {
     fontSize: 12,
@@ -44,11 +48,15 @@ export const resumeDocumentStyle = StyleSheet.create({
   heading: {
     fontWeight: 'bold',
     fontSize: 14,
-    marginVertical: 5,
+    marginVertical: 2,
+  },
+  subheading: {
+    fontWeight: 'bold',
+    fontSize: 13,
   },
   role: {
     fontSize: 8,
-    marginTop: 2,
+    marginTop: 2, 
   },
   name: {
     fontSize: 14,

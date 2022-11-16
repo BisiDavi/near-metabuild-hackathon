@@ -9,7 +9,8 @@ export const cvsData = {
     },
     address: {
       address: '123460 22nd Ave. SW',
-      state: 'Seattle',
+      state: 'WA',
+      city: 'Seattle',
       zip: 'WA 98116',
       country: 'United States',
       phone: '(206) 742-5187',
