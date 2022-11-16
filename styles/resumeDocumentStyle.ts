@@ -53,10 +53,11 @@ export const resumeDocumentStyle = StyleSheet.create({
   subheading: {
     fontWeight: 'bold',
     fontSize: 13,
+    marginVertical: 4,
   },
   role: {
     fontSize: 8,
-    marginTop: 2, 
+    marginTop: 2,
   },
   name: {
     fontSize: 14,
