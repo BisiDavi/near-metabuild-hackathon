@@ -1,41 +1,51 @@
 'use client';
-
-import { useState } from 'react';
-
 import formContent from '@/json/form.json';
 import displayFormElement from '@/lib/displayFormElement';
+import useResumeEditor from '@/hooks/useResumeEditor';
 
 export default function ResumeEditor() {
-  const [formStage, setFormStage] = useState<number>(0);
-
-  function formStageHandler(type: 'prev' | 'next') {
-    const formStageState = (prevState: number) =>
-      type === 'prev' ? prevState - 1 : prevState + 1;
-    if (formStage > 0) {
-      setFormStage((prevState) => formStageState(prevState));
-    }
-  }
+  const {
+    currentStage,
+    formCurrentStage,
+    formStage,
+    prevStageHandler,
+    nextStageHandler,
+  } = useResumeEditor();
 
   return (
     <aside className="mr-6">
       <h5 className="text-center text-xl font-bold">Edit Resume</h5>
+      <div className="outer my-4 h-4 w-full rounded-full border bg-gray-500">
+        <div
+          className="inner h-4 rounded-full bg-green-500"
+          style={{ width: `${currentStage}%` }}
+        ></div>
+      </div>
       <form>
-        <h4>{formContent[formStage].title}</h4>
+        <h4>
+          Stage {formCurrentStage}: {formContent[formStage].title}
+        </h4>
         {formContent[formStage].form.map((formItem, index) => (
-          <div key={index} className="flex">
-            {formItem.map((item) => displayFormElement(item))}
+          <div key={index} className="flex w-full space-x-2">
+            {formItem.map((item) => (
+              <div key={item.name} className="w-full">
+                {displayFormElement(item)}
+              </div>
+            ))}
           </div>
         ))}
         <div className="button-group mt-4 flex items-center justify-between text-white">
           <button
             className="rounded bg-gray-400 px-4 py-1 hover:bg-opacity-80"
-            onClick={() => formStageHandler('prev')}
+            type="button"
+            onClick={prevStageHandler}
           >
             Previous
           </button>
           <button
             className="rounded bg-blue-400 px-4 py-1 hover:bg-opacity-80"
-            onClick={() => formStageHandler('next')}
+            type="button"
+            onClick={nextStageHandler}
           >
             Next
           </button>

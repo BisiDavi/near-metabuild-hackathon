@@ -7,12 +7,10 @@ interface Props {
 
 export default function Input({ input }: Props) {
   return (
-    <div> 
-      <input
-        name={input.name}
-        className="block w-full rounded-md border-gray-300 pl-7 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-        placeholder={input.placeholder}
-      />
-    </div>
+    <input
+      name={input.name}
+      className="my-2 w-full rounded-md border border-gray-300 p-2 focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
+      placeholder={input.placeholder}
+    />
   );
 }
