@@ -56,23 +56,23 @@ function ResumeDocumentComponent() {
             </View>
           </View>
           <View style={styles.section}>
-            <Text>Profile</Text>
-            <Text>{dCvs.profile.intro}</Text>
-            <Text>Employment History</Text>
+            <Text style={styles.heading}>Profile</Text>
+            <Text style={styles.text}>{dCvs.profile.intro}</Text>
+            <Text style={styles.heading}>Employment History</Text>
             <View>
-              <Text>
+              <Text style={styles.text}>
                 Branch Customer Service Representative, AT&T Inc., Seattle
               </Text>
-              <Text>AUGUST 2014 - SEPTEMBER 2020</Text>
+              <Text style={styles.text}>AUGUST 2014 - SEPTEMBER 2020</Text>
               <View style={styles.listGroup}>
-                <Text style={styles.list}>
+                <Text style={styles.text}>
                   - Maintained up to date knowledge of products and services.
                 </Text>
-                <Text style={styles.list}>
+                <Text style={styles.text}>
                   - Handled customer calls and responded to queries about
                   services, product malfunctions, promotions and billing.
                 </Text>
-                <Text style={styles.list}>
+                <Text style={styles.text}>
                   - Worked to address all customer concerns in a timely and
                   effective manner.
                 </Text>
@@ -82,13 +82,13 @@ function ResumeDocumentComponent() {
               <Text>Customer Service Representation, Anglo Hotel, NYC</Text>
               <Text>AUGUST 2010 - AUGUST 2014</Text>
               <View style={styles.listGroup}>
-                <Text style={styles.list}>
+                <Text style={styles.text}>
                   - Provided High quality customer service to customers.
                 </Text>
-                <Text style={styles.list}>
+                <Text style={styles.text}>
                   - Handled Sales transactions and returns in a timely manner
                 </Text>
-                <Text style={styles.list}>
+                <Text style={styles.text}>
                   - Greeted customers in a friendly and helpful manner
                 </Text>
               </View>

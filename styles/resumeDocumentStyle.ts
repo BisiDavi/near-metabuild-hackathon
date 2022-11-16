@@ -7,6 +7,7 @@ export const resumeDocumentStyle = StyleSheet.create({
     height: '100%',
     display: 'flex',
     flexDirection: 'row',
+    lineHeight: 1.2,
   },
   aside: {
     backgroundColor: 'black',
@@ -38,18 +39,12 @@ export const resumeDocumentStyle = StyleSheet.create({
     fontSize: 12,
   },
   text: {
-    marginVertical: 2,
+    fontSize: 12,
   },
   heading: {
     fontWeight: 'bold',
     fontSize: 14,
     marginVertical: 5,
-  },
-  list: {
-    display: 'flex',
-    listStyle: 'disc',
-    fontSize: 12,
-    lineHeight: 1.15,
   },
   role: {
     fontSize: 8,

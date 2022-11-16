@@ -1,6 +1,12 @@
+import dynamic from 'next/dynamic';
 import Layout from '@/layout';
 import ResumeEditor from '@/components/resume/ResumeEditor';
-import ResumeDocument from '@/components/resume/ResumeDocument';
+// import ResumeDocument from '@/components/resume/ResumeDocument';
+
+const ResumeDocument = dynamic(
+  () => import('../components/resume/ResumeDocument'),
+  { ssr: false },
+);
 
 export default function Home() {
   return (
