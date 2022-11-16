@@ -11,6 +11,7 @@ export interface FormElementProps {
   input: {
     name: string;
     placeholder: string;
+    id: string;
   };
 }
 

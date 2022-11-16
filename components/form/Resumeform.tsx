@@ -9,7 +9,6 @@ import { updateCV } from '@/redux/builder-slice';
 
 export default function Resumeform({ resume }: any) {
   const { cvs } = useAppSelector((state) => state.builder);
-  const dispatch = useAppDispatch();
 
   console.log('cv', cvs);
 

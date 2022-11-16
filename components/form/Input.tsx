@@ -4,7 +4,7 @@ import type { FormElementProps } from '@/types/interfaces';
 export default function Input({ input }: FormElementProps) {
   const { onChangeHandler, getInputValue } = useReduxForm();
 
-  const inputValue = getInputValue(input.name);
+  const inputValue = getInputValue(input.id);
 
   return (
     <input

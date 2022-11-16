@@ -14,7 +14,7 @@ export type BuilderStateType = {
       phone: string;
       email: string;
     };
-    skills: { [key: string]: string };
+    skills: { [key: string]: { [key: string]: string } };
     employmentHistory: { [key: string]: string };
     education: { [key: string]: string };
   };

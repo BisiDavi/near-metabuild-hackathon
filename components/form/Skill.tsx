@@ -5,7 +5,12 @@ import Button from '@/components/Button';
 
 export default function Skill() {
   const [skills, setSkills] = useState<skillType>([
-    { name: 'skill-1', placeholder: 'Skill 1, 100%', type: 'input' },
+    {
+      name: 'skill-1',
+      placeholder: 'Skill 1, 100%',
+      type: 'input',
+      id: 'skills.skill',
+    },
   ]);
 
   function addSkillsHandler() {
@@ -17,6 +22,7 @@ export default function Skill() {
           name: `skill-${skillLength}`,
           placeholder: `Skill ${skillLength}, 100%`,
           type: 'input',
+          id: 'skills.skill',
         },
       ];
     });
