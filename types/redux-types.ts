@@ -6,7 +6,7 @@ export type BuilderStateType = {
       intro: string;
       profile: string;
     };
-    details: {
+    address: {
       address: string;
       state: string;
       zip: string;

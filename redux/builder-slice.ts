@@ -8,10 +8,11 @@ const initialState: BuilderStateType = {
     profile: {
       name: 'Tony Sanders',
       role: 'CUSTOMER SERVICE REPRESENTATIVE',
-      intro: '',
+      intro:
+        'Dedicated Customer Service Representative dedicated to providing quality care for ultimate customer satisfaction.Proven ability toestablish and maintain excellent communication and relationshipswith clients. Adept in general accounting and financetransactions.',
       profile: '',
     },
-    details: {
+    address: {
       address: 'CUSTOMER SERVICE REPRESENTATIVE',
       state: '',
       zip: '',

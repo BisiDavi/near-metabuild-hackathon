@@ -2,16 +2,38 @@
   {
     "title": "Profile",
     "form": [
-      [{ "name": "name", "placeholder": "Name", "type": "input" }],
-      [{ "name": "role", "placeholder": "Role", "type": "input" }],
+      [
+        {
+          "name": "name",
+          "placeholder": "Name",
+          "type": "input",
+          "id": "profile.name"
+        }
+      ],
+      [
+        {
+          "name": "role",
+          "placeholder": "Role",
+          "type": "input",
+          "id": "profile.role"
+        }
+      ],
       [
         {
           "name": "intro",
           "placeholder": "Profile Introduction",
-          "type": "textarea"
+          "type": "textarea",
+          "id": "profile.intro"
         }
       ],
-      [{ "name": "profile", "placeholder": "Profile", "type": "file" }]
+      [
+        {
+          "name": "profile",
+          "placeholder": "Profile",
+          "type": "file",
+          "id": "profile.profile"
+        }
+      ]
     ]
   },
   {
@@ -21,26 +43,44 @@
         {
           "name": "address",
           "placeholder": "Your House Address",
-          "type": "input"
+          "type": "input",
+          "id": "address.address"
         }
       ],
       [
-        { "name": "state", "placeholder": "State", "type": "input" },
-        { "name": "zip", "placeholder": "Zip code", "type": "input" }
+        {
+          "name": "state",
+          "placeholder": "State",
+          "type": "input",
+          "id": "address.state"
+        },
+        {
+          "name": "zip",
+          "placeholder": "Zip code",
+          "type": "input",
+          "id": "address.zip"
+        }
       ],
       [
         {
           "name": "country",
           "placeholder": "Country",
-          "type": "selectCountry"
+          "type": "selectCountry",
+          "id": "address.country"
         },
-        { "name": "phone", "placeholder": "phone", "type": "input" }
+        {
+          "name": "phone",
+          "placeholder": "phone",
+          "type": "input",
+          "id": "address.phone"
+        }
       ],
       [
         {
           "name": "email",
           "placeholder": "Email Address",
-          "type": "input"
+          "type": "input",
+          "id": "address.email"
         }
       ]
     ]
@@ -48,15 +88,40 @@
   {
     "title": "Skills",
     "form": [
-      [{ "name": "skill", "placeholder": "skill,100%", "type": "skill" }]
+      [
+        {
+          "name": "skill",
+          "placeholder": "skill,100%",
+          "type": "skill",
+          "id": "skills.skill"
+        }
+      ]
     ]
   },
   {
     "title": "Employment History",
-    "form": [[{ "name": "skill", "placeholder": "skill,100", "type": "input" }]]
+    "form": [
+      [
+        {
+          "name": "skill",
+          "placeholder": "skill,100",
+          "type": "input",
+          "id": "employmentHistory.skill"
+        }
+      ]
+    ]
   },
   {
     "title": "Education",
-    "form": [[{ "name": "skill", "placeholder": "skill,100", "type": "input" }]]
+    "form": [
+      [
+        {
+          "name": "skill",
+          "placeholder": "skill,100",
+          "type": "input",
+          "id": "education.skill"
+        }
+      ]
+    ]
   }
 ]
