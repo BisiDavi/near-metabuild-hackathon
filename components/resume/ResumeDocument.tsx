@@ -24,6 +24,13 @@ export default function ResumeDocument() {
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'flex-start',
+      color: 'white',
+    },
+    outer: {
+      backgroundColor: 'gray',
+    },
+    inner: {
+      backgroundColor: 'white',
     },
     image: {
       height: 100,
@@ -37,6 +44,14 @@ export default function ResumeDocument() {
       width: '70%',
       flexGrow: 1,
     },
+    divider: {
+      width: 30,
+    },
+    details: {},
+    heading: {
+      fontWeight: 'bold',
+    },
+    list: {},
   });
 
   return (
@@ -48,9 +63,46 @@ export default function ResumeDocument() {
               src="https://res.cloudinary.com/verrb-inc/image/upload/v1668528090/john-doe_bm98ji.jpg"
               style={styles.image}
             />
+            <Text>Tony Sanders</Text>
+            <View style={styles.divider}></View>
+            <Text>CUSTOMER SERVICE REPRESENTATIVE</Text>
+            <View style={styles.details}>
+              <Text style={styles.heading}>Details</Text>
+              <Text>123460 22nd Ave. SW</Text>
+              <Text>Seattle, WA 98116</Text>
+              <Text>United States</Text>
+              <Text>(206) 742-5187</Text>
+              <Text>tonysandy@gmail.com</Text>
+              <Text style={styles.heading}>Skills</Text>
+              <Text>Excellent Communication Skills</Text>
+              <View></View>
+              <Text>Troubleshooting Skills</Text>
+              <View style={styles.outer}>
+                <View style={styles.inner}></View>
+              </View>
+              <Text>Multitasking Skills</Text>
+              <View></View>
+              <Text>Marketing Strategies</Text>
+              <View></View>
+            </View>
           </View>
           <View style={styles.section}>
-            <Text>Section #2</Text>
+            <Text>Profile</Text>
+            <Text>
+              Dedicated Customer Service Representative dedicated to providing
+              quality care for ultimate customer satisfaction.Proven ability to
+              establish and maintain excellent communication and relationships
+              with clients. Adept in general accounting and finance
+              transactions.
+            </Text>
+            <Text>Employment History</Text>
+            <Text>
+              Branch Customer Service Representative, AT&T Inc., Seattle
+            </Text>
+            <Text>AUGUST 2014 - SEPTEMBER 2020</Text>
+            <View style={styles.list}>
+              <Text></Text>
+            </View>
           </View>
         </Page>
       </Document>
