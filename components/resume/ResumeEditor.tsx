@@ -1,6 +1,7 @@
 'use client';
 import useResumeEditor from '@/hooks/useResumeEditor';
 import Button from '@/components/Button';
+import FormProgress from '@/components/form/FormProgress';
 import displayFormElement from '@/lib/displayFormElement';
 import formContent from '@/json/form.json';
 
@@ -16,12 +17,7 @@ export default function ResumeEditor() {
   return (
     <aside className="mr-6">
       <h5 className="text-center text-xl font-bold">Edit Resume</h5>
-      <div className="outer my-4 h-4 w-full rounded-full bg-gray-500">
-        <div
-          className="inner h-4 rounded-full bg-green-500"
-          style={{ width: `${currentStage}%` }}
-        ></div>
-      </div>
+      <FormProgress currentStage={currentStage} />
       <form>
         <h4>
           Stage {formCurrentStage}: {formContent[formStage].title}
