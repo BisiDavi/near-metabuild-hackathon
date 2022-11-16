@@ -4,15 +4,15 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { BuilderStateType } from '@/types/redux-types';
 
 const initialState: BuilderStateType = {
-  styles: {},
+  cv: {},
 };
 
 const UISlice = createSlice({
   name: 'UI',
   initialState,
   reducers: {
-    updateStyles(state, action: PayloadAction<BuilderStateType['styles']>) {
-      state.styles = action.payload;
+    updateStyles(state, action: PayloadAction<BuilderStateType['cv']>) {
+      state.cv = action.payload;
     },
   },
 });

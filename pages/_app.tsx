@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app';
 
-import Providerlayout from '@/providers/ProviderLayout';
+import Providerlayout from '@/layout/ProviderLayout';
 import '@/styles/globals.css';
 import 'react-toastify/dist/ReactToastify.css';
 
