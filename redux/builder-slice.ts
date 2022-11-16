@@ -4,7 +4,25 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { BuilderStateType } from '@/types/redux-types';
 
 const initialState: BuilderStateType = {
-  cvs: {},
+  cvs: {
+    profile: {
+      name: 'Tony Sanders',
+      role: 'CUSTOMER SERVICE REPRESENTATIVE',
+      intro: '',
+      profile: '',
+    },
+    details: {
+      address: 'CUSTOMER SERVICE REPRESENTATIVE',
+      state: '',
+      zip: '',
+      country: '',
+      phone: '',
+      email: '',
+    },
+    skills: {},
+    employmentHistory: {},
+    education: {},
+  },
 };
 
 const CVSlice = createSlice({

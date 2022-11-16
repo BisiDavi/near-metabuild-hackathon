@@ -9,6 +9,7 @@ import {
   PDFViewer,
 } from '@react-pdf/renderer';
 import ProgressBar from '@/components/resume/ProgressBar';
+import { useAppSelector } from '@/hooks/useRedux';
 
 export default function ResumeDocument() {
   const styles = StyleSheet.create({
@@ -75,6 +76,7 @@ export default function ResumeDocument() {
       marginTop: 10,
     },
   });
+  const { cvs } = useAppSelector((state) => state.builder);
 
   return (
     <PDFViewer showToolbar={false} width="90%" height="100%">
