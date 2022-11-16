@@ -79,8 +79,10 @@ function ResumeDocumentComponent() {
               </View>
             </View>
             <View>
-              <Text>Customer Service Representation, Anglo Hotel, NYC</Text>
-              <Text>AUGUST 2010 - AUGUST 2014</Text>
+              <Text style={styles.subheading}>
+                Customer Service Representation, Anglo Hotel, NYC
+              </Text>
+              <Text style={styles.date}>AUGUST 2010 - AUGUST 2014</Text>
               <View style={styles.listGroup}>
                 <Text style={styles.text}>
                   - Provided High quality customer service to customers.
@@ -95,13 +97,15 @@ function ResumeDocumentComponent() {
             </View>
             <View>
               <Text>Education</Text>
-              <Text>
+              <Text style={styles.subheading}>
                 Bachelor of Communications, University of Seattle, Seattle
               </Text>
-              <Text>AUGUST 2007 - May 2011</Text>
-              <Text>- Graduated with High Honours.</Text>
-              <Text>High School Diploma, Hartwick High School, Hartwick</Text>
-              <Text>AUGUST 2007 - May 2011</Text>
+              <Text style={styles.date}>AUGUST 2007 - May 2011</Text>
+              <Text style={styles.text}>- Graduated with High Honours.</Text>
+              <Text style={styles.text}>
+                - High School Diploma, Hartwick High School, Hartwick
+              </Text>
+              <Text style={styles.date}>AUGUST 2007 - May 2011</Text>
             </View>
             <View>
               <Text>References</Text>
