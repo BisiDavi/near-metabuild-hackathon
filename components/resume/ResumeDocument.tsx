@@ -8,9 +8,9 @@ import {
   PDFViewer,
 } from '@react-pdf/renderer';
 import { memo } from 'react';
+
 import ProgressBar from '@/components/resume/ProgressBar';
 import { useAppSelector } from '@/hooks/useRedux';
-
 import useDebounce from '@/hooks/useDebounce';
 import { BuilderStateType } from '@/types/redux-types';
 import { resumeDocumentStyle } from '@/styles/resumeDocumentStyle';
