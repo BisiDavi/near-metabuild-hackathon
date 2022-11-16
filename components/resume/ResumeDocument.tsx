@@ -10,8 +10,9 @@ import {
 } from '@react-pdf/renderer';
 import ProgressBar from '@/components/resume/ProgressBar';
 import { useAppSelector } from '@/hooks/useRedux';
+import { memo } from 'react';
 
-export default function ResumeDocument() {
+function ResumeDocumentComponent() {
   const styles = StyleSheet.create({
     page: {
       backgroundColor: '#E4E4E4',
@@ -113,9 +114,7 @@ export default function ResumeDocument() {
           </View>
           <View style={styles.section}>
             <Text>Profile</Text>
-            <Text>
-             {cvs.profile.intro}
-            </Text>
+            <Text>{cvs.profile.intro}</Text>
             <Text>Employment History</Text>
             <View>
               <Text>
@@ -174,3 +173,6 @@ export default function ResumeDocument() {
     </PDFViewer>
   );
 }
+
+const ResumeDocument = memo(ResumeDocumentComponent);
+export default ResumeDocument;
