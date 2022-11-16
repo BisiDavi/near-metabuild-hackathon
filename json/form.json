@@ -1,6 +1,14 @@
 [
   {
-    "title": "details",
+    "title": "Profile",
+    "form": [
+      [{ "name": "name", "placeholder": "Name", "type": "input" }],
+      [{ "name": "role", "placeholder": "Role", "type": "input" }],
+      [{ "name": "profile", "placeholder": "Profile", "type": "file" }]
+    ]
+  },
+  {
+    "title": "Details",
     "form": [
       [
         {
@@ -25,5 +33,12 @@
         }
       ]
     ]
+  },
+  {
+    "title": "Skills",
+    "form": [{ "name": "skill", "placeholder": "skill,100", "type": "input" }]
+  },
+  {
+    "title": "Skills"
   }
 ]
