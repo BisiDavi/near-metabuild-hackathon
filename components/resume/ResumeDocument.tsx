@@ -1,4 +1,4 @@
-// /* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/alt-text */
 'use client';
 import { PDFViewer } from '@react-pdf/renderer';
 import {
@@ -9,7 +9,7 @@ import {
   View,
   StyleSheet,
 } from '@react-pdf/renderer';
-import ProgressBar from './ProgressBar';
+import ProgressBar from '@/components/resume/ProgressBar';
 
 export default function ResumeDocument() {
   const styles = StyleSheet.create({

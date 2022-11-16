@@ -1,7 +1,13 @@
 'use client';
-import ResumeDocument from '@/components/resume/ResumeDocument';
+import dynamic from 'next/dynamic';
 import ResumeEditor from '@/components/resume/ResumeEditor';
 
+const ResumeDocument = dynamic(
+  () => import('@/components/resume/ResumeDocument'),
+  {
+    ssr: false,
+  },
+);
 export default function ResumePDFBuilder() {
   return (
     <div className="container mx-auto flex h-screen justify-center">
@@ -9,7 +15,7 @@ export default function ResumePDFBuilder() {
         <ResumeEditor />
       </div>
       <div className="w-9/12">
-        {/* <ResumeDocument /> */}
+        <ResumeDocument />
       </div>
     </div>
   );
