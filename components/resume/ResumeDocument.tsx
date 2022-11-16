@@ -1,4 +1,4 @@
-/* eslint-disable jsx-a11y/alt-text */
+// /* eslint-disable jsx-a11y/alt-text */
 'use client';
 import { PDFViewer } from '@react-pdf/renderer';
 import {
@@ -92,7 +92,7 @@ export default function ResumeDocument() {
             <View style={styles.details}>
               <Text style={styles.heading}>Details</Text>
               <Text style={styles.text}>123460 22nd Ave. SW</Text>
-                <Text style={styles.text}>Seattle, WA 98116</Text>
+              <Text style={styles.text}>Seattle, WA 98116</Text>
               <Text style={styles.text}>United States</Text>
               <Text style={styles.text}>(206) 742-5187</Text>
               <Text style={styles.text}>tonysandy@gmail.com</Text>

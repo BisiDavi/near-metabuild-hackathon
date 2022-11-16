@@ -9,7 +9,7 @@ export default function ResumePDFBuilder() {
         <ResumeEditor />
       </div>
       <div className="w-9/12">
-        <ResumeDocument />
+        {/* <ResumeDocument /> */}
       </div>
     </div>
   );
