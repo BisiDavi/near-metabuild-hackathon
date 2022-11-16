@@ -22,11 +22,21 @@ export default function useResumeEditor() {
 
   const currentStage = (formCurrentStage / formContent.length) * 100;
 
+  const disabledNext = formStage === formStageLimit ? true : false;
+  const disabledPrev = formStage <= 0 ? true : false;
+
+  const disabledNextClassname = disabledNext ? 'cursor-not-allowed' : '';
+  const disabledPrevClassname = disabledPrev ? 'cursor-not-allowed' : '';
+
   return {
     currentStage,
     formCurrentStage,
     formStage,
     prevStageHandler,
     nextStageHandler,
+    disabledNext,
+    disabledPrev,
+    disabledNextClassname,
+    disabledPrevClassname,
   };
 }

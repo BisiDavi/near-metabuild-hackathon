@@ -11,6 +11,10 @@ export default function ResumeEditor() {
     formStage,
     prevStageHandler,
     nextStageHandler,
+    disabledNext,
+    disabledPrev,
+    disabledNextClassname,
+    disabledPrevClassname,
   } = useResumeEditor();
 
   return (
@@ -32,16 +36,18 @@ export default function ResumeEditor() {
         ))}
         <div className="button-group mt-4 flex items-center justify-between text-white">
           <Button
-            className="rounded bg-gray-500 px-4 py-1 hover:bg-opacity-80"
+            className={`${disabledPrevClassname} rounded bg-gray-500 px-4 py-1 hover:bg-opacity-80`}
             type="button"
             onClick={prevStageHandler}
             text="← Previous"
+            disabled={disabledPrev}
           />
           <Button
-            className="rounded bg-blue-500 px-4 py-1 hover:bg-opacity-80"
+            className={`${disabledNextClassname} rounded bg-blue-500 px-4 py-1 hover:bg-opacity-80`}
             type="button"
             onClick={nextStageHandler}
             text="Next →"
+            disabled={disabledNext}
           />
         </div>
       </form>
