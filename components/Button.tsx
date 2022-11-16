@@ -5,9 +5,10 @@ export default function Button({
   className,
   type,
   text,
+  disabled = false,
 }: ButtonProps) {
   return (
-    <button className={className} type={type} onClick={onClick}>
+    <button className={className} type={type} onClick={onClick} disabled={disabled}>
       {text}
     </button>
   );

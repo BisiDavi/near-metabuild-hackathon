@@ -23,9 +23,9 @@ export interface ButtonProps {
   className: string;
   type: 'button' | 'submit' | 'reset';
   text: string;
+  disabled?: boolean;
 }
 
-
-export interface FormProgressProps{
-  currentStage:number
+export interface FormProgressProps {
+  currentStage: number;
 }
