@@ -20,8 +20,7 @@ export default function useReduxForm() {
     const name = splittedId[1];
     const group = splittedId[0];
 
-    const result: any = cvs[group][name] ? cvs[group][name] : '';
-    return result;
+    return cvs[group][name] ? cvs[group][name] : '';
   };
 
   return { onChangeHandler, getInputValue };

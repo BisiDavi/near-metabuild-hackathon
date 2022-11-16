@@ -87,9 +87,9 @@ export default function ResumeDocument() {
               src="https://res.cloudinary.com/verrb-inc/image/upload/v1668528090/john-doe_bm98ji.jpg"
               style={styles.image}
             />
-            <Text style={styles.name}>Tony Sanders</Text>
+            <Text style={styles.name}>{cvs.profile.name}</Text>
             <Text style={styles.divider}>---</Text>
-            <Text style={styles.role}>CUSTOMER SERVICE REPRESENTATIVE</Text>
+            <Text style={styles.role}>{cvs.profile.role}</Text>
             <View style={styles.details}>
               <Text style={styles.heading}>Details</Text>
               <Text style={styles.text}>123460 22nd Ave. SW</Text>
@@ -114,11 +114,7 @@ export default function ResumeDocument() {
           <View style={styles.section}>
             <Text>Profile</Text>
             <Text>
-              Dedicated Customer Service Representative dedicated to providing
-              quality care for ultimate customer satisfaction.Proven ability to
-              establish and maintain excellent communication and relationships
-              with clients. Adept in general accounting and finance
-              transactions.
+             {cvs.profile.intro}
             </Text>
             <Text>Employment History</Text>
             <View>

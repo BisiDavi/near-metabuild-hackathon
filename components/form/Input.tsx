@@ -10,7 +10,7 @@ export default function Input({ input }: FormElementProps) {
     <input
       className="my-2 w-full rounded-md border border-gray-300 p-2 focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
       placeholder={input.placeholder}
-      onChange={(e) => onChangeHandler(e, input.name)}
+      onChange={(e) => onChangeHandler(e, input.id)}
       name={input.name}
       value={inputValue}
     />
