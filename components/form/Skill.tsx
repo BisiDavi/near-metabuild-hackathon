@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 import { skillType } from '@/types';
 import Button from '@/components/Button';
@@ -23,15 +23,18 @@ export default function Skill() {
     });
   }
 
-  let tempSkill = skills;
-  function removeSkillsHandler(name: string) {
-    if (tempSkill.length > 1) {
-      const skillIndex = tempSkill.findIndex((item) => item.name === name);
-      tempSkill.splice(skillIndex, 1);
-      console.log('tempSkill', tempSkill);
-      return setSkills(tempSkill);
-    }
-  }
+  const removeSkillsHandler = useCallback(
+    function (name: string) {
+      let tempSkill = skills;
+      if (tempSkill.length > 1) {
+        const skillIndex = tempSkill.findIndex((item) => item.name === name);
+        tempSkill.splice(skillIndex, 1);
+        console.log('tempSkill', tempSkill);
+        return setSkills(tempSkill);
+      }
+    },
+    [skills],
+  );
 
   console.log('skill', skills);
 

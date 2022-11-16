@@ -1,7 +1,7 @@
 // export async function generateStaticParams() {}
 
-import ResumeBoard from "@/components/resume/ResumeBoard";
+import ResumePDFBuilder from '@/components/resume/ResumePDFBuilder';
 
 export default function Page({ params }: { params?: any }) {
-  return <ResumeBoard />;
+  return <ResumePDFBuilder />;
 }
