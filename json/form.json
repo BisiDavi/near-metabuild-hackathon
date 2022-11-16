@@ -4,18 +4,18 @@
     "form": [
       [{ "name": "name", "placeholder": "Name", "type": "input" }],
       [{ "name": "role", "placeholder": "Role", "type": "input" }],
-      [{ "name": "profile", "placeholder": "Profile", "type": "file" }],
       [
         {
           "name": "intro",
           "placeholder": "Profile Introduction",
           "type": "textarea"
         }
-      ]
+      ],
+      [{ "name": "profile", "placeholder": "Profile", "type": "file" }]
     ]
   },
   {
-    "title": "Details",
+    "title": "Address Details",
     "form": [
       [
         {
@@ -29,10 +29,14 @@
         { "name": "zip", "placeholder": "Zip code", "type": "input" }
       ],
       [
-        { "name": "country", "placeholder": "country", "type": "selectCountry" },
+        {
+          "name": "country",
+          "placeholder": "country",
+          "type": "selectCountry"
+        },
         { "name": "phone", "placeholder": "phone", "type": "input" }
       ],
-      [
+      [  
         {
           "name": "email",
           "placeholder": "Email Address",
@@ -43,10 +47,10 @@
   },
   {
     "title": "Skills",
-    "form": [[{ "name": "skill", "placeholder": "skill,100", "type": "input" }]]
+    "form": [[{ "name": "skill", "placeholder": "skill,100%", "type": "input" }]]
   },
   {
-    "title": "Skills",
+    "title": "Employment History",
     "form": [[{ "name": "skill", "placeholder": "skill,100", "type": "input" }]]
   }
 ]

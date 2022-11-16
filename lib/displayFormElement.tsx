@@ -1,3 +1,4 @@
+import File from '@/components/form/File';
 import Input from '@/components/form/Input';
 import Select from '@/components/form/Select';
 import SelectCountry from '@/components/form/SelectCountry';
@@ -14,5 +15,7 @@ export default function displayFormElement(input: inputType) {
       return <SelectCountry input={input} />;
     case 'textarea':
       return <Textarea input={input} />;
+    case 'file':
+      return <File input={input} />;
   }
 }
