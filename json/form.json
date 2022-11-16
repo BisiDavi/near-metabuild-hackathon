@@ -1,0 +1,29 @@
+[
+  {
+    "title": "details",
+    "form": [
+      [
+        {
+          "name": "address",
+          "placeholder": "Your House Address",
+          "type": "input"
+        }
+      ],
+      [
+        { "name": "state", "placeholder": "State", "type": "input" },
+        { "name": "zip", "placeholder": "Zip code", "type": "input" }
+      ],
+      [
+        { "name": "country", "placeholder": "country", "type": "select" },
+        { "name": "phone", "placeholder": "phone", "type": "input" }
+      ],
+      [
+        {
+          "name": "email",
+          "placeholder": "Email Address",
+          "type": "input"
+        }
+      ]
+    ]
+  }
+]
