@@ -78,7 +78,7 @@ export default function ResumeDocument() {
   });
 
   return (
-    <PDFViewer width="90%" height="100%">
+    <PDFViewer showToolbar={false} width="90%" height="100%">
       <Document>
         <Page wrap={true} size="A4" style={styles.page}>
           <View style={styles.aside}>
@@ -92,7 +92,7 @@ export default function ResumeDocument() {
             <View style={styles.details}>
               <Text style={styles.heading}>Details</Text>
               <Text style={styles.text}>123460 22nd Ave. SW</Text>
-              <Text style={styles.text}>Seattle, WA 98116</Text>
+                <Text style={styles.text}>Seattle, WA 98116</Text>
               <Text style={styles.text}>United States</Text>
               <Text style={styles.text}>(206) 742-5187</Text>
               <Text style={styles.text}>tonysandy@gmail.com</Text>

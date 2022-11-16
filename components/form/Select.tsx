@@ -1,8 +1,4 @@
-import { inputType } from '@/types';
-
-interface SelectProps {
-  input: inputType;
-}
+import type { SelectProps } from '@/types/interfaces';
 
 export default function Select({ input }: SelectProps) {
   return (

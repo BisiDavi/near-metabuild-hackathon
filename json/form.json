@@ -4,7 +4,14 @@
     "form": [
       [{ "name": "name", "placeholder": "Name", "type": "input" }],
       [{ "name": "role", "placeholder": "Role", "type": "input" }],
-      [{ "name": "profile", "placeholder": "Profile", "type": "file" }]
+      [{ "name": "profile", "placeholder": "Profile", "type": "file" }],
+      [
+        {
+          "name": "intro",
+          "placeholder": "Profile Introduction",
+          "type": "textarea"
+        }
+      ]
     ]
   },
   {
@@ -22,7 +29,7 @@
         { "name": "zip", "placeholder": "Zip code", "type": "input" }
       ],
       [
-        { "name": "country", "placeholder": "country", "type": "select" },
+        { "name": "country", "placeholder": "country", "type": "selectCountry" },
         { "name": "phone", "placeholder": "phone", "type": "input" }
       ],
       [

@@ -1,11 +1,6 @@
-interface Props {
-  input: {
-    name: string;
-    placeholder: string;
-  };
-}
+import type { FormElementProps } from '@/types/interfaces';
 
-export default function Input({ input }: Props) {
+export default function Input({ input }: FormElementProps) {
   return (
     <input
       name={input.name}
