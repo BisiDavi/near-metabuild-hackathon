@@ -1,12 +1,8 @@
-'use client';
 import dynamic from 'next/dynamic';
 import ResumeEditor from '@/components/resume/ResumeEditor';
 
 const ResumeDocument = dynamic(
   () => import('@/components/resume/ResumeDocument'),
-  {
-    ssr: false,
-  },
 );
 export default function ResumePDFBuilder() {
   return (
