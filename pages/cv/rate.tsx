@@ -1,5 +1,9 @@
+import Layout from '@/layout';
+
 export default function Rate() {
   return (
-    <div>rate</div>
-  )
+    <Layout>
+      <div>rate</div>
+    </Layout>
+  );
 }

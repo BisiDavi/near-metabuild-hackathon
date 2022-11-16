@@ -1,5 +1,9 @@
+import Layout from '@/layout';
+
 export default function Recruiter() {
   return (
-    <div>recruiter</div>
-  )
+    <Layout>
+      <div>recruiter</div>
+    </Layout>
+  );
 }

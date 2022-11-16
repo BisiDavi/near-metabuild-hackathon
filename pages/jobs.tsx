@@ -1,5 +1,9 @@
+import Layout from '@/layout';
+
 export default function Jobs() {
   return (
-    <div>jobs</div>
-  )
+    <Layout>
+      <h1>jobs</h1>
+    </Layout>
+  );
 }
