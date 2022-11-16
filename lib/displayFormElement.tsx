@@ -2,8 +2,9 @@ import File from '@/components/form/File';
 import Input from '@/components/form/Input';
 import Select from '@/components/form/Select';
 import SelectCountry from '@/components/form/SelectCountry';
+import Skill from '@/components/form/Skill';
 import Textarea from '@/components/form/Textarea';
-import { inputType } from '@/types';
+import type { inputType } from '@/types';
 
 export default function displayFormElement(input: inputType) {
   switch (input.type) {
@@ -17,5 +18,7 @@ export default function displayFormElement(input: inputType) {
       return <Textarea input={input} />;
     case 'file':
       return <File input={input} />;
+    case 'skill':
+      return <Skill />;
   }
 }

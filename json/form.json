@@ -31,12 +31,12 @@
       [
         {
           "name": "country",
-          "placeholder": "country",
+          "placeholder": "Country",
           "type": "selectCountry"
         },
         { "name": "phone", "placeholder": "phone", "type": "input" }
       ],
-      [  
+      [
         {
           "name": "email",
           "placeholder": "Email Address",
@@ -47,7 +47,9 @@
   },
   {
     "title": "Skills",
-    "form": [[{ "name": "skill", "placeholder": "skill,100%", "type": "input" }]]
+    "form": [
+      [{ "name": "skill", "placeholder": "skill,100%", "type": "skill" }]
+    ]
   },
   {
     "title": "Employment History",

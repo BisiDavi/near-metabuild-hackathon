@@ -13,4 +13,8 @@ export type inputType = {
   options?: Array<{ value: string; text: string }>;
 };
 
-export type selectInput = {};
+export type skillType = Array<{
+  name: string;
+  placeholder: string;
+  type: string;
+}>;

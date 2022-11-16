@@ -36,18 +36,18 @@ export default function ResumeEditor() {
         ))}
         <div className="button-group mt-4 flex items-center justify-between text-white">
           <button
-            className="rounded bg-gray-400 px-4 py-1 hover:bg-opacity-80"
+            className="rounded bg-gray-500 px-4 py-1 hover:bg-opacity-80"
             type="button"
             onClick={prevStageHandler}
           >
-            Previous
+            ← Previous
           </button>
           <button
-            className="rounded bg-blue-400 px-4 py-1 hover:bg-opacity-80"
+            className="rounded bg-blue-500 px-4 py-1 hover:bg-opacity-80"
             type="button"
             onClick={nextStageHandler}
           >
-            Next
+            Next →
           </button>
         </div>
       </form>
