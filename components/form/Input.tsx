@@ -1,12 +1,6 @@
-import { useFormContext } from 'react-hook-form';
-
 import type { FormElementProps } from '@/types/interfaces';
 
-export default function Input({ input }: FormElementProps) {
-  const {
-    register,
-    formState: { errors },
-  }: any = useFormContext();
+export default function Input({ input , register}: FormElementProps) {
 
   return (
     <input

@@ -1,13 +1,7 @@
-import { useFormContext } from 'react-hook-form';
-
 import countries from '@/json/countries.json';
 import type { FormElementProps } from '@/types/interfaces';
 
-export default function SelectCountry({ input }: FormElementProps) {
-  const {
-    register,
-    formState: { errors },
-  }: any = useFormContext();
+export default function SelectCountry({ input, register }: FormElementProps) {
   return (
     <select
       name={input.name}

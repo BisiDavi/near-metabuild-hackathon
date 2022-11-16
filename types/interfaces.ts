@@ -12,10 +12,12 @@ export interface FormElementProps {
     name: string;
     placeholder: string;
   };
+  register: any;
 }
 
 export interface SelectProps {
   input: inputType;
+  register: any;
 }
 
 export interface ButtonProps {

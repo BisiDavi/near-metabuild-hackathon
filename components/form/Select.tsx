@@ -1,12 +1,6 @@
-import { useFormContext } from 'react-hook-form';
 import type { SelectProps } from '@/types/interfaces';
 
-export default function Select({ input }: SelectProps) {
-  const {
-    register,
-    formState: { errors },
-  }: any = useFormContext();
-
+export default function Select({ input, register }: SelectProps) {
   return (
     <select {...register(input.name)}>
       <option>Select {input.placeholder}</option>

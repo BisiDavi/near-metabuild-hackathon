@@ -7,15 +7,16 @@ const initialState: BuilderStateType = {
   cv: {},
 };
 
-const UISlice = createSlice({
-  name: 'UI',
+const CVSlice = createSlice({
+  name: 'CV',
   initialState,
   reducers: {
-    updateStyles(state, action: PayloadAction<BuilderStateType['cv']>) {
+    updateCV(state, action: PayloadAction<BuilderStateType['cv']>) {
+      console.log('action.payload', action.payload);
       state.cv = action.payload;
     },
   },
 });
 
-export const { updateStyles } = UISlice.actions;
-export default UISlice.reducer;
+export const { updateCV } = CVSlice.actions;
+export default CVSlice.reducer;

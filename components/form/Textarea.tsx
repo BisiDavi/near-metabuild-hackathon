@@ -1,12 +1,6 @@
-import { useFormContext } from 'react-hook-form';
 import type { FormElementProps } from '@/types/interfaces';
 
-export default function Textarea({ input }: FormElementProps) {
-  const {
-    register,
-    formState: { errors },
-  }: any = useFormContext();
-
+export default function Textarea({ input, register }: FormElementProps) {
   return (
     <textarea
       name={input.name}
