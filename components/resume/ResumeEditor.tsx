@@ -15,7 +15,7 @@ export default function ResumeEditor() {
   return (
     <aside className="mr-6">
       <h5 className="text-center text-xl font-bold">Edit Resume</h5>
-      <div className="outer my-4 h-4 w-full rounded-full border bg-gray-500">
+      <div className="outer my-4 h-4 w-full rounded-full bg-gray-500">
         <div
           className="inner h-4 rounded-full bg-green-500"
           style={{ width: `${currentStage}%` }}

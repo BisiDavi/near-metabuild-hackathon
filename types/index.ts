@@ -10,4 +10,7 @@ export type inputType = {
   name: string;
   placeholder: string;
   type: string;
+  options?: Array<{ value: string; text: string }>;
 };
+
+export type selectInput = {};
