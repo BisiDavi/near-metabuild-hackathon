@@ -5,3 +5,9 @@ export type elementsType = {
     id: string;
   };
 };
+
+export type inputType = {
+  name: string;
+  placeholder: string;
+  type: string;
+};

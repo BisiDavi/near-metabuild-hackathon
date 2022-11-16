@@ -36,9 +36,10 @@
   },
   {
     "title": "Skills",
-    "form": [{ "name": "skill", "placeholder": "skill,100", "type": "input" }]
+    "form": [[{ "name": "skill", "placeholder": "skill,100", "type": "input" }]]
   },
   {
-    "title": "Skills"
+    "title": "Skills",
+    "form": [[{ "name": "skill", "placeholder": "skill,100", "type": "input" }]]
   }
 ]
