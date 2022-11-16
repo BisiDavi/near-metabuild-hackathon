@@ -5,79 +5,20 @@ import {
   Page,
   Text,
   View,
-  StyleSheet,
   PDFViewer,
 } from '@react-pdf/renderer';
+import { memo } from 'react';
 import ProgressBar from '@/components/resume/ProgressBar';
 import { useAppSelector } from '@/hooks/useRedux';
-import { memo } from 'react';
+
+import useDebounce from '@/hooks/useDebounce';
+import { BuilderStateType } from '@/types/redux-types';
+import { resumeDocumentStyle } from '@/styles/resumeDocumentStyle';
 
 function ResumeDocumentComponent() {
-  const styles = StyleSheet.create({
-    page: {
-      backgroundColor: '#E4E4E4',
-      width: '100%',
-      height: '100%',
-      display: 'flex',
-      flexDirection: 'row',
-    },
-    aside: {
-      backgroundColor: 'black',
-      width: '30%',
-      height: '100%',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'flex-start',
-      color: 'white',
-    },
-    image: {
-      height: 100,
-      width: 100,
-      marginVertical: 5,
-      borderRadius: '50%',
-    },
-    section: {
-      margin: 10,
-      padding: 10,
-      width: '70%',
-      flexGrow: 1,
-    },
-    divider: {
-      width: 30,
-      color: 'white',
-    },
-    details: {
-      padding: 20,
-      fontSize: 12,
-    },
-    text: {
-      marginVertical: 2,
-    },
-    heading: {
-      fontWeight: 'bold',
-      fontSize: 14,
-      marginVertical: 5,
-    },
-    list: {
-      display: 'flex',
-      listStyle: 'disc',
-      fontSize: 12,
-      lineHeight: 1.15,
-    },
-    role: {
-      fontSize: 8,
-      marginTop: 2,
-    },
-    name: {
-      fontSize: 14,
-      marginTop: 2,
-      fontWeight: 'bold',
-    },
-    listGroup: {
-      marginTop: 10,
-    },
-  });
+  const styles = resumeDocumentStyle;
   const { cvs } = useAppSelector((state) => state.builder);
+  const dCvs = useDebounce<BuilderStateType['cvs']>(cvs, 2000);
 
   return (
     <PDFViewer showToolbar={false} width="90%" height="100%">
@@ -88,16 +29,18 @@ function ResumeDocumentComponent() {
               src="https://res.cloudinary.com/verrb-inc/image/upload/v1668528090/john-doe_bm98ji.jpg"
               style={styles.image}
             />
-            <Text style={styles.name}>{cvs.profile.name}</Text>
+            <Text style={styles.name}>{dCvs.profile.name}</Text>
             <Text style={styles.divider}>---</Text>
-            <Text style={styles.role}>{cvs.profile.role}</Text>
+            <Text style={styles.role}>{dCvs.profile.role}</Text>
             <View style={styles.details}>
               <Text style={styles.heading}>Details</Text>
-              <Text style={styles.text}>123460 22nd Ave. SW</Text>
-              <Text style={styles.text}>Seattle, WA 98116</Text>
-              <Text style={styles.text}>United States</Text>
-              <Text style={styles.text}>(206) 742-5187</Text>
-              <Text style={styles.text}>tonysandy@gmail.com</Text>
+              <Text style={styles.text}>{dCvs.address.address}</Text>
+              <Text style={styles.text}>
+                {dCvs.address.state}, {dCvs.address.zip}
+              </Text>
+              <Text style={styles.text}>{dCvs.address.country}</Text>
+              <Text style={styles.text}>{dCvs.address.phone}</Text>
+              <Text style={styles.text}>{dCvs.address.email}</Text>
               <Text style={styles.heading}>Skills</Text>
               <ProgressBar
                 text="Excellent Communication Skills"
@@ -114,7 +57,7 @@ function ResumeDocumentComponent() {
           </View>
           <View style={styles.section}>
             <Text>Profile</Text>
-            <Text>{cvs.profile.intro}</Text>
+            <Text>{dCvs.profile.intro}</Text>
             <Text>Employment History</Text>
             <View>
               <Text>
