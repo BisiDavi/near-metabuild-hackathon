@@ -1,4 +1,3 @@
-'use client';
 import DragWrapper from '@/components/resume/DragWrapper';
 import ResumeDocument from '@/components/resume/ResumeDocument';
 import useResumeBuilder from '@/hooks/useResumeBuilder';

@@ -1,6 +1,4 @@
 /* eslint-disable jsx-a11y/alt-text */
-'use client';
-import { PDFViewer } from '@react-pdf/renderer';
 import {
   Document,
   Image,
@@ -8,6 +6,7 @@ import {
   Text,
   View,
   StyleSheet,
+  PDFViewer,
 } from '@react-pdf/renderer';
 import ProgressBar from '@/components/resume/ProgressBar';
 

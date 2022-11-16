@@ -1,4 +1,3 @@
-'use client';
 import update from 'immutability-helper';
 import { useCallback, useState } from 'react';
 import { useDrop, XYCoord } from 'react-dnd';

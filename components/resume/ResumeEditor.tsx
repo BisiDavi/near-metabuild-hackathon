@@ -1,4 +1,3 @@
-'use client';
 import useResumeEditor from '@/hooks/useResumeEditor';
 import Button from '@/components/Button';
 import FormProgress from '@/components/form/FormProgress';
