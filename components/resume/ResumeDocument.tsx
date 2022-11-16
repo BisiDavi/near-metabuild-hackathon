@@ -29,16 +29,6 @@ export default function ResumeDocument() {
       justifyContent: 'flex-start',
       color: 'white',
     },
-    outer: {
-      backgroundColor: 'gray',
-      marginBottom: 10,
-      height: 10,
-    },
-    inner: {
-      backgroundColor: 'white',
-      height: 10,
-      width: '30%',
-    },
     image: {
       height: 100,
       width: 100,
@@ -65,7 +55,7 @@ export default function ResumeDocument() {
     heading: {
       fontWeight: 'bold',
       fontSize: 14,
-      marginTop: 10,
+      marginVertical: 5,
     },
     list: {
       display: 'flex',
@@ -114,7 +104,10 @@ export default function ResumeDocument() {
               <ProgressBar text="Troubleshooting Skills" percentage="90%" />
               <ProgressBar text="Multitasking Skills" percentage="100%" />
               <ProgressBar text="Marketing Strategies" percentage="98%" />
-              <ProgressBar text="Mediation & Negotiation Skills" percentage="40%" />
+              <ProgressBar
+                text="Mediation & Negotiation Skills"
+                percentage="40%"
+              />
             </View>
           </View>
           <View style={styles.section}>

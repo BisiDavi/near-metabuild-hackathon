@@ -10,11 +10,13 @@ export default function ProgressBar({ percentage, text }: Props) {
     outer: {
       backgroundColor: 'gray',
       marginVertical: 4,
+      borderRadius: '10px',
       height: 6,
     },
     inner: {
       backgroundColor: 'white',
       height: 6,
+      borderRadius: '10px',
       width: percentage,
     },
   });
