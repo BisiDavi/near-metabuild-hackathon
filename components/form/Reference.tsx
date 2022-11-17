@@ -1,21 +1,26 @@
 import { useAppSelector } from '@/hooks/useRedux';
 import Button from '@/components/Button';
+import { useAppDispatch } from '@/redux/store';
+import useReference from '@/hooks/useReference';
 
 export default function Reference() {
   const { cvs } = useAppSelector((state) => state.builder);
+  const { getInputValue } = useReference();
 
   return (
     <div className="rounded border p-4">
       {cvs.references.map((referenceGroup, index) => {
         return (
           <div className="group relative my-4 rounded border p-2" key={index}>
-            {referenceGroup.map((item, index) => {
+            {referenceGroup.map((item, idx) => {
+              const inputValue = getInputValue(item.id, index, idx);
               return (
-                <div className="input-group my-2" key={index}>
+                <div className="input-group my-2" key={idx}>
                   <input
                     className="h-8 w-full rounded-md border border-gray-300 p-2 focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
                     name={item.name}
                     placeholder={item.placeholder}
+                    value={inputValue}
                   />
                 </div>
               );
