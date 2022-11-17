@@ -3,6 +3,7 @@ import {
   addSection,
   removeAchievement,
   updateAchievement,
+  updateSection,
   updateSectionText,
 } from '@/redux/builder-slice';
 
@@ -86,7 +87,16 @@ export default function useEmploymentHistory() {
       }),
     );
   }
-  function removeEmploymentHistoryHandler() {}
+  function removeEmploymentHistoryHandler(index: number) {
+    let tempEmploymentHistory = [...cvs.employmentHistory];
+    tempEmploymentHistory.splice(index, 1);
+    dispatch(
+      updateSection({
+        sectionKey: 'employmentHistory',
+        section: tempEmploymentHistory,
+      }),
+    );
+  }
 
   function onChangeHandler(
     e: any,

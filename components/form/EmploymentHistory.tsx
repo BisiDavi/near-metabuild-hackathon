@@ -68,7 +68,7 @@ export default function EmploymentHistory() {
               <Button
                 className="absolute -right-4 -top-4 z-10 mx-4 mt-2 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-2xl text-white hover:bg-opacity-70"
                 type="button"
-                onClick={() => null}
+                onClick={() => removeEmploymentHistoryHandler(index)}
                 title="Remove Employment History"
                 text="⤬"
               />
