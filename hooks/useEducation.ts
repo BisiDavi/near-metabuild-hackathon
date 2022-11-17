@@ -46,9 +46,17 @@ export default function useEducation() {
     );
   }
 
-  function deleteEducationHandler() {
-    dispatch(removeSection({ sectionKey: 'education', section: [] }));
+  function deleteEducationHandler(index: number) {
+    let tempEducation = [...cvs.education];
+    tempEducation.splice(index, 1);
+    dispatch(
+      removeSection({ sectionKey: 'education', section: tempEducation }),
+    );
   }
 
-  return { addEducationHandler, deleteEducationHandler };
+  function getInputValue(index1: number, index2: number, index3: number) {
+    return cvs.education[index1][index2][index3].text;
+  }
+
+  return { addEducationHandler, deleteEducationHandler, getInputValue };
 }

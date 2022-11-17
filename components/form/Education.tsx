@@ -4,7 +4,8 @@ import useEducation from '@/hooks/useEducation';
 
 export default function Education() {
   const { cvs } = useAppSelector((state) => state.builder);
-  const {addEducationHandler} = useEducation()
+  const { addEducationHandler, deleteEducationHandler, getInputValue } =
+    useEducation();
 
   return (
     <div className="rounded border p-4">
@@ -17,10 +18,11 @@ export default function Education() {
             {educationItem.map((educationGroup, idx) => {
               return (
                 <div className="education-group flex space-x-2" key={idx}>
-                  {educationGroup.map((item) => {
+                  {educationGroup.map((item, itemIdx) => {
                     const inputClassname = item.name.includes('achievement')
                       ? 'rounded-l-md'
                       : 'rounded-md';
+                    const inputValue = getInputValue(index, idx, itemIdx);
                     return (
                       <div
                         className="item-group my-1 flex w-full"
@@ -29,6 +31,7 @@ export default function Education() {
                         <input
                           className={`${inputClassname} h-8 w-full rounded-l-md border border-gray-300 p-2 focus:border-gray-500 focus:ring-gray-500 sm:text-sm`}
                           name={item.name}
+                          value={inputValue}
                           placeholder={item.placeholder}
                         />
                         {item.name.includes('achievement') && (
@@ -48,8 +51,8 @@ export default function Education() {
             <Button
               className="absolute -right-6 -top-5 z-10 mx-4 mt-2 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-2xl text-white hover:bg-opacity-70"
               type="button"
-              onClick={() => null}
-              title="Remove Employment History"
+              onClick={() => deleteEducationHandler(index)}
+              title="Remove Education History"
               text="⤬"
             />
             <div className="group mt-2 flex">
