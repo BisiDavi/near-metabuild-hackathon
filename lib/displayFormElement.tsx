@@ -4,6 +4,7 @@ import Select from '@/components/form/Select';
 import SelectCountry from '@/components/form/SelectCountry';
 import Skill from '@/components/form/Skill';
 import Textarea from '@/components/form/Textarea';
+import EmploymentHistory from '@/components/form/EmploymentHistory';
 import type { inputType } from '@/types';
 
 export default function displayFormElement(input: inputType) {
@@ -20,5 +21,7 @@ export default function displayFormElement(input: inputType) {
       return <File input={input} />;
     case 'skill':
       return <Skill />;
+    case 'employment':
+      return <EmploymentHistory />;
   }
 }

@@ -111,7 +111,7 @@
         {
           "name": "skill",
           "placeholder": "skill,100",
-          "type": "input",
+          "type": "employment",
           "id": "employmentHistory.skill"
         }
       ]

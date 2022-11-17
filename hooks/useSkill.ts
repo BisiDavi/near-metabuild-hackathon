@@ -1,4 +1,3 @@
-import Button from '@/components/Button';
 import { useAppDispatch, useAppSelector } from '@/hooks/useRedux';
 import useReduxForm from '@/hooks/useReduxForm';
 import { updateCV, updateSkill } from '@/redux/builder-slice';

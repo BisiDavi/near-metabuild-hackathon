@@ -25,6 +25,7 @@ export interface ButtonProps {
   type: 'button' | 'submit' | 'reset';
   text: string;
   disabled?: boolean;
+  title?: string;
 }
 
 export interface FormProgressProps {

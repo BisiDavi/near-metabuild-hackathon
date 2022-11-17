@@ -5,10 +5,17 @@ export default function Button({
   className,
   type,
   text,
+  title = '',
   disabled = false,
 }: ButtonProps) {
   return (
-    <button className={className} type={type} onClick={onClick} disabled={disabled}>
+    <button
+      title={title}
+      className={className}
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {text}
     </button>
   );

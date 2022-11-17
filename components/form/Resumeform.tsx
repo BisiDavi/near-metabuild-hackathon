@@ -15,14 +15,14 @@ export default function Resumeform({ resume }: any) {
   } = resume;
 
   return (
-    <form>
+    <form className="h-5/6 overflow-y-scroll">
       <h4>
         Stage {formCurrentStage}: {formContent[formStage].title}
       </h4>
       {formContent[formStage].form.map((formItem, index) => (
-        <div key={index} className="flex w-full space-x-2">
+        <div key={index} className="flex h-full w-full space-x-2">
           {formItem.map((item) => (
-            <div key={item.name} className="w-full">
+            <div key={item.name} className="h-5/6 w-full overflow-y-scroll">
               {displayFormElement(item)}
             </div>
           ))}
