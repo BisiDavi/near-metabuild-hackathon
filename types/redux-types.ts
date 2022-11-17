@@ -50,3 +50,5 @@ export type builderKeyType =
   | 'education'
   | 'skills'
   | 'employmentHistory';
+
+export type achievementType = 'education' | 'employmentHistory';

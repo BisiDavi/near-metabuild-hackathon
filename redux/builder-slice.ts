@@ -4,6 +4,7 @@ import type {
   BuilderStateType,
   builderKeyType,
   addBuilderKeyType,
+  achievementType,
 } from '@/types/redux-types';
 import { cvsData } from '@/lib/seeder';
 
@@ -40,6 +41,35 @@ const CVSlice = createSlice({
       const { sectionKey, section } = action.payload;
       state.cvs[sectionKey] = [...state.cvs[sectionKey], section];
     },
+    updateAchievement(
+      state,
+      action: PayloadAction<{
+        sectionKey: achievementType;
+        section: any;
+        index: number;
+        achievementId: number;
+      }>,
+    ) {
+      const { sectionKey, section, index, achievementId } = action.payload;
+      state.cvs[sectionKey][index][achievementId] = [
+        ...state.cvs[sectionKey][index][achievementId],
+        section,
+      ];
+    },
+    removeAchievement(
+      state,
+      action: PayloadAction<{
+        sectionKey: achievementType;
+        index: number;
+        achievementId: number;
+        index2: number;
+      }>,
+    ) {
+      const { sectionKey, index, achievementId, index2 } = action.payload;
+      const tempAchievement = [...state.cvs[sectionKey][index][achievementId]];
+      tempAchievement.splice(index2, 1);
+      state.cvs[sectionKey][index][achievementId] = tempAchievement;
+    },
   },
 });
 
@@ -49,5 +79,7 @@ export const {
   addSection,
   updateReference,
   updateSection,
+  updateAchievement,
+  removeAchievement,
 } = CVSlice.actions;
 export default CVSlice.reducer;

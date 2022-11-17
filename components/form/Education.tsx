@@ -8,6 +8,7 @@ export default function Education() {
     addEducationHandler,
     deleteEducationHandler,
     getInputValue,
+    removeAchievementHandler,
     addAchievementHandler,
   } = useEducation();
 
@@ -20,10 +21,10 @@ export default function Education() {
             key={index}
           >
             {educationItem.map((educationGroup, idx) => {
-              const groupClassname = idx === 2 ? 'flex-col' : '';
+              const groupClassname = idx === 2 ? 'flex-col' : 'space-x-2';
               return (
                 <div
-                  className={`education-group ${groupClassname} flex space-x-2`}
+                  className={`education-group ${groupClassname} flex`}
                   key={idx}
                 >
                   {educationGroup.map((item, itemIdx) => {
@@ -47,7 +48,10 @@ export default function Education() {
                             className="flex h-8 w-8 items-center justify-center rounded-r bg-red-500 text-center text-2xl text-white hover:bg-opacity-70"
                             type="button"
                             text="⤬"
-                            onClick={() => null}
+                            title="remove achievement"
+                            onClick={() =>
+                              removeAchievementHandler(index, itemIdx)
+                            }
                           />
                         )}
                       </div>

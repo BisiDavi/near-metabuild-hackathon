@@ -1,5 +1,10 @@
 import { useAppDispatch, useAppSelector } from '@/hooks/useRedux';
-import { addSection, updateSection } from '@/redux/builder-slice';
+import {
+  addSection,
+  removeAchievement,
+  updateAchievement,
+  updateSection,
+} from '@/redux/builder-slice';
 
 export default function useEducation() {
   const { cvs } = useAppSelector((state) => state.builder);
@@ -59,23 +64,34 @@ export default function useEducation() {
   }
 
   function addAchievementHandler(index: number) {
-    let tempEducation = [...cvs.education];
-    const achievementLength = tempEducation[index][2].length;
-    tempEducation[index][2] = [
-      ...tempEducation[index][2],
-      {
-        text: '',
-        name: `achievement-${achievementLength}`,
-        placeholder: `Achievement ${achievementLength}`,
-        id: 'education.achievement',
-      },
-    ];
+    const achievementLength = cvs.education[index][2].length + 1;
+    const achievementArray = {
+      text: '',
+      name: `achievement-${achievementLength}`,
+      placeholder: `Achievement ${achievementLength}`,
+      id: 'education.achievement',
+    };
+
     dispatch(
-      updateSection({ sectionKey: 'education', section: tempEducation }),
+      updateAchievement({
+        sectionKey: 'education',
+        index,
+        achievementId: 2,
+        section: achievementArray,
+      }),
     );
   }
 
-  function removeAchievementHandler() {}
+  function removeAchievementHandler(index: number, index2: number) {
+    dispatch(
+      removeAchievement({
+        sectionKey: 'education',
+        index,
+        achievementId: 2,
+        index2,
+      }),
+    );
+  }
 
   return {
     addEducationHandler,
