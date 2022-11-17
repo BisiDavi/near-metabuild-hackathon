@@ -42,24 +42,16 @@ function ResumeDocumentComponent() {
               <Text>{dCvs.address.phone}</Text>
               <Text>{dCvs.address.email}</Text>
               <Text style={styles.subheading}>Skills</Text>
-              <ProgressBar
-                text="Excellent Communication Skills"
-                percentage="80%"
-              />
-              <ProgressBar text="Troubleshooting Skills" percentage="90%" />
-              <ProgressBar text="Multitasking Skills" percentage="100%" />
-              <ProgressBar text="Marketing Strategies" percentage="98%" />
-              <ProgressBar
-                text="Mediation & Negotiation Skills"
-                percentage="40%"
-              />
+              {dCvs.skills.map((skill) => (
+                <ProgressBar key={skill.id} text={skill.text} />
+              ))}
             </View>
           </View>
           <View style={styles.section}>
             <Text style={styles.heading}>Profile</Text>
             <Text style={styles.text}>{dCvs.profile.intro}</Text>
             <View style={styles.subsection}>
-            <Text style={styles.subheading}>Employment History</Text>
+              <Text style={styles.subheading}>Employment History</Text>
               <Text style={styles.h4}>
                 Branch Customer Service Representative, AT&T Inc., Seattle
               </Text>

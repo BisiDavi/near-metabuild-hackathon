@@ -2,10 +2,8 @@ import Button from '@/components/Button';
 import { useAppDispatch, useAppSelector } from '@/hooks/useRedux';
 import useReduxForm from '@/hooks/useReduxForm';
 import { updateCV, updateSkill } from '@/redux/builder-slice';
-import { useEffect, useState } from 'react';
 
 export default function Skill() {
-  const [skill, setSkill] = useState<any>(null);
   const { cvs } = useAppSelector((state) => state.builder);
   const dispatch = useAppDispatch();
   const { getInputValue } = useReduxForm();

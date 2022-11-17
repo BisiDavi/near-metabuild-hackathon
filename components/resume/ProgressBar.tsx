@@ -1,11 +1,14 @@
 import { Text, View, StyleSheet } from '@react-pdf/renderer';
 
 interface Props {
-  percentage: string;
   text: string;
 }
 
-export default function ProgressBar({ percentage, text }: Props) {
+export default function ProgressBar({ text }: Props) {
+  const splitText = text.split(',');
+  const textValue = splitText[0];
+  const percentage = splitText[1] ? splitText[1].trim() : '100%';
+
   const styles = StyleSheet.create({
     outer: {
       backgroundColor: 'gray',
@@ -20,9 +23,10 @@ export default function ProgressBar({ percentage, text }: Props) {
       width: percentage,
     },
   });
+
   return (
     <>
-      <Text>{text}</Text>
+      <Text>{textValue}</Text>
       <View style={styles.outer}>
         <View style={styles.inner}></View>
       </View>
