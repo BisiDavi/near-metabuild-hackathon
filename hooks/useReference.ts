@@ -10,7 +10,7 @@ export default function useReference() {
     const name = splittedId[1];
     const group = splittedId[0];
 
-    return cvs[group][index1][index2][name];
+    return cvs[group][index1][index2].text;
   }
 
   return {

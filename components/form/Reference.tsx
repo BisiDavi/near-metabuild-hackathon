@@ -1,6 +1,5 @@
 import { useAppSelector } from '@/hooks/useRedux';
 import Button from '@/components/Button';
-import { useAppDispatch } from '@/redux/store';
 import useReference from '@/hooks/useReference';
 
 export default function Reference() {
@@ -14,6 +13,7 @@ export default function Reference() {
           <div className="group relative my-4 rounded border p-2" key={index}>
             {referenceGroup.map((item, idx) => {
               const inputValue = getInputValue(item.id, index, idx);
+              console.log('inputValue', inputValue);
               return (
                 <div className="input-group my-2" key={idx}>
                   <input
