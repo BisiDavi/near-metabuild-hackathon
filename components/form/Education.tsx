@@ -10,6 +10,7 @@ export default function Education() {
     getInputValue,
     removeAchievementHandler,
     addAchievementHandler,
+    onChangeHandler,
   } = useEducation();
 
   return (
@@ -42,6 +43,9 @@ export default function Education() {
                           name={item.name}
                           value={inputValue}
                           placeholder={item.placeholder}
+                          onChange={(e) =>
+                            onChangeHandler(e, index, idx, itemIdx)
+                          }
                         />
                         {item.name.includes('achievement') && (
                           <Button

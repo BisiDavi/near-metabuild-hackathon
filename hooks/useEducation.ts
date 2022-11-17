@@ -4,6 +4,7 @@ import {
   removeAchievement,
   updateAchievement,
   updateSection,
+  updateSectionText,
 } from '@/redux/builder-slice';
 
 export default function useEducation() {
@@ -93,11 +94,29 @@ export default function useEducation() {
     );
   }
 
+  function onChangeHandler(
+    e: any,
+    index1: number,
+    index2: number,
+    index3: number,
+  ) {
+    dispatch(
+      updateSectionText({
+        index1,
+        index2,
+        index3,
+        sectionKey: 'education',
+        text: e.target.value,
+      }),
+    );
+  }
+
   return {
     addEducationHandler,
     deleteEducationHandler,
     getInputValue,
     addAchievementHandler,
     removeAchievementHandler,
+    onChangeHandler,
   };
 }

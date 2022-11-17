@@ -23,7 +23,14 @@ const CVSlice = createSlice({
       const { index, text } = action.payload;
       state.cvs.skills[index].text = text;
     },
-    updateReference(state, action) {
+    updateReference(
+      state,
+      action: PayloadAction<{
+        index1: number;
+        index2: number;
+        text: string;
+      }>,
+    ) {
       const { index1, index2, text } = action.payload;
       state.cvs.references[index1][index2].text = text;
     },
@@ -70,6 +77,20 @@ const CVSlice = createSlice({
       tempAchievement.splice(index2, 1);
       state.cvs[sectionKey][index][achievementId] = tempAchievement;
     },
+
+    updateSectionText(
+      state,
+      action: PayloadAction<{
+        index1: number;
+        index2: number;
+        index3: number;
+        text: string;
+        sectionKey: achievementType;
+      }>,
+    ) {
+      const { index1, index2,index3, text ,sectionKey} = action.payload;
+      state.cvs[sectionKey][index1][index2][index3].text = text;
+    },
   },
 });
 
@@ -81,5 +102,6 @@ export const {
   updateSection,
   updateAchievement,
   removeAchievement,
+  updateSectionText,
 } = CVSlice.actions;
 export default CVSlice.reducer;
