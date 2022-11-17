@@ -1,5 +1,10 @@
 import { useAppSelector } from '@/hooks/useRedux';
-import { addReference, removeReference, updateCV } from '@/redux/builder-slice';
+import {
+  addReference,
+  removeReference,
+  updateCV,
+  updateReference,
+} from '@/redux/builder-slice';
 import { useAppDispatch } from '@/redux/store';
 
 export default function useReference() {
@@ -48,6 +53,10 @@ export default function useReference() {
     dispatch(removeReference(tempReference));
   }
 
+  function onChangeHandler(index1: number, index2: number, text: string) {
+    dispatch(updateReference({ text, index1, index2 }));
+  }
+
   const disableDelete = cvs.references.length === 1 ? true : false;
   const disableDeleteClassname =
     cvs.references.length === 1 ? 'cursor-not-allowed' : '';
@@ -58,5 +67,6 @@ export default function useReference() {
     removeReferenceHandler,
     disableDelete,
     disableDeleteClassname,
+    onChangeHandler,
   };
 }

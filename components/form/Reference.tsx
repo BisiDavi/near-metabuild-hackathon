@@ -10,6 +10,7 @@ export default function Reference() {
     removeReferenceHandler,
     disableDelete,
     disableDeleteClassname,
+    onChangeHandler,
   } = useReference();
 
   return (
@@ -27,6 +28,9 @@ export default function Reference() {
                     name={item.name}
                     placeholder={item.placeholder}
                     value={inputValue}
+                    onChange={(e) =>
+                      onChangeHandler(index, idx, e.target.value)
+                    }
                   />
                 </div>
               );
