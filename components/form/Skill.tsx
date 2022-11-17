@@ -11,7 +11,7 @@ export default function Skill() {
     addCVSkillHandler,
     getInputValue,
   } = useSkill();
-  
+
   return (
     <>
       <p className="text-xs">
@@ -30,7 +30,7 @@ export default function Skill() {
               onChange={(e) => onChangeHandler(e, index)}
             />
             <Button
-              className={`${disableClassname} item-center flex h-10 w-10 justify-center rounded-r bg-red-500 text-center text-3xl text-white hover:bg-opacity-70`}
+              className={`${disableClassname} flex h-10 w-10 items-center justify-center rounded-r bg-red-500 text-center text-3xl text-white hover:bg-opacity-70`}
               type="button"
               text="⤬"
               disabled={disableButton}
@@ -40,7 +40,7 @@ export default function Skill() {
         );
       })}
       <Button
-        className="item-center mt-2 flex h-10 w-10 justify-center rounded-full bg-green-500 text-3xl text-white hover:bg-opacity-70"
+        className="mt-2 flex h-10 w-10 items-center justify-center rounded-full bg-green-500 text-3xl text-white hover:bg-opacity-70"
         type="button"
         onClick={addCVSkillHandler}
         text="+"
