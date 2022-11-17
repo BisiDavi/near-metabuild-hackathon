@@ -6,6 +6,7 @@ import Skill from '@/components/form/Skill';
 import Textarea from '@/components/form/Textarea';
 import EmploymentHistory from '@/components/form/EmploymentHistory';
 import type { inputType } from '@/types';
+import Education from '@/components/form/Education';
 
 export default function displayFormElement(input: inputType) {
   switch (input.type) {
@@ -23,5 +24,7 @@ export default function displayFormElement(input: inputType) {
       return <Skill />;
     case 'employment':
       return <EmploymentHistory />;
+    case 'education':
+      return <Education />;
   }
 }

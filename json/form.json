@@ -124,7 +124,20 @@
         {
           "name": "skill",
           "placeholder": "skill,100",
-          "type": "input",
+          "type": "education",
+          "id": "education.skill"
+        }
+      ]
+    ]
+  },
+  {
+    "title": "References",
+    "form": [
+      [
+        {
+          "name": "skill",
+          "placeholder": "skill,100",
+          "type": "reference",
           "id": "education.skill"
         }
       ]
