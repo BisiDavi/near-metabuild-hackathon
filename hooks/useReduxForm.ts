@@ -15,12 +15,17 @@ export default function useReduxForm() {
       updateCV({ ...cvs, [group]: { ...cvs[group], [name]: e.target.value } }),
     );
   }
-  const getInputValue = (id: any) => {
+  const getInputValue = (id: any, index?: number) => {
     const splittedId = id.split('.');
     const name = splittedId[1];
     const group = splittedId[0];
 
-    return cvs[group][name] ? cvs[group][name] : '';
+    const objectValue = cvs[group][name] ? cvs[group][name] : '';
+    const arrayValue2 =
+      index && cvs[group][index] ? cvs[group][index]?.text : '';
+    const arrayValue =
+      typeof cvs[group].length === 'number' ? arrayValue2 : objectValue;
+    return arrayValue;
   };
 
   return { onChangeHandler, getInputValue };
