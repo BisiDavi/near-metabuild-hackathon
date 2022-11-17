@@ -9,3 +9,7 @@
 .resume-view .dragWrapper {
   border: 1px solid gray;
 }
+
+.resumeform {
+  max-height: 60vh;
+}
