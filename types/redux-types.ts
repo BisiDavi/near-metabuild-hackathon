@@ -16,7 +16,18 @@ export type BuilderStateType = {
       email: string;
     };
     skills: Array<{ [key: string]: string }>;
-    employmentHistory: { [key: string]: string };
-    education: { [key: string]: string };
+    employmentHistory: {
+      text: string;
+      name: string;
+      placeholder: string;
+      id: string;
+    }[][][];
+    education: {
+      text: string;
+      name: string;
+      placeholder: string;
+      id: string;
+    }[][][];
+    references: Array<{ title: string; email: string; phone: string }>;
   };
 };

@@ -22,30 +22,35 @@ export const cvsData = {
         name: 'skill-1',
         placeholder: 'Skill 1, 100%',
         id: 'skills.skill-1',
+        type: 'input',
       },
       {
         text: 'Troubleshooting Skills, 80%',
         name: 'skill-2',
         placeholder: 'Skill 2, 100%',
         id: 'skills.skill-2',
+        type: 'input',
       },
       {
         text: 'Multitasking Skills, 100%',
         name: 'skill-3',
         placeholder: 'Skill 3, 100%',
         id: 'skills.skill-3',
+        type: 'input',
       },
       {
         text: 'Marketing Skills, 90%',
         name: 'skill-4',
         placeholder: 'Skill 4, 100%',
         id: 'skills.skill-4',
+        type: 'input',
       },
       {
         text: 'Mediation & Negotiation Skills, 95%',
         name: 'skill-5',
         placeholder: 'Skill 5, 100%',
         id: 'skills.skill-5',
+        type: 'input',
       },
     ],
     employmentHistory: [
@@ -56,6 +61,7 @@ export const cvsData = {
             name: 'role',
             placeholder: 'Job Role',
             id: 'employmentHistory.role',
+            type: 'input',
           },
         ],
         [
@@ -64,12 +70,14 @@ export const cvsData = {
             name: 'startedOn',
             placeholder: 'Started on (Date)',
             id: 'employmentHistory.started-on',
+            type: 'input',
           },
           {
             text: 'SEPTEMBER 2020',
             name: 'endOn',
             placeholder: 'End on (Date)',
             id: 'employmentHistory.end-on',
+            type: 'input',
           },
         ],
         [
@@ -78,66 +86,147 @@ export const cvsData = {
             name: 'achievement-1',
             placeholder: 'Achievement 1',
             id: 'employmentHistory.achievement-1',
+            type: 'input',
           },
           {
             text: '- Handled customer calls and responded to queries about services, product malfunctions, promotions and billing.',
             name: 'achievement-2',
             placeholder: 'Achievement 2',
             id: 'employmentHistory.achievement-2',
+            type: 'input',
           },
           {
             text: '- Worked to address all customer concerns in a timely and effective manner.',
             name: 'achievement-3',
             placeholder: 'Achievement 3',
             id: 'employmentHistory.achievement-3',
+            type: 'input',
           },
         ],
       ],
       [
         [
           {
-            text: 'Branch Customer Service Representative, AT&T Inc., Seattle',
+            text: 'Customer Service Representation, Anglo Hotel, NYC',
             name: 'role',
             placeholder: 'Job Role',
             id: 'employmentHistory.role',
+            type: 'add-input',
           },
         ],
         [
           {
-            text: 'AUGUST 2014',
+            text: 'AUGUST 2010',
             name: 'startedOn',
             placeholder: 'Started on (Date)',
             id: 'employmentHistory.started-on',
+            type: 'input',
           },
           {
-            text: 'SEPTEMBER 2020',
+            text: 'MAY 2014',
             name: 'endOn',
             placeholder: 'End on (Date)',
             id: 'employmentHistory.end-on',
+            type: 'input',
           },
         ],
         [
           {
-            text: 'Maintained up to date knowledge of products and services',
+            text: '- Provided High quality customer service to customers.',
             name: 'achievement-1',
             placeholder: 'Achievement 1',
             id: 'employmentHistory.achievement-1',
+            type: 'add-input',
           },
           {
-            text: '- Handled customer calls and responded to queries about services, product malfunctions, promotions and billing.',
+            text: '- Handled Sales transactions and returns in a timely manner.',
             name: 'achievement-2',
             placeholder: 'Achievement 2',
             id: 'employmentHistory.achievement-2',
+            type: 'add-input',
           },
           {
-            text: '- Worked to address all customer concerns in a timely and effective manner.',
+            text: '- Greeted customers in a friendly and helpful manner.',
             name: 'achievement-3',
             placeholder: 'Achievement 3',
             id: 'employmentHistory.achievement-3',
+            type: 'add-input',
           },
         ],
       ],
     ],
-    education: {},
+    education: [
+      [
+        [
+          {
+            text: 'Bachelor of Communications, University of Seattle, Seattle.',
+            name: 'course-1',
+            placeholder: 'Course of Study',
+            id: 'education.course-1',
+          },
+        ],
+        [
+          {
+            text: 'AUGUST 2007',
+            name: 'startedOn',
+            placeholder: 'Started on (Date)',
+            id: 'education.started-on',
+          },
+          {
+            text: 'MAY 2011',
+            name: 'endOn',
+            placeholder: 'End on (Date)',
+            id: 'education.end-on',
+          },
+        ],
+        [
+          {
+            text: '- Graduated with High Honours',
+            name: 'achievement-1',
+            placeholder: 'Achievement',
+            id: 'education.achievement',
+          },
+        ],
+      ],
+      [
+        [
+          {
+            text: 'High School Diploma, Hartwick High School, Hartwick',
+            name: 'course-2',
+            placeholder: 'Course of Study',
+            id: 'education.course-2',
+            type: 'input',
+          },
+        ],
+        [
+          {
+            text: 'AUGUST 2000',
+            name: 'startedOn',
+            placeholder: 'Started on (Date)',
+            id: 'education.started-on-2',
+            type: 'input',
+          },
+          {
+            text: 'AUGUST 2007',
+            name: 'endOn',
+            placeholder: 'End on (Date)',
+            id: 'education.end-on-2',
+            type: 'input',
+          },
+        ],
+      ],
+    ],
+    references: [
+      {
+        title: 'David Leeds from Anglo Hotel',
+        email: 'dleeds@anglo.com',
+        phone: '732-189-0909',
+      },
+      {
+        title: 'Cole Kenny from AT&T',
+        email: 'kennycole@att.com',
+        phone: '934-289-0209',
+      },
+    ],
   },
 };
