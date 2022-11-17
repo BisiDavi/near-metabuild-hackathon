@@ -1,7 +1,10 @@
-/* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import type { BuilderStateType } from '@/types/redux-types';
+import type {
+  BuilderStateType,
+  builderKeyType,
+  addBuilderKeyType,
+} from '@/types/redux-types';
 import { cvsData } from '@/lib/seeder';
 
 const initialState: BuilderStateType = {
@@ -19,15 +22,23 @@ const CVSlice = createSlice({
       const { index, text } = action.payload;
       state.cvs.skills[index].text = text;
     },
-    addReference(state, action) {
-      state.cvs.references = [...state.cvs.references, action.payload];
-    },
-    removeReference(state, action) {
-      state.cvs.references = action.payload;
-    },
     updateReference(state, action) {
       const { index1, index2, text } = action.payload;
       state.cvs.references[index1][index2].text = text;
+    },
+    removeSection(
+      state,
+      action: PayloadAction<{ sectionKey: builderKeyType; section: any }>,
+    ) {
+      const { sectionKey, section } = action.payload;
+      state.cvs[sectionKey] = section;
+    },
+    addSection(
+      state,
+      action: PayloadAction<{ sectionKey: addBuilderKeyType; section: any }>,
+    ) {
+      const { sectionKey, section } = action.payload;
+      state.cvs[sectionKey] = [...state.cvs[sectionKey], section];
     },
   },
 });
@@ -35,8 +46,8 @@ const CVSlice = createSlice({
 export const {
   updateCV,
   updateSkill,
-  addReference,
-  removeReference,
+  addSection,
   updateReference,
+  removeSection,
 } = CVSlice.actions;
 export default CVSlice.reducer;

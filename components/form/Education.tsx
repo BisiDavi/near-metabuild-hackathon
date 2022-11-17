@@ -1,8 +1,10 @@
 import { useAppSelector } from '@/hooks/useRedux';
 import Button from '@/components/Button';
+import useEducation from '@/hooks/useEducation';
 
 export default function Education() {
   const { cvs } = useAppSelector((state) => state.builder);
+  const {addEducationHandler} = useEducation()
 
   return (
     <div className="rounded border p-4">
@@ -58,7 +60,9 @@ export default function Education() {
                 title="Add Achievement"
                 text="+"
               />
-              <p className="ml-1 mt-1 mb-0 text-sm font-bold">Add Achievement</p>
+              <p className="ml-1 mt-1 mb-0 text-sm font-bold">
+                Add Achievement
+              </p>
             </div>
           </div>
         );
@@ -67,8 +71,8 @@ export default function Education() {
         <Button
           className="mt-2 flex h-6 w-6 items-center justify-center rounded-full bg-green-500 text-center text-2xl text-white hover:bg-opacity-70"
           type="button"
-          onClick={() => null}
-          title="Add Achievement"
+          onClick={addEducationHandler}
+          title="Add Education"
           text="+"
         />
         <p className="ml-1 mt-2 mb-0 text-sm font-bold">Add Education</p>

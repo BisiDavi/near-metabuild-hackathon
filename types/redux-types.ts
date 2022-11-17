@@ -37,6 +37,12 @@ export type BuilderStateType = {
   };
 };
 
+export type addBuilderKeyType =
+  | 'skills'
+  | 'employmentHistory'
+  | 'education'
+  | 'references';
+
 export type builderKeyType =
   | 'references'
   | 'profile'

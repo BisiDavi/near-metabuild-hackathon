@@ -1,8 +1,7 @@
 import { useAppSelector } from '@/hooks/useRedux';
 import {
-  addReference,
-  removeReference,
-  updateCV,
+  addSection,
+  removeSection,
   updateReference,
 } from '@/redux/builder-slice';
 import { useAppDispatch } from '@/redux/store';
@@ -21,36 +20,41 @@ export default function useReference() {
   function addReferenceHandler() {
     const referencesLength = cvs.references.length;
     dispatch(
-      addReference([
-        {
-          text: '',
-          name: 'title',
-          placeholder: 'title',
-          id: `references.title-${referencesLength}`,
-          type: 'text',
-        },
-        {
-          text: '',
-          name: 'email',
-          placeholder: 'email',
-          id: `references.email-${referencesLength}`,
-          type: 'email',
-        },
-        {
-          text: '',
-          name: 'phone',
-          placeholder: 'phone',
-          id: `references.phone-${referencesLength}`,
-          type: 'text',
-        },
-      ]),
+      addSection({
+        sectionKey: 'references',
+        section: [
+          {
+            text: '',
+            name: 'title',
+            placeholder: 'title',
+            id: `references.title-${referencesLength}`,
+            type: 'text',
+          },
+          {
+            text: '',
+            name: 'email',
+            placeholder: 'email',
+            id: `references.email-${referencesLength}`,
+            type: 'email',
+          },
+          {
+            text: '',
+            name: 'phone',
+            placeholder: 'phone',
+            id: `references.phone-${referencesLength}`,
+            type: 'text',
+          },
+        ],
+      }),
     );
   }
 
   function removeReferenceHandler(index: number) {
     let tempReference = [...cvs.references];
     tempReference.splice(index, 1);
-    dispatch(removeReference(tempReference));
+    dispatch(
+      removeSection({ sectionKey: 'references', section: tempReference }),
+    );
   }
 
   function onChangeHandler(index1: number, index2: number, text: string) {
