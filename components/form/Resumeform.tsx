@@ -1,17 +1,8 @@
-import { useForm } from 'react-hook-form';
-import { useEffect } from 'react';
-
 import Button from '@/components/Button';
 import displayFormElement from '@/lib/displayFormElement';
 import formContent from '@/json/form.json';
-import { useAppDispatch, useAppSelector } from '@/hooks/useRedux';
-import { updateCV } from '@/redux/builder-slice';
 
 export default function Resumeform({ resume }: any) {
-  const { cvs } = useAppSelector((state) => state.builder);
-
-  console.log('cv', cvs);
-
   const {
     formCurrentStage,
     formStage,

@@ -28,13 +28,19 @@ export default function Skill() {
     );
   }
 
-  console.log('cvs.skills', cvs.skills);
   function removeCVSkillsHandler(name: string) {
+    let tempSkills = [...cvs.skills];
     if (cvs.skills.length > 1) {
-      const skillIndex = cvs.skills.findIndex((item) => item.name === name);
-      console.log('skillIndex', skillIndex);
-      cvs.skills.splice(skillIndex, 1);
+      const skillIndex = tempSkills.findIndex((item) => item.name === name);
+      tempSkills.splice(skillIndex, 1);
+      dispatch(updateCV({ ...cvs, skills: tempSkills }));
     }
+  }
+
+  function onChangeHandler(e: any, index: number) {
+    let tempSkills = [...cvs.skills];
+    tempSkills[index].text = e.target.value;
+    dispatch(updateCV({ ...cvs, skills: tempSkills }));
   }
 
   const disableButton = cvs.skills.length > 1 ? false : true;
@@ -46,14 +52,15 @@ export default function Skill() {
       </p>
       {cvs.skills.map((skill, index) => {
         const inputValue = getInputValue(skill.id, index);
-        console.log('skill.name', skill.name);
+        const skillInputValue = index === 0 ? cvs.skills[0].text : inputValue;
         return (
           <div key={skill.name} className="input-group flex">
             <input
               className="my-2 h-10 w-full rounded-l-md border border-gray-300 p-2 focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
               placeholder={skill.placeholder}
-              value={inputValue}
+              value={skillInputValue}
               name={skill.name}
+              onChange={(e) => onChangeHandler(e, index)}
             />
             <Button
               className="item-center mt-2 flex h-10 w-10 justify-center rounded-r bg-red-500 text-3xl text-white"
