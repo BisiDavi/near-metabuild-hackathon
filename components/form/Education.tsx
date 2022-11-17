@@ -1,14 +1,17 @@
 import { useAppSelector } from '@/hooks/useRedux';
-import Button from '../Button';
+import Button from '@/components/Button';
 
 export default function Education() {
   const { cvs } = useAppSelector((state) => state.builder);
 
   return (
-    <div className='border p-4 rounded'>
+    <div className="rounded border p-4">
       {cvs.education.map((educationItem, index) => {
         return (
-          <div className="education-item border my-3 p-3 rounded" key={index}>
+          <div
+            className="education-item relative my-4 rounded border p-3"
+            key={index}
+          >
             {educationItem.map((educationGroup, idx) => {
               return (
                 <div className="education-group flex space-x-2" key={idx}>
@@ -40,9 +43,26 @@ export default function Education() {
                 </div>
               );
             })}
+            <Button
+              className="absolute -right-6 -top-5 z-10 mx-4 mt-2 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-2xl text-white hover:bg-opacity-70"
+              type="button"
+              onClick={() => null}
+              title="Remove Employment History"
+              text="⤬"
+            />
           </div>
         );
       })}
+      <div className="group flex items-center">
+        <Button
+          className="mt-2 flex h-6 w-6 items-center justify-center rounded-full bg-green-500 text-center text-2xl text-white hover:bg-opacity-70"
+          type="button"
+          onClick={() => null}
+          title="Add Achievement"
+          text="+"
+        />
+        <p className="ml-1 mt-2 mb-0 text-sm font-bold">Add Education</p>
+      </div>
     </div>
   );
 }

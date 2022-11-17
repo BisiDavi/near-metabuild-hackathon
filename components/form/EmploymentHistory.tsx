@@ -4,7 +4,7 @@ import Button from '@/components/Button';
 export default function EmploymentHistory() {
   const { cvs } = useAppSelector((state) => state.builder);
   return (
-    <>
+    <div className="rounded border p-4">
       <div className="overflow-y-scroll">
         {cvs.employmentHistory.map((history, index) => {
           return (
@@ -84,6 +84,6 @@ export default function EmploymentHistory() {
           Add new Employment History
         </p>
       </div>
-    </>
+    </div>
   );
 }

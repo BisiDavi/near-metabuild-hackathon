@@ -28,6 +28,11 @@ export type BuilderStateType = {
       placeholder: string;
       id: string;
     }[][][];
-    references: Array<{ title: string; email: string; phone: string }>;
+    references: {
+      text: string;
+      name: string;
+      placeholder: string;
+      id: string;
+    }[][];
   };
 };

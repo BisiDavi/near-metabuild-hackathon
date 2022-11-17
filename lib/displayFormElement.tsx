@@ -7,6 +7,7 @@ import Textarea from '@/components/form/Textarea';
 import EmploymentHistory from '@/components/form/EmploymentHistory';
 import type { inputType } from '@/types';
 import Education from '@/components/form/Education';
+import Reference from '@/components/form/Reference';
 
 export default function displayFormElement(input: inputType) {
   switch (input.type) {
@@ -26,5 +27,7 @@ export default function displayFormElement(input: inputType) {
       return <EmploymentHistory />;
     case 'education':
       return <Education />;
+    case 'reference':
+      return <Reference />;
   }
 }

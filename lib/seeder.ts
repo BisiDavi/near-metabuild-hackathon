@@ -217,16 +217,52 @@ export const cvsData = {
       ],
     ],
     references: [
-      {
-        title: 'David Leeds from Anglo Hotel',
-        email: 'dleeds@anglo.com',
-        phone: '732-189-0909',
-      },
-      {
-        title: 'Cole Kenny from AT&T',
-        email: 'kennycole@att.com',
-        phone: '934-289-0209',
-      },
+      [
+        {
+          text: 'David Leeds from Anglo Hotel',
+          name: 'title',
+          placeholder: 'title',
+          id: 'references.title-1',
+          type: 'input',
+        },
+        {
+          text: 'dleeds@anglo.com',
+          name: 'email',
+          placeholder: 'email',
+          id: 'references.email-1',
+          type: 'input',
+        },
+        {
+          text: '732-189-0909',
+          name: 'phone',
+          placeholder: 'phone',
+          id: 'references.phone-1',
+          type: 'input',
+        },
+      ],
+      [
+        {
+          text: 'Cole Kenny from AT&T',
+          name: 'title',
+          placeholder: 'title',
+          id: 'references.title-2',
+          type: 'input',
+        },
+        {
+          text: 'kennycole@att.com',
+          name: 'email',
+          placeholder: 'email',
+          id: 'references.email-2',
+          type: 'input',
+        },
+        {
+          text: '934-289-0209',
+          name: 'phone',
+          placeholder: 'phone',
+          id: 'references.phone-2',
+          type: 'input',
+        },
+      ],
     ],
   },
 };
