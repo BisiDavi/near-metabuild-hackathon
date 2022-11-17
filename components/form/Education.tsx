@@ -1,4 +1,3 @@
-import { useAppSelector } from '@/hooks/useRedux';
 import Button from '@/components/Button';
 import useEducation from '@/hooks/useEducation';
 

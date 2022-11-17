@@ -21,12 +21,15 @@ export default function EmploymentHistory() {
               key={index}
             >
               {history.map((itemGroup, idx) => {
+                console.log('itemGroup', itemGroup);
                 const inputGroupClassname =
-                  itemGroup.length === 2 ? 'flex space-x-2' : 'flex flex-col';
+                  itemGroup && itemGroup[0]?.placeholder.includes('Date')
+                    ? 'flex space-x-2'
+                    : 'flex flex-col';
 
                 return (
                   <div
-                    className={`item-group ${inputGroupClassname}`}
+                    className={`item-group flex ${inputGroupClassname}`}
                     key={idx}
                   >
                     {itemGroup.map((item, itemIdx) => {
