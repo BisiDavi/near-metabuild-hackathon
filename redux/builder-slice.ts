@@ -26,7 +26,7 @@ const CVSlice = createSlice({
       const { index1, index2, text } = action.payload;
       state.cvs.references[index1][index2].text = text;
     },
-    removeSection(
+    updateSection(
       state,
       action: PayloadAction<{ sectionKey: builderKeyType; section: any }>,
     ) {
@@ -48,6 +48,6 @@ export const {
   updateSkill,
   addSection,
   updateReference,
-  removeSection,
+  updateSection,
 } = CVSlice.actions;
 export default CVSlice.reducer;

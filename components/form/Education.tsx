@@ -4,8 +4,12 @@ import useEducation from '@/hooks/useEducation';
 
 export default function Education() {
   const { cvs } = useAppSelector((state) => state.builder);
-  const { addEducationHandler, deleteEducationHandler, getInputValue } =
-    useEducation();
+  const {
+    addEducationHandler,
+    deleteEducationHandler,
+    getInputValue,
+    addAchievementHandler,
+  } = useEducation();
 
   return (
     <div className="rounded border p-4">
@@ -16,8 +20,12 @@ export default function Education() {
             key={index}
           >
             {educationItem.map((educationGroup, idx) => {
+              const groupClassname = idx === 2 ? 'flex-col' : '';
               return (
-                <div className="education-group flex space-x-2" key={idx}>
+                <div
+                  className={`education-group ${groupClassname} flex space-x-2`}
+                  key={idx}
+                >
                   {educationGroup.map((item, itemIdx) => {
                     const inputClassname = item.name.includes('achievement')
                       ? 'rounded-l-md'
@@ -59,7 +67,7 @@ export default function Education() {
               <Button
                 className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500 text-center text-2xl text-white hover:bg-opacity-70"
                 type="button"
-                onClick={() => null}
+                onClick={() => addAchievementHandler(index)}
                 title="Add Achievement"
                 text="+"
               />

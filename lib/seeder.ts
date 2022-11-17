@@ -184,7 +184,7 @@ export const cvsData = {
             text: '- Graduated with High Honours',
             name: 'achievement-1',
             placeholder: 'Achievement',
-            id: 'education.achievement',
+            id: 'education.achievement-1',
           },
         ],
       ],
@@ -212,6 +212,14 @@ export const cvsData = {
             placeholder: 'End on (Date)',
             id: 'education.end-on-2',
             type: 'input',
+          },
+        ],
+        [
+          {
+            text: '',
+            name: 'achievement-2',
+            placeholder: 'Achievement',
+            id: 'education.achievement-2',
           },
         ],
       ],

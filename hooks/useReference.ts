@@ -1,7 +1,7 @@
 import { useAppSelector } from '@/hooks/useRedux';
 import {
   addSection,
-  removeSection,
+  updateSection,
   updateReference,
 } from '@/redux/builder-slice';
 import { useAppDispatch } from '@/redux/store';
@@ -50,7 +50,7 @@ export default function useReference() {
     let tempReference = [...cvs.references];
     tempReference.splice(index, 1);
     dispatch(
-      removeSection({ sectionKey: 'references', section: tempReference }),
+      updateSection({ sectionKey: 'references', section: tempReference }),
     );
   }
 
