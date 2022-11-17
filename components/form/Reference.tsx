@@ -4,7 +4,13 @@ import useReference from '@/hooks/useReference';
 
 export default function Reference() {
   const { cvs } = useAppSelector((state) => state.builder);
-  const { getInputValue } = useReference();
+  const {
+    getInputValue,
+    addReferenceHandler,
+    removeReferenceHandler,
+    disableDelete,
+    disableDeleteClassname,
+  } = useReference();
 
   return (
     <div className="rounded border p-4">
@@ -26,11 +32,12 @@ export default function Reference() {
               );
             })}
             <Button
-              className="absolute -right-6 -top-5 z-10 mx-4 mt-2 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-2xl text-white hover:bg-opacity-70"
+              className={`${disableDeleteClassname} absolute -right-6 -top-5 z-10 mx-4 mt-2 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-2xl text-white hover:bg-opacity-70`}
               type="button"
-              onClick={() => null}
+              onClick={() => removeReferenceHandler(index)}
               title="Remove Reference"
               text="⤬"
+              disabled={disableDelete}
             />
           </div>
         );
@@ -39,7 +46,7 @@ export default function Reference() {
         <Button
           className="mt-2 flex h-6 w-6 items-center justify-center rounded-full bg-green-500 text-center text-2xl text-white hover:bg-opacity-70"
           type="button"
-          onClick={() => null}
+          onClick={addReferenceHandler}
           title="Add Reference"
           text="+"
         />

@@ -19,12 +19,15 @@ const CVSlice = createSlice({
       const { index, text } = action.payload;
       state.cvs.skills[index].text = text;
     },
-    addReference(state, action){
-      const { index,  reference } = action.payload;
-      state.cvs.references[index] = reference;
-    }
+    addReference(state, action) {
+      state.cvs.references = [...state.cvs.references, action.payload];
+    },
+    removeReference(state, action) {
+      state.cvs.references = action.payload;
+    },
   },
 });
 
-export const { updateCV, updateSkill, addReference } = CVSlice.actions;
+export const { updateCV, updateSkill, addReference, removeReference } =
+  CVSlice.actions;
 export default CVSlice.reducer;

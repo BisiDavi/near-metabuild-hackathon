@@ -1,5 +1,5 @@
 import { useAppSelector } from '@/hooks/useRedux';
-import { addReference, updateCV } from '@/redux/builder-slice';
+import { addReference, removeReference, updateCV } from '@/redux/builder-slice';
 import { useAppDispatch } from '@/redux/store';
 
 export default function useReference() {
@@ -8,45 +8,55 @@ export default function useReference() {
 
   function getInputValue(id: string, index1: number, index2: number) {
     const splittedId = id.split('.');
-    const name = splittedId[1];
     const group = splittedId[0];
 
     return cvs[group][index1][index2].text;
   }
 
-  function addReferenceHandler(){
-    const referencesLength = cvs.references.length + 1;
+  function addReferenceHandler() {
+    const referencesLength = cvs.references.length;
     dispatch(
-      addReference({
-        index: referencesLength,
-        reference: [
-          {
-            text: '',
-            name: 'title',
-            placeholder: 'title',
-            id: 'references.title-1',
-            type: 'text',
-          },
-          {
-            text: '',
-            name: 'email',
-            placeholder: 'email',
-            id: 'references.email-1',
-            type: 'email',
-          },
-          {
-            text: '',
-            name: 'phone',
-            placeholder: 'phone',
-            id: 'references.phone-1',
-            type: 'text',
-          },
-        ],
-      }),
+      addReference([
+        {
+          text: '',
+          name: 'title',
+          placeholder: 'title',
+          id: `references.title-${referencesLength}`,
+          type: 'text',
+        },
+        {
+          text: '',
+          name: 'email',
+          placeholder: 'email',
+          id: `references.email-${referencesLength}`,
+          type: 'email',
+        },
+        {
+          text: '',
+          name: 'phone',
+          placeholder: 'phone',
+          id: `references.phone-${referencesLength}`,
+          type: 'text',
+        },
+      ]),
     );
   }
 
+  function removeReferenceHandler(index: number) {
+    let tempReference = [...cvs.references];
+    tempReference.splice(index, 1);
+    dispatch(removeReference(tempReference));
+  }
+
+  const disableDelete = cvs.references.length === 1 ? true : false;
+  const disableDeleteClassname =
+    cvs.references.length === 1 ? 'cursor-not-allowed' : '';
+
   return {
     getInputValue,
+    addReferenceHandler,
+    removeReferenceHandler,
+    disableDelete,
+    disableDeleteClassname,
   };
 }
