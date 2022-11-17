@@ -45,6 +45,9 @@ export default function EmploymentHistory() {
                             name={item.name}
                             placeholder={item.placeholder}
                             className={`${inputClassname} h-8 w-full rounded-l-md border border-gray-300 p-2 focus:border-gray-500 focus:ring-gray-500 sm:text-sm`}
+                            onChange={(e) =>
+                              onChangeHandler(e, index, idx, itemIdx)
+                            }
                           />
                           {item.name.includes('achievement') && (
                             <Button
@@ -89,7 +92,7 @@ export default function EmploymentHistory() {
         <Button
           className="flex h-8 w-8 items-center justify-center rounded bg-blue-500 text-3xl text-white hover:bg-opacity-70"
           type="button"
-          onClick={() => null}
+          onClick={addEmploymentHistoryHandler}
           title="Add new Employment History"
           text="+"
         />

@@ -1,5 +1,6 @@
 import { useAppDispatch, useAppSelector } from '@/hooks/useRedux';
 import {
+  addSection,
   removeAchievement,
   updateAchievement,
   updateSectionText,
@@ -10,7 +11,7 @@ export default function useEmploymentHistory() {
   const dispatch = useAppDispatch();
 
   function addAchievementHandler(index: number) {
-    const achievementLength = cvs.education[index][2].length + 1;
+    const achievementLength = cvs.employmentHistory[index][2].length + 1;
     const achievementArray = {
       text: '',
       name: `achievement-${achievementLength}`,
@@ -39,7 +40,52 @@ export default function useEmploymentHistory() {
     );
   }
 
-  function addEmploymentHistoryHandler() {}
+  function addEmploymentHistoryHandler() {
+    const employmentArraylength = cvs.employmentHistory.length;
+    const achievementLength = cvs.employmentHistory[0][2].length + 1;
+
+    dispatch(
+      addSection({
+        sectionKey: 'employmentHistory',
+        section: [
+          [
+            {
+              text: '',
+              name: 'role',
+              placeholder: 'Job Role',
+              id: `employmentHistory.role-${employmentArraylength}`,
+              type: 'input',
+            },
+          ],
+          [
+            {
+              text: '',
+              name: 'startedOn',
+              placeholder: 'Started on (Date)',
+              id: `employmentHistory.started-on-${employmentArraylength}`,
+              type: 'input',
+            },
+            {
+              text: 'SEPTEMBER 2020',
+              name: 'endOn',
+              placeholder: 'End on (Date)',
+              id: `employmentHistory.end-on-${employmentArraylength}`,
+              type: 'input',
+            },
+          ],
+          [
+            {
+              text: '',
+              name: 'achievement',
+              placeholder: 'Achievement 1',
+              id: `employmentHistory.achievement-${achievementLength}`,
+              type: 'input',
+            },
+          ],
+        ],
+      }),
+    );
+  }
   function removeEmploymentHistoryHandler() {}
 
   function onChangeHandler(
