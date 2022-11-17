@@ -1,8 +1,16 @@
-import { useAppSelector } from '@/hooks/useRedux';
 import Button from '@/components/Button';
+import useEmploymentHistory from '@/hooks/useEmploymentHistory';
 
 export default function EmploymentHistory() {
-  const { cvs } = useAppSelector((state) => state.builder);
+  const {
+    cvs,
+    addAchievementHandler,
+    removeAchievementHandler,
+    addEmploymentHistoryHandler,
+    removeEmploymentHistoryHandler,
+    onChangeHandler,
+  } = useEmploymentHistory();
+
   return (
     <div className="rounded border p-4">
       <div className="overflow-y-scroll">
@@ -21,7 +29,7 @@ export default function EmploymentHistory() {
                     className={`item-group ${inputGroupClassname}`}
                     key={idx}
                   >
-                    {itemGroup.map((item) => {
+                    {itemGroup.map((item, itemIdx) => {
                       const inputClassname = item.name.includes('achievement')
                         ? 'rounded-l-md'
                         : 'rounded-md';
@@ -40,7 +48,9 @@ export default function EmploymentHistory() {
                               className="flex h-8 w-8 items-center justify-center rounded-r bg-red-500 text-center text-2xl text-white hover:bg-opacity-70"
                               type="button"
                               text="⤬"
-                              onClick={() => null}
+                              onClick={() =>
+                                removeAchievementHandler(index, itemIdx)
+                              }
                             />
                           )}
                         </div>
@@ -60,7 +70,7 @@ export default function EmploymentHistory() {
                 <Button
                   className="mt-2 flex h-6 w-6 items-center justify-center rounded-full bg-green-500 text-center text-2xl text-white hover:bg-opacity-70"
                   type="button"
-                  onClick={() => null}
+                  onClick={() => addAchievementHandler(index)}
                   title="Add Achievement"
                   text="+"
                 />
