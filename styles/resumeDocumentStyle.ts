@@ -64,6 +64,11 @@ export const resumeDocumentStyle = StyleSheet.create({
     fontSize: 12,
     marginVertical: 2,
   },
+  skill: {
+    marginTop: 20,
+    fontSize: 12,
+    fontWeight: 'bold',
+  },
   role: {
     fontSize: 8,
     marginTop: 2,

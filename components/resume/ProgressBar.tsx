@@ -12,7 +12,7 @@ export default function ProgressBar({ text }: Props) {
   const styles = StyleSheet.create({
     outer: {
       backgroundColor: 'gray',
-      marginVertical: 4,
+      marginTop: 0,
       borderRadius: '10px',
       height: 6,
     },
@@ -22,14 +22,22 @@ export default function ProgressBar({ text }: Props) {
       borderRadius: '10px',
       width: percentage,
     },
+    text: {
+      fontSize: 10,
+      margin: 0,
+      lineHeight: 1.3,
+    },
+    progressBar: {
+      marginBottom: 12,
+    },
   });
 
   return (
-    <>
-      <Text>{textValue}</Text>
+    <View style={styles.progressBar}>
+      <Text style={styles.text}>{textValue}</Text>
       <View style={styles.outer}>
         <View style={styles.inner}></View>
       </View>
-    </>
+    </View>
   );
 }

@@ -18,7 +18,7 @@ import { resumeDocumentStyle } from '@/styles/resumeDocumentStyle';
 function ResumeDocumentComponent() {
   const styles = resumeDocumentStyle;
   const { cvs } = useAppSelector((state) => state.builder);
-  const dCvs = useDebounce<BuilderStateType['cvs']>(cvs, 2000);
+  const dCvs = useDebounce<BuilderStateType['cvs']>(cvs, 2500);
 
   return (
     <PDFViewer showToolbar={false} width="90%" height="100%">
@@ -41,7 +41,7 @@ function ResumeDocumentComponent() {
               <Text>{dCvs.address.country}</Text>
               <Text>{dCvs.address.phone}</Text>
               <Text>{dCvs.address.email}</Text>
-              <Text style={styles.subheading}>Skills</Text>
+              <Text style={styles.skill}>Skills</Text>
               {dCvs.skills.map((skill) => (
                 <ProgressBar key={skill.id} text={skill.text} />
               ))}
