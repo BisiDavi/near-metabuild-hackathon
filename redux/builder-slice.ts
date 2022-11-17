@@ -13,11 +13,14 @@ const CVSlice = createSlice({
   initialState,
   reducers: {
     updateCV(state, action: PayloadAction<BuilderStateType['cvs']>) {
-      console.log('action.payload', action.payload);
       state.cvs = action.payload;
+    },
+    updateSkill(state, action) {
+      const { index, text } = action.payload;
+      state.cvs.skills[index].text = text;
     },
   },
 });
 
-export const { updateCV } = CVSlice.actions;
+export const { updateCV, updateSkill } = CVSlice.actions;
 export default CVSlice.reducer;
