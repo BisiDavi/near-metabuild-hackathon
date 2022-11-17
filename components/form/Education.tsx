@@ -50,6 +50,16 @@ export default function Education() {
               title="Remove Employment History"
               text="⤬"
             />
+            <div className="group mt-2 flex">
+              <Button
+                className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500 text-center text-2xl text-white hover:bg-opacity-70"
+                type="button"
+                onClick={() => null}
+                title="Add Achievement"
+                text="+"
+              />
+              <p className="ml-1 mt-1 mb-0 text-sm font-bold">Add Achievement</p>
+            </div>
           </div>
         );
       })}
