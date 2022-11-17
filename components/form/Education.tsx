@@ -3,8 +3,8 @@ import Button from '@/components/Button';
 import useEducation from '@/hooks/useEducation';
 
 export default function Education() {
-  const { cvs } = useAppSelector((state) => state.builder);
   const {
+    cvs,
     addEducationHandler,
     deleteEducationHandler,
     getInputValue,

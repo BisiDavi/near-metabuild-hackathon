@@ -118,5 +118,6 @@ export default function useEducation() {
     addAchievementHandler,
     removeAchievementHandler,
     onChangeHandler,
+    cvs,
   };
 }

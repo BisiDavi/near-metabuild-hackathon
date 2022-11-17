@@ -3,8 +3,8 @@ import Button from '@/components/Button';
 import useReference from '@/hooks/useReference';
 
 export default function Reference() {
-  const { cvs } = useAppSelector((state) => state.builder);
   const {
+    cvs,
     getInputValue,
     addReferenceHandler,
     removeReferenceHandler,
@@ -14,7 +14,7 @@ export default function Reference() {
   } = useReference();
 
   return (
-    <div className="rounded border p-4 my-2">
+    <div className="my-2 rounded border p-4">
       {cvs.references.map((referenceGroup, index) => {
         return (
           <div className="group relative my-4 rounded border p-2" key={index}>

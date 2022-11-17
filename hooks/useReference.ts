@@ -7,7 +7,7 @@ import {
 import { useAppDispatch } from '@/redux/store';
 
 export default function useReference() {
-  const { cvs }: any = useAppSelector((state) => state.builder);
+  const { cvs } = useAppSelector((state) => state.builder);
   const dispatch = useAppDispatch();
 
   function getInputValue(index1: number, index2: number) {
@@ -63,6 +63,7 @@ export default function useReference() {
     cvs.references.length === 1 ? 'cursor-not-allowed' : '';
 
   return {
+    cvs,
     getInputValue,
     addReferenceHandler,
     removeReferenceHandler,
