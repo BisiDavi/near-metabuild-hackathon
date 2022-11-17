@@ -2,7 +2,7 @@ import { StyleSheet } from '@react-pdf/renderer';
 
 export const resumeDocumentStyle = StyleSheet.create({
   page: {
-    backgroundColor: '#E4E4E4',
+    backgroundColor: 'white',
     width: '100%',
     height: '100%',
     display: 'flex',
@@ -17,6 +17,7 @@ export const resumeDocumentStyle = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     color: 'white',
+    paddingTop: 60,
   },
   image: {
     height: 100,
@@ -29,6 +30,7 @@ export const resumeDocumentStyle = StyleSheet.create({
   },
   section: {
     margin: 10,
+    marginTop: 40,
     padding: 10,
     width: '70%',
     flexGrow: 1,
@@ -43,17 +45,24 @@ export const resumeDocumentStyle = StyleSheet.create({
     lineHeight: 1.5,
   },
   text: {
-    fontSize: 12,
+    fontSize: 10,
+  },
+  subsection: {
+    marginVertical: 10,
   },
   heading: {
     fontWeight: 'bold',
     fontSize: 14,
     marginVertical: 2,
   },
+  h4: {
+    fontWeight: 'bold',
+    fontSize: 12,
+  },
   subheading: {
     fontWeight: 'bold',
-    fontSize: 13,
-    marginVertical: 4,
+    fontSize: 12,
+    marginVertical: 2,
   },
   role: {
     fontSize: 8,
@@ -65,6 +74,6 @@ export const resumeDocumentStyle = StyleSheet.create({
     fontWeight: 'bold',
   },
   listGroup: {
-    marginTop: 10,
+    marginTop: 3,
   },
 });
