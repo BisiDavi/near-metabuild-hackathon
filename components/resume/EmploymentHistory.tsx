@@ -1,6 +1,11 @@
+import { useAppSelector } from '@/hooks/useRedux';
+import { useAppDispatch } from '@/redux/store';
 import { Text, View, StyleSheet } from '@react-pdf/renderer';
 
 export default function EmploymentHistory({}) {
+  const { cvs } = useAppSelector((state) => state.builder);
+  const dispatch = useAppDispatch();
+
   const styles = StyleSheet.create({
     list: {
       display: 'flex',

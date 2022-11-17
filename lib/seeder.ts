@@ -48,7 +48,96 @@ export const cvsData = {
         id: 'skills.skill-5',
       },
     ],
-    employmentHistory: {},
+    employmentHistory: [
+      [
+        [
+          {
+            text: 'Branch Customer Service Representative, AT&T Inc., Seattle',
+            name: 'role',
+            placeholder: 'Job Role',
+            id: 'employmentHistory.role',
+          },
+        ],
+        [
+          {
+            text: 'AUGUST 2014',
+            name: 'startedOn',
+            placeholder: 'Started on (Date)',
+            id: 'employmentHistory.started-on',
+          },
+          {
+            text: 'SEPTEMBER 2020',
+            name: 'endOn',
+            placeholder: 'End on (Date)',
+            id: 'employmentHistory.end-on',
+          },
+        ],
+        [
+          {
+            text: 'Maintained up to date knowledge of products and services',
+            name: 'achievement-1',
+            placeholder: 'Achievement 1',
+            id: 'employmentHistory.achievement-1',
+          },
+          {
+            text: '- Handled customer calls and responded to queries about services, product malfunctions, promotions and billing.',
+            name: 'achievement-2',
+            placeholder: 'Achievement 2',
+            id: 'employmentHistory.achievement-2',
+          },
+          {
+            text: '- Worked to address all customer concerns in a timely and effective manner.',
+            name: 'achievement-3',
+            placeholder: 'Achievement 3',
+            id: 'employmentHistory.achievement-3',
+          },
+        ],
+      ],
+      [
+        [
+          {
+            text: 'Branch Customer Service Representative, AT&T Inc., Seattle',
+            name: 'role',
+            placeholder: 'Job Role',
+            id: 'employmentHistory.role',
+          },
+        ],
+        [
+          {
+            text: 'AUGUST 2014',
+            name: 'startedOn',
+            placeholder: 'Started on (Date)',
+            id: 'employmentHistory.started-on',
+          },
+          {
+            text: 'SEPTEMBER 2020',
+            name: 'endOn',
+            placeholder: 'End on (Date)',
+            id: 'employmentHistory.end-on',
+          },
+        ],
+        [
+          {
+            text: 'Maintained up to date knowledge of products and services',
+            name: 'achievement-1',
+            placeholder: 'Achievement 1',
+            id: 'employmentHistory.achievement-1',
+          },
+          {
+            text: '- Handled customer calls and responded to queries about services, product malfunctions, promotions and billing.',
+            name: 'achievement-2',
+            placeholder: 'Achievement 2',
+            id: 'employmentHistory.achievement-2',
+          },
+          {
+            text: '- Worked to address all customer concerns in a timely and effective manner.',
+            name: 'achievement-3',
+            placeholder: 'Achievement 3',
+            id: 'employmentHistory.achievement-3',
+          },
+        ],
+      ],
+    ],
     education: {},
   },
 };

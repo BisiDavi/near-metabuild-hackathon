@@ -28,7 +28,7 @@ export default function ProgressBar({ text }: Props) {
       lineHeight: 1.3,
     },
     progressBar: {
-      marginBottom: 12,
+      marginBottom: 8,
     },
   });
 
