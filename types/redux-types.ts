@@ -36,3 +36,11 @@ export type BuilderStateType = {
     }[][];
   };
 };
+
+export type builderKeyType =
+  | 'references'
+  | 'profile'
+  | 'address'
+  | 'education'
+  | 'skills'
+  | 'employmentHistory';
