@@ -6,6 +6,7 @@ export default function EmploymentHistory({}) {
   const { cvs } = useAppSelector((state) => state.builder);
   const dispatch = useAppDispatch();
 
+
   const styles = StyleSheet.create({
     list: {
       display: 'flex',
