@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { Text, View, Image } from '@react-pdf/renderer';
-import { resumeStyle } from '@/components/resume/01/resumeStyle';
+import { resumeStyle } from '@/components/resume/02/resumeStyle';
 
 interface profileProps {
   profile: {
@@ -15,14 +15,14 @@ export default function Profile({ profile }: profileProps) {
 
   return (
     <View style={styles.subsection}>
-      <View>
+      <View style={styles.bio}>
         <Image
           src="https://res.cloudinary.com/verrb-inc/image/upload/v1668528090/john-doe_bm98ji.jpg"
           style={styles.image}
         />
         <View>
           <Text style={styles.name}>{profile.name}</Text>
-          <Text style={styles.name}>{profile.role}</Text>
+          <Text style={styles.role}>{profile.role}</Text>
         </View>
       </View>
       <Text style={styles.heading}>Profile</Text>
