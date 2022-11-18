@@ -13,6 +13,7 @@ export default function useEducation() {
 
   function addEducationHandler() {
     const educationLength = cvs.education.length;
+
     dispatch(
       addSection({
         sectionKey: 'education',
@@ -42,7 +43,7 @@ export default function useEducation() {
           [
             {
               text: '',
-              name: 'achievement',
+              name: 'achievement-1',
               placeholder: 'Achievement',
               id: `education.achievement-${educationLength}`,
             },
@@ -68,7 +69,7 @@ export default function useEducation() {
     const achievementLength = cvs.education[index][2].length + 1;
     const achievementArray = {
       text: '',
-      name: 'achievement',
+      name: `achievement-${achievementLength}`,
       placeholder: `Achievement ${achievementLength}`,
       id: 'education.achievement',
     };
