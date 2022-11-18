@@ -1,4 +1,4 @@
-import type { inputType } from '@/types';
+import type { employmentHistoryType, inputType } from '@/types';
 import { BuilderStateType } from './redux-types';
 
 export interface DragItem {
@@ -42,6 +42,6 @@ export interface employmentHistoryProps {
     role: string;
     startedOn: string;
     endOn: string;
-    achievements: string[];
+    achievements: employmentHistoryType;
   };
 }

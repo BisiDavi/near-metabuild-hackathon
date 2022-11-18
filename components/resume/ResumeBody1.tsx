@@ -3,34 +3,21 @@ import { Text, View } from '@react-pdf/renderer';
 import { resumeDocumentStyle } from '@/styles/resumeDocumentStyle';
 import { ResumeAside1 } from '@/types/interfaces';
 import formatEmploymentHistoryDetails from '@/lib/formatEmploymentHistoryDetails';
+import EmploymentHistory from './EmploymentHistory';
 
 export default function ResumeBody1({ dCvs }: ResumeAside1) {
   const styles = resumeDocumentStyle;
   const { profile, employmentHistory, references } = dCvs;
 
-  const vberb = formatEmploymentHistoryDetails(employmentHistory);
-  console.log('vberb,', vberb);
-
+  const employmentDetails = formatEmploymentHistoryDetails(employmentHistory);
   return (
     <View style={styles.section}>
       <Text style={styles.heading}>Profile</Text>
       <Text style={styles.text}>{profile.intro}</Text>
       <View style={styles.subsection}>
         <Text style={styles.subheading}>Employment History</Text>
-        {employmentHistory.map((historyGroup, index) => {
-          return (
-            <div className="historyGroup" key={index}>
-              {historyGroup.map((employmentItemGroup, idx) => {
-                return (
-                  <div className="employmentItemGroup" key={idx}>
-                    {employmentItemGroup.map((itemGroup, itemIdx) => {
-                      return <div className="itemGroup" key={itemIdx}></div>;
-                    })}
-                  </div>
-                );
-              })}
-            </div>
-          );
+        {employmentDetails.map((item) => {
+          return <EmploymentHistory key={item.role} details={item} />;
         })}
         <Text style={styles.h4}>
           Branch Customer Service Representative, AT&T Inc., Seattle

@@ -20,11 +20,13 @@ export default function EmploymentHistory({ details }: employmentHistoryProps) {
         {details.startedOn} - {details.endOn}
       </Text>
       <View style={styles.listGroup}>
-        {details.achievements.map((achievement, index) => (
-          <View key={index}>
-            <Text style={styles.list}>- {achievement}</Text>
-          </View>
-        ))}
+        {details.achievements.map((achievement, index) => {
+          return (
+            <View key={index}>
+              <Text style={styles.list}>{achievement.text}</Text>
+            </View>
+          );
+        })}
       </View>
     </View>
   );

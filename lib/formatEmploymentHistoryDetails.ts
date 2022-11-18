@@ -17,19 +17,19 @@ export default function formatEmploymentHistoryDetails(
 ) {
   let details: groupType;
   let achievements: string[] = [];
+  let achievementObj: any = {};
   let group: groupType[] = [];
 
   historyGroup.map((historyArray, index) => {
-    historyArray.map((itemGroup) => {
-      itemGroup.map((item, index) => {
-        if (item.id.includes('achievement')) {
-          if (index < historyGroup.length) {
-            achievements = [...achievements, item.text];
-            details = {
-              ...details,
-              [`achievements-${index}`]: achievements,
-            };
-          }
+    historyArray.map((itemGroup, idx) => {
+      itemGroup.map((item) => {
+        if (idx === 2) {
+          achievements = [...achievements, item.text];
+          achievementObj[`achievement-${index}${idx}`] = itemGroup;
+          details = {
+            ...details,
+            [`achievement-${index}${idx}`]: itemGroup,
+          };
         } else {
           if (item.text) {
             details = { ...details, [item.name]: item.text };
@@ -41,6 +41,10 @@ export default function formatEmploymentHistoryDetails(
       group = [...group, details];
     }
   });
-
-  return group;
+  let detailGroup: any[] = [];
+  group.map((item: any, index: number) => {
+    const itemIndex = `achievement-${index}2`;
+    detailGroup = [...detailGroup, { ...item, achievements: item[itemIndex] }];
+  });
+  return detailGroup;
 }

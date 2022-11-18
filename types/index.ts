@@ -13,6 +13,14 @@ export type skillType = Array<{
   id: string;
 }>;
 
+export type employmentHistoryType = Array<{
+  name: string;
+  placeholder: string;
+  type: string;
+  text: string;
+  id: string;
+}>;
+
 export type cvsGroupType =
   | 'profile'
   | 'address'
