@@ -67,7 +67,7 @@ export default function useEmploymentHistory() {
               type: 'input',
             },
             {
-              text: 'SEPTEMBER 2020',
+              text: '',
               name: 'endOn',
               placeholder: 'End on (Date)',
               id: `employmentHistory.end-on-${employmentArraylength}`,

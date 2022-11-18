@@ -1,4 +1,5 @@
 import type { inputType } from '@/types';
+import { BuilderStateType } from './redux-types';
 
 export interface DragItem {
   type: string;
@@ -30,4 +31,8 @@ export interface ButtonProps {
 
 export interface FormProgressProps {
   currentStage: number;
+}
+
+export interface ResumeAside1 {
+  dCvs: BuilderStateType['cvs'];
 }

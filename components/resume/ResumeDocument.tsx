@@ -1,19 +1,12 @@
 /* eslint-disable jsx-a11y/alt-text */
-import {
-  Document,
-  Image,
-  Page,
-  Text,
-  View,
-  PDFViewer,
-} from '@react-pdf/renderer';
+import { Document, Page, Text, View, PDFViewer } from '@react-pdf/renderer';
 import { memo } from 'react';
 
-import ProgressBar from '@/components/resume/ProgressBar';
 import { useAppSelector } from '@/hooks/useRedux';
 import useDebounce from '@/hooks/useDebounce';
 import { BuilderStateType } from '@/types/redux-types';
 import { resumeDocumentStyle } from '@/styles/resumeDocumentStyle';
+import ResumeAside1 from '@/components/resume/ResumeAside1';
 
 function ResumeDocumentComponent() {
   const styles = resumeDocumentStyle;
@@ -26,29 +19,7 @@ function ResumeDocumentComponent() {
     <PDFViewer showToolbar={false} width="90%" height="100%">
       <Document>
         <Page wrap={true} size="A4" style={styles.page}>
-          <View style={styles.aside}>
-            <Image
-              src="https://res.cloudinary.com/verrb-inc/image/upload/v1668528090/john-doe_bm98ji.jpg"
-              style={styles.image}
-            />
-            <Text style={styles.name}>{dCvs.profile.name}</Text>
-            <Text style={styles.divider}>---</Text>
-            <Text style={styles.role}>{dCvs.profile.role}</Text>
-            <View style={styles.details}>
-              <Text style={styles.subheading}>Details</Text>
-              <Text>{dCvs.address.address}</Text>
-              <Text>
-                {dCvs.address.city}, {dCvs.address.state}, {dCvs.address.zip}
-              </Text>
-              <Text>{dCvs.address.country}</Text>
-              <Text>{dCvs.address.phone}</Text>
-              <Text>{dCvs.address.email}</Text>
-              <Text style={styles.skill}>Skills</Text>
-              {dCvs.skills.map((skill) => (
-                <ProgressBar key={skill.id} text={skill.text} />
-              ))}
-            </View>
-          </View>
+          <ResumeAside1 dCvs={dCvs} />
           <View style={styles.section}>
             <Text style={styles.heading}>Profile</Text>
             <Text style={styles.text}>{dCvs.profile.intro}</Text>
