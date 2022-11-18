@@ -1,10 +1,10 @@
 import { Text, View } from '@react-pdf/renderer';
 
-import { resumeDocumentStyle } from '@/styles/resumeDocumentStyle';
+import { resumeStyle } from '@/components/resume/01/resumeStyle';
 import type { educationProps } from '@/types/interfaces';
 
 export default function Education({ details }: educationProps) {
-  const styles = resumeDocumentStyle;
+  const styles = resumeStyle;
   return (
     <View style={styles.subsection}>
       <Text style={styles.heading}>Education</Text>

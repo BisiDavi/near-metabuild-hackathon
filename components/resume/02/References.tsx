@@ -1,13 +1,13 @@
 import { Text, View } from '@react-pdf/renderer';
 
-import { resumeDocumentStyle } from '@/styles/resumeDocumentStyle';
+import { resumeStyle } from '@/components/resume/01/resumeStyle';
 
 interface referenceProps {
   details: { title: string; email: string; phone: string }[];
 }
 
 export default function References({ details }: referenceProps) {
-  const styles = resumeDocumentStyle;
+  const styles = resumeStyle;
 
   return (
     <View style={styles.subsection}>

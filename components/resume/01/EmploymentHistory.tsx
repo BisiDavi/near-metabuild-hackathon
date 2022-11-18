@@ -1,10 +1,10 @@
 import { Text, View } from '@react-pdf/renderer';
-import { resumeDocumentStyle } from '@/styles/resumeDocumentStyle';
+import { resumeStyle } from '@/components/resume/01/resumeStyle';
 
 import type { employmentHistoryProps } from '@/types/interfaces';
 
 export default function EmploymentHistory({ history }: employmentHistoryProps) {
-  const styles = resumeDocumentStyle;
+  const styles = resumeStyle;
 
   return (
     <View style={styles.subsection}>

@@ -6,11 +6,11 @@ import References from '@/components/resume/01/References';
 import Profile from '@/components/resume/01/Profile';
 import formatDetails from '@/lib/formatDetails';
 import { formatReferences } from '@/lib/formatReference';
-import { resumeDocumentStyle } from '@/styles/resumeDocumentStyle';
+import { resumeStyle } from '@/components/resume/01/resumeStyle';
 import type { ResumeAside1 } from '@/types/interfaces';
 
 export default function ResumeBody({ dCvs }: ResumeAside1) {
-  const styles = resumeDocumentStyle;
+  const styles = resumeStyle;
   const { profile, employmentHistory, references, education } = dCvs;
 
   const employmentDetails = formatDetails(employmentHistory);

@@ -5,11 +5,11 @@ import { useAppSelector } from '@/hooks/useRedux';
 import useDebounce from '@/hooks/useDebounce';
 import ResumeAside from '@/components/resume/02/ResumeAside';
 import ResumeBody from '@/components/resume/02/ResumeBody';
-import { resumeDocumentStyle } from '@/styles/resumeDocumentStyle';
+import { resumeStyle } from '@/components/resume/01/resumeStyle';
 import { BuilderStateType } from '@/types/redux-types';
 
 function ResumeDocumentComponent() {
-  const styles = resumeDocumentStyle;
+  const styles = resumeStyle;
   const { cvs } = useAppSelector((state) => state.builder);
   const dCvs = useDebounce<BuilderStateType['cvs']>(cvs, 2500);
 

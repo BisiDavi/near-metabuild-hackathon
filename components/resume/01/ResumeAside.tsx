@@ -2,11 +2,11 @@
 import { Image, Text, View } from '@react-pdf/renderer';
 
 import ProgressBar from '@/components/resume/01/ProgressBar';
-import { resumeDocumentStyle } from '@/styles/resumeDocumentStyle';
+import { resumeStyle } from '@/components/resume/01/resumeStyle';
 import type { ResumeAside1 } from '@/types/interfaces';
 
 export default function ResumeAside({ dCvs }: ResumeAside1) {
-  const styles = resumeDocumentStyle;
+  const styles = resumeStyle;
 
   return (
     <View style={styles.aside}>

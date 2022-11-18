@@ -1,9 +1,9 @@
 import { Text, View } from '@react-pdf/renderer';
-import { resumeDocumentStyle } from '@/styles/resumeDocumentStyle';
+import { resumeStyle } from '@/components/resume/01/resumeStyle';
 import type { profileProps } from '@/types/interfaces';
 
 export default function Profile({ profile }: profileProps) {
-  const styles = resumeDocumentStyle;
+  const styles = resumeStyle;
 
   return (
     <View style={styles.subsection}>

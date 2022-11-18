@@ -1,6 +1,6 @@
 import { StyleSheet } from '@react-pdf/renderer';
 
-export const resumeDocumentStyle = StyleSheet.create({
+export const resumeStyle = StyleSheet.create({
   page: {
     backgroundColor: 'white',
     width: '100%',
