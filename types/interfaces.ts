@@ -38,12 +38,12 @@ export interface ResumeAside1 {
 }
 
 export interface employmentHistoryProps {
-  details: {
+  history: {
     role: string;
     startedOn: string;
     endOn: string;
     achievements: employmentHistoryType;
-  };
+  }[];
 }
 
 export interface educationProps {
@@ -52,7 +52,7 @@ export interface educationProps {
     startedOn: string;
     endOn: string;
     achievements: employmentHistoryType;
-  };
+  }[];
 }
 
 export interface profileProps {

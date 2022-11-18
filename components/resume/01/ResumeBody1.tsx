@@ -1,4 +1,4 @@
-import { Text, View } from '@react-pdf/renderer';
+import { View } from '@react-pdf/renderer';
 
 import EmploymentHistory from '@/components/resume/01/EmploymentHistory';
 import Education from '@/components/resume/01/Education';
@@ -20,18 +20,8 @@ export default function ResumeBody1({ dCvs }: ResumeAside1) {
   return (
     <View style={styles.section}>
       <Profile profile={profile} />
-      <View style={styles.subsection}>
-        <Text style={styles.heading}>Employment History</Text>
-        {employmentDetails.map((item) => {
-          return <EmploymentHistory key={item.role} details={item} />;
-        })}
-      </View>
-      <View style={styles.subsection}>
-        <Text style={styles.heading}>Education</Text>
-        {educationDetails.map((item) => (
-          <Education key={item.course} details={item} />
-        ))}
-      </View>
+      <EmploymentHistory history={employmentDetails} />
+      <Education details={educationDetails} />
       <References details={referencesDetails} />
     </View>
   );
