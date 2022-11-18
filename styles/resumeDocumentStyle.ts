@@ -8,7 +8,7 @@ export const resumeDocumentStyle = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     fontFamily: 'Open Sans',
-    lineHeight: 1.2,
+    lineHeight: 1.4,
   },
   aside: {
     backgroundColor: 'black',
@@ -96,6 +96,6 @@ export const resumeDocumentStyle = StyleSheet.create({
     fontWeight: 'bold',
   },
   listGroup: {
-    marginTop: 3,
+    marginTop: 2,
   },
 });
