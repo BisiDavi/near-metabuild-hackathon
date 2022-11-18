@@ -36,3 +36,12 @@ export interface FormProgressProps {
 export interface ResumeAside1 {
   dCvs: BuilderStateType['cvs'];
 }
+
+export interface employmentHistoryProps {
+  details: {
+    role: string;
+    startedOn: string;
+    endOn: string;
+    achievements: string[];
+  };
+}

@@ -1,12 +1,7 @@
-import { useAppSelector } from '@/hooks/useRedux';
-import { useAppDispatch } from '@/redux/store';
+import { employmentHistoryProps } from '@/types/interfaces';
 import { Text, View, StyleSheet } from '@react-pdf/renderer';
 
-export default function EmploymentHistory({}) {
-  const { cvs } = useAppSelector((state) => state.builder);
-  const dispatch = useAppDispatch();
-
-
+export default function EmploymentHistory({ details }: employmentHistoryProps) {
   const styles = StyleSheet.create({
     list: {
       display: 'flex',
@@ -20,18 +15,16 @@ export default function EmploymentHistory({}) {
   });
   return (
     <View>
-      <Text>Customer Service Representation, Anglo Hotel, NYC</Text>
-      <Text>AUGUST 2010 - AUGUST 2014</Text>
+      <Text>{details.role}</Text>
+      <Text>
+        {details.startedOn} - {details.endOn}
+      </Text>
       <View style={styles.listGroup}>
-        <Text style={styles.list}>
-          - Provided High quality customer service to customers.
-        </Text>
-        <Text style={styles.list}>
-          - Handled Sales transactions and returns in a timely manner
-        </Text>
-        <Text style={styles.list}>
-          - Greeted customers in a friendly and helpful manner
-        </Text>
+        {details.achievements.map((achievement, index) => (
+          <View key={index}>
+            <Text style={styles.list}>- {achievement}</Text>
+          </View>
+        ))}
       </View>
     </View>
   );
