@@ -4,7 +4,7 @@ import Layout from '@/layout';
 import ResumeEditor from '@/components/resume/ResumeEditor';
 
 const ResumeDocument = dynamic(
-  () => import('../components/resume/ResumeDocument'),
+  () => import('../components/resume/01/ResumeDocument'),
   { ssr: false },
 );
 
