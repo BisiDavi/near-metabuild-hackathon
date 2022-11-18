@@ -115,6 +115,10 @@ export default function useEmploymentHistory() {
     );
   }
 
+  function getInputValue(index1: number, index2: number, index3: number) {
+    return cvs.employmentHistory[index1][index2][index3].text;
+  }
+
   return {
     cvs,
     addAchievementHandler,
@@ -122,5 +126,6 @@ export default function useEmploymentHistory() {
     addEmploymentHistoryHandler,
     removeEmploymentHistoryHandler,
     onChangeHandler,
+    getInputValue,
   };
 }

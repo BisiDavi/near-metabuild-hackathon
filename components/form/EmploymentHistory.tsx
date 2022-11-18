@@ -9,6 +9,7 @@ export default function EmploymentHistory() {
     addEmploymentHistoryHandler,
     removeEmploymentHistoryHandler,
     onChangeHandler,
+    getInputValue,
   } = useEmploymentHistory();
 
   return (
@@ -21,7 +22,6 @@ export default function EmploymentHistory() {
               key={index}
             >
               {history.map((itemGroup, idx) => {
-                console.log('itemGroup', itemGroup);
                 const inputGroupClassname =
                   itemGroup && itemGroup[0]?.placeholder.includes('Date')
                     ? 'flex space-x-2'
@@ -36,6 +36,7 @@ export default function EmploymentHistory() {
                       const inputClassname = item.name.includes('achievement')
                         ? 'rounded-l-md'
                         : 'rounded-md';
+                      const inputValue = getInputValue(index, idx, itemIdx);
                       return (
                         <div
                           key={`${item.id}-${index}`}
@@ -45,6 +46,7 @@ export default function EmploymentHistory() {
                             name={item.name}
                             placeholder={item.placeholder}
                             className={`${inputClassname} h-8 w-full rounded-l-md border border-gray-300 p-2 focus:border-gray-500 focus:ring-gray-500 sm:text-sm`}
+                            value={inputValue}
                             onChange={(e) =>
                               onChangeHandler(e, index, idx, itemIdx)
                             }
