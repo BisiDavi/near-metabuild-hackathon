@@ -54,3 +54,9 @@ export interface educationProps {
     achievements: employmentHistoryType;
   };
 }
+
+export interface profileProps {
+  profile: {
+    intro: string;
+  };
+}

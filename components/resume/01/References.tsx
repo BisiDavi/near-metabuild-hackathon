@@ -11,7 +11,7 @@ export default function References({ details }: referenceProps) {
 
   return (
     <View style={styles.subsection}>
-      <Text style={styles.subheading}>References</Text>
+      <Text style={styles.heading}>References</Text>
       {details.map((item) => (
         <View key={item.title} style={styles.view}>
           <Text style={styles.h4}>{item.title}</Text>
