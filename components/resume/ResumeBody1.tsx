@@ -12,7 +12,7 @@ export default function ResumeBody1({ dCvs }: ResumeAside1) {
 
   const employmentDetails = formatDetails(employmentHistory);
   const educationDetails = formatDetails(education);
-  console.log('educationDetails', educationDetails);
+
   return (
     <View style={styles.section}>
       <Text style={styles.heading}>Profile</Text>

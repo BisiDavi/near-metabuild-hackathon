@@ -1,26 +1,11 @@
-import { Text, View, StyleSheet } from '@react-pdf/renderer';
+import { Text, View } from '@react-pdf/renderer';
+import { resumeDocumentStyle } from '@/styles/resumeDocumentStyle';
+
 import type { employmentHistoryProps } from '@/types/interfaces';
 
 export default function EmploymentHistory({ details }: employmentHistoryProps) {
-  const styles = StyleSheet.create({
-    view: {
-      marginBottom: 3,
-    },
-    listGroup: {
-      marginTop: 5,
-    },
-    h4: {
-      fontWeight: 600,
-      fontFamily: 'Lato Bold',
-      fontSize: 12,
-    },
-    date: {
-      fontSize: 8,
-    },
-    text: {
-      fontSize: 10,
-    },
-  });
+  const styles = resumeDocumentStyle;
+
   return (
     <View style={styles.view}>
       <Text style={styles.h4}>{details.role}</Text>
