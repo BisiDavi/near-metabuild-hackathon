@@ -3,8 +3,8 @@ import { memo } from 'react';
 
 import { useAppSelector } from '@/hooks/useRedux';
 import useDebounce from '@/hooks/useDebounce';
-import ResumeAside from '@/components/resume/01/ResumeAside';
-import ResumeBody from '@/components/resume/01/ResumeBody';
+import ResumeAside from '@/components/resume/02/ResumeAside';
+import ResumeBody from '@/components/resume/02/ResumeBody';
 import { resumeDocumentStyle } from '@/styles/resumeDocumentStyle';
 import { BuilderStateType } from '@/types/redux-types';
 
