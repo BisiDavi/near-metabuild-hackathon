@@ -5,7 +5,7 @@ import ProgressBar from '@/components/resume/01/ProgressBar';
 import { resumeDocumentStyle } from '@/styles/resumeDocumentStyle';
 import type { ResumeAside1 } from '@/types/interfaces';
 
-export default function ResumeAside1({ dCvs }: ResumeAside1) {
+export default function ResumeAside({ dCvs }: ResumeAside1) {
   const styles = resumeDocumentStyle;
 
   return (

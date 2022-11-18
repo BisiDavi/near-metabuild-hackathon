@@ -9,7 +9,7 @@ import { formatReferences } from '@/lib/formatReference';
 import { resumeDocumentStyle } from '@/styles/resumeDocumentStyle';
 import type { ResumeAside1 } from '@/types/interfaces';
 
-export default function ResumeBody1({ dCvs }: ResumeAside1) {
+export default function ResumeBody({ dCvs }: ResumeAside1) {
   const styles = resumeDocumentStyle;
   const { profile, employmentHistory, references, education } = dCvs;
 
