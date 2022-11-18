@@ -3,8 +3,8 @@ import { memo } from 'react';
 
 import { useAppSelector } from '@/hooks/useRedux';
 import useDebounce from '@/hooks/useDebounce';
-import ResumeAside1 from '@/components/resume/01/ResumeAside';
-import ResumeBody1 from '@/components/resume/01/ResumeBody';
+import ResumeAside from '@/components/resume/01/ResumeAside';
+import ResumeBody from '@/components/resume/01/ResumeBody';
 import { resumeDocumentStyle } from '@/styles/resumeDocumentStyle';
 import { BuilderStateType } from '@/types/redux-types';
 
@@ -37,8 +37,8 @@ function ResumeDocumentComponent() {
     <PDFViewer showToolbar={false} width="90%" height="100%">
       <Document>
         <Page wrap={true} size="A4" style={styles.page}>
-          <ResumeAside1 dCvs={dCvs} />
-          <ResumeBody1 dCvs={dCvs} />
+          <ResumeBody dCvs={dCvs} />
+          <ResumeAside dCvs={dCvs} />
         </Page>
       </Document>
     </PDFViewer>
