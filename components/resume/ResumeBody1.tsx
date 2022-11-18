@@ -6,8 +6,9 @@ import formatEmploymentHistoryDetails from '@/lib/formatEmploymentHistoryDetails
 import EmploymentHistory from './EmploymentHistory';
 
 export default function ResumeBody1({ dCvs }: ResumeAside1) {
+  console.log('dCvs', dCvs);
   const styles = resumeDocumentStyle;
-  const { profile, employmentHistory, references } = dCvs;
+  const { profile, employmentHistory, references, education } = dCvs;
 
   const employmentDetails = formatEmploymentHistoryDetails(employmentHistory);
   return (
@@ -19,40 +20,6 @@ export default function ResumeBody1({ dCvs }: ResumeAside1) {
         {employmentDetails.map((item) => {
           return <EmploymentHistory key={item.role} details={item} />;
         })}
-        <Text style={styles.h4}>
-          Branch Customer Service Representative, AT&T Inc., Seattle
-        </Text>
-        <Text style={styles.date}>AUGUST 2014 - SEPTEMBER 2020</Text>
-        <View style={styles.listGroup}>
-          <Text style={styles.text}>
-            - Maintained up to date knowledge of products and services.
-          </Text>
-          <Text style={styles.text}>
-            - Handled customer calls and responded to queries about services,
-            product malfunctions, promotions and billing.
-          </Text>
-          <Text style={styles.text}>
-            - Worked to address all customer concerns in a timely and effective
-            manner.
-          </Text>
-        </View>
-      </View>
-      <View>
-        <Text style={styles.subheading}>
-          Customer Service Representation, Anglo Hotel, NYC
-        </Text>
-        <Text style={styles.date}>AUGUST 2010 - AUGUST 2014</Text>
-        <View style={styles.listGroup}>
-          <Text style={styles.text}>
-            - Provided High quality customer service to customers.
-          </Text>
-          <Text style={styles.text}>
-            - Handled Sales transactions and returns in a timely manner
-          </Text>
-          <Text style={styles.text}>
-            - Greeted customers in a friendly and helpful manner
-          </Text>
-        </View>
       </View>
       <View>
         <Text style={styles.subheading}>Education</Text>

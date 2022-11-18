@@ -160,7 +160,7 @@ export const cvsData = {
         [
           {
             text: 'Bachelor of Communications, University of Seattle, Seattle.',
-            name: 'course-1',
+            name: 'course',
             placeholder: 'Course of Study, School',
             id: 'education.course-1',
           },

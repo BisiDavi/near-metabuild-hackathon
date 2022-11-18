@@ -3,28 +3,32 @@ import { Text, View, StyleSheet } from '@react-pdf/renderer';
 
 export default function EmploymentHistory({ details }: employmentHistoryProps) {
   const styles = StyleSheet.create({
-    list: {
-      display: 'flex',
-      listStyle: 'disc',
-      fontSize: 12,
-      lineHeight: 1.15,
-    },
     listGroup: {
       marginTop: 10,
+    },
+    h4: {
+      fontWeight: 'bold',
+      fontSize: 12,
+    },
+    date: {
+      fontSize: 8,
+    },
+    text: {
+      fontSize: 10,
     },
   });
   return (
     <View>
-      <Text>{details.role}</Text>
-      <Text>
+      <Text style={styles.h4}>{details.role}</Text>
+      <Text style={styles.date}>
         {details.startedOn} - {details.endOn}
       </Text>
       <View style={styles.listGroup}>
         {details.achievements.map((achievement, index) => {
           return (
-            <View key={index}>
-              <Text style={styles.list}>{achievement.text}</Text>
-            </View>
+            <Text key={index} style={styles.text}>
+              {achievement.text}
+            </Text>
           );
         })}
       </View>
