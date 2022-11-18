@@ -4,7 +4,7 @@ import type { employmentHistoryProps } from '@/types/interfaces';
 export default function EmploymentHistory({ details }: employmentHistoryProps) {
   const styles = StyleSheet.create({
     view: {
-      marginBottom: 6,
+      marginBottom: 3,
     },
     listGroup: {
       marginTop: 5,

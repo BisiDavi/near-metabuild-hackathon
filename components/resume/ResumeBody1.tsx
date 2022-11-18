@@ -33,7 +33,7 @@ export default function ResumeBody1({ dCvs }: ResumeAside1) {
         </Text>
         <Text style={styles.date}>AUGUST 2007 - May 2011</Text>
       </View>
-      <View>
+      <View style={styles.subsection}>
         <Text style={styles.subheading}>References</Text>
         <Text style={styles.text}>David Leeds from Anglo Hotel</Text>
         <Text style={styles.text}>dleeds@anglo.com | 732-189-0909</Text>
