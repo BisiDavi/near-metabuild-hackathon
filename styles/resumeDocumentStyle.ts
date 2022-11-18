@@ -28,7 +28,8 @@ export const resumeDocumentStyle = StyleSheet.create({
   },
   date: {
     fontSize: 8,
-    marginBottom: 3,
+    marginBottom: 2,
+    color: 'gray',
   },
   section: {
     margin: 10,
@@ -55,11 +56,11 @@ export const resumeDocumentStyle = StyleSheet.create({
   heading: {
     fontWeight: 'bold',
     fontFamily: 'Lato Bold',
-    fontSize: 14,
+    fontSize: 13,
     marginVertical: 2,
   },
   view: {
-    marginBottom: 3,
+    marginBottom: 4,
   },
   h4: {
     fontWeight: 'bold',
@@ -69,7 +70,7 @@ export const resumeDocumentStyle = StyleSheet.create({
   subheading: {
     fontWeight: 'bold',
     fontFamily: 'Lato Bold',
-    fontSize: 12,
+    fontSize: 11,
     marginVertical: 2,
   },
   skill: {
