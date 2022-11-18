@@ -67,6 +67,14 @@ export const resumeDocumentStyle = StyleSheet.create({
     fontFamily: 'Lato Bold',
     fontSize: 11,
   },
+  h6: {
+    fontWeight: 'bold',
+    fontFamily: 'Lato Bold',
+    fontSize: 11,
+  },
+  p: {
+    fontSize: 10,
+  },
   subheading: {
     fontWeight: 'bold',
     fontFamily: 'Lato Bold',
