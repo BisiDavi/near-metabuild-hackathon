@@ -162,7 +162,7 @@ export const cvsData = {
             text: 'Bachelor of Communications, University of Seattle, Seattle.',
             name: 'course',
             placeholder: 'Course of Study, School',
-            id: 'education.course-1',
+            id: 'education.course',
           },
         ],
         [
@@ -192,9 +192,9 @@ export const cvsData = {
         [
           {
             text: 'High School Diploma, Hartwick High School, Hartwick',
-            name: 'course-2',
+            name: 'course',
             placeholder: 'Course of Study, School',
-            id: 'education.course-2',
+            id: 'education.course2',
             type: 'input',
           },
         ],
@@ -217,7 +217,7 @@ export const cvsData = {
         [
           {
             text: '',
-            name: 'achievement-2',
+            name: 'achievement-1',
             placeholder: 'Achievement',
             id: 'education.achievement-2',
           },

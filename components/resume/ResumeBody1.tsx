@@ -1,16 +1,17 @@
 import { Text, View } from '@react-pdf/renderer';
 
+import EmploymentHistory from '@/components/resume/EmploymentHistory';
 import { resumeDocumentStyle } from '@/styles/resumeDocumentStyle';
-import { ResumeAside1 } from '@/types/interfaces';
-import formatEmploymentHistoryDetails from '@/lib/formatEmploymentHistoryDetails';
-import EmploymentHistory from './EmploymentHistory';
+import formatDetails from '@/lib/formatDetails';
+import type { ResumeAside1 } from '@/types/interfaces';
 
 export default function ResumeBody1({ dCvs }: ResumeAside1) {
-  // console.log('dCvs', dCvs);
   const styles = resumeDocumentStyle;
   const { profile, employmentHistory, references, education } = dCvs;
 
-  const employmentDetails = formatEmploymentHistoryDetails(employmentHistory);
+  const employmentDetails = formatDetails(employmentHistory);
+  const educationDetails = formatDetails(education);
+  console.log('educationDetails', educationDetails);
   return (
     <View style={styles.section}>
       <Text style={styles.heading}>Profile</Text>
