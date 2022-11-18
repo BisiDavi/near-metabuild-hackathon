@@ -1,6 +1,7 @@
 import { Text, View } from '@react-pdf/renderer';
 
 import EmploymentHistory from '@/components/resume/EmploymentHistory';
+import Education from '@/components/resume/Education';
 import { resumeDocumentStyle } from '@/styles/resumeDocumentStyle';
 import formatDetails from '@/lib/formatDetails';
 import type { ResumeAside1 } from '@/types/interfaces';
@@ -24,15 +25,9 @@ export default function ResumeBody1({ dCvs }: ResumeAside1) {
       </View>
       <View style={styles.subsection}>
         <Text style={styles.heading}>Education</Text>
-        <Text style={styles.text}>
-          Bachelor of Communications, University of Seattle, Seattle
-        </Text>
-        <Text style={styles.date}>AUGUST 2007 - May 2011</Text>
-        <Text style={styles.text}>- Graduated with High Honours.</Text>
-        <Text style={styles.text}>
-          - High School Diploma, Hartwick High School, Hartwick
-        </Text>
-        <Text style={styles.date}>AUGUST 2007 - May 2011</Text>
+        {educationDetails.map((item) => (
+          <Education key={item.course} details={item} />
+        ))}
       </View>
       <View style={styles.subsection}>
         <Text style={styles.subheading}>References</Text>

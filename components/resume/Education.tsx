@@ -1,16 +1,9 @@
 import { Text, View } from '@react-pdf/renderer';
+
 import { resumeDocumentStyle } from '@/styles/resumeDocumentStyle';
+import type { educationProps } from '@/types/interfaces';
 
-interface Props {
-  details: {
-    course: string;
-    startedOn: string;
-    endOn: string;
-    achievements: string[];
-  };
-}
-
-export default function Education({ details }: Props) {
+export default function Education({ details }: educationProps) {
   const styles = resumeDocumentStyle;
   return (
     <View>
@@ -18,9 +11,9 @@ export default function Education({ details }: Props) {
       <Text style={styles.date}>
         {details.startedOn} - {details.endOn}
       </Text>
-      {details.achievements.map((achievement: string) => (
-        <Text key={achievement} style={styles.text}>
-          - {achievement}.
+      {details.achievements.map((achievement) => (
+        <Text key={achievement.text} style={styles.text}>
+          - {achievement.text}
         </Text>
       ))}
     </View>
