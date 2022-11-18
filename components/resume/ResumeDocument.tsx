@@ -20,6 +20,8 @@ function ResumeDocumentComponent() {
   const { cvs } = useAppSelector((state) => state.builder);
   const dCvs = useDebounce<BuilderStateType['cvs']>(cvs, 2500);
 
+  console.log('dCvs', dCvs);
+
   return (
     <PDFViewer showToolbar={false} width="90%" height="100%">
       <Document>

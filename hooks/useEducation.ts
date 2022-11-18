@@ -20,7 +20,7 @@ export default function useEducation() {
           [
             {
               text: '',
-              name: `course-${educationLength}`,
+              name: 'course',
               placeholder: 'Course of Study',
               id: `education.course-${educationLength}`,
             },
@@ -28,13 +28,13 @@ export default function useEducation() {
           [
             {
               text: '',
-              name: `startedOn-${educationLength}`,
+              name: 'startedOn',
               placeholder: 'Started on (Date)',
               id: `education.started-on-${educationLength}`,
             },
             {
               text: '',
-              name: `endOn-${educationLength}`,
+              name: 'endOn',
               placeholder: 'End on (Date)',
               id: `education.end-on-${educationLength}`,
             },
@@ -42,7 +42,7 @@ export default function useEducation() {
           [
             {
               text: '',
-              name: `achievement-${educationLength}`,
+              name: 'achievement',
               placeholder: 'Achievement',
               id: `education.achievement-${educationLength}`,
             },
@@ -68,7 +68,7 @@ export default function useEducation() {
     const achievementLength = cvs.education[index][2].length + 1;
     const achievementArray = {
       text: '',
-      name: `achievement-${achievementLength}`,
+      name: 'achievement',
       placeholder: `Achievement ${achievementLength}`,
       id: 'education.achievement',
     };

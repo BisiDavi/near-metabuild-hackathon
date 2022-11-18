@@ -15,7 +15,7 @@ export default function useEmploymentHistory() {
     const achievementLength = cvs.employmentHistory[index][2].length + 1;
     const achievementArray = {
       text: '',
-      name: `achievement-${achievementLength}`,
+      name: `achievement`,
       placeholder: `Achievement ${achievementLength}`,
       id: `employmentHistory.achievement-${achievementLength}`,
       type: 'input',
