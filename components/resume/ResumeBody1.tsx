@@ -6,7 +6,7 @@ import formatEmploymentHistoryDetails from '@/lib/formatEmploymentHistoryDetails
 import EmploymentHistory from './EmploymentHistory';
 
 export default function ResumeBody1({ dCvs }: ResumeAside1) {
-  console.log('dCvs', dCvs);
+  // console.log('dCvs', dCvs);
   const styles = resumeDocumentStyle;
   const { profile, employmentHistory, references, education } = dCvs;
 
@@ -16,13 +16,13 @@ export default function ResumeBody1({ dCvs }: ResumeAside1) {
       <Text style={styles.heading}>Profile</Text>
       <Text style={styles.text}>{profile.intro}</Text>
       <View style={styles.subsection}>
-        <Text style={styles.subheading}>Employment History</Text>
+        <Text style={styles.heading}>Employment History</Text>
         {employmentDetails.map((item) => {
           return <EmploymentHistory key={item.role} details={item} />;
         })}
       </View>
-      <View>
-        <Text style={styles.subheading}>Education</Text>
+      <View style={styles.subsection}>
+        <Text style={styles.heading}>Education</Text>
         <Text style={styles.text}>
           Bachelor of Communications, University of Seattle, Seattle
         </Text>

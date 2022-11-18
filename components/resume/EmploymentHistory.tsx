@@ -1,13 +1,17 @@
-import { employmentHistoryProps } from '@/types/interfaces';
 import { Text, View, StyleSheet } from '@react-pdf/renderer';
+import type { employmentHistoryProps } from '@/types/interfaces';
 
 export default function EmploymentHistory({ details }: employmentHistoryProps) {
   const styles = StyleSheet.create({
+    view: {
+      marginBottom: 6,
+    },
     listGroup: {
-      marginTop: 10,
+      marginTop: 5,
     },
     h4: {
-      fontWeight: 'bold',
+      fontWeight: 600,
+      fontFamily: 'Lato Bold',
       fontSize: 12,
     },
     date: {
@@ -18,7 +22,7 @@ export default function EmploymentHistory({ details }: employmentHistoryProps) {
     },
   });
   return (
-    <View>
+    <View style={styles.view}>
       <Text style={styles.h4}>{details.role}</Text>
       <Text style={styles.date}>
         {details.startedOn} - {details.endOn}

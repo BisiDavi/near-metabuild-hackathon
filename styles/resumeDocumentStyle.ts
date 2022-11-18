@@ -7,6 +7,7 @@ export const resumeDocumentStyle = StyleSheet.create({
     height: '100%',
     display: 'flex',
     flexDirection: 'row',
+    fontFamily: 'Open Sans',
     lineHeight: 1.2,
   },
   aside: {
@@ -48,10 +49,11 @@ export const resumeDocumentStyle = StyleSheet.create({
     fontSize: 10,
   },
   subsection: {
-    marginVertical: 10,
+    marginVertical: 5,
   },
   heading: {
     fontWeight: 'bold',
+    fontFamily: 'Lato Bold',
     fontSize: 14,
     marginVertical: 2,
   },
@@ -61,6 +63,7 @@ export const resumeDocumentStyle = StyleSheet.create({
   },
   subheading: {
     fontWeight: 'bold',
+    fontFamily: 'Lato Bold',
     fontSize: 12,
     marginVertical: 2,
   },
