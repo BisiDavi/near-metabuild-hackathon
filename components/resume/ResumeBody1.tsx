@@ -2,38 +2,14 @@ import { Text, View } from '@react-pdf/renderer';
 
 import { resumeDocumentStyle } from '@/styles/resumeDocumentStyle';
 import { ResumeAside1 } from '@/types/interfaces';
-
-type itemGroupType = {
-  text: string;
-  name: string;
-  placeholder: string;
-  id: string;
-};
+import formatEmploymentHistoryDetails from '@/lib/formatEmploymentHistoryDetails';
 
 export default function ResumeBody1({ dCvs }: ResumeAside1) {
   const styles = resumeDocumentStyle;
   const { profile, employmentHistory, references } = dCvs;
 
-  function formatEmploymentHistory(itemGroup: itemGroupType) {
-    let details = {};
-    details = { ...details, [itemGroup.name]: itemGroup.text };
-    return details;
-  }
-
-  function formatVB(items: itemGroupType[]) {
-    let details = {};
-    let achievements: string[] = [];
-
-    items.map((item) => {
-      if (!item.id.includes('achievement')) {
-        details = { ...details, [item.name]: item.text };
-      } else {
-        achievements = [...achievements, item.text];
-        details = { ...details, achievements };
-      }
-    });
-    return details;
-  }
+  const vberb = formatEmploymentHistoryDetails(employmentHistory);
+  console.log('vberb,', vberb);
 
   return (
     <View style={styles.section}>
@@ -45,14 +21,9 @@ export default function ResumeBody1({ dCvs }: ResumeAside1) {
           return (
             <div className="historyGroup" key={index}>
               {historyGroup.map((employmentItemGroup, idx) => {
-                const trev = formatVB(employmentItemGroup);
-                console.log('trev', trev);
                 return (
                   <div className="employmentItemGroup" key={idx}>
                     {employmentItemGroup.map((itemGroup, itemIdx) => {
-                      const employmentDetails =
-                        formatEmploymentHistory(itemGroup);
-                      console.log('employmentDetails', employmentDetails);
                       return <div className="itemGroup" key={itemIdx}></div>;
                     })}
                   </div>
