@@ -3,10 +3,10 @@ import { memo } from 'react';
 
 import { useAppSelector } from '@/hooks/useRedux';
 import useDebounce from '@/hooks/useDebounce';
-import { BuilderStateType } from '@/types/redux-types';
+import ResumeAside1 from '@/components/resume/01/ResumeAside1';
+import ResumeBody1 from '@/components/resume/01/ResumeBody1';
 import { resumeDocumentStyle } from '@/styles/resumeDocumentStyle';
-import ResumeAside1 from '@/components/resume/ResumeAside1';
-import ResumeBody1 from '@/components/resume/ResumeBody1';
+import { BuilderStateType } from '@/types/redux-types';
 
 function ResumeDocumentComponent() {
   const styles = resumeDocumentStyle;
