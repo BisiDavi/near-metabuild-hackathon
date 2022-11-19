@@ -43,16 +43,12 @@ export default function ResumeSlider() {
         type: 'loop',
       }}
       aria-label="resumes"
-      className="mx-auto my-10 flex w-full items-center justify-center bg-blue-400 px-10 py-4"
+      className="my-10 flex w-full bg-blue-400 px-10 py-4"
     >
       {resumeImages.map((item) => (
         <SplideSlide key={item.name}>
-          <div className="resume-slide relative mx-auto flex flex-col items-center justify-center">
-            <img
-              src={item.image}
-              alt={item.name}
-              className="-ml-14 lg:-ml-40"
-            />
+          <div className="resume-slide mx-auto flex flex-col items-center justify-center">
+            <img src={item.image} alt={item.name} />
             <Button
               className="z-40 mx-auto flex items-center justify-center rounded-lg bg-blue-500 px-4 py-1 text-white"
               onClick={() => null}
