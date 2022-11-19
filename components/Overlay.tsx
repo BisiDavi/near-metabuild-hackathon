@@ -10,7 +10,7 @@ export default function Overlay() {
     googleProvider(setShowOverlay);
   }
 
-  const displayOverlay = showOverlay ? 'hidden' : '';
+  const displayOverlay = showOverlay ? '' : 'hidden';
 
   return (
     <div
