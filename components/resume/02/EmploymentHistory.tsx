@@ -18,7 +18,7 @@ export default function EmploymentHistory({ history }: employmentHistoryProps) {
           <View style={styles.listGroup}>
             {item.achievements.map((achievement, index) => {
               return (
-                <Text key={index} style={styles.text}>
+                <Text key={index} style={styles.list}>
                   {achievement.text}
                 </Text>
               );

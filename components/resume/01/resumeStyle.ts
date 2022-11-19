@@ -98,4 +98,8 @@ export const resumeStyle = StyleSheet.create({
   listGroup: {
     marginTop: 2,
   },
+  list: {
+    fontSize: 10,
+    marginLeft: 5,
+  },
 });

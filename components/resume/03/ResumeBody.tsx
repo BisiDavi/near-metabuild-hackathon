@@ -1,9 +1,9 @@
 import { View } from '@react-pdf/renderer';
 
-import EmploymentHistory from '@/components/resume/02/EmploymentHistory';
-import Education from '@/components/resume/02/Education';
-import References from '@/components/resume/02/References';
-import Profile from '@/components/resume/02/Profile';
+import EmploymentHistory from '@/components/resume/03/EmploymentHistory';
+import Education from '@/components/resume/03/Education';
+import References from '@/components/resume/03/References';
+import Profile from '@/components/resume/03/Profile';
 import formatDetails from '@/lib/formatDetails';
 import { formatReferences } from '@/lib/formatReference';
 import { resumeStyle } from '@/components/resume/01/resumeStyle';

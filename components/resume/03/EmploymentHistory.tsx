@@ -1,5 +1,5 @@
 import { Text, View } from '@react-pdf/renderer';
-import { resumeStyle } from '@/components/resume/01/resumeStyle';
+import { resumeStyle } from '@/components/resume/03/resumeStyle';
 
 import type { employmentHistoryProps } from '@/types/interfaces';
 
@@ -18,7 +18,7 @@ export default function EmploymentHistory({ history }: employmentHistoryProps) {
           <View style={styles.listGroup}>
             {item.achievements.map((achievement, index) => {
               return (
-                <Text key={index} style={styles.text}>
+                <Text key={index} style={styles.list}>
                   {achievement.text}
                 </Text>
               );
