@@ -74,7 +74,9 @@ export default function useFirebase() {
   function authSignOut() {
     const app = initFB();
     const auth = getAuth(app);
-    return signOut(auth);
+    return signOut(auth).then(() => {
+      toast.success("You're logged out.");
+    });
   }
 
   return {

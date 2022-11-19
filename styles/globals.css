@@ -13,3 +13,7 @@
 .resumeform {
   max-height: 60vh;
 }
+
+.toolbar {
+  display: none;
+}
