@@ -1,15 +1,26 @@
-import { useRouter } from 'next/router';
+import { GetServerSidePropsContext } from 'next';
 
 import Layout from '@/layout';
 import displayResume from '@/lib/displayResume';
 
-export default function ResumeTemplatePage() {
-  const router = useRouter();
-  const { slug }: any = router.query;
+interface Props {
+  slug: string;
+}
+
+export default function ResumeTemplatePage({ slug }: Props) {
   console.log('slug', slug);
   return (
     <Layout showHero={false}>
       {slug && <div className="content">{displayResume(slug)}</div>}
     </Layout>
   );
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const { slug } = context.query;
+  return {
+    props: {
+      slug,
+    },
+  };
 }

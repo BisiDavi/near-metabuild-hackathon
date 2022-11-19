@@ -1,6 +1,3 @@
-// import Resume from '@/components/resume/01/Resume';
-// import Resume2 from '@/components/resume/02/Resume';
-// import Resume3 from '@/components/resume/03/Resume';
 import dynamic from 'next/dynamic';
 
 const Resume = dynamic(() => import('@/components/resume/01/Resume'), {
