@@ -6,7 +6,7 @@ import References from '@/components/resume/02/References';
 import Profile from '@/components/resume/02/Profile';
 import formatDetails from '@/lib/formatDetails';
 import { formatReferences } from '@/lib/formatReference';
-import { resumeStyle } from '@/components/resume/01/resumeStyle';
+import { resumeStyle } from '@/components/resume/common/styles';
 import type { ResumeAside1 } from '@/types/interfaces';
 
 export default function ResumeBody({ dCvs }: ResumeAside1) {

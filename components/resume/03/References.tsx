@@ -1,6 +1,6 @@
 import { Text, View } from '@react-pdf/renderer';
 
-import { resumeStyle } from '@/components/resume/03/resumeStyle';
+import { resumeStyle } from '@/components/resume/common/styles';
 import Underline from '@/components/resume/common/Underline';
 
 interface referenceProps {

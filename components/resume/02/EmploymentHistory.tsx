@@ -1,5 +1,5 @@
 import { Text, View } from '@react-pdf/renderer';
-import { resumeStyle } from '@/components/resume/01/resumeStyle';
+import { resumeStyle } from '@/components/resume/common/styles';
 
 import type { employmentHistoryProps } from '@/types/interfaces';
 

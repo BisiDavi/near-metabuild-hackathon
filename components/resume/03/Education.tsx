@@ -1,7 +1,7 @@
 import { Text, View } from '@react-pdf/renderer';
 
 import Underline from '@/components/resume/common/Underline';
-import { resumeStyle } from '@/components/resume/03/resumeStyle';
+import { resumeStyle } from '@/components/resume/common/styles';
 import type { educationProps } from '@/types/interfaces';
 
 export default function Education({ details }: educationProps) {
@@ -18,7 +18,7 @@ export default function Education({ details }: educationProps) {
             {detail.startedOn} - {detail.endOn}
           </Text>
           {detail.achievements.map((achievement) => (
-            <Text key={achievement.text} style={styles.text}>
+            <Text key={achievement.text} style={styles.list}>
               {achievement.text}
             </Text>
           ))}
