@@ -21,8 +21,10 @@ export default function useFirebase() {
       currentUser.photoURL = user.photoURL;
       currentUser.emailVerified = user.emailVerified;
       currentUser.uid = user.uid;
+      return currentUser;
+    } else {
+      return null;
     }
-    return currentUser;
   }
 
   function initializeDB() {
