@@ -8,7 +8,7 @@ export default function ResumeTemplatePage() {
   const { slug }: any = router.query;
   return (
     <Layout showHero={false}>
-      <div className="content">{displayResume(slug)}</div>
+      {slug && <div className="content">{displayResume(slug)}</div>}
     </Layout>
   );
 }
