@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { ButtonProps } from '@/types/interfaces';
 
 export default function Button({
@@ -7,8 +8,8 @@ export default function Button({
   title = '',
   type = 'button',
   disabled = false,
+  iconUrl,
 }: ButtonProps) {
-
   return (
     <button
       title={title}
@@ -17,7 +18,7 @@ export default function Button({
       onClick={onClick}
       disabled={disabled}
     >
-      {text}
+      {iconUrl && <img src={iconUrl} alt={iconUrl} className="mr-3 h-7" />} {text}
     </button>
   );
 }

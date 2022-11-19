@@ -27,6 +27,7 @@ export interface ButtonProps {
   text: string;
   disabled?: boolean;
   title?: string;
+  iconUrl?:string
 }
 
 export interface FormProgressProps {
