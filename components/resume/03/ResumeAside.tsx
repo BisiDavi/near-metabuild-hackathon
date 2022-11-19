@@ -1,8 +1,8 @@
 import { Text, View } from '@react-pdf/renderer';
 
-import ProgressBar from '@/components/resume/common/ProgressBar';
 import Underline from '@/components/resume/common/Underline';
 import { resumeStyle } from '@/components/resume/03/resumeStyle';
+import ProgressCircle from '@/components/resume/common/ProgressCircle';
 import type { ResumeAside1 } from '@/types/interfaces';
 
 export default function ResumeAside({ dCvs }: ResumeAside1) {
@@ -25,7 +25,7 @@ export default function ResumeAside({ dCvs }: ResumeAside1) {
         <Text style={styles.subheading}>Skills</Text>
         <Underline bg="white" />
         {dCvs.skills.map((skill) => (
-          <ProgressBar key={skill.id} text={skill.text} />
+          <ProgressCircle key={skill.id} bg="white" text={skill.text} />
         ))}
       </View>
     </View>
