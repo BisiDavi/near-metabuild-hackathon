@@ -27,6 +27,7 @@ export default function ProgressCircle({ bg, text }: Props) {
     },
     progressCircle: {
       marginVertical: 4,
+      fontFamily: 'Open Sans',
     },
   });
 

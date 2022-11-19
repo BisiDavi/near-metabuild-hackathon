@@ -10,6 +10,19 @@ export const resumeStyle = StyleSheet.create({
     fontFamily: 'Open Sans',
     lineHeight: 1.4,
   },
+  profile: {
+    border: '2px solid black',
+    textAlign: 'center',
+    paddingVertical: 20,
+    backgroundColor: 'white',
+    width: '70%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 'auto',
+    marginBottom: 20,
+  },
   bio: {
     display: 'flex',
     flexDirection: 'row',
@@ -17,7 +30,7 @@ export const resumeStyle = StyleSheet.create({
     marginBottom: 20,
   },
   aside: {
-    backgroundColor: 'black',
+    backgroundColor: 'gray',
     width: '30%',
     height: '100%',
     flexDirection: 'column',
@@ -26,6 +39,7 @@ export const resumeStyle = StyleSheet.create({
     color: 'white',
     paddingTop: 60,
     paddingHorizontal: 15,
+    fontFamily: 'Open Sans',
   },
   image: {
     height: 100,
@@ -41,7 +55,7 @@ export const resumeStyle = StyleSheet.create({
   },
   section: {
     margin: 10,
-    marginTop: 40,
+    marginTop: 15,
     padding: 10,
     width: '70%',
     flexGrow: 1,

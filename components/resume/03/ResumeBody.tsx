@@ -4,9 +4,9 @@ import EmploymentHistory from '@/components/resume/03/EmploymentHistory';
 import Education from '@/components/resume/03/Education';
 import References from '@/components/resume/03/References';
 import Profile from '@/components/resume/03/Profile';
-import formatDetails from '@/lib/formatDetails';
 import { formatReferences } from '@/lib/formatReference';
-import { resumeStyle } from '@/components/resume/01/resumeStyle';
+import { resumeStyle } from '@/components/resume/03/resumeStyle';
+import formatDetails from '@/lib/formatDetails';
 import type { ResumeAside1 } from '@/types/interfaces';
 
 export default function ResumeBody({ dCvs }: ResumeAside1) {
