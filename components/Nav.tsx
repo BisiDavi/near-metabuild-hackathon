@@ -1,10 +1,17 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import useFirebase from '@/hooks/useFirebase';
 
 import navcontent from '@/json/nav.json';
 
 export default function Nav() {
   const pathname = usePathname();
+  const { getAuthdetails } = useFirebase();
+  const authDetails = getAuthdetails();
+  console.log('authDetails', authDetails);
+  const name = authDetails?.displayName
+    ? authDetails?.displayName
+    : authDetails?.email;
 
   return (
     <nav className="flex w-3/4 justify-end">
@@ -19,6 +26,16 @@ export default function Nav() {
             </li>
           );
         })}
+        {authDetails !== null && (
+          <>
+            <li className="rounded-full border px-4 py-2  font-bold">
+              👋 Hello, {name}
+            </li>
+            <li>
+              
+            </li>
+          </>
+        )}
       </ul>
     </nav>
   );

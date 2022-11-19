@@ -8,7 +8,6 @@ interface Props {
 }
 
 export default function ResumeTemplatePage({ slug }: Props) {
-  console.log('slug', slug);
   return (
     <Layout showHero={false}>
       {slug && <div className="content">{displayResume(slug)}</div>}
