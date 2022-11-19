@@ -10,8 +10,12 @@ export const resumeStyle = StyleSheet.create({
     fontFamily: 'Open Sans',
     lineHeight: 1.4,
   },
-  underline:{
-    
+  underline: {
+    height: 2,
+    width: '100%',
+    backgroundColor: 'white',
+    marginBottom: 10,
+    marginTop: -5,
   },
   bio: {
     display: 'flex',

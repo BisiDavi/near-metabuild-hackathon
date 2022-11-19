@@ -5,7 +5,7 @@ import { useAppSelector } from '@/hooks/useRedux';
 import useDebounce from '@/hooks/useDebounce';
 import ResumeAside from '@/components/resume/03/ResumeAside';
 import ResumeBody from '@/components/resume/03/ResumeBody';
-import { resumeStyle } from '@/components/resume/01/resumeStyle';
+import { resumeStyle } from '@/components/resume/03/resumeStyle';
 import { BuilderStateType } from '@/types/redux-types';
 
 function ResumeDocumentComponent() {
