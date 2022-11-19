@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 
-import ResumeEditor from '@/components/resume/ResumeEditor';
+import ResumeEditor from '@/components/resume/common/ResumeEditor';
 import Overlay from '@/components/Overlay';
 
 const ResumeDocument = dynamic(

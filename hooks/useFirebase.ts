@@ -6,7 +6,6 @@ import {
   signOut,
 } from 'firebase/auth';
 import { toast } from 'react-toastify';
-import axios from 'axios';
 
 import { createFirebaseApp } from '@/lib/firebaseConfig';
 

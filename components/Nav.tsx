@@ -1,16 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import useFirebase from '@/hooks/useFirebase';
 
+import useFirebase from '@/hooks/useFirebase';
 import navcontent from '@/json/nav.json';
-import LogoutIcon from './LogoutIcon';
+import LogoutIcon from '@/components/LogoutIcon';
 
 export default function Nav() {
   const pathname = usePathname();
   const { getAuthdetails, authSignOut } = useFirebase();
   const authDetails = getAuthdetails();
-  console.log('authDetails', authDetails);
   const name = authDetails?.displayName
     ? authDetails?.displayName
     : authDetails?.email;

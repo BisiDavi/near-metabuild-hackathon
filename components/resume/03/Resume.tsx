@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 
-import ResumeEditor from '@/components/resume/ResumeEditor';
+import ResumeEditor from '@/components/resume/common/ResumeEditor';
 
 const ResumeDocument = dynamic(
   () => import('../../../components/resume/03/ResumeDocument'),
