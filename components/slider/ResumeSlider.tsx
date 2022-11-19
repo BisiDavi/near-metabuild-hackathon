@@ -10,11 +10,11 @@ export default function ResumeSlider() {
   const router = useRouter();
 
   function onSelectResumeHandler(resumeName: string) {
-    router.push(`/template/${resumeName}`);
+    return router.push(`/template/${resumeName}`);
   }
 
   return (
-    <a id="get-started">
+    <a id="get-started" className="relative">
       <Splide
         options={{
           autoplay: false,
@@ -36,8 +36,8 @@ export default function ResumeSlider() {
               />
               <Button
                 className="absolute z-40 mx-auto flex items-center justify-center rounded-lg bg-blue-500 px-4 py-1 text-white hover:bg-opacity-80"
-                onClick={() => onSelectResumeHandler(item.name)}
                 text="Use this Template"
+                onClick={() => onSelectResumeHandler(item.name)}
               />
               <div className="absolute bottom-2 z-20 rounded-md bg-gray-400 px-2 py-0.5 text-sm text-white">
                 Price: {item.price} NEAR
