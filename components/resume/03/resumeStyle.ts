@@ -10,6 +10,9 @@ export const resumeStyle = StyleSheet.create({
     fontFamily: 'Open Sans',
     lineHeight: 1.4,
   },
+  underline:{
+    
+  },
   bio: {
     display: 'flex',
     flexDirection: 'row',

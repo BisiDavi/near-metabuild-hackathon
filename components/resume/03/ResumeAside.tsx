@@ -1,7 +1,7 @@
 import { Text, View } from '@react-pdf/renderer';
 
-import ProgressBar from '@/components/resume/01/ProgressBar';
-import { resumeStyle } from '@/components/resume/01/resumeStyle';
+import ProgressBar from '@/components/resume/03/ProgressBar';
+import { resumeStyle } from '@/components/resume/03/resumeStyle';
 import type { ResumeAside1 } from '@/types/interfaces';
 
 export default function ResumeAside({ dCvs }: ResumeAside1) {
@@ -11,6 +11,7 @@ export default function ResumeAside({ dCvs }: ResumeAside1) {
     <View style={styles.aside}>
       <View style={styles.details}>
         <Text style={styles.subheading}>Details</Text>
+        <View style={styles.underline} />
         <Text>{dCvs.address.address}</Text>
         <Text>
           {dCvs.address.city}, {dCvs.address.state}, {dCvs.address.zip}
