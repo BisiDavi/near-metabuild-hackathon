@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { Text, View, Image } from '@react-pdf/renderer';
+import { Text, View } from '@react-pdf/renderer';
 
 import Underline from '@/components/resume/common/Underline';
 import { resumeStyle } from '@/components/resume/03/resumeStyle';
