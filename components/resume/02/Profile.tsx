@@ -17,7 +17,7 @@ export default function Profile({ profile }: profileProps) {
     <View style={styles.subsection}>
       <View style={styles.bio}>
         <Image
-          src="https://res.cloudinary.com/verrb-inc/image/upload/v1668528090/john-doe_bm98ji.jpg"
+          src="https://res.cloudinary.com/verrb-inc/image/upload/v1668869250/john-doe-female_eoapgp.jpg"
           style={styles.image}
         />
         <View>

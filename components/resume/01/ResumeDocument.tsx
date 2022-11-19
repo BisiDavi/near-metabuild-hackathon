@@ -34,7 +34,11 @@ function ResumeDocumentComponent() {
   });
 
   return (
-    <PDFViewer showToolbar={false} width="90%" height="100%">
+    <PDFViewer
+      //  showToolbar={false}
+      width="90%"
+      height="100%"
+    >
       <Document>
         <Page wrap={true} size="A4" style={styles.page}>
           <ResumeAside dCvs={dCvs} />
