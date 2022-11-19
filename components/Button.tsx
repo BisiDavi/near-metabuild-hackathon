@@ -3,11 +3,12 @@ import { ButtonProps } from '@/types/interfaces';
 export default function Button({
   onClick,
   className,
-  type,
   text,
   title = '',
+  type = 'button',
   disabled = false,
 }: ButtonProps) {
+
   return (
     <button
       title={title}

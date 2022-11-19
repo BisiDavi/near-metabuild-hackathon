@@ -9,7 +9,8 @@ export default function Layout({ children }: PropsWithChildren<{}>) {
     <>
       <Header />
       <Hero />
-      <main className="container mx-auto py-6">{children}</main>
+      <main className="mx-auto py-6">{children}</main>
+
       <Footer />
     </>
   );

@@ -1,7 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import Image from 'next/image';
 
 import '@splidejs/react-splide/css';
+import Button from '@/components/Button';
 
 const resumeImages = [
   {
@@ -22,22 +24,41 @@ const resumeImages = [
     price: 2,
     name: 'resume-3',
   },
+  {
+    image:
+      'https://res.cloudinary.com/verrb-inc/image/upload/v1668870625/near-resume/resume-3_lss8gt.webp',
+    price: 2,
+    name: 'resume-4',
+  },
 ];
 
 export default function ResumeSlider() {
   return (
     <Splide
-      options={{ rewind: true, autoplay: true }}
-      aria-label="our cocktails"
-      className="container mx-auto my-10 flex items-center justify-center"
+      options={{
+        autoplay: false,
+        perPage: 3,
+        gap: '2rem',
+        perMove: 1,
+        type: 'loop',
+      }}
+      aria-label="resumes"
+      className="mx-auto my-10 flex w-full items-center justify-center bg-blue-400 px-10 py-4"
     >
       {resumeImages.map((item) => (
         <SplideSlide key={item.name}>
-          <Image
-            src={item.image}
-            alt={item.name}
-            className="-ml-14 lg:-ml-40"
-          />
+          <div className="resume-slide relative mx-auto flex flex-col items-center justify-center">
+            <img
+              src={item.image}
+              alt={item.name}
+              className="-ml-14 lg:-ml-40"
+            />
+            <Button
+              className="z-40 mx-auto flex items-center justify-center rounded-lg bg-blue-500 px-4 py-1 text-white"
+              onClick={() => null}
+              text="Use this Template"
+            />
+          </div>
         </SplideSlide>
       ))}
     </Splide>

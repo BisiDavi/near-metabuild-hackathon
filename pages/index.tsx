@@ -7,9 +7,9 @@ import ResumeSlider from '@/components/slider/ResumeSlider';
 export default function Home() {
   return (
     <Layout>
-      <Resume />
-      <Resume2 />
-      <Resume3 />
+      {/* <Resume /> */}
+      {/* <Resume2 /> */}
+      {/* <Resume3 /> */}
       <ResumeSlider />
     </Layout>
   );

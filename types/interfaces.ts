@@ -23,7 +23,7 @@ export interface SelectProps {
 export interface ButtonProps {
   onClick: () => void;
   className: string;
-  type: 'button' | 'submit' | 'reset';
+  type?: 'button' | 'submit' | 'reset';
   text: string;
   disabled?: boolean;
   title?: string;
