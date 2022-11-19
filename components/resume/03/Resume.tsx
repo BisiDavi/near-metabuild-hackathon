@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import ResumeEditor from '@/components/resume/ResumeEditor';
 
 const ResumeDocument = dynamic(
-  () => import('../../../components/resume/02/ResumeDocument'),
+  () => import('../../../components/resume/03/ResumeDocument'),
   { ssr: false },
 );
 
