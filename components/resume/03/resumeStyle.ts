@@ -25,6 +25,7 @@ export const resumeStyle = StyleSheet.create({
     justifyContent: 'flex-start',
     color: 'white',
     paddingTop: 60,
+    paddingHorizontal: 15,
   },
   image: {
     height: 100,
@@ -51,8 +52,8 @@ export const resumeStyle = StyleSheet.create({
   },
   details: {
     fontSize: 10,
-    paddingVertical: 10,
     lineHeight: 1.5,
+    width: '100%',
   },
   text: {
     fontSize: 10,
@@ -89,10 +90,10 @@ export const resumeStyle = StyleSheet.create({
     fontSize: 12,
     marginVertical: 2,
   },
-  skill: {
+  skills: {
     marginTop: 20,
-    fontSize: 12,
     fontWeight: 'bold',
+    width: '100%',
   },
   role: {
     fontSize: 8,
