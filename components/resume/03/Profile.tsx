@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { Text, View, Image } from '@react-pdf/renderer';
-import { resumeStyle } from '@/components/resume/02/resumeStyle';
+import { resumeStyle } from '@/components/resume/03/resumeStyle';
+import Underline from '@/components/resume/common/Underline';
 
 interface profileProps {
   profile: {
@@ -26,6 +27,7 @@ export default function Profile({ profile }: profileProps) {
         </View>
       </View>
       <Text style={styles.heading}>Profile</Text>
+      <Underline bg="black" />
       <Text style={styles.text}>{profile.intro}</Text>
     </View>
   );

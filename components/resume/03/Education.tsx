@@ -1,6 +1,7 @@
 import { Text, View } from '@react-pdf/renderer';
 
-import { resumeStyle } from '@/components/resume/01/resumeStyle';
+import Underline from '@/components/resume/common/Underline';
+import { resumeStyle } from '@/components/resume/03/resumeStyle';
 import type { educationProps } from '@/types/interfaces';
 
 export default function Education({ details }: educationProps) {
@@ -8,6 +9,8 @@ export default function Education({ details }: educationProps) {
   return (
     <View style={styles.subsection}>
       <Text style={styles.heading}>Education</Text>
+      <Underline bg="black" />
+
       {details.map((detail) => (
         <View style={styles.view} key={detail.course}>
           <Text style={styles.h4}>{detail.course}</Text>

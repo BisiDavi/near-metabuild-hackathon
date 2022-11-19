@@ -66,7 +66,7 @@ export const resumeStyle = StyleSheet.create({
     fontFamily: 'Lato Bold',
     fontSize: 16,
     marginVertical: 2,
-    lineHeight: 1,
+    lineHeight: 1.4,
   },
   view: {
     marginBottom: 4,
