@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import '@splidejs/react-splide/css';
 import Button from '@/components/Button';
 import resumes from '@/json/resumes.json';
+import Link from 'next/link';
 
 export default function ResumeSlider() {
   const router = useRouter();
@@ -34,11 +35,12 @@ export default function ResumeSlider() {
                 alt={item.name}
                 className="z-10 rounded-md"
               />
-              <Button
+              <Link
                 className="absolute z-40 mx-auto flex items-center justify-center rounded-lg bg-blue-500 px-4 py-1 text-white hover:bg-opacity-80"
-                text="Use this Template"
-                onClick={() => onSelectResumeHandler(item.name)}
-              />
+                href={`/template/${item.name}`}
+              >
+                Use this Template
+              </Link>
               <div className="absolute bottom-2 z-20 rounded-md bg-gray-400 px-2 py-0.5 text-sm text-white">
                 Price: {item.price} NEAR
               </div>

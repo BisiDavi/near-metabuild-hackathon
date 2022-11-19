@@ -6,7 +6,7 @@ export default function Overlay() {
       <h4 className="z-40 text-center text-4xl font-bold text-white opacity-100">
         Please Login to continue
       </h4>
-      <Button text="Login with Google" className='border px-4 rounded-full py-1 my-2' onClick={() => null} />
+      <Button text="Login with Google" className='border px-6 font-bold text-white rounded-full py-2 my-2' onClick={() => null} />
     </div>
   );
 }
