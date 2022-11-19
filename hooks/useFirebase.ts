@@ -57,13 +57,6 @@ export default function useFirebase() {
     const provider = new GoogleAuthProvider();
     return signInWithPopup(auth, provider).then((result) => {
       const user = result.user;
-      axios
-        .post('/api/email/send-signup-email', {
-          email: user.email,
-          name: user.displayName,
-        })
-        .then((response) => console.log('email response', response))
-        .catch((err) => console.log('email error', err));
       writeData(JSON.stringify(user), `/users/${user.uid}/`).then(() => {
         toast.success(`Welcome, ${user?.displayName}`);
         setShowOverlay(false);
