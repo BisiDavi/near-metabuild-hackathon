@@ -1,14 +1,11 @@
-import { getDatabase, ref, set, onValue, remove } from "firebase/database";
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
-import { toast } from "react-toastify";
-import { useRouter } from "next/router";
-import axios from "axios";
+import { getDatabase, ref, set, onValue, remove } from 'firebase/database';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import { toast } from 'react-toastify';
+import axios from 'axios';
 
-import { createFirebaseApp } from "@/lib/firebaseConfig";
+import { createFirebaseApp } from '@/lib/firebaseConfig';
 
 export default function useFirebase() {
-  const router = useRouter();
-
   function initFB() {
     const app = createFirebaseApp();
     return app;
@@ -54,22 +51,22 @@ export default function useFirebase() {
     return remove(dataRef);
   }
 
-  function googleProvider() {
+  function googleProvider(setShowOverlay: any) {
     const app = initFB();
     const auth = getAuth(app);
     const provider = new GoogleAuthProvider();
     return signInWithPopup(auth, provider).then((result) => {
       const user = result.user;
       axios
-        .post("/api/email/send-signup-email", {
+        .post('/api/email/send-signup-email', {
           email: user.email,
           name: user.displayName,
         })
-        .then((response) => console.log("email response", response))
-        .catch((err) => console.log("email error", err));
+        .then((response) => console.log('email response', response))
+        .catch((err) => console.log('email error', err));
       writeData(JSON.stringify(user), `/users/${user.uid}/`).then(() => {
         toast.success(`Welcome, ${user?.displayName}`);
-        router.push("/");
+        setShowOverlay(false);
       });
     });
   }
