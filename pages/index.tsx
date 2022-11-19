@@ -8,7 +8,8 @@ export default function Home() {
   return (
     <Layout>
       {/* <Resume /> */}
-      {/* <Resume2 /> */}
+      {/* <import Resume from '@/components/resume/01/Resume';
+ /> */}
       {/* <Resume3 /> */}
       <ResumeSlider />
     </Layout>

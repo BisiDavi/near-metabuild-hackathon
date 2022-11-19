@@ -4,19 +4,18 @@ import { useState } from 'react';
 
 import '@splidejs/react-splide/css';
 import Button from '@/components/Button';
-import Link from 'next/link';
 
 const resumeImages = [
   {
     image:
       'https://res.cloudinary.com/verrb-inc/image/upload/v1668870626/near-resume/resume-1_brqgaa.webp',
-    price: 2,
+    price: 1,
     name: 'resume-1',
   },
   {
     image:
       'https://res.cloudinary.com/verrb-inc/image/upload/v1668870626/near-resume/resume-2_swhdv4.webp',
-    price: 2,
+    price: 1.5,
     name: 'resume-2',
   },
   {
