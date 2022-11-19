@@ -1,0 +1,17 @@
+[
+  {
+    "image": "https://res.cloudinary.com/verrb-inc/image/upload/v1668870626/near-resume/resume-1_brqgaa.webp",
+    "price": 1,
+    "name": "resume-1"
+  },
+  {
+    "image": "https://res.cloudinary.com/verrb-inc/image/upload/v1668870626/near-resume/resume-2_swhdv4.webp",
+    "price": 1.5,
+    "name": "resume-2"
+  },
+  {
+    "image": "https://res.cloudinary.com/verrb-inc/image/upload/v1668870625/near-resume/resume-3_lss8gt.webp",
+    "price": 2,
+    "name": "resume-3"
+  }
+]

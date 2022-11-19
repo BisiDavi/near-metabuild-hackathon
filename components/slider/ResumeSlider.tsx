@@ -4,30 +4,11 @@ import { useState } from 'react';
 
 import '@splidejs/react-splide/css';
 import Button from '@/components/Button';
-
-const resumeImages = [
-  {
-    image:
-      'https://res.cloudinary.com/verrb-inc/image/upload/v1668870626/near-resume/resume-1_brqgaa.webp',
-    price: 1,
-    name: 'resume-1',
-  },
-  {
-    image:
-      'https://res.cloudinary.com/verrb-inc/image/upload/v1668870626/near-resume/resume-2_swhdv4.webp',
-    price: 1.5,
-    name: 'resume-2',
-  },
-  {
-    image:
-      'https://res.cloudinary.com/verrb-inc/image/upload/v1668870625/near-resume/resume-3_lss8gt.webp',
-    price: 2,
-    name: 'resume-3',
-  },
-];
+import resumes from '@/json/resumes.json';
 
 export default function ResumeSlider() {
   const [selectedResume, setSelectedResume] = useState('');
+  
   return (
     <a id="get-started">
       <Splide
@@ -41,7 +22,7 @@ export default function ResumeSlider() {
         aria-label="resumes"
         className="my-14 flex w-full bg-blue-400 p-10"
       >
-        {resumeImages.map((item) => (
+        {resumes.map((item) => (
           <SplideSlide key={item.name}>
             <div className="resume-slide relative mx-auto flex flex-col items-center justify-center">
               <img
