@@ -1,8 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import useFirebase from '@/hooks/useFirebase';
 
 import navcontent from '@/json/nav.json';
+import LogoutIcon from './LogoutIcon';
 
 export default function Nav() {
   const pathname = usePathname();
@@ -28,11 +30,12 @@ export default function Nav() {
         })}
         {authDetails !== null && (
           <>
-            <li className="rounded-full border px-4 py-2  font-bold">
+            <li className="rounded-full border px-4 py-1 font-bold hover:border-blue-600   hover:bg-blue-600">
               👋 Hello, {name}
             </li>
-            <li>
+            <li className="flex items-center rounded-full border py-1  pl-4 font-bold hover:border-blue-600 hover:bg-blue-600">
               
+              Logout <LogoutIcon />
             </li>
           </>
         )}
