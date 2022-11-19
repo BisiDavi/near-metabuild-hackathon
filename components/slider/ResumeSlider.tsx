@@ -1,19 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import { useRouter } from 'next/router';
-
-import '@splidejs/react-splide/css';
-import Button from '@/components/Button';
-import resumes from '@/json/resumes.json';
 import Link from 'next/link';
 
+import resumes from '@/json/resumes.json';
+import '@splidejs/react-splide/css';
+
 export default function ResumeSlider() {
-  const router = useRouter();
-
-  function onSelectResumeHandler(resumeName: string) {
-    return router.push(`/template/${resumeName}`);
-  }
-
   return (
     <Splide
       id="get-started"
