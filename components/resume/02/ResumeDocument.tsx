@@ -35,7 +35,7 @@ function ResumeDocumentComponent() {
 
   return (
     <PDFViewer
-      // showToolbar={false}
+      showToolbar={false}
       width="90%"
       height="100%"
     >
