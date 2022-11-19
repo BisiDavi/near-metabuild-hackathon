@@ -3,6 +3,7 @@ import { Text, View } from '@react-pdf/renderer';
 import ProgressBar from '@/components/resume/common/ProgressBar';
 import { resumeStyle } from '@/components/resume/03/resumeStyle';
 import type { ResumeAside1 } from '@/types/interfaces';
+import Underline from '../common/Underline';
 
 export default function ResumeAside({ dCvs }: ResumeAside1) {
   const styles = resumeStyle;
@@ -11,9 +12,7 @@ export default function ResumeAside({ dCvs }: ResumeAside1) {
     <View style={styles.aside}>
       <View style={styles.details}>
         <Text style={styles.subheading}>Details</Text>
-        <View>
-          <View style={styles.underline}></View>
-        </View>
+        <Underline bg="white" />
         <Text>{dCvs.address.address}</Text>
         <Text>
           {dCvs.address.city}, {dCvs.address.state}, {dCvs.address.zip}
