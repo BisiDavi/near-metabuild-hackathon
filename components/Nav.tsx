@@ -8,7 +8,7 @@ import LogoutIcon from './LogoutIcon';
 
 export default function Nav() {
   const pathname = usePathname();
-  const { getAuthdetails } = useFirebase();
+  const { getAuthdetails, authSignOut } = useFirebase();
   const authDetails = getAuthdetails();
   console.log('authDetails', authDetails);
   const name = authDetails?.displayName
@@ -33,9 +33,13 @@ export default function Nav() {
             <li className="rounded-full border px-4 py-1 font-bold hover:border-blue-600   hover:bg-blue-600">
               👋 Hello, {name}
             </li>
-            <li className="flex items-center rounded-full border py-1  pl-4 font-bold hover:border-blue-600 hover:bg-blue-600">
-              
-              Logout <LogoutIcon />
+            <li>
+              <button
+                className="flex items-center rounded-full border py-1  pl-4 font-bold hover:border-blue-600 hover:bg-blue-600"
+                onClick={authSignOut}
+              >
+                Logout <LogoutIcon />
+              </button>
             </li>
           </>
         )}

@@ -1,5 +1,10 @@
 import { getDatabase, ref, set, onValue, remove } from 'firebase/database';
-import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import {
+  GoogleAuthProvider,
+  getAuth,
+  signInWithPopup,
+  signOut,
+} from 'firebase/auth';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 
@@ -66,12 +71,19 @@ export default function useFirebase() {
     });
   }
 
+  function authSignOut() {
+    const app = initFB();
+    const auth = getAuth(app);
+    return signOut(auth);
+  }
+
   return {
     getAuthdetails,
     initFB,
     writeData,
     readData,
     deleteData,
+    authSignOut,
     googleProvider,
   };
 }
