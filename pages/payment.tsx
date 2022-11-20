@@ -41,14 +41,13 @@ export default function Payment() {
         ) : (
           <div className="content flex h-full w-full items-center">
             <div className="w-3/12">
-              <h4>
-                Thanks for using{' '}
-                <span className="font-bold text-white">Near-Resume</span> in
-                making your Resumé
+              <h4 className="tex-sm">
+                Thanks for using <span className="font-bold">Near-Resumé</span>{' '}
+                in making your Resumé
               </h4>
               <Button
-                text={`Make Payment of ${price}`}
-                className="rounded bg-green-500 text-white"
+                text={`Make Payment of ${price} NEAR`}
+                className="my-3 rounded bg-green-500 px-2 py-1 text-white hover:bg-green-900"
                 onClick={() => null}
               />
             </div>
