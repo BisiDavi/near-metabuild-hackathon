@@ -6,9 +6,13 @@ import { login } from '@/lib/near';
 
 export default function NEAROverlay() {
   const router = useRouter();
-  const queries = router.query;
+  const routePath = router.asPath;
 
-  console.log('queries', queries);
+  const nearKeyArray = routePath?.split('all_keys=');
+  const nearKey = nearKeyArray.length === 2 ? nearKeyArray[1] : '';
+
+  console.log('routePath', routePath);
+  console.log('nearKey', nearKey);
 
   return (
     <div
