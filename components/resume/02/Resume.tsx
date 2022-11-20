@@ -12,7 +12,7 @@ export default function Resume() {
   return (
     <>
       <Overlay />
-      <div className="container mx-auto my-8 flex h-screen justify-center py-4">
+      <div className="container mx-auto flex h-screen justify-center py-4">
         <div className="w-3/12">
           <ResumeEditor />
         </div>
