@@ -1,5 +1,5 @@
 use near_sdk::borsh::{self, BorshDeserialize, BorshSerialize};
-use near_sdk::{near_bindgen, AccountId, PanicOnDefault, env};
+use near_sdk::{near_bindgen, AccountId, PanicOnDefault};
 use near_sdk::serde::{Serialize, Deserialize};
 
 #[near_bindgen]
@@ -33,7 +33,7 @@ impl Resume  {
             image: payload.image,
             price: payload.price,
             bought: 0,
-            owner: env::signer_account_id()
+            owner: "olubisidavid.testnet".parse().unwrap()
         }
     }
 
