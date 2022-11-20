@@ -1,22 +1,39 @@
-import { useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
+import { toast } from 'react-toastify';
 
 import useResume from '@/hooks/useResume';
 import formatResumePrice from '@/lib/formatResumePrice';
+import { resumeType } from '@/types';
 
 export default function usePayment() {
-  const { fetchResume, isUserSignedToNear } = useResume();
+  const { fetchResume, isUserSignedToNear, makePayment } = useResume();
   const router = useRouter();
   const resumeId: any = router.query.template;
   const { data: nearData, status: nearStatus } = useQuery(
     ['isUserSignedToNear'],
     isUserSignedToNear,
   );
-  const { data, status } = useQuery(
+  const { data, status } = useQuery<resumeType>(
     ['fetchResume'],
     () => fetchResume(resumeId),
     {
       enabled: !!resumeId,
+    },
+  );
+
+  const mutation = useMutation(
+    () => makePayment({ id: resumeId, price: data?.price }),
+    {
+      mutationKey: ['makePayment'],
+      onSuccess: async (data) => {
+        console.log('data', data);
+        toast.success('Payment successful');
+      },
+      onError: async (error) => {
+        console.log('error', error);
+        toast.error('Error making payment');
+      },
     },
   );
 
@@ -28,5 +45,6 @@ export default function usePayment() {
     nearStatus,
     data,
     status,
+    mutation,
   };
 }

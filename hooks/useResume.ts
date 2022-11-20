@@ -14,7 +14,7 @@ export default function useResume() {
     return await isSignedIn();
   }
 
-  async function makePayment({ id, price }: { id: string; price: string }) {
+  async function makePayment({ id, price }: { id: string; price: any }) {
     return await buyResume({ id, price });
   }
 
