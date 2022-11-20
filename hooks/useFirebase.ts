@@ -27,7 +27,7 @@ export default function useFirebase() {
       currentUser.uid = user.uid;
       return currentUser;
     } else {
-      return null;
+      return undefined;
     }
   }
 
