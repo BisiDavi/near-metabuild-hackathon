@@ -33,14 +33,12 @@ export async function getAccountId() {
   return walletConnection.getAccountId();
 }
 
-export async function login() {
+export async function login(resumeId: string) {
   const { walletConnection } = await initializeContract();
   walletConnection.requestSignIn({
     contractId: nearEnv.contractName,
-    successUrl:
-      'https://near-metabuild-hackathon.vercel.app/payment?login=successful',
-    failureUrl:
-      'https://near-metabuild-hackathon.vercel.app/payment?login=failure',
+    successUrl: `https://near-metabuild-hackathon.vercel.app/payment?template=${resumeId}&login=successful`,
+    failureUrl: `https://near-metabuild-hackathon.vercel.app/payment?template=${resumeId}&login=failure`,
   });
 }
 

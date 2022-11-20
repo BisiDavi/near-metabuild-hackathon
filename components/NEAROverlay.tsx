@@ -7,6 +7,9 @@ import { login } from '@/lib/near';
 export default function NEAROverlay() {
   const router = useRouter();
   const routePath = router.asPath;
+  const resumeId: any = router.query.template;
+
+  console.log('resumeId', resumeId);
 
   const nearKeyArray = routePath?.split('all_keys=');
   const nearKey = nearKeyArray.length === 2 ? nearKeyArray[1] : '';
@@ -26,7 +29,7 @@ export default function NEAROverlay() {
         text="Login to NEAR Test-Wallet"
         className="my-5 flex items-center rounded-full border-2 px-4 py-1 font-bold text-white hover:bg-white hover:text-blue-500"
         iconUrl="/near.png"
-        onClick={login}
+        onClick={() => login(resumeId)}
       />
     </div>
   );
