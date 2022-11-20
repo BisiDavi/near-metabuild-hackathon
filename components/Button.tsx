@@ -18,7 +18,7 @@ export default function Button({
       onClick={onClick}
       disabled={disabled}
     >
-      {iconUrl && <img src={iconUrl} alt={iconUrl} className="mr-3 h-7" />} {text}
+      {iconUrl && <img src={iconUrl} alt={iconUrl} className="mr-3 h-8" />} {text}
     </button>
   );
 }
