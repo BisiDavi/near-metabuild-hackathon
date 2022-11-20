@@ -19,7 +19,7 @@ export async function getResumes() {
 
 export async function getResume(id: string) {
   const { contract }: any = await initializeContract();
-  return contract.get_resume(id);
+  return contract.get_resume({ id });
 }
 
 export async function buyResume({ id, price }: { id: string; price: string }) {
