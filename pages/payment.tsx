@@ -7,6 +7,7 @@ export default function Payment() {
   const { price, nearData, nearStatus, data, status, mutation } = usePayment();
 
   console.log('status', status, 'data', data);
+  console.log('nearData', nearData);
 
   return (
     <Layout showHero={false}>
@@ -24,7 +25,7 @@ export default function Payment() {
               <div className="content flex h-full w-full items-center">
                 <div className="flex h-full w-3/12 flex-col items-center justify-center bg-gray-500 px-4">
                   <h4 className="text-center text-white">
-                    Thanks for using ${data.name} template from{' '}
+                    Thanks for using {data.name} template from{' '}
                     <span className="font-bold">Near-Resumé</span> in making
                     your Resumé, make payment to download the resume
                   </h4>

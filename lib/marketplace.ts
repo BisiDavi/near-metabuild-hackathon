@@ -23,6 +23,7 @@ export async function getResume(id: string) {
 }
 
 export async function buyResume({ id, price }: { id: string; price: string }) {
+  console.log('id', id, 'price', price);
   const { contract }: any = await initializeContract();
   contract.buy_resume({ resume_id: id }, GAS, price);
 }

@@ -4,10 +4,11 @@ import { toast } from 'react-toastify';
 
 import useResume from '@/hooks/useResume';
 import formatResumePrice from '@/lib/formatResumePrice';
+import { buyResume } from '@/lib/marketplace';
 import { resumeType } from '@/types';
 
 export default function usePayment() {
-  const { fetchResume, isUserSignedToNear, makePayment } = useResume();
+  const { fetchResume, isUserSignedToNear } = useResume();
   const router = useRouter();
   const resumeId: any = router.query.template;
   const { data: nearData, status: nearStatus } = useQuery(
@@ -23,8 +24,7 @@ export default function usePayment() {
   );
 
   const mutation = useMutation(
-    ({ id, price }: { id: string; price: string }) =>
-      makePayment({ id, price }),
+    ({ id, price }: { id: string; price: string }) => buyResume({ id, price }),
     {
       mutationKey: ['makePayment'],
       onSuccess: async (data) => {
