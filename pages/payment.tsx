@@ -34,7 +34,9 @@ export default function Payment() {
                   <Button
                     text={`Make Payment of ${price} NEAR`}
                     className="my-3 rounded bg-green-500 px-2 py-1 text-white hover:bg-green-900"
-                    onClick={() => null}
+                    onClick={() =>
+                      mutation.mutate({ id: data.id, price: data.price })
+                    }
                   />
                 </div>
                 <div className="w-9/12"></div>
