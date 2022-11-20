@@ -1,8 +1,15 @@
+/* eslint-disable @next/next/no-img-element */
+import { useRouter } from 'next/router';
+
 import Button from '@/components/Button';
 import { login } from '@/lib/near';
 
-/* eslint-disable @next/next/no-img-element */
 export default function NEAROverlay() {
+  const router = useRouter();
+  const queries = router.query;
+
+  console.log('queries', queries);
+
   return (
     <div
       className={`overlay absolute z-20 flex h-full w-full flex-col flex-col items-center justify-center bg-gray-400`}

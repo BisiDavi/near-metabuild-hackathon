@@ -45,7 +45,7 @@ export default function Resumeform({ resume }: any) {
         {formCurrentStage === 6 ? (
           <Link
             href={`/payment?template=${resumeType}`}
-            className="my-4 mx-auto flex rounded-md rounded bg-green-400 px-4 py-1 text-white hover:bg-opacity-80"
+            className="my-4 flex rounded-md rounded bg-green-400 px-4 py-1 text-white hover:bg-opacity-80"
           >
             Next →
           </Link>
