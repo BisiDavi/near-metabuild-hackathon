@@ -1,30 +1,12 @@
-import { useQuery } from '@tanstack/react-query';
-import { useRouter } from 'next/router';
-
 import NEAROverlay from '@/components/NEAROverlay';
-import useResume from '@/hooks/useResume';
 import Layout from '@/layout';
 import Button from '@/components/Button';
-import formatResumePrice from '@/lib/formatResumePrice';
+import usePayment from '@/hooks/usePayment';
 
 export default function Payment() {
-  const { fetchResume, isUserSignedToNear } = useResume();
-  const router = useRouter();
-  const resumeId: any = router.query.template;
-  const { data: nearData, status: nearStatus } = useQuery(
-    ['isUserSignedToNear'],
-    isUserSignedToNear,
-  );
-  const { data, status } = useQuery(
-    ['fetchResume'],
-    () => fetchResume(resumeId),
-    {
-      enabled: !!resumeId,
-    },
-  );
+  const { price, nearData, nearStatus, data, status } = usePayment();
+  
   console.log('status', status, 'data', data);
-
-  const price = status === 'success' ? formatResumePrice(data.price) : 0;
 
   return (
     <Layout showHero={false}>
@@ -42,7 +24,7 @@ export default function Payment() {
           <div className="content flex h-full w-full items-center">
             <div className="flex h-full w-3/12 flex-col items-center justify-center bg-gray-500 px-4">
               <h4 className="text-center text-white">
-                Thanks for using <span className="font-bold">Near-Resumé</span>{' '}
+                Thanks for using ${data.name} template from <span className="font-bold">Near-Resumé</span>{' '}
                 in making your Resumé, make payment to download the resume
               </h4>
               <p className="my-4 font-bold text-red-500">

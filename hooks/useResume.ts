@@ -1,4 +1,4 @@
-import { getResumes, getResume } from '@/lib/marketplace';
+import { getResumes, getResume, buyResume } from '@/lib/marketplace';
 import { isSignedIn } from '@/lib/near';
 
 export default function useResume() {
@@ -14,9 +14,9 @@ export default function useResume() {
     return await isSignedIn();
   }
 
-  async function makePayment(){
-    
+  async function makePayment({ id, price }: { id: string; price: string }) {
+    return await buyResume({ id, price });
   }
 
-  return { fetchResumes, fetchResume, isUserSignedToNear };
+  return { fetchResumes, fetchResume, isUserSignedToNear, makePayment };
 }
