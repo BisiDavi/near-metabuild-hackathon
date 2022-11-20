@@ -5,9 +5,12 @@ authors = ["Olubisi David"]
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 near-sdk = "4.0.0"
+serde= {version="1.0", features=["derive"] }
 uint = { version = "0.9.3", default-features = false }
 
 [profile.release]
