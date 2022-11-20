@@ -1,6 +1,6 @@
 export default function environment(env: string) {
   const CONTRACT_NAME =
-    process.env.PUBLIC_CONTRACT_NAME || 'olubisidavid.testnet';
+    process.env.NEXT_PUBLIC_CONTRACT_NAME || 'near-resume.olubisidavid.testnet';
   switch (env) {
     case 'mainnet':
       return {

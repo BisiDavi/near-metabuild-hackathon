@@ -14,7 +14,7 @@ export async function initializeContract() {
       nearEnv,
     ),
   );
-  const walletConnection = new WalletConnection(near, '');
+  const walletConnection = new WalletConnection(near, 'NEAR-RESUME');
   const accountId = walletConnection.getAccountId();
   const contract = new Contract(
     walletConnection.account(),
@@ -48,4 +48,9 @@ export async function login() {
 export async function logout() {
   const { walletConnection } = await initializeContract();
   walletConnection.signOut();
+}
+
+export async function isSignedIn() {
+  const { walletConnection } = await initializeContract();
+  return walletConnection.isSignedIn();
 }

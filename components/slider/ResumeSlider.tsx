@@ -8,17 +8,19 @@ import resumes from '@/json/resumes.json';
 import { getResumes } from '@/lib/marketplace';
 
 export default function ResumeSlider() {
-  // const [cResumes, setCResume] = useState([]);
+  const [cResumes, setCResume] = useState([]);
 
-  // const fetchResumes = useCallback(async () => {
-  //   setCResume(await getResumes());
-  // }, []);
+  const fetchResumes = useCallback(async () => {
+    setCResume(await getResumes());
+  }, []);
 
-  // useEffect(() => {
-  //   fetchResumes();
-  // }, []);
+  useEffect(() => {
+    if (cResumes.length === 0) {
+      fetchResumes();
+    }
+  }, []);
 
-  // console.log('cResumes', cResumes);
+  console.log('cResumes', cResumes);
 
   return (
     <div id="get-started" className="relative">
