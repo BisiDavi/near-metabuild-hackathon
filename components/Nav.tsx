@@ -1,18 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
-import useFirebase from '@/hooks/useFirebase';
 import navcontent from '@/json/nav.json';
 import LogoutIcon from '@/components/LogoutIcon';
+import useNav from '@/hooks/useNav';
 
 export default function Nav() {
-  const pathname = usePathname();
-  const { getAuthdetails, authSignOut } = useFirebase();
-  const authDetails = getAuthdetails();
-  const name = authDetails?.displayName
-    ? authDetails?.displayName
-    : authDetails?.email;
+  const { pathname, name, authSignOut, auth } = useNav();
 
   return (
     <nav className="flex w-3/4 justify-end">
@@ -27,7 +21,7 @@ export default function Nav() {
             </li>
           );
         })}
-        {authDetails !== null && (
+        {auth !== null && (
           <>
             <li className="rounded-full border px-4 py-1 font-bold hover:border-blue-600   hover:bg-blue-600">
               👋 Hello, {name}
