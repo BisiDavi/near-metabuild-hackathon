@@ -23,6 +23,8 @@ export default function usePayment() {
     },
   );
 
+  console.log('router', router);
+
   const mutation = useMutation(
     ({ id, price }: { id: string; price: string }) => buyResume({ id, price }),
     {

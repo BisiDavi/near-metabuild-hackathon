@@ -6,14 +6,7 @@ import environment from '@/lib/nearConfig';
 const nearEnv: any = environment('testnet');
 
 export async function initializeContract() {
-  const near = await connect(
-    Object.assign(
-      {
-        deps: { keyStores: new keyStores.BrowserLocalStorageKeyStore() },
-      },
-      nearEnv,
-    ),
-  );
+  const near = await connect(nearEnv);
   const walletConnection = new WalletConnection(near, 'NEAR-RESUME');
   const accountId = walletConnection.getAccountId();
   const contract = new Contract(
@@ -42,7 +35,13 @@ export async function getAccountId() {
 
 export async function login() {
   const { walletConnection } = await initializeContract();
-  walletConnection.requestSignIn(nearEnv.contractName);
+  walletConnection.requestSignIn({
+    contractId: nearEnv.contractName,
+    successUrl:
+      'https://near-metabuild-hackathon.vercel.app/payment?login=successful',
+    failureUrl:
+      'https://near-metabuild-hackathon.vercel.app/payment?login=failure',
+  });
 }
 
 export async function logout() {

@@ -1,3 +1,4 @@
+import { keyStores } from 'near-api-js';
 export default function environment(env: string) {
   const CONTRACT_NAME =
     process.env.NEXT_PUBLIC_CONTRACT_NAME || 'near-resume.olubisidavid.testnet';
@@ -5,6 +6,7 @@ export default function environment(env: string) {
     case 'mainnet':
       return {
         networkId: 'mainnet',
+        keyStore: new keyStores.BrowserLocalStorageKeyStore(),
         nodeUrl: 'https://rpc.mainnet.near.org',
         contractName: CONTRACT_NAME,
         walletUrl: 'https://wallet.near.org',
@@ -15,6 +17,7 @@ export default function environment(env: string) {
     case 'testnet':
       return {
         networkId: 'testnet',
+        keyStore: new keyStores.BrowserLocalStorageKeyStore(),
         nodeUrl: 'https://rpc.testnet.near.org',
         contractName: CONTRACT_NAME,
         walletUrl: 'https://wallet.testnet.near.org',
@@ -25,3 +28,4 @@ export default function environment(env: string) {
       throw Error(`Unknown environment '${env}'.`);
   }
 }
+
