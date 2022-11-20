@@ -1,11 +1,17 @@
-import { connect, Contract, WalletConnection } from 'near-api-js';
+import { connect, Contract, keyStores, WalletConnection } from 'near-api-js';
 import { formatNearAmount } from 'near-api-js/lib/utils/format';
 
 import environment from '@/lib/nearConfig';
 
+const nearEnv: any = environment('testnet');
 export async function initializeContract() {
-  const nearEnv: any = await environment('testnet');
-  const near = await connect(nearEnv);
+  const near = await connect(
+    Object.assign(
+      { deps: { keyStore: new keyStores.BrowserLocalStorageKeyStore() } },
+      nearEnv,
+    ),
+  );
+  console.log('near', near);
   const walletConnection = new WalletConnection(near, 'NEAR-RESUME');
   const accountId = walletConnection.getAccountId();
   const contract = new Contract(
