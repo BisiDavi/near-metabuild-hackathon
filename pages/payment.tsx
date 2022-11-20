@@ -39,7 +39,7 @@ export default function Payment() {
         ) : status === 'loading' ? (
           'loading, fetching payment details...'
         ) : (
-          <div className="content flex w-full items-center">
+          <div className="content flex h-full w-full items-center">
             <div className="w-3/12">
               <h4>
                 Thanks for using{' '}
