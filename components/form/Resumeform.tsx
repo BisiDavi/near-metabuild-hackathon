@@ -1,8 +1,14 @@
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+
 import Button from '@/components/Button';
 import displayFormElement from '@/lib/displayFormElement';
 import formContent from '@/json/form.json';
 
 export default function Resumeform({ resume }: any) {
+  const router = useRouter();
+  const currentRoute = router.asPath;
+  const resumeType = currentRoute.split("/template/")[1];
   const {
     formCurrentStage,
     formStage,
@@ -36,13 +42,21 @@ export default function Resumeform({ resume }: any) {
           text="← Previous"
           disabled={disabledPrev}
         />
-        <Button
-          className={`${disabledNextClassname} rounded bg-blue-500 px-4 py-1 hover:bg-opacity-80`}
-          type="button"
-          onClick={nextStageHandler}
-          text="Next →"
-          disabled={disabledNext}
-        />
+        {formCurrentStage === 6 ? (
+          <Link
+            href={`/payment?template=${resumeType}`}
+            className="my-4 mx-auto flex rounded-md rounded bg-green-400 px-4 py-1 text-white hover:bg-opacity-80"
+          >
+            Next →
+          </Link>
+        ) : (
+          <Button
+            className={`${disabledNextClassname} rounded bg-blue-500 px-4 py-1 hover:bg-opacity-80`}
+            onClick={nextStageHandler}
+            text="Next →"
+            disabled={disabledNext}
+          />
+        )}
       </div>
     </form>
   );
