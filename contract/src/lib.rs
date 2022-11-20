@@ -37,8 +37,8 @@ impl Marketplace{
     }
     
     #[payable]
-    pub fn buy_resume(&mut self, id: &String){
-        match self.listed_resumes.get(id){
+    pub fn buy_resume(&mut self, resume_id: &String){
+        match self.listed_resumes.get(resume_id){
             Some(ref mut resume) => {
                 let price = resume.price.parse().unwrap();
                 assert_eq!(env::attached_deposit(), price, "attached deposit should be equal to the product's");
