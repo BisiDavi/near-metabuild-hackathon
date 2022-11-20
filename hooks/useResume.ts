@@ -1,9 +1,13 @@
-import { getResumes } from '@/lib/marketplace';
+import { getResumes, getResume } from '@/lib/marketplace';
 
 export default function useResume() {
   async function fetchResumes() {
     return await getResumes();
   }
 
-  return { fetchResumes };
+  async function fetchResume(id: string) {
+    return await getResume(id);
+  }
+
+  return { fetchResumes, fetchResume };
 }

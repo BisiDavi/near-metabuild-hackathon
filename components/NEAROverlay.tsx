@@ -10,13 +10,13 @@ export default function NEAROverlay() {
 
   const nearKeyArray = routePath?.split('all_keys=');
   const nearKey = nearKeyArray.length === 2 ? nearKeyArray[1] : '';
-
+  const loginSuccess = routePath.includes('all_keys') ? 'hidden' : '';
   console.log('routePath', routePath);
   console.log('nearKey', nearKey);
 
   return (
     <div
-      className={`overlay absolute z-20 flex h-full w-full flex-col flex-col items-center justify-center bg-gray-400`}
+      className={`overlay ${loginSuccess} absolute z-20 flex h-full w-full flex-col flex-col items-center justify-center bg-gray-400`}
     >
       <div className="flex  items-center text-xl font-bold text-white">
         Connect to <img src="/near.png" className="mx-1 w-8" alt="near-icon" />{' '}

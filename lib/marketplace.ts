@@ -5,7 +5,7 @@ import { initializeContract } from '@/lib/near';
 
 const GAS = 100000000000000;
 
-export async function createResume(resume:any) {
+export async function createResume(resume: any) {
   const { contract }: any = await initializeContract();
   resume.id = uuidv4();
   resume.price = parseNearAmount(resume.price + '');
@@ -15,6 +15,11 @@ export async function createResume(resume:any) {
 export async function getResumes() {
   const { contract }: any = await initializeContract();
   return contract.get_resumes();
+}
+
+export async function getResume(id: string) {
+  const { contract }: any = await initializeContract();
+  return contract.get_resume(id);
 }
 
 export async function buyResume({ id, price }: { id: string; price: string }) {
