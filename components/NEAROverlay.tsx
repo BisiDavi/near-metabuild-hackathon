@@ -1,4 +1,5 @@
-import Button from './Button';
+import Button from '@/components/Button';
+import { login } from '@/lib/near';
 
 /* eslint-disable @next/next/no-img-element */
 export default function NEAROverlay() {
@@ -14,7 +15,7 @@ export default function NEAROverlay() {
         text="Login to NEAR Test-Wallet"
         className="my-5 flex items-center rounded-full border-2 px-4 py-1 font-bold text-white hover:bg-white hover:text-blue-500"
         iconUrl="/near.png"
-        onClick={() => null}
+        onClick={login}
       />
     </div>
   );
