@@ -1,11 +1,10 @@
-import { connect, Contract, keyStores, WalletConnection } from 'near-api-js';
+import { connect, Contract, WalletConnection } from 'near-api-js';
 import { formatNearAmount } from 'near-api-js/lib/utils/format';
 
 import environment from '@/lib/nearConfig';
 
-const nearEnv: any = environment('testnet');
-
 export async function initializeContract() {
+  const nearEnv: any = await environment('testnet');
   const near = await connect(nearEnv);
   const walletConnection = new WalletConnection(near, 'NEAR-RESUME');
   const accountId = walletConnection.getAccountId();

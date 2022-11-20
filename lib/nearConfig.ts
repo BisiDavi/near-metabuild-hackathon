@@ -1,7 +1,11 @@
-import { keyStores } from 'near-api-js';
-export default function environment(env: string) {
-  const myKeyStore = new keyStores.BrowserLocalStorageKeyStore();
+import { KeyPair, keyStores } from 'near-api-js';
+export default async function environment(env: string) {
+  const myKeyStore = new keyStores.InMemoryKeyStore();
+  const PRIVATE_KEY =
+    'by8kdJoJHu7uUkKfoaLd2J2Dp1q1TigeWMG123pHdu9UREqPcshCM223kWadm';
+  const keyPair = KeyPair.fromString(PRIVATE_KEY);
 
+  await myKeyStore.setKey('testnet', 'near-resume.olubisidavid.testnet', keyPair);
   const CONTRACT_NAME =
     process.env.NEXT_PUBLIC_CONTRACT_NAME || 'near-resume.olubisidavid.testnet';
   switch (env) {
