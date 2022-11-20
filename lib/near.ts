@@ -1,7 +1,7 @@
 import { connect, Contract, keyStores, WalletConnection } from 'near-api-js';
+import { formatNearAmount } from 'near-api-js/lib/utils/format';
 
 import environment from '@/lib/nearConfig';
-import { formatNearAmount } from 'near-api-js/lib/utils/format';
 
 const nearEnv: any = environment('testnet');
 
