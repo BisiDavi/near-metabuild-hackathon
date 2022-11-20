@@ -2,12 +2,12 @@ import { useState } from 'react';
 
 import Button from '@/components/Button';
 import useFirebase from '@/hooks/useFirebase';
+import useNav from '@/hooks/useNav';
 
 export default function Overlay() {
   const { googleProvider, getAuthdetails } = useFirebase();
   const [showOverlay, setShowOverlay] = useState(true);
-
-  const authDetails = getAuthdetails();
+  const { auth } = useNav();
 
   function googleHandler() {
     googleProvider(setShowOverlay);
@@ -17,7 +17,7 @@ export default function Overlay() {
 
   return (
     <>
-      {authDetails === null ? (
+      {auth === null ? (
         <div
           className={`overlay ${displayOverlay} absolute z-20 flex h-full w-full flex-col items-center justify-center bg-gray-500 bg-opacity-80`}
         >

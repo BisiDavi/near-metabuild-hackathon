@@ -14,6 +14,7 @@ export default function useFirebase() {
     const app = createFirebaseApp();
     return app;
   }
+  
   function getAuthdetails() {
     const app = initFB();
     const auth = getAuth(app);
