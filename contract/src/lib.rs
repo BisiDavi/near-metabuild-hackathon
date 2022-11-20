@@ -1,12 +1,16 @@
 use near_sdk::collections::UnorderedMap;
 use near_sdk::borsh::{self, BorshDeserialize, BorshSerialize};
-use near_sdk::{near_bindgen, AccountId, PanicOnDefault, env, Promise};
-use near_sdk::serde::{Serialize, Deserialize};
+use near_sdk::{near_bindgen,PanicOnDefault, env, Promise};
+
+pub use crate::model::*;
+
+mod model;
+
 
 #[near_bindgen]
 #[derive(BorshDeserialize, BorshSerialize, PanicOnDefault)]
 pub struct  Marketplace {
-    listed_resumes: UnorderedMap<String, Resume>
+    listed_resumes: UnorderedMap<String, model::Resume>
 }
 
 #[near_bindgen]
@@ -20,15 +24,15 @@ impl Marketplace{
     }
 
     pub fn set_resume(&mut self, payload:Payload){
-        let resume = Resume::from_payload(payload);
+        let resume = model::Resume::from_payload(payload);
         self.listed_resumes.insert(&resume.id, &resume);
     }
 
-    pub fn get_resume(&self, id: &String) -> Option<Resume>{
+    pub fn get_resume(&self, id: &String) -> Option<model::Resume>{
         self.listed_resumes.get(id)
     }
 
-    pub fn get_resumes(&self) -> Vec<Resume>{
+    pub fn get_resumes(&self) -> Vec<model::Resume>{
         return self.listed_resumes.values_as_vector().to_vec();
     }
     
@@ -49,44 +53,4 @@ impl Marketplace{
         }
     }
 
-}
-
-#[near_bindgen]
-#[derive(Serialize, Deserialize, PanicOnDefault)]
-pub struct Payload {
-    id:String,
-    name:String,
-    image:String,
-    price:String,
-}
-
-#[near_bindgen]
-#[derive(BorshSerialize,  BorshDeserialize, Serialize, PanicOnDefault)]
-pub struct  Resume {
-    id:String,
-    name:String,
-    image:String,
-    price:String,
-    bought:u32,
-    owner: AccountId
-}
-
- 
-
-#[near_bindgen]
-impl Resume  {
-    pub fn from_payload(payload: Payload) -> Self {
-        Self {
-            id: payload.id,
-            name: payload.name,
-            image: payload.image,
-            price: payload.price,
-            bought: 0,
-            owner: env::signer_account_id()
-        }
-    }
-
-    pub fn increment_bought(&mut self) {
-        self.bought = self.bought + 1;
-    }
 }
