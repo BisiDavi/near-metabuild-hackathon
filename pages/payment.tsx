@@ -40,11 +40,14 @@ export default function Payment() {
           'loading, fetching payment details...'
         ) : (
           <div className="content flex h-full w-full items-center">
-            <div className="w-3/12">
-              <h4 className="tex-sm">
+            <div className="flex h-full w-3/12 flex-col items-center justify-center bg-gray-500 px-4">
+              <h4 className="text-center text-white">
                 Thanks for using <span className="font-bold">Near-Resumé</span>{' '}
-                in making your Resumé
+                in making your Resumé, make payment to download the resume
               </h4>
+              <p className="my-4 font-bold text-red-500">
+                Pay with NEAR testnet token
+              </p>
               <Button
                 text={`Make Payment of ${price} NEAR`}
                 className="my-3 rounded bg-green-500 px-2 py-1 text-white hover:bg-green-900"

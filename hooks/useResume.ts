@@ -14,5 +14,9 @@ export default function useResume() {
     return await isSignedIn();
   }
 
+  async function makePayment(){
+    
+  }
+
   return { fetchResumes, fetchResume, isUserSignedToNear };
 }
