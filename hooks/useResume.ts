@@ -1,4 +1,5 @@
 import { getResumes, getResume } from '@/lib/marketplace';
+import { isSignedIn } from '@/lib/near';
 
 export default function useResume() {
   async function fetchResumes() {
@@ -9,5 +10,9 @@ export default function useResume() {
     return await getResume(id);
   }
 
-  return { fetchResumes, fetchResume };
+  async function isUserSignedToNear() {
+    return await isSignedIn();
+  }
+
+  return { fetchResumes, fetchResume, isUserSignedToNear };
 }
