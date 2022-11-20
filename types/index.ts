@@ -27,3 +27,10 @@ export type cvsGroupType =
   | 'skills'
   | 'employmentHistory'
   | 'education';
+
+  export type resumeType = {
+    image: string;
+    price: string;
+    name: string;
+    id: string;
+  };
