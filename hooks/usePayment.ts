@@ -23,7 +23,8 @@ export default function usePayment() {
   );
 
   const mutation = useMutation(
-    () => makePayment({ id: resumeId, price: data?.price }),
+    ({ id, price }: { id: string; price: string }) =>
+      makePayment({ id, price }),
     {
       mutationKey: ['makePayment'],
       onSuccess: async (data) => {
