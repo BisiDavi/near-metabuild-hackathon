@@ -27,9 +27,11 @@ export default function usePayment() {
     ({ id, price }: { id: string; price: string }) => buyResume({ id, price }),
     {
       mutationKey: ['makePayment'],
-      onSuccess: async (data) => {
-        console.log('data', data);
-        toast.success('Payment successful');
+      onSuccess: async (data: any) => {
+        console.log('onSuccess-data', data);
+        if (data) {
+          toast.success('Payment successful');
+        }
       },
       onError: async (error) => {
         console.log('error', error);

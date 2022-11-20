@@ -6,9 +6,6 @@ import usePayment from '@/hooks/usePayment';
 export default function Payment() {
   const { price, nearData, nearStatus, data, status, mutation } = usePayment();
 
-  console.log('status', status, 'data', data);
-  console.log('nearData', nearData);
-
   return (
     <Layout showHero={false}>
       <section className="make-payment container mx-auto h-screen bg-white">
@@ -29,7 +26,7 @@ export default function Payment() {
                     <span className="font-bold">Near-Resumé</span> in making
                     your Resumé, make payment to download the resume
                   </h4>
-                  <p className="my-4 font-bold text-red-500">
+                  <p className="my-4 font-bold text-red-300">
                     Pay with NEAR testnet token
                   </p>
                   <Button

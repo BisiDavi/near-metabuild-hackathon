@@ -21,7 +21,7 @@ export default function Nav() {
             </li>
           );
         })}
-        {auth !== null && (
+        {auth !== null && name && (
           <>
             <li className="rounded-full border px-4 py-1 font-bold hover:border-blue-600   hover:bg-blue-600">
               👋 Hello, {name}
