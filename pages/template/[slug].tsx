@@ -10,7 +10,7 @@ interface Props {
 export default function ResumeTemplatePage({ slug }: Props) {
   return (
     <Layout showHero={false}>
-      {slug && <div className="content">{displayResume(slug)}</div>}
+      {slug && <section className="content">{displayResume(slug)}</section>}
     </Layout>
   );
 }
