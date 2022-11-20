@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import NEAROverlay from '@/components/NEAROverlay';
 import Layout from '@/layout';
 import Button from '@/components/Button';
@@ -37,7 +38,9 @@ export default function Payment() {
                     }
                   />
                 </div>
-                <div className="w-9/12"></div>
+                <div className="w-9/12">
+                  <img src="/near-banner.webp" alt="near" />
+                </div>
               </div>
             )}
       </section>
