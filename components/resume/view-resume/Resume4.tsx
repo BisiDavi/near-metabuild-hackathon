@@ -5,7 +5,7 @@ import { resumeStyle } from '@/components/resume/04/resumeStyle';
 import { seeder4 } from '@/lib/seeder-4';
 import ResumeBody from '@/components/resume/04/ResumeBody';
 
-export default function Resume1() {
+export default function Resume4() {
   const styles = resumeStyle;
   const { cvs, selectedResume } = useAppSelector((state) => state.resume);
   const resumeContent = selectedResume === 'resume-4' ? cvs : seeder4;
