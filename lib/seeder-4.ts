@@ -1,7 +1,7 @@
 export const seeder4 = {
   profile: {
     name: 'Tony Sanders',
-    role: 'CUSTOMER SERVICE REPRESENTATIVE',
+    role: 'Customer Service Representative',
     intro:
       'Certified Accountant with five years of experience in account reconcilations, streamlining accounts, and financial planning. Highly Motivated professional with a proven track record of delivering accurate reports and high quality service. A dedicated leader with the ability to lead effective teams in attaining profit improvement.',
     profile: '',

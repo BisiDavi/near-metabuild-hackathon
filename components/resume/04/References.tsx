@@ -19,7 +19,7 @@ export default function References({ details }: referenceProps) {
         </View>
         <View style={styles.right}>
           {details.map((item) => (
-            <View key={item.title} style={styles.list}>
+            <View key={item.title} style={styles.reference}>
               <Text style={styles.h6}>{item.title}</Text>
               <Text style={styles.p}>
                 {item.email} | {item.phone}

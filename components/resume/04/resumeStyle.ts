@@ -117,4 +117,8 @@ export const resumeStyle = StyleSheet.create({
     marginLeft: 5,
     marginVertical: 2,
   },
+  reference: {
+    fontSize: 10,
+    marginVertical: 2,
+  },
 });
