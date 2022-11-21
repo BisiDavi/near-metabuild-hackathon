@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import Button from '@/components/Button';
 
 /* eslint-disable @next/next/no-img-element */
 interface Props {
@@ -6,8 +8,9 @@ interface Props {
   id: string;
 }
 export default function PaymentStatusNotification({ status, id }: Props) {
+  const router = useRouter();
   return (
-    <div className="item-scenter flex h-full flex-col justify-center">
+    <div className="flex h-full flex-col items-center justify-center">
       {status === 'successful' ? (
         <>
           <img
@@ -34,7 +37,15 @@ export default function PaymentStatusNotification({ status, id }: Props) {
         </>
       ) : (
         <>
-          <img src="/check-mark-verified.gif" alt="payment successful" />
+          <h4 className="my-4 text-center text-xl font-bold">
+            Oops, Payment not successful
+          </h4>
+          <img src="/error.png" alt="payment successful" className="w-1/3" />
+          <Button
+            text="Go back"
+            className="item-center my-4 mx-auto flex h-10 w-40 items-center justify-center border px-4 text-center text-xl font-bold hover:bg-red-500 hover:text-white"
+            onClick={() => router.back()}
+          />
         </>
       )}
     </div>
