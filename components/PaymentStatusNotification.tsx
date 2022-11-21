@@ -1,11 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-// import { PDFDownloadLink } from '@react-pdf/renderer';
+import { PDFDownloadLink } from '@react-pdf/renderer';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import Button from '@/components/Button';
-// import ViewPdf from '@/components/resume/view-resume/ViewPdf';
+import ViewPdf from '@/components/resume/view-resume/ViewPdf';
 import { getResumeName } from '@/lib/selectResume';
+import { useAppSelector } from '@/hooks/useRedux';
 
 interface Props {
   status: 'successful' | 'error';
@@ -14,7 +15,7 @@ interface Props {
 export default function PaymentStatusNotification({ status, id }: Props) {
   const router = useRouter();
   const resumeName = getResumeName(id);
-  console.log('id', id, 'resumeName', resumeName);
+  const { cvs, asideBg } = useAppSelector((state) => state.resume);
   return (
     <div className="flex h-full flex-col items-center justify-center">
       {status === 'successful' ? (
@@ -28,9 +29,9 @@ export default function PaymentStatusNotification({ status, id }: Props) {
             Payment successful, thanks for using NEAR-RESUMÉ, your resumé
             download should begin anytime soon.
           </h4>
-          {/* {id && (
+          {id && (
             <PDFDownloadLink
-              document={<ViewPdf resumeId={id} />}
+              document={<ViewPdf resumeId={id} asideBg={asideBg} cvs={cvs} />}
               fileName={resumeName}
             >
               <button className="relative my-8 mx-auto  flex w-auto justify-center rounded-md border-2 bg-gray-300 px-4 py-1.5 font-bold text-blue-500 hover:bg-gray-200">
@@ -39,7 +40,7 @@ export default function PaymentStatusNotification({ status, id }: Props) {
                 <span className="absolute -right-1.5 -top-1 inline-flex h-3 w-3 rounded-full bg-red-500"></span>
               </button>
             </PDFDownloadLink>
-          )} */}
+          )}
           <Link
             href={`/cv/rate/template?id=${id}`}
             className="item-center my-4 mx-auto flex h-10  items-center justify-center border px-4 text-center text-xl font-bold hover:bg-red-500 hover:text-white"

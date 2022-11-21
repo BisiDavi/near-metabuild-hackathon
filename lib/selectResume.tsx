@@ -3,17 +3,17 @@ import Resume2 from '@/components/resume/view-resume/Resume2';
 import Resume3 from '@/components/resume/view-resume/Resume3';
 import Resume4 from '@/components/resume/view-resume/Resume4';
 
-export default function selectResume(resume: string) {
+export default function selectResume(resume: string, asideBg: any, cvs: any) {
   console.log('resume-selectResume', resume);
   switch (resume) {
     case 'resume-1':
-      return <Resume1 />;
+      return <Resume1 asideBg={asideBg} cvs={cvs} />;
     case 'resume-2':
-      return <Resume2 />;
+      return <Resume2 asideBg={asideBg} cvs={cvs} />;
     case 'resume-3':
-      return <Resume3 />;
+      return <Resume3 asideBg={asideBg} cvs={cvs} />;
     case 'resume-4':
-      return <Resume4 />;
+      return <Resume4 asideBg={asideBg} cvs={cvs} />;
   }
 }
 
