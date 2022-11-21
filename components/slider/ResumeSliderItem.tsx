@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 
 import { useAppDispatch } from '@/hooks/useRedux';
 import Button from '@/components/Button';
@@ -16,15 +16,17 @@ interface Props {
 export default function ResumeSliderItem({ item }: Props) {
   const dispatch = useAppDispatch();
   const price = formatResumePrice(item.price);
+  const router = useRouter();
+
+  const text = item.bought > 1 ? 'people' : 'person';
 
   function selectResumeHandler(type: resumeStateType['selectedResume']) {
-    console.log('type', type);
     const selectedSeeder = selectSeeder(type);
-    Router.push(`/template/${type}`);
+    router.push(`/template/${type}`);
     return dispatch(selectResume({ type, seeder: selectedSeeder }));
   }
   return (
-    <div className="relative  mx-3 rounded flex flex-col items-center justify-center border">
+    <div className="relative  mx-3 flex flex-col items-center justify-center rounded border">
       <img src={item.image} alt={item.name} className="z-10 rounded-md" />
       <Button
         className="absolute z-50 mx-auto flex items-center justify-center rounded-lg bg-blue-500 px-4 py-1 text-white hover:bg-opacity-80"
@@ -32,7 +34,7 @@ export default function ResumeSliderItem({ item }: Props) {
         onClick={() => selectResumeHandler(item.id)}
       />
       <div className="absolute bottom-2 z-10 rounded-md bg-gray-400 px-2 py-0.5 text-sm text-white">
-        Price: {price} NEAR
+        Price: {price} NEAR,  {item.bought} {text} chose this template
       </div>
     </div>
   );

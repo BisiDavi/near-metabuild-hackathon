@@ -32,5 +32,6 @@ export type resumeType = {
   image: string;
   price: string;
   name: string;
+  bought: number;
   id: 'resume-1' | 'resume-2' | 'resume-3';
 };

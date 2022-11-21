@@ -20,6 +20,8 @@ export default function ResumeSlider() {
     swipeToSlide: true,
   };
 
+  console.log('data', data);
+
   return (
     <div id="get-started" className="resume-grid relative my-6">
       {data && (
