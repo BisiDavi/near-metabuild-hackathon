@@ -6,7 +6,7 @@ import type {
   addBuilderKeyType,
   achievementType,
 } from '@/types/redux-types';
-import { cvsData } from '@/lib/seeder';
+import { cvsData } from '@/lib/seeder-1';
 
 const initialState: BuilderStateType = {
   cvs: cvsData.cv1,
