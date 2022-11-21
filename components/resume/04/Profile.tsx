@@ -30,7 +30,7 @@ export default function Profile({ profile, address }: profileProps) {
       <Underline bg="black" />
       <View style={styles.view}>
         <View style={styles.left}>
-          <Text style={styles.heading}>Profile</Text>
+          <Text style={styles.heading}>PROFILE</Text>
         </View>
         <View style={styles.right}>
           <Text style={styles.text}>{profile.intro}</Text>

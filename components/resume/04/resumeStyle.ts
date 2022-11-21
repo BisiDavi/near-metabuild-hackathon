@@ -23,23 +23,10 @@ export const resumeStyle = StyleSheet.create({
     margin: 'auto',
     marginBottom: 20,
   },
-  bio: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 20,
-  },
-  image: {
-    height: 100,
-    width: 100,
-    marginVertical: 5,
-    borderRadius: '50%',
-    marginRight: 10,
-  },
   date: {
     fontSize: 8,
     marginBottom: 2,
-    color: 'gray',
+    color: 'black',
   },
   section: {
     margin: 10,
@@ -66,13 +53,15 @@ export const resumeStyle = StyleSheet.create({
   heading: {
     fontWeight: 'bold',
     fontFamily: 'Lato Bold',
-    fontSize: 16,
+    fontSize: 10,
     marginVertical: 2,
     lineHeight: 1.4,
   },
   view: {
     display: 'flex',
     flexDirection: 'row',
+    marginBottom: 10,
+    alignItems: 'flex-start',
   },
   left: {
     width: '30%',
