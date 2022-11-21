@@ -16,10 +16,14 @@ export default function Payment() {
   const router = useRouter();
 
   useEffect(() => {
-    if (router.asPath.includes('transactionHashes') && status === 'success' && data) {
+    if (
+      router.asPath.includes('transactionHashes') &&
+      status === 'success' &&
+      data
+    ) {
       router.push(`/payment-status?status=successful&template=${data.id}`);
     }
-  }, [router]);
+  }, [router, status]);
 
   return (
     <Layout showHero={false}>
