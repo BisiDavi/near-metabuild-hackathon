@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Router from 'next/router';
 
-import useResume from '@/hooks/useResume';
 import { useAppDispatch } from '@/hooks/useRedux';
 import Button from '@/components/Button';
 import selectSeeder from '@/lib/selectSeeder';
@@ -15,7 +14,6 @@ interface Props {
 }
 
 export default function ResumeSliderItem({ item }: Props) {
-  const { fetchResumes } = useResume();
   const dispatch = useAppDispatch();
   const price = formatResumePrice(item.price);
 
@@ -26,7 +24,7 @@ export default function ResumeSliderItem({ item }: Props) {
     return dispatch(selectResume({ type, seeder: selectedSeeder }));
   }
   return (
-    <div className="relative mx-auto flex flex-col items-center justify-center">
+    <div className="relative  mx-3 rounded flex flex-col items-center justify-center border">
       <img src={item.image} alt={item.name} className="z-10 rounded-md" />
       <Button
         className="absolute z-50 mx-auto flex items-center justify-center rounded-lg bg-blue-500 px-4 py-1 text-white hover:bg-opacity-80"
