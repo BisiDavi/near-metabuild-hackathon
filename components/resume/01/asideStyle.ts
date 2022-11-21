@@ -1,6 +1,6 @@
 import { StyleSheet } from '@react-pdf/renderer';
 
-export const asideStyles = (bg: string) =>
+export const asideStyle = (bg: string) =>
   StyleSheet.create({
     aside: {
       backgroundColor: bg,

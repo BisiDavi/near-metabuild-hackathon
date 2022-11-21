@@ -16,7 +16,7 @@ function ResumeDocumentComponent() {
   );
   const dCvs = useDebounce<resumeStateType['cvs']>(cvs, 2500);
   const resumeContent = selectedResume === 'resume-3' ? dCvs : seeder3;
-  const bg = asideBg['resume-1'];
+  const bg = asideBg['resume-3'];
 
   Font.register({
     family: 'Open Sans',
@@ -39,7 +39,7 @@ function ResumeDocumentComponent() {
   });
 
   return (
-    <PDFViewer showToolbar={false} width="90%" height="100%">
+    <PDFViewer showToolbar={false} width="100%" height="100%">
       <Document>
         <Page wrap={true} size="A4" style={styles.page}>
           <ResumeAside dCvs={resumeContent} bg={bg} />

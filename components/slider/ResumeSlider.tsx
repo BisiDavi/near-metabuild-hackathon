@@ -53,7 +53,7 @@ export default function ResumeSlider() {
                       className="z-10 rounded-md"
                     />
                     <Button
-                      className="absolute z-40 mx-auto flex items-center justify-center rounded-lg bg-blue-500 px-4 py-1 text-white hover:bg-opacity-80"
+                      className="absolute z-50 mx-auto flex items-center justify-center rounded-lg bg-blue-500 px-4 py-1 text-white hover:bg-opacity-80"
                       text="Use this Template"
                       onClick={() => selectResumeHandler(item.id)}
                     />
