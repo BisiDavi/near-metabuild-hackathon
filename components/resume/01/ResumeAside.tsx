@@ -8,6 +8,8 @@ import { asideStyle } from '@/components/resume/01/asideStyle';
 export default function ResumeAside({ dCvs, bg }: ResumeAside1) {
   const styles = asideStyle(bg);
 
+  console.log('dCvs', dCvs);
+
   return (
     <View style={styles.aside}>
       {dCvs.profile.profile && (

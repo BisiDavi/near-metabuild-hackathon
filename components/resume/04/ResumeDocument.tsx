@@ -10,9 +10,7 @@ import { resumeStateType } from '@/types/redux-types';
 
 function ResumeDocumentComponent() {
   const styles = resumeStyle;
-  const { cvs, selectedResume, asideBg } = useAppSelector(
-    (state) => state.resume,
-  );
+  const { cvs, selectedResume } = useAppSelector((state) => state.resume);
   const dCvs = useDebounce<resumeStateType['cvs']>(cvs, 2500);
   const resumeContent = selectedResume === 'resume-4' ? dCvs : seeder4;
 

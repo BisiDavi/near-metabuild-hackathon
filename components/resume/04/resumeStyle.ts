@@ -49,6 +49,7 @@ export const resumeStyle = StyleSheet.create({
   },
   subsection: {
     marginBottom: 10,
+    fontFamily: 'Open Sans',
   },
   heading: {
     fontWeight: 'bold',
@@ -70,12 +71,10 @@ export const resumeStyle = StyleSheet.create({
     width: '65%',
   },
   h4: {
-    fontWeight: 'bold',
     fontFamily: 'Lato Bold',
     fontSize: 12,
   },
   h6: {
-    fontWeight: 'bold',
     fontFamily: 'Lato Bold',
     fontSize: 10,
   },
@@ -90,9 +89,15 @@ export const resumeStyle = StyleSheet.create({
   },
   skills: {
     display: 'flex',
-    flexDirection: 'row',
     marginBottom: 10,
+    justifyContent: 'space-between',
+  },
+  skillSet: {
+    display: 'flex',
+    flexDirection: 'row',
     alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    fontSize: 10,
   },
   address: {
     fontSize: 10,
