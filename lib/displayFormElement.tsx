@@ -5,9 +5,9 @@ import SelectCountry from '@/components/form/SelectCountry';
 import Skill from '@/components/form/Skill';
 import Textarea from '@/components/form/Textarea';
 import EmploymentHistory from '@/components/form/EmploymentHistory';
-import type { inputType } from '@/types';
 import Education from '@/components/form/Education';
 import Reference from '@/components/form/Reference';
+import type { inputType } from '@/types';
 
 export default function displayFormElement(input: inputType) {
   switch (input.type) {
