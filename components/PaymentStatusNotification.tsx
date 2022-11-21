@@ -5,6 +5,7 @@ import { PDFDownloadLink } from '@react-pdf/renderer';
 
 import Button from '@/components/Button';
 import ViewPdf from '@/components/resume/view-resume/DownloadPdf';
+import { getResumeName } from '@/lib/selectResume';
 
 interface Props {
   status: 'successful' | 'error';
@@ -12,6 +13,7 @@ interface Props {
 }
 export default function PaymentStatusNotification({ status, id }: Props) {
   const router = useRouter();
+  const resumeName = getResumeName(id);
   return (
     <div className="flex h-full flex-col items-center justify-center">
       {status === 'successful' ? (
@@ -25,7 +27,10 @@ export default function PaymentStatusNotification({ status, id }: Props) {
             Payment successful, thanks for using NEAR-RESUMÉ, your resumé
             download should begin anytime soon.
           </h4>
-          <PDFDownloadLink document={<ViewPdf resumeId={id} />} fileName="">
+          <PDFDownloadLink
+            document={<ViewPdf resumeId={id} />}
+            fileName={resumeName}
+          >
             <button className="0 relative my-8 mx-auto flex w-auto rounded-md bg-white px-4 py-1.5 font-bold text-blue-500 hover:bg-gray-200">
               Download Resume
               <span className="absolute -right-1.5 -top-1 inline-flex h-3  w-3 animate-ping rounded-full bg-red-500"></span>
