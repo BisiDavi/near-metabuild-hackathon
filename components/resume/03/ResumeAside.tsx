@@ -1,12 +1,14 @@
 import { Text, View } from '@react-pdf/renderer';
 
 import Underline from '@/components/resume/common/Underline';
-import { resumeStyle } from '@/components/resume/03/resumeStyle';
+import { asideStyle } from '@/components/resume/03/asideStyle';
 import ProgressCircle from '@/components/resume/common/ProgressCircle';
 import type { ResumeAside1 } from '@/types/interfaces';
+import { useAppSelector } from '@/hooks/useRedux';
 
 export default function ResumeAside({ dCvs }: ResumeAside1) {
-  const styles = resumeStyle;
+  const { asideBg } = useAppSelector((state) => state.resume);
+  const styles = asideStyle(asideBg['resume-3']);
 
   return (
     <View style={styles.aside}>

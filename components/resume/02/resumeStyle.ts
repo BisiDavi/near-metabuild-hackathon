@@ -16,16 +16,6 @@ export const resumeStyle = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 20,
   },
-  aside: {
-    backgroundColor: 'black',
-    width: '30%',
-    height: '100%',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    color: 'white',
-    paddingTop: 60,
-  },
   image: {
     height: 100,
     width: 100,
