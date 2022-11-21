@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 
 import Button from '@/components/Button';
-import ViewPdf from '@/components/resume/view-resume/DownloadPdf';
+import ViewPdf from '@/components/resume/view-resume/ViewPdf';
 import { getResumeName } from '@/lib/selectResume';
 
 interface Props {

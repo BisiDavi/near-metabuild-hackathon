@@ -5,12 +5,12 @@ import Layout from '@/layout';
 
 export default function PaymentStatus() {
   const router = useRouter();
-  const status: any = router.query.status;
-  const id: any = router.query.template;
+  const status: any = router?.query?.status;
+  const id: any = router?.query?.template;
   return (
     <Layout showHero={false}>
       <section className="paymentStatus container mx-auto h-screen ">
-        {status && <PaymentStatusNotification status={status} id={id} />}
+        {status && id && <PaymentStatusNotification status={status} id={id} />}
       </section>
     </Layout>
   );

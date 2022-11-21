@@ -4,6 +4,7 @@ import Resume3 from '@/components/resume/view-resume/Resume3';
 import Resume4 from '@/components/resume/view-resume/Resume4';
 
 export default function selectResume(resume: string) {
+  console.log('resume-selectResume', resume);
   switch (resume) {
     case 'resume-1':
       return <Resume1 />;
