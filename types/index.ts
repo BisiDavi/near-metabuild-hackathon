@@ -28,9 +28,9 @@ export type cvsGroupType =
   | 'employmentHistory'
   | 'education';
 
-  export type resumeType = {
-    image: string;
-    price: string;
-    name: string;
-    id: string;
-  };
+export type resumeType = {
+  image: string;
+  price: string;
+  name: string;
+  id: 'resume-1' | 'resume-2' | 'resume-3';
+};

@@ -6,17 +6,28 @@ import type {
   addResumeKeyType,
   achievementType,
 } from '@/types/redux-types';
-import { cvsData } from '@/lib/seeder-1';
+import { seeder1 } from '@/lib/seeder-1';
 
 const initialState: resumeStateType = {
-  cvs: cvsData.cv1,
+  cvs: seeder1,
   selectedResume: null,
 };
 
-const CVSlice = createSlice({
+const resumeSlice = createSlice({
   name: 'resume',
   initialState,
   reducers: {
+    selectResume(
+      state,
+      action: PayloadAction<{
+        type: resumeStateType['selectedResume'];
+        seeder: any;
+      }>,
+    ) {
+      const { type, seeder } = action.payload;
+      state.selectedResume = type;
+      state.cvs = seeder;
+    },
     updateCV(state, action: PayloadAction<resumeStateType['cvs']>) {
       state.cvs = action.payload;
     },
@@ -104,5 +115,6 @@ export const {
   updateAchievement,
   removeAchievement,
   updateSectionText,
-} = CVSlice.actions;
-export default CVSlice.reducer;
+  selectResume,
+} = resumeSlice.actions;
+export default resumeSlice.reducer;
