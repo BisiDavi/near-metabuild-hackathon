@@ -89,9 +89,10 @@ export const resumeStyle = StyleSheet.create({
     marginVertical: 2,
   },
   skills: {
-    marginTop: 20,
-    fontWeight: 'bold',
-    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    marginBottom: 10,
+    alignItems: 'flex-start',
   },
   address: {
     fontSize: 10,
