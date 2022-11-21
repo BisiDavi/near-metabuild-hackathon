@@ -10,10 +10,7 @@ export default function PaymentStatus() {
   return (
     <Layout showHero={false}>
       <section className="paymentStatus container mx-auto h-screen ">
-        {
-          // status &&
-          <PaymentStatusNotification status="error" id={id} />
-        }
+        {status && <PaymentStatusNotification status={status} id={id} />}
       </section>
     </Layout>
   );
