@@ -45,6 +45,11 @@ const resumeSlice = createSlice({
         state.cvs.skills[index].text = text;
       }
     },
+    updateProfileImage(state, action) {
+      if (state.cvs) {
+        state.cvs.profile.profile = action.payload;
+      }
+    },
     updateReference(
       state,
       action: PayloadAction<{
@@ -141,5 +146,6 @@ export const {
   updateSectionText,
   selectResume,
   updateAsideBg,
+  updateProfileImage,
 } = resumeSlice.actions;
 export default resumeSlice.reducer;
