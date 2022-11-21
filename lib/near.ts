@@ -12,7 +12,7 @@ export async function initializeContract() {
       nearEnv,
     ),
   );
-  console.log('near', near);
+  // console.log('near', near);
   const walletConnection = new WalletConnection(near, 'NEAR-RESUME');
   const accountId = walletConnection.getAccountId();
   const contract = new Contract(
