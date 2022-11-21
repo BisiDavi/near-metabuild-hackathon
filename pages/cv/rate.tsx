@@ -10,7 +10,7 @@ export default function Rate() {
         </h4>
         <div className="how my-4 mx-auto flex flex-col items-center justify-center">
           <h6 className="text-right text-xl font-bold underline">
-            How to earn
+           Procedure
           </h6>
           <ul>
             <li className="my-1">
