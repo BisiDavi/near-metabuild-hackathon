@@ -14,7 +14,7 @@ export default function Education() {
 
   return (
     <div className="rounded border p-4">
-      {cvs.education.map((educationItem, index) => {
+      {cvs?.education.map((educationItem, index) => {
         return (
           <div
             className="education-item relative my-4 rounded border p-3"

@@ -15,7 +15,7 @@ export default function EmploymentHistory() {
   return (
     <div className="rounded border p-4">
       <div className="overflow-y-scroll">
-        {cvs.employmentHistory.map((history, index) => {
+        {cvs?.employmentHistory.map((history, index) => {
           return (
             <div
               className="history relative my-3 rounded-lg border p-3"

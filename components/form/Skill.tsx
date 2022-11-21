@@ -17,7 +17,7 @@ export default function Skill() {
       <p className="text-xs">
         Write a skill, and a percentage. <br /> eg. Multitasking Skill, 80%{' '}
       </p>
-      {cvs.skills.map((skill, index) => {
+      {cvs?.skills.map((skill, index) => {
         const inputValue = getInputValue(skill.id, index);
         const skillInputValue = index === 0 ? cvs.skills[0].text : inputValue;
         return (

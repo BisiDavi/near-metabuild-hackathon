@@ -31,7 +31,7 @@ export default function usePayment() {
       mutationKey: ['makePayment'],
       onSuccess: async (data: any) => {
         console.log('onSuccess-data', data);
-        if (data) {
+        if (router.asPath.includes('transactionHashes')) {
           toast.success('Payment successful');
         }
       },

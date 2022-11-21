@@ -11,11 +11,11 @@ export default function useReference() {
   const dispatch = useAppDispatch();
 
   function getInputValue(index1: number, index2: number) {
-    return cvs.references[index1][index2].text;
+    return cvs?.references[index1][index2].text;
   }
 
   function addReferenceHandler() {
-    const referencesLength = cvs.references.length;
+    const referencesLength = cvs?.references.length;
     dispatch(
       addSection({
         sectionKey: 'references',
@@ -47,20 +47,22 @@ export default function useReference() {
   }
 
   function removeReferenceHandler(index: number) {
-    let tempReference = [...cvs.references];
-    tempReference.splice(index, 1);
-    dispatch(
-      updateSection({ sectionKey: 'references', section: tempReference }),
-    );
+    if (cvs) {
+      let tempReference = [...cvs.references];
+      tempReference.splice(index, 1);
+      dispatch(
+        updateSection({ sectionKey: 'references', section: tempReference }),
+      );
+    }
   }
 
   function onChangeHandler(index1: number, index2: number, text: string) {
     dispatch(updateReference({ text, index1, index2 }));
   }
 
-  const disableDelete = cvs.references.length === 1 ? true : false;
+  const disableDelete = cvs?.references.length === 1 ? true : false;
   const disableDeleteClassname =
-    cvs.references.length === 1 ? 'cursor-not-allowed' : '';
+    cvs?.references.length === 1 ? 'cursor-not-allowed' : '';
 
   return {
     cvs,
