@@ -29,10 +29,11 @@ export default function usePayment() {
     ({ id, price }: { id: string; price: string }) => buyResume({ id, price }),
     {
       mutationKey: ['makePayment'],
-      onSuccess: async (data: any) => {
+      onSuccess: async (data: any, { id }) => {
         console.log('onSuccess-data', data);
         if (router.asPath.includes('transactionHashes')) {
           toast.success('Payment successful');
+          router.push(`/payment-status?status=successful&template=${id}`);
         }
       },
       onError: async (error) => {

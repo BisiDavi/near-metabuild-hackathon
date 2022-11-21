@@ -1,9 +1,11 @@
+import { useRouter } from 'next/router';
+
 import PaymentStatusNotification from '@/components/PaymentStatusNotification';
 import Layout from '@/layout';
-import { useRouter } from 'next/router';
 
 export default function PaymentStatus() {
   const router = useRouter();
+  console.log('router', router);
   return (
     <Layout showHero={false}>
       <section className="paymentStatus container mx-auto h-screen ">
