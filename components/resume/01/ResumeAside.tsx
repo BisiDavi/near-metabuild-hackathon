@@ -27,7 +27,7 @@ export default function ResumeAside({ dCvs }: ResumeAside1) {
         <Text>{dCvs.address.phone}</Text>
         <Text>{dCvs.address.email}</Text>
         <Text style={styles.skill}>Skills</Text>
-        {dCvs.skills.map((skill) => (
+        {dCvs.skills.map((skill:any) => (
           <ProgressBar key={skill.id} text={skill.text} />
         ))}
       </View>

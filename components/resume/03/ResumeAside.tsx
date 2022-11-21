@@ -24,7 +24,7 @@ export default function ResumeAside({ dCvs }: ResumeAside1) {
       <View style={styles.skills}>
         <Text style={styles.subheading}>Skills</Text>
         <Underline bg="white" />
-        {dCvs.skills.map((skill) => (
+        {dCvs.skills.map((skill: { [key: string]: string }) => (
           <ProgressCircle key={skill.id} bg="white" text={skill.text} />
         ))}
       </View>

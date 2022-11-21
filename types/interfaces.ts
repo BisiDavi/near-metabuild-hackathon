@@ -35,7 +35,7 @@ export interface FormProgressProps {
 }
 
 export interface ResumeAside1 {
-  dCvs: resumeStateType['cvs'];
+  dCvs: resumeStateType['cvs']| any
 }
 
 export interface employmentHistoryProps {

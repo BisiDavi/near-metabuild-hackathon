@@ -14,7 +14,7 @@ export default function Reference() {
 
   return (
     <div className="my-2 rounded border p-4">
-      {cvs.references.map((referenceGroup, index) => {
+      {cvs?.references.map((referenceGroup, index) => {
         return (
           <div className="group relative my-4 rounded border p-2" key={index}>
             {referenceGroup.map((item, idx) => {
