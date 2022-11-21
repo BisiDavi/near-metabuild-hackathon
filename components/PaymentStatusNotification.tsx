@@ -27,16 +27,18 @@ export default function PaymentStatusNotification({ status, id }: Props) {
             Payment successful, thanks for using NEAR-RESUMÉ, your resumé
             download should begin anytime soon.
           </h4>
-          <PDFDownloadLink
-            document={<ViewPdf resumeId={id} />}
-            fileName={resumeName}
-          >
-            <button className="0 relative my-8 mx-auto flex w-auto rounded-md bg-white px-4 py-1.5 font-bold text-blue-500 hover:bg-gray-200">
-              Download Resume
-              <span className="absolute -right-1.5 -top-1 inline-flex h-3  w-3 animate-ping rounded-full bg-red-500"></span>
-              <span className="absolute -right-1.5 -top-1 inline-flex h-3 w-3 rounded-full bg-red-500"></span>
-            </button>
-          </PDFDownloadLink>
+          {id && (
+            <PDFDownloadLink
+              document={<ViewPdf resumeId={id} />}
+              fileName={resumeName}
+            >
+              <button className="relative my-8 mx-auto  flex w-auto justify-center rounded-md border-2 bg-gray-300 px-4 py-1.5 font-bold text-blue-500 hover:bg-gray-200">
+                Download Resume
+                <span className="absolute -right-1.5 -top-1 inline-flex h-3  w-3 animate-ping rounded-full bg-red-500"></span>
+                <span className="absolute -right-1.5 -top-1 inline-flex h-3 w-3 rounded-full bg-red-500"></span>
+              </button>
+            </PDFDownloadLink>
+          )}
           <Link
             href={`/cv/rate/template?id=${id}`}
             className="item-center my-4 mx-auto flex h-10  items-center justify-center border px-4 text-center text-xl font-bold hover:bg-red-500 hover:text-white"

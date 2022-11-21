@@ -10,7 +10,7 @@ interface Props {
 export default function ResumeEditor({ colorPicker = true }: Props) {
   const resume = useResumeEditor();
   const { currentStage } = resume;
-  console.log('colorPicker', colorPicker);
+
   return (
     <aside className="mr-6">
       <h5 className="text-center text-xl font-bold">Edit Resume</h5>
