@@ -1,5 +1,23 @@
-export default function PaymentStatus() {
+/* eslint-disable @next/next/no-img-element */
+interface Props {
+  status: 'success' | 'error';
+}
+export default function PaymentStatus({ status }: Props) {
   return (
-    <div>PaymentStatus</div>
-  )
+    <div>
+      {status === 'success' ? (
+        <>
+          <img
+            src="/check-mark-verified.gif"
+            alt="payment successful"
+            className="mx-auto w-1/3"
+          />
+        </>
+      ) : (
+        <>
+          <img src="/check-mark-verified.gif" alt="payment successful" />
+        </>
+      )}
+    </div>
+  );
 }

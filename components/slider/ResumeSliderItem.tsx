@@ -34,7 +34,10 @@ export default function ResumeSliderItem({ item }: Props) {
         onClick={() => selectResumeHandler(item.id)}
       />
       <div className="absolute bottom-2 z-10 rounded-md bg-gray-400 px-2 py-0.5 text-sm text-white">
-        Price: {price} NEAR,  {item.bought} {text} chose this template
+        Price: {price} NEAR, {item.bought} {text} chose this template
+      </div>
+      <div className="absolute top-2 right-4 z-10 rounded-md bg-gray-400 px-2 py-0.5 text-sm text-white">
+        {item.name}
       </div>
     </div>
   );
