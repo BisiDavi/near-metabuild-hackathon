@@ -3,7 +3,11 @@ import FormProgress from '@/components/form/FormProgress';
 import Resumeform from '@/components/form/Resumeform';
 import AsideColorPicker from '@/components/resume/common/AsideColorPicker';
 
-export default function ResumeEditor() {
+interface Props {
+  colorPicker?: boolean;
+}
+
+export default function ResumeEditor({ colorPicker = true }: Props) {
   const resume = useResumeEditor();
   const { currentStage } = resume;
   return (
@@ -11,7 +15,7 @@ export default function ResumeEditor() {
       <h5 className="text-center text-xl font-bold">Edit Resume</h5>
       <FormProgress currentStage={currentStage} />
       <Resumeform resume={resume} />
-      <AsideColorPicker />
+      {colorPicker && <AsideColorPicker />}
     </aside>
   );
 }
