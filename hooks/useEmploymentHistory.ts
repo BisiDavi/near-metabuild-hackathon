@@ -5,10 +5,10 @@ import {
   updateAchievement,
   updateSection,
   updateSectionText,
-} from '@/redux/builder-slice';
+} from '@/redux/resume-slice';
 
 export default function useEmploymentHistory() {
-  const { cvs } = useAppSelector((state) => state.builder);
+  const { cvs } = useAppSelector((state) => state.resume);
   const dispatch = useAppDispatch();
 
   function addAchievementHandler(index: number) {

@@ -13,7 +13,7 @@ const initialState: BuilderStateType = {
 };
 
 const CVSlice = createSlice({
-  name: 'CV',
+  name: 'resume',
   initialState,
   reducers: {
     updateCV(state, action: PayloadAction<BuilderStateType['cvs']>) {

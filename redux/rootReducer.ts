@@ -2,10 +2,10 @@ import { combineReducers } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
 
-import BuilderReducer from '@/redux/builder-slice';
+import resumeReducer from '@/redux/resume-slice';
 
 const reducers = combineReducers({
-  builder: BuilderReducer,
+  resume: resumeReducer,
 });
 
 const persistConfig = {

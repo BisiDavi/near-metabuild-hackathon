@@ -10,7 +10,7 @@ import { BuilderStateType } from '@/types/redux-types';
 
 function ResumeDocumentComponent() {
   const styles = resumeStyle;
-  const { cvs } = useAppSelector((state) => state.builder);
+  const { cvs } = useAppSelector((state) => state.resume);
   const dCvs = useDebounce<BuilderStateType['cvs']>(cvs, 2500);
 
   Font.register({
@@ -34,11 +34,7 @@ function ResumeDocumentComponent() {
   });
 
   return (
-    <PDFViewer
-      showToolbar={false}
-      width="90%"
-      height="100%"
-    >
+    <PDFViewer showToolbar={false} width="90%" height="100%">
       <Document>
         <Page wrap={true} size="A4" style={styles.page}>
           <ResumeBody dCvs={dCvs} />

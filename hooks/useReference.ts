@@ -3,11 +3,11 @@ import {
   addSection,
   updateSection,
   updateReference,
-} from '@/redux/builder-slice';
+} from '@/redux/resume-slice';
 import { useAppDispatch } from '@/redux/store';
 
 export default function useReference() {
-  const { cvs } = useAppSelector((state) => state.builder);
+  const { cvs } = useAppSelector((state) => state.resume);
   const dispatch = useAppDispatch();
 
   function getInputValue(index1: number, index2: number) {

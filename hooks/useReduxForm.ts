@@ -1,11 +1,11 @@
 import { useAppSelector } from '@/hooks/useRedux';
-import { updateCV } from '@/redux/builder-slice';
+import { updateCV } from '@/redux/resume-slice';
 import { useAppDispatch } from '@/redux/store';
 import { cvsGroupType } from '@/types';
 
 export default function useReduxForm() {
   const dispatch = useAppDispatch();
-  const { cvs }: any = useAppSelector((state) => state.builder);
+  const { cvs }: any = useAppSelector((state) => state.resume);
 
   function onChangeHandler(e: any, id: any) {
     const splittedId = id.split('.');

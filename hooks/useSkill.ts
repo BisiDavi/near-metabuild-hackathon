@@ -1,9 +1,9 @@
 import { useAppDispatch, useAppSelector } from '@/hooks/useRedux';
 import useReduxForm from '@/hooks/useReduxForm';
-import { updateCV, updateSkill } from '@/redux/builder-slice';
+import { updateCV, updateSkill } from '@/redux/resume-slice';
 
 export default function useSkill() {
-  const { cvs } = useAppSelector((state) => state.builder);
+  const { cvs } = useAppSelector((state) => state.resume);
   const dispatch = useAppDispatch();
   const { getInputValue } = useReduxForm();
 
