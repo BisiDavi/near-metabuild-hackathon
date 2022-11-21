@@ -13,7 +13,7 @@ export default function Test() {
     <Layout showHero={false}>
       <section className="container mx-auto flex h-screen justify-center py-14">
         <div className="w-3/12">
-          <ResumeEditor />
+          <ResumeEditor colorPicker={false} />
         </div>
         <div className="w-9/12">
           <ResumeDocument />
