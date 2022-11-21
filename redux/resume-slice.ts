@@ -6,10 +6,9 @@ import type {
   addResumeKeyType,
   achievementType,
 } from '@/types/redux-types';
-import { seeder1 } from '@/lib/seeder-1';
 
 const initialState: resumeStateType = {
-  cvs: seeder1,
+  cvs: null,
   selectedResume: null,
 };
 
@@ -33,7 +32,9 @@ const resumeSlice = createSlice({
     },
     updateSkill(state, action) {
       const { index, text } = action.payload;
-      state.cvs.skills[index].text = text;
+      if (state.cvs) {
+        state.cvs.skills[index].text = text;
+      }
     },
     updateReference(
       state,
@@ -44,21 +45,27 @@ const resumeSlice = createSlice({
       }>,
     ) {
       const { index1, index2, text } = action.payload;
-      state.cvs.references[index1][index2].text = text;
+      if (state.cvs) {
+        state.cvs.references[index1][index2].text = text;
+      }
     },
     updateSection(
       state,
       action: PayloadAction<{ sectionKey: resumeKeyType; section: any }>,
     ) {
       const { sectionKey, section } = action.payload;
-      state.cvs[sectionKey] = section;
+      if (state.cvs) {
+        state.cvs[sectionKey] = section;
+      }
     },
     addSection(
       state,
       action: PayloadAction<{ sectionKey: addResumeKeyType; section: any }>,
     ) {
       const { sectionKey, section } = action.payload;
-      state.cvs[sectionKey] = [...state.cvs[sectionKey], section];
+      if (state.cvs) {
+        state.cvs[sectionKey] = [...state.cvs[sectionKey], section];
+      }
     },
     updateAchievement(
       state,
@@ -70,10 +77,12 @@ const resumeSlice = createSlice({
       }>,
     ) {
       const { sectionKey, section, index, achievementId } = action.payload;
-      state.cvs[sectionKey][index][achievementId] = [
-        ...state.cvs[sectionKey][index][achievementId],
-        section,
-      ];
+      if (state.cvs) {
+        state.cvs[sectionKey][index][achievementId] = [
+          ...state.cvs[sectionKey][index][achievementId],
+          section,
+        ];
+      }
     },
     removeAchievement(
       state,
@@ -85,9 +94,13 @@ const resumeSlice = createSlice({
       }>,
     ) {
       const { sectionKey, index, achievementId, index2 } = action.payload;
-      const tempAchievement = [...state.cvs[sectionKey][index][achievementId]];
-      tempAchievement.splice(index2, 1);
-      state.cvs[sectionKey][index][achievementId] = tempAchievement;
+      if (state.cvs) {
+        const tempAchievement = [
+          ...state.cvs[sectionKey][index][achievementId],
+        ];
+        tempAchievement.splice(index2, 1);
+        state.cvs[sectionKey][index][achievementId] = tempAchievement;
+      }
     },
 
     updateSectionText(
@@ -101,7 +114,9 @@ const resumeSlice = createSlice({
       }>,
     ) {
       const { index1, index2, index3, text, sectionKey } = action.payload;
-      state.cvs[sectionKey][index1][index2][index3].text = text;
+      if (state.cvs) {
+        state.cvs[sectionKey][index1][index2][index3].text = text;
+      }
     },
   },
 });

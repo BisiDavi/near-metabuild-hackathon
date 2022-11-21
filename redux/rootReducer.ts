@@ -6,13 +6,11 @@ import resumeReducer from '@/redux/resume-slice';
 
 const reducers = combineReducers({
   resume: resumeReducer,
-  resumeSlide: resumeReducer,
 });
 
 const persistConfig = {
   key: 'root',
   storage,
-  //   blacklist: ['UI'],
 };
 
 const RootReducer = persistReducer(persistConfig, reducers);

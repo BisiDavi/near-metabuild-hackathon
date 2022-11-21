@@ -34,7 +34,7 @@ export type resumeStateType = {
       placeholder: string;
       id: string;
     }[][];
-  };
+  } | null;
   selectedResume: 'resume-1' | 'resume-2' | 'resume-3' | null;
 };
 
