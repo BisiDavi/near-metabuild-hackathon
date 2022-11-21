@@ -6,7 +6,6 @@ export default function File({ input }: FormElementProps) {
 
   function onClickHandler(e: any) {
     if (e.target.files) {
-      // const imageData = URL.createObjectURL(e.target.files[0]);
       uploadMedia(e.target.files[0], 'profile');
     }
   }

@@ -16,8 +16,6 @@ export default function useMediaUpload() {
     formData.append('api_key', `${process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY}`);
     formData.append('upload_preset', 'near-resume');
 
-    console.log('formData');
-
     return axios.post(
       `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`,
       formData,
