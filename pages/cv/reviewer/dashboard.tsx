@@ -2,11 +2,11 @@ import type { GetServerSidePropsContext } from 'next';
 
 import Layout from '@/layout';
 
-export default function Reviewer() {
+export default function ReviewerDashboard() {
   return (
     <Layout showHero={false}>
       <section className="container mx-auto py-4">
-       
+        
       </section>
     </Layout>
   );

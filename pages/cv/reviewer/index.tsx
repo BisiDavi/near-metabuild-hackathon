@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import useFirebase from '@/hooks/useFirebase';
 import Layout from '@/layout';
 
@@ -19,15 +20,23 @@ export default function Reviewer() {
             <li>4. Get paid (0.5 NEAR) after review in NEAR testnet token</li>
           </ul>
           <button
-            className="hover:opacity-bg-80 relative my-8 mx-auto flex w-auto rounded-md bg-blue-500 px-4 py-1.5 font-bold text-white"
+            className="hover-bg-opacity relative my-8 mx-auto flex w-auto rounded-md bg-blue-500 px-4 py-1.5 font-bold text-white"
             onClick={googleProviderReviewer}
           >
             login/signup as Reviewer
             <span className="absolute -right-1.5 -top-1 inline-flex h-3  w-3 animate-ping rounded-full bg-red-500"></span>
             <span className="absolute -right-1.5 -top-1 inline-flex h-3 w-3 rounded-full bg-red-500"></span>
           </button>
+          <Link
+            href="/cv/reviewer/listing"
+            className="hover-bg-opacity rounded bg-green-500 px-4 py-1.5 font-bold text-white"
+          >
+            View Resume Reviewers
+          </Link>
         </div>
       </section>
     </Layout>
   );
 }
+
+//1649500867
