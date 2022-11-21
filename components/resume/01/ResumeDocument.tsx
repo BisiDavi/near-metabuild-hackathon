@@ -7,7 +7,7 @@ import ResumeAside from '@/components/resume/01/ResumeAside';
 import ResumeBody from '@/components/resume/01/ResumeBody';
 import { resumeStyle } from '@/components/resume/01/resumeStyle';
 import { seeder1 } from '@/lib/seeder-1';
-import { resumeStateType } from '@/types/redux-types';
+import type { resumeStateType } from '@/types/redux-types';
 
 function ResumeDocumentComponent() {
   const { cvs, selectedResume, asideBg } = useAppSelector(

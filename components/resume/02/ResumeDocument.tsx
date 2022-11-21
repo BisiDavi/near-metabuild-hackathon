@@ -14,9 +14,9 @@ function ResumeDocumentComponent() {
   const { cvs, selectedResume, asideBg } = useAppSelector(
     (state) => state.resume,
   );
+  const bg = asideBg['resume-2'];
   const dCvs = useDebounce<resumeStateType['cvs']>(cvs, 2500);
   const resumeContent = selectedResume === 'resume-2' ? dCvs : seeder2;
-  const bg = asideBg['resume-2'];
 
   Font.register({
     family: 'Open Sans',

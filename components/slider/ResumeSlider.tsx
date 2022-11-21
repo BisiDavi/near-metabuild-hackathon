@@ -1,12 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { useQuery } from '@tanstack/react-query';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 import useResume from '@/hooks/useResume';
 import { useAppDispatch } from '@/hooks/useRedux';
 import { selectResume } from '@/redux/resume-slice';
-import Button from '@/components/Button';
 import formatResumePrice from '@/lib/formatResumePrice';
 import selectSeeder from '@/lib/selectSeeder';
 import type { resumeStateType } from '@/types/redux-types';
@@ -16,13 +15,11 @@ import '@splidejs/react-splide/css';
 export default function ResumeSlider() {
   const { fetchResumes } = useResume();
   const { status, data } = useQuery(['fetchResumes'], fetchResumes);
-  const router = useRouter();
   const dispatch = useAppDispatch();
 
   function selectResumeHandler(type: resumeStateType['selectedResume']) {
     const selectedSeeder = selectSeeder(type);
-    dispatch(selectResume({ type, seeder: selectedSeeder }));
-    router.push(`/template/${type}`);
+    return dispatch(selectResume({ type, seeder: selectedSeeder }));
   }
 
   return (
@@ -52,11 +49,13 @@ export default function ResumeSlider() {
                       alt={item.name}
                       className="z-10 rounded-md"
                     />
-                    <Button
+                    <Link
+                      href={`/template/${item.id}`}
                       className="absolute z-50 mx-auto flex items-center justify-center rounded-lg bg-blue-500 px-4 py-1 text-white hover:bg-opacity-80"
-                      text="Use this Template"
                       onClick={() => selectResumeHandler(item.id)}
-                    />
+                    >
+                      Use this Template
+                    </Link>
                     <div className="absolute bottom-2 z-20 rounded-md bg-gray-400 px-2 py-0.5 text-sm text-white">
                       Price: {price} NEAR
                     </div>
