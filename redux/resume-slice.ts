@@ -1,22 +1,23 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import type {
-  BuilderStateType,
-  builderKeyType,
-  addBuilderKeyType,
+  resumeStateType,
+  resumeKeyType,
+  addResumeKeyType,
   achievementType,
 } from '@/types/redux-types';
 import { cvsData } from '@/lib/seeder-1';
 
-const initialState: BuilderStateType = {
+const initialState: resumeStateType = {
   cvs: cvsData.cv1,
+  selectedResume: null,
 };
 
 const CVSlice = createSlice({
   name: 'resume',
   initialState,
   reducers: {
-    updateCV(state, action: PayloadAction<BuilderStateType['cvs']>) {
+    updateCV(state, action: PayloadAction<resumeStateType['cvs']>) {
       state.cvs = action.payload;
     },
     updateSkill(state, action) {
@@ -36,14 +37,14 @@ const CVSlice = createSlice({
     },
     updateSection(
       state,
-      action: PayloadAction<{ sectionKey: builderKeyType; section: any }>,
+      action: PayloadAction<{ sectionKey: resumeKeyType; section: any }>,
     ) {
       const { sectionKey, section } = action.payload;
       state.cvs[sectionKey] = section;
     },
     addSection(
       state,
-      action: PayloadAction<{ sectionKey: addBuilderKeyType; section: any }>,
+      action: PayloadAction<{ sectionKey: addResumeKeyType; section: any }>,
     ) {
       const { sectionKey, section } = action.payload;
       state.cvs[sectionKey] = [...state.cvs[sectionKey], section];
@@ -88,7 +89,7 @@ const CVSlice = createSlice({
         sectionKey: achievementType;
       }>,
     ) {
-      const { index1, index2,index3, text ,sectionKey} = action.payload;
+      const { index1, index2, index3, text, sectionKey } = action.payload;
       state.cvs[sectionKey][index1][index2][index3].text = text;
     },
   },

@@ -1,4 +1,4 @@
-export type BuilderStateType = {
+export type resumeStateType = {
   cvs: {
     profile: {
       name: string;
@@ -35,15 +35,16 @@ export type BuilderStateType = {
       id: string;
     }[][];
   };
+  selectedResume: 'resume-1' | 'resume-2' | 'resume-3' | null;
 };
 
-export type addBuilderKeyType =
+export type addResumeKeyType =
   | 'skills'
   | 'employmentHistory'
   | 'education'
   | 'references';
 
-export type builderKeyType =
+export type resumeKeyType =
   | 'references'
   | 'profile'
   | 'address'

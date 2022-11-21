@@ -6,12 +6,12 @@ import useDebounce from '@/hooks/useDebounce';
 import ResumeAside from '@/components/resume/01/ResumeAside';
 import ResumeBody from '@/components/resume/01/ResumeBody';
 import { resumeStyle } from '@/components/resume/01/resumeStyle';
-import { BuilderStateType } from '@/types/redux-types';
+import { resumeStateType } from '@/types/redux-types';
 
 function ResumeDocumentComponent() {
   const styles = resumeStyle;
   const { cvs } = useAppSelector((state) => state.resume);
-  const dCvs = useDebounce<BuilderStateType['cvs']>(cvs, 2500);
+  const dCvs = useDebounce<resumeStateType['cvs']>(cvs, 2500);
 
   Font.register({
     family: 'Open Sans',

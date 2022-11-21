@@ -1,5 +1,5 @@
 import type { employmentHistoryType, inputType } from '@/types';
-import type { BuilderStateType } from '@/types/redux-types';
+import type { resumeStateType } from '@/types/redux-types';
 
 export interface DragItem {
   type: string;
@@ -27,7 +27,7 @@ export interface ButtonProps {
   text: string;
   disabled?: boolean;
   title?: string;
-  iconUrl?:string
+  iconUrl?: string;
 }
 
 export interface FormProgressProps {
@@ -35,7 +35,7 @@ export interface FormProgressProps {
 }
 
 export interface ResumeAside1 {
-  dCvs: BuilderStateType['cvs'];
+  dCvs: resumeStateType['cvs'];
 }
 
 export interface employmentHistoryProps {
