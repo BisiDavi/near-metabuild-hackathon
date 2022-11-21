@@ -23,8 +23,8 @@ export default function Profile({ profile, address }: profileProps) {
           {profile.name}, {profile.role}
         </Text>
         <Text style={styles.address}>
-          {address.address}, {address.city}, {address.state}, {address.country},
-          {address.phone}, {address.email}
+          {address.address}, {address.city}, {address.state}, {address.country}{' '}
+          , {address.phone}, {address.email}
         </Text>
       </View>
       <Underline bg="black" />
