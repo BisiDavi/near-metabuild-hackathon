@@ -1,17 +1,17 @@
 import { View } from '@react-pdf/renderer';
 
-import EmploymentHistory from '@/components/resume/03/EmploymentHistory';
-import Education from '@/components/resume/03/Education';
-import References from '@/components/resume/03/References';
-import Profile from '@/components/resume/03/Profile';
+import EmploymentHistory from '@/components/resume/04/EmploymentHistory';
+import Education from '@/components/resume/04/Education';
+import References from '@/components/resume/04/References';
+import Profile from '@/components/resume/04/Profile';
 import { formatReferences } from '@/lib/formatReference';
-import { resumeStyle } from '@/components/resume/03/resumeStyle';
+import { resumeStyle } from '@/components/resume/04/resumeStyle';
 import formatDetails from '@/lib/formatDetails';
 import type { ResumeBody } from '@/types/interfaces';
 
 export default function ResumeBody({ dCvs }: ResumeBody) {
   const styles = resumeStyle;
-  const { profile, employmentHistory, references, education } = dCvs;
+  const { profile, employmentHistory, address, references, education } = dCvs;
 
   const employmentDetails = formatDetails(employmentHistory);
   const educationDetails = formatDetails(education);
@@ -19,7 +19,7 @@ export default function ResumeBody({ dCvs }: ResumeBody) {
 
   return (
     <View style={styles.section}>
-      <Profile profile={profile} />
+      <Profile profile={profile} address={address} />
       <EmploymentHistory history={employmentDetails} />
       <Education details={educationDetails} />
       <References details={referencesDetails} />

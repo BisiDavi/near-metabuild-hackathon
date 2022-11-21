@@ -11,13 +11,13 @@ export const resumeStyle = StyleSheet.create({
     lineHeight: 1.4,
   },
   profile: {
-    border: '2px solid black',
     textAlign: 'center',
-    paddingVertical: 20,
+    paddingTop: 20,
     backgroundColor: 'white',
-    width: '70%',
     display: 'flex',
     flexDirection: 'column',
+    fontSize: 12,
+    fontWeight: 'bold',
     justifyContent: 'center',
     alignItems: 'center',
     margin: 'auto',
@@ -71,7 +71,14 @@ export const resumeStyle = StyleSheet.create({
     lineHeight: 1.4,
   },
   view: {
-    marginBottom: 4,
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  left: {
+    width: '30%',
+  },
+  right: {
+    width: '65%',
   },
   h4: {
     fontWeight: 'bold',
@@ -97,14 +104,14 @@ export const resumeStyle = StyleSheet.create({
     fontWeight: 'bold',
     width: '100%',
   },
-  role: {
-    fontSize: 8,
-    marginTop: -2,
+  address: {
+    fontSize: 10,
+    marginTop: 0,
     fontFamily: 'Lato Bold',
   },
   name: {
-    fontSize: 24,
-    fontFamily: 'Open Sans',
+    fontSize: 14,
+    fontFamily: 'Lato Bold',
     fontWeight: 'bold',
   },
   listGroup: {

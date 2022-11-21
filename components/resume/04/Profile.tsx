@@ -2,7 +2,7 @@
 import { Text, View } from '@react-pdf/renderer';
 
 import Underline from '@/components/resume/common/Underline';
-import { resumeStyle } from '@/components/resume/03/resumeStyle';
+import { resumeStyle } from '@/components/resume/04/resumeStyle';
 
 interface profileProps {
   profile: {
@@ -10,20 +10,32 @@ interface profileProps {
     name: string;
     role: string;
   };
+  address: any;
 }
 
-export default function Profile({ profile }: profileProps) {
+export default function Profile({ profile, address }: profileProps) {
   const styles = resumeStyle;
 
   return (
     <View style={styles.subsection}>
       <View style={styles.profile}>
-        <Text style={styles.name}>{profile.name}</Text>
-        <Text style={styles.role}>{profile.role}</Text>
+        <Text style={styles.name}>
+          {profile.name}, {profile.role}
+        </Text>
+        <Text style={styles.address}>
+          {address.address}, {address.city}, {address.state}, {address.country},
+          {address.phone}, {address.email}
+        </Text>
       </View>
-      <Text style={styles.heading}>Profile</Text>
       <Underline bg="black" />
-      <Text style={styles.text}>{profile.intro}</Text>
+      <View style={styles.view}>
+        <View style={styles.left}>
+          <Text style={styles.heading}>Profile</Text>
+        </View>
+        <View style={styles.right}>
+          <Text style={styles.text}>{profile.intro}</Text>
+        </View>
+      </View>
     </View>
   );
 }
