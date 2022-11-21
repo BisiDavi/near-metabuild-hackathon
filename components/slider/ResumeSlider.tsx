@@ -1,9 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { useQuery } from '@tanstack/react-query';
-import Link from 'next/link';
+import Router from 'next/router';
 
 import useResume from '@/hooks/useResume';
+import Button from '@/components/Button';
 import { useAppDispatch } from '@/hooks/useRedux';
 import { selectResume } from '@/redux/resume-slice';
 import formatResumePrice from '@/lib/formatResumePrice';
@@ -18,7 +19,9 @@ export default function ResumeSlider() {
   const dispatch = useAppDispatch();
 
   function selectResumeHandler(type: resumeStateType['selectedResume']) {
+    console.log('type', type);
     const selectedSeeder = selectSeeder(type);
+    Router.push(`/template/${type}`);
     return dispatch(selectResume({ type, seeder: selectedSeeder }));
   }
 
@@ -43,20 +46,18 @@ export default function ResumeSlider() {
               const price = formatResumePrice(item.price);
               return (
                 <SplideSlide key={item.name}>
-                  <div className="resume-slide relative mx-auto flex flex-col items-center justify-center">
+                  <div className="relative mx-auto flex flex-col items-center justify-center">
                     <img
                       src={item.image}
                       alt={item.name}
                       className="z-10 rounded-md"
                     />
-                    <Link
-                      href={`/template/${item.id}`}
+                    <Button
                       className="absolute z-50 mx-auto flex items-center justify-center rounded-lg bg-blue-500 px-4 py-1 text-white hover:bg-opacity-80"
+                      text="Use this Template"
                       onClick={() => selectResumeHandler(item.id)}
-                    >
-                      Use this Template
-                    </Link>
-                    <div className="absolute bottom-2 z-20 rounded-md bg-gray-400 px-2 py-0.5 text-sm text-white">
+                    />
+                    <div className="absolute bottom-2 z-10 rounded-md bg-gray-400 px-2 py-0.5 text-sm text-white">
                       Price: {price} NEAR
                     </div>
                   </div>
