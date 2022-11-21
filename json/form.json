@@ -29,7 +29,7 @@
       [
         {
           "name": "profile",
-          "placeholder": "Profile",
+          "placeholder": "Profile resume-1 resume-2",
           "type": "file",
           "id": "profile.profile"
         }
