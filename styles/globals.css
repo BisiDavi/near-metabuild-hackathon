@@ -11,12 +11,12 @@
 }
 
 .resumeform {
-max-height: 60vh;
+  max-height: 60vh;
 }
 
-/* .toolbar {
+.toolbar {
   display: none;
-} */
+}
 
 .slick-prev {
   left: 3% !important;
