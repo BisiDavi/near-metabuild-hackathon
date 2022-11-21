@@ -4,6 +4,7 @@ import { formatNearAmount } from 'near-api-js/lib/utils/format';
 import environment from '@/lib/nearConfig';
 
 const nearEnv: any = environment('testnet');
+
 export async function initializeContract() {
   const near = await connect(
     Object.assign(

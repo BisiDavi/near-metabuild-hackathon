@@ -17,3 +17,8 @@
 .toolbar {
   display: none;
 }
+
+.payment-view {
+  background-image: url('/near-banner.webp');
+  background-position: center;
+}
