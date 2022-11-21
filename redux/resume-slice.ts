@@ -21,6 +21,10 @@ const resumeSlice = createSlice({
   name: 'resume',
   initialState,
   reducers: {
+    updateAsideBg(state, action) {
+      const { active, color } = action.payload;
+      state.asideBg[active] = color;
+    },
     selectResume(
       state,
       action: PayloadAction<{
@@ -136,5 +140,6 @@ export const {
   removeAchievement,
   updateSectionText,
   selectResume,
+  updateAsideBg,
 } = resumeSlice.actions;
 export default resumeSlice.reducer;
