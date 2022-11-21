@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
@@ -15,8 +16,8 @@ export default function Payment() {
   const router = useRouter();
 
   useEffect(() => {
-    if (router.asPath.includes('transactionHashes')) {
-      router.push('/payment-status?status=successful');
+    if (router.asPath.includes('transactionHashes') && status === 'success' && data) {
+      router.push(`/payment-status?status=successful&template=${data.id}`);
     }
   }, [router]);
 

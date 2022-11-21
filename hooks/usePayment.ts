@@ -36,10 +36,6 @@ export default function usePayment() {
           router.push(`/payment-status?status=successful&template=${id}`);
         }
       },
-      onError: async (error) => {
-        console.log('error', error);
-        toast.error('Error making payment');
-      },
     },
   );
 

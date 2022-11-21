@@ -14,6 +14,7 @@ interface Props {
 export default function PaymentStatusNotification({ status, id }: Props) {
   const router = useRouter();
   const resumeName = getResumeName(id);
+  console.log('id', id, 'resumeName', resumeName);
   return (
     <div className="flex h-full flex-col items-center justify-center">
       {status === 'successful' ? (
