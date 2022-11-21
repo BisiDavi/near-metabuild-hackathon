@@ -5,7 +5,7 @@ import useFirebase from '@/hooks/useFirebase';
 import useNav from '@/hooks/useNav';
 
 export default function Overlay() {
-  const { googleProvider, getAuthdetails } = useFirebase();
+  const { googleProvider } = useFirebase();
   const [showOverlay, setShowOverlay] = useState(true);
   const { auth } = useNav();
 

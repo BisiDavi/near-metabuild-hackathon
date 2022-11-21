@@ -6,15 +6,17 @@ import {
   signOut,
 } from 'firebase/auth';
 import { toast } from 'react-toastify';
+import { useRouter } from 'next/router';
 
 import { createFirebaseApp } from '@/lib/firebaseConfig';
 
 export default function useFirebase() {
+  const router = useRouter();
   function initFB() {
     const app = createFirebaseApp();
     return app;
   }
-  
+
   function getAuthdetails() {
     const app = initFB();
     const auth = getAuth(app);
@@ -71,6 +73,24 @@ export default function useFirebase() {
     });
   }
 
+  function googleProviderReviewer() {
+    const authDetails = getAuthdetails();
+    if (authDetails === undefined) {
+      const app = initFB();
+      const auth = getAuth(app);
+      const provider = new GoogleAuthProvider();
+      return signInWithPopup(auth, provider).then((result) => {
+        const user = result.user;
+        writeData(JSON.stringify(user), `/reviewers/${user.uid}/`).then(() => {
+          toast.success(`Welcome reviewer, ${user?.displayName}`);
+        });
+        router.push('/cv/reviewer/dashboard');
+      });
+    } else {
+      return router.push('/cv/reviewer/dashboard');
+    }
+  }
+
   function authSignOut() {
     const app = initFB();
     const auth = getAuth(app);
@@ -87,5 +107,6 @@ export default function useFirebase() {
     deleteData,
     authSignOut,
     googleProvider,
+    googleProviderReviewer,
   };
 }
