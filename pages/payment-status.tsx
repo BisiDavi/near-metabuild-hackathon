@@ -5,8 +5,8 @@ import { useRouter } from 'next/router';
 export default function PaymentStatus() {
   const router = useRouter();
   return (
-    <Layout>
-      <section className="paymentStatus">
+    <Layout showHero={false}>
+      <section className="paymentStatus container mx-auto h-screen ">
         <PaymentStatusNotification status="success" />
       </section>
     </Layout>

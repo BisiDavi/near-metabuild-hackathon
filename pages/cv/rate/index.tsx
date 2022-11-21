@@ -9,9 +9,7 @@ export default function Rate() {
           Rate our resumé and get rewarded with 0.1 NEAR
         </h4>
         <div className="how my-4 mx-auto flex flex-col items-center justify-center">
-          <h6 className="text-right text-xl font-bold underline">
-           Procedure
-          </h6>
+          <h6 className="text-right text-xl font-bold underline">Procedure</h6>
           <ul>
             <li className="my-1">
               1. Select a resumé template from the{' '}
