@@ -6,6 +6,7 @@ import resumeReducer from '@/redux/resume-slice';
 
 const reducers = combineReducers({
   resume: resumeReducer,
+  
 });
 
 const persistConfig = {

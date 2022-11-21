@@ -36,6 +36,7 @@ export type resumeStateType = {
     }[][];
   } | null;
   selectedResume: 'resume-1' | 'resume-2' | 'resume-3' | null;
+  asideBg: { [key: string]: string };
 };
 
 export type addResumeKeyType =

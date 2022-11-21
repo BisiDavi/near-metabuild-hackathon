@@ -10,6 +10,11 @@ import type {
 const initialState: resumeStateType = {
   cvs: null,
   selectedResume: null,
+  asideBg: {
+    'resume-1': 'black',
+    'resume-2': '',
+    'resume-3': 'black',
+  },
 };
 
 const resumeSlice = createSlice({
