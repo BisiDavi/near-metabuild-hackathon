@@ -17,3 +17,18 @@
 .toolbar {
   display: none;
 }
+
+.slick-prev {
+  left: 3% !important;
+  z-index: 60;
+}
+.slick-next {
+  right: 3% !important;
+  z-index: 60;
+}
+
+.slick-slider .slick-prev::before,
+.slick-slider .slick-next::before {
+  color: red !important;
+  font-size: 40px;
+}

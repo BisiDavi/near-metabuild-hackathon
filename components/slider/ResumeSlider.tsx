@@ -15,12 +15,13 @@ export default function ResumeSlider() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    swipeToSlide: true,
   };
 
   return (
-    <div id="get-started" className="resume-grid my-6 relative">
+    <div id="get-started" className="resume-grid relative my-6">
       {data && (
         <Slider {...settings}>
           {status === 'error'
