@@ -1,18 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import Link from 'next/link';
 import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
 
 import useResume from '@/hooks/useResume';
-import '@splidejs/react-splide/css';
-import formatResumePrice from '@/lib/formatResumePrice';
 import { useAppDispatch } from '@/hooks/useRedux';
 import { selectResume } from '@/redux/resume-slice';
 import Button from '@/components/Button';
+import formatResumePrice from '@/lib/formatResumePrice';
+import selectSeeder from '@/lib/selectSeeder';
 import type { resumeStateType } from '@/types/redux-types';
 import type { resumeType } from '@/types';
-import selectSeeder from '@/lib/selectSeeder';
+import '@splidejs/react-splide/css';
 
 export default function ResumeSlider() {
   const { fetchResumes } = useResume();

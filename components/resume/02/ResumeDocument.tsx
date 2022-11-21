@@ -7,11 +7,13 @@ import ResumeAside from '@/components/resume/02/ResumeAside';
 import ResumeBody from '@/components/resume/02/ResumeBody';
 import { resumeStyle } from '@/components/resume/common/styles';
 import { resumeStateType } from '@/types/redux-types';
+import { seeder2 } from '@/lib/seeder-2';
 
 function ResumeDocumentComponent() {
   const styles = resumeStyle;
-  const { cvs } = useAppSelector((state) => state.resume);
+  const { cvs, selectedResume } = useAppSelector((state) => state.resume);
   const dCvs = useDebounce<resumeStateType['cvs']>(cvs, 2500);
+  const resumeContent = selectedResume === 'resume-2' ? dCvs : seeder2;
 
   Font.register({
     family: 'Open Sans',
@@ -37,8 +39,8 @@ function ResumeDocumentComponent() {
     <PDFViewer showToolbar={false} width="90%" height="100%">
       <Document>
         <Page wrap={true} size="A4" style={styles.page}>
-          <ResumeBody dCvs={dCvs} />
-          <ResumeAside dCvs={dCvs} />
+          <ResumeBody dCvs={resumeContent} />
+          <ResumeAside dCvs={resumeContent} />
         </Page>
       </Document>
     </PDFViewer>
