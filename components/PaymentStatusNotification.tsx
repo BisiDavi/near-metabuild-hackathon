@@ -2,7 +2,7 @@
 interface Props {
   status: 'success' | 'error';
 }
-export default function PaymentStatus({ status }: Props) {
+export default function PaymentStatusNotification({ status }: Props) {
   return (
     <div>
       {status === 'success' ? (
