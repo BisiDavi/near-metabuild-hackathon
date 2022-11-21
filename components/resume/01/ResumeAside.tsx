@@ -10,10 +10,9 @@ export default function ResumeAside({ dCvs, bg }: ResumeAside1) {
 
   return (
     <View style={styles.aside}>
-      <Image
-        src="https://res.cloudinary.com/verrb-inc/image/upload/v1668528090/john-doe_bm98ji.jpg"
-        style={styles.image}
-      />
+      {dCvs.profile.profile && (
+        <Image src={dCvs.profile.profile} style={styles.image} />
+      )}
       <Text style={styles.name}>{dCvs.profile.name}</Text>
       <Text style={styles.divider}>---</Text>
       <Text style={styles.role}>{dCvs.profile.role}</Text>

@@ -7,6 +7,7 @@ interface profileProps {
     intro: string;
     name: string;
     role: string;
+    profile: string;
   };
 }
 
@@ -16,10 +17,9 @@ export default function Profile({ profile }: profileProps) {
   return (
     <View style={styles.subsection}>
       <View style={styles.bio}>
-        <Image
-          src="https://res.cloudinary.com/verrb-inc/image/upload/v1668869250/john-doe-female_eoapgp.jpg"
-          style={styles.image}
-        />
+        {profile.profile && (
+          <Image src={profile.profile} style={styles.image} />
+        )}
         <View>
           <Text style={styles.name}>{profile.name}</Text>
           <Text style={styles.role}>{profile.role}</Text>

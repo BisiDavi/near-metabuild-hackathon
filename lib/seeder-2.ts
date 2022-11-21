@@ -4,7 +4,8 @@ export const seeder2 = {
     role: 'CUSTOMER SERVICE REPRESENTATIVE',
     intro:
       'Dedicated Customer Service Representative dedicated to providing quality care for ultimate customer satisfaction.Proven ability toestablish and maintain excellent communication and relationshipswith clients. Adept in general accounting and financetransactions.',
-    profile: '',
+    profile:
+      'https://res.cloudinary.com/verrb-inc/image/upload/v1668869250/john-doe-female_eoapgp.jpg',
   },
   address: {
     address: '123460 22nd Ave. SW',
