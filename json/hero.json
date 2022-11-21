@@ -1,28 +1,23 @@
 {
   "home": {
-    "main": "Build Professional Resume and Earn 🪙 NEAR Tokens",
-    "info": "Use our drag `n` drop resume builder to build Resume within 10 minutes and earn while at it."
+    "main": "Build Professional resumé & Earn 🪙 NEAR (testnet) tokens",
+    "info": "Customize our resumé template and create a professional resumé within 5 minutes, earn while at it."
   },
   "cards": [
     {
       "icon": "build",
-      "title": "Build CV with drag n drop builder.",
-      "text": "Build a professional resume template and publish. You earn NEAR token as people use your template, your template is ranked high based on template ratings."
+      "title": "Create a Professional resumé by entering your details",
+      "text": "Select from our collection of professional resumé templates. Edit, upload, customize  template to suit that job listing."
     },
     {
       "icon": "review",
       "title": "Review CV's and Earn NEAR token.",
-      "text": "Are you a recruiter? Review users CV's and earn NEAR token, correct CV's and suggest tips to help them ace their interview."
+      "text": "Are you a recruiter? Review resumé's and earn NEAR token. Correct resumé's and suggest tips to help them get noticed and professional."
     },
     {
       "icon": "rate",
       "title": "Rate CV template and Earn NEAR token.",
-      "text": "So you love that CV template after using it, rate the CV and earn NEAR token, help the CV template grow popularity."
-    },
-    {
-      "icon": "jobs",
-      "title": "Search, filter available jobs based on your profession.",
-      "text": "View Job listing based on your profession, Goodluck in your application"
+      "text": "So you love that resumé template after using it, rate the resume after usage and earn NEAR token, help the resumé template grow popularity."
     }
   ]
 }
