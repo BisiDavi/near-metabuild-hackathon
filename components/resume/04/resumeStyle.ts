@@ -53,7 +53,7 @@ export const resumeStyle = StyleSheet.create({
   heading: {
     fontWeight: 'bold',
     fontFamily: 'Lato Bold',
-    fontSize: 10,
+    fontSize: 12,
     marginVertical: 2,
     lineHeight: 1.4,
   },

@@ -9,7 +9,7 @@ export default function Education({ details }: educationProps) {
   return (
     <View style={styles.subsection}>
       <Underline bg="black" />
-      <Text style={styles.heading}>Education</Text>
+      <Text style={styles.heading}>EDUCATION</Text>
       {details.map((detail) => (
         <View style={styles.view} key={detail.course}>
           <View style={styles.left}>
