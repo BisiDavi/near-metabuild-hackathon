@@ -1,16 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+
 import NEAROverlay from '@/components/NEAROverlay';
 import Layout from '@/layout';
 import Button from '@/components/Button';
 import usePayment from '@/hooks/usePayment';
-import displayResume from '@/lib/displayResume';
 import { useAppSelector } from '@/hooks/useRedux';
 import displayResumeDocument from '@/lib/displayResumeDocument';
 
 export default function Payment() {
   const { price, nearData, nearStatus, data, status, mutation } = usePayment();
   const { selectedResume } = useAppSelector((state) => state.resume);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (router.asPath.includes('transactionHashes')) {
+      router.push('/payment-status?status=successful');
+    }
+  }, [router]);
 
   return (
     <Layout showHero={false}>
@@ -44,7 +52,7 @@ export default function Payment() {
                   />
                 </div>
                 {selectedResume && (
-                  <div className="w-9/12 h-full">
+                  <div className="h-full w-9/12">
                     {displayResumeDocument(selectedResume)}
                   </div>
                 )}
