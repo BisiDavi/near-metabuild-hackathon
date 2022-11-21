@@ -29,18 +29,6 @@ export const resumeStyle = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 20,
   },
-  aside: {
-    backgroundColor: 'gray',
-    width: '30%',
-    height: '100%',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    color: 'white',
-    paddingTop: 60,
-    paddingHorizontal: 15,
-    fontFamily: 'Open Sans',
-  },
   image: {
     height: 100,
     width: 100,
@@ -57,7 +45,7 @@ export const resumeStyle = StyleSheet.create({
     margin: 10,
     marginTop: 15,
     padding: 10,
-    width: '70%',
+    width: '100%',
     flexGrow: 1,
   },
   divider: {
