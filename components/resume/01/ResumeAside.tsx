@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { Image, Text, View, StyleSheet } from '@react-pdf/renderer';
+import { Image, Text, View } from '@react-pdf/renderer';
 
 import ProgressBar from '@/components/resume/common/ProgressBar';
 import type { ResumeAside1 } from '@/types/interfaces';
