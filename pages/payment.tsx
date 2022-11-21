@@ -21,7 +21,7 @@ export default function Payment() {
           ? 'loading, fetching payment details...'
           : data && (
               <div className="content flex h-full w-full items-center">
-                <div className="flex h-full w-3/12 flex-col items-center justify-center bg-gray-500 px-4">
+                <div className="flex h-full w-4/12 flex-col items-center justify-center bg-gray-500 px-4">
                   <h4 className="text-center text-white">
                     Thanks for using {data.name} template from{' '}
                     <span className="font-bold">Near-Resumé</span> in making
@@ -38,8 +38,8 @@ export default function Payment() {
                     }
                   />
                 </div>
-                <div className="w-9/12">
-                  <img src="/near-banner.webp" alt="near" />
+                <div className="w-8/12">
+                  <img src="/near-banner.webp" className='h-full w-full' alt="near" />
                 </div>
               </div>
             )}
