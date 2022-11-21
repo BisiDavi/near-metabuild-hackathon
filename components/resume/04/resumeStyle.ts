@@ -89,7 +89,6 @@ export const resumeStyle = StyleSheet.create({
   },
   skills: {
     display: 'flex',
-    marginBottom: 10,
     justifyContent: 'space-between',
   },
   skillSet: {
@@ -98,6 +97,7 @@ export const resumeStyle = StyleSheet.create({
     alignItems: 'flex-start',
     justifyContent: 'space-between',
     fontSize: 10,
+    lineHeight: 1.5,
   },
   address: {
     fontSize: 10,
