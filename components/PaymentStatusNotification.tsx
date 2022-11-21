@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
+// import { PDFDownloadLink } from '@react-pdf/renderer';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { PDFDownloadLink } from '@react-pdf/renderer';
 
 import Button from '@/components/Button';
-import ViewPdf from '@/components/resume/view-resume/ViewPdf';
+// import ViewPdf from '@/components/resume/view-resume/ViewPdf';
 import { getResumeName } from '@/lib/selectResume';
 
 interface Props {
@@ -28,7 +28,7 @@ export default function PaymentStatusNotification({ status, id }: Props) {
             Payment successful, thanks for using NEAR-RESUMÉ, your resumé
             download should begin anytime soon.
           </h4>
-          {id && (
+          {/* {id && (
             <PDFDownloadLink
               document={<ViewPdf resumeId={id} />}
               fileName={resumeName}
@@ -39,7 +39,7 @@ export default function PaymentStatusNotification({ status, id }: Props) {
                 <span className="absolute -right-1.5 -top-1 inline-flex h-3 w-3 rounded-full bg-red-500"></span>
               </button>
             </PDFDownloadLink>
-          )}
+          )} */}
           <Link
             href={`/cv/rate/template?id=${id}`}
             className="item-center my-4 mx-auto flex h-10  items-center justify-center border px-4 text-center text-xl font-bold hover:bg-red-500 hover:text-white"
