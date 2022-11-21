@@ -3,12 +3,10 @@ import { Image, Text, View } from '@react-pdf/renderer';
 
 import ProgressBar from '@/components/resume/common/ProgressBar';
 import type { ResumeAside1 } from '@/types/interfaces';
-import { useAppSelector } from '@/hooks/useRedux';
 import { asideStyles } from './asideStyle';
 
-export default function ResumeAside({ dCvs }: ResumeAside1) {
-  const { asideBg } = useAppSelector((state) => state.resume);
-  const styles = asideStyles(asideBg['resume-1']);
+export default function ResumeAside({ dCvs, bg }: ResumeAside1) {
+  const styles = asideStyles(bg);
 
   return (
     <View style={styles.aside}>
