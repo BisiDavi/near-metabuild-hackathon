@@ -6,6 +6,7 @@ import Button from '@/components/Button';
 import usePayment from '@/hooks/usePayment';
 import displayResume from '@/lib/displayResume';
 import { useAppSelector } from '@/hooks/useRedux';
+import displayResumeDocument from '@/lib/displayResumeDocument';
 
 export default function Payment() {
   const { price, nearData, nearStatus, data, status, mutation } = usePayment();
@@ -43,7 +44,9 @@ export default function Payment() {
                   />
                 </div>
                 {selectedResume && (
-                  <div className="w-9/12">{displayResume(selectedResume)}</div>
+                  <div className="w-9/12 h-full">
+                    {displayResumeDocument(selectedResume)}
+                  </div>
                 )}
               </div>
             )}
