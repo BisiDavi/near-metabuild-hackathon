@@ -6,9 +6,9 @@ import ProgressCircle from '@/components/resume/common/ProgressCircle';
 import type { ResumeAside1 } from '@/types/interfaces';
 import { useAppSelector } from '@/hooks/useRedux';
 
-export default function ResumeAside({ dCvs }: ResumeAside1) {
+export default function ResumeAside({ dCvs, bg }: ResumeAside1) {
   const { asideBg } = useAppSelector((state) => state.resume);
-  const styles = asideStyle(asideBg['resume-3']);
+  const styles = asideStyle(bg);
 
   return (
     <View style={styles.aside}>

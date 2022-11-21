@@ -11,9 +11,12 @@ import { resumeStateType } from '@/types/redux-types';
 
 function ResumeDocumentComponent() {
   const styles = resumeStyle;
-  const { cvs, selectedResume } = useAppSelector((state) => state.resume);
+  const { cvs, selectedResume, asideBg } = useAppSelector(
+    (state) => state.resume,
+  );
   const dCvs = useDebounce<resumeStateType['cvs']>(cvs, 2500);
   const resumeContent = selectedResume === 'resume-3' ? dCvs : seeder3;
+  const bg = asideBg['resume-1'];
 
   Font.register({
     family: 'Open Sans',
@@ -39,7 +42,7 @@ function ResumeDocumentComponent() {
     <PDFViewer showToolbar={false} width="90%" height="100%">
       <Document>
         <Page wrap={true} size="A4" style={styles.page}>
-          <ResumeAside dCvs={resumeContent} />
+          <ResumeAside dCvs={resumeContent} bg={bg} />
           <ResumeBody dCvs={resumeContent} />
         </Page>
       </Document>

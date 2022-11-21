@@ -7,9 +7,9 @@ import Profile from '@/components/resume/03/Profile';
 import { formatReferences } from '@/lib/formatReference';
 import { resumeStyle } from '@/components/resume/03/resumeStyle';
 import formatDetails from '@/lib/formatDetails';
-import type { ResumeAside1 } from '@/types/interfaces';
+import type { ResumeBody } from '@/types/interfaces';
 
-export default function ResumeBody({ dCvs }: ResumeAside1) {
+export default function ResumeBody({ dCvs }: ResumeBody) {
   const styles = resumeStyle;
   const { profile, employmentHistory, references, education } = dCvs;
 

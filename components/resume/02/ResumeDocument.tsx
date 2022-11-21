@@ -11,9 +11,12 @@ import { seeder2 } from '@/lib/seeder-2';
 
 function ResumeDocumentComponent() {
   const styles = resumeStyle;
-  const { cvs, selectedResume } = useAppSelector((state) => state.resume);
+  const { cvs, selectedResume, asideBg } = useAppSelector(
+    (state) => state.resume,
+  );
   const dCvs = useDebounce<resumeStateType['cvs']>(cvs, 2500);
   const resumeContent = selectedResume === 'resume-2' ? dCvs : seeder2;
+  const bg = asideBg['resume-2'];
 
   Font.register({
     family: 'Open Sans',
@@ -40,7 +43,7 @@ function ResumeDocumentComponent() {
       <Document>
         <Page wrap={true} size="A4" style={styles.page}>
           <ResumeBody dCvs={resumeContent} />
-          <ResumeAside dCvs={resumeContent} />
+          <ResumeAside dCvs={resumeContent} bg={bg} />
         </Page>
       </Document>
     </PDFViewer>
