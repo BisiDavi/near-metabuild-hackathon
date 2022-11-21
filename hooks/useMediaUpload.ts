@@ -1,7 +1,7 @@
-import axios from "axios";
-import { useRef } from "react";
+import axios from 'axios';
+import { useRef } from 'react';
 
-import useToast from "@/hooks/useToast";
+import useToast from '@/hooks/useToast';
 
 export default function useMediaUpload() {
   const toastID = useRef(null);
@@ -9,13 +9,13 @@ export default function useMediaUpload() {
 
   function uploadImage(image: any) {
     const formData = new FormData();
-    formData.append("file", image);
-    formData.append("api_key", `${process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY}`);
-    formData.append("upload_preset", "jinterros");
+    formData.append('file', image);
+    formData.append('api_key', `${process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY}`);
+    formData.append('upload_preset', 'near-resume');
 
     return axios.post(
       `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`,
-      formData
+      formData,
     );
   }
 
@@ -24,12 +24,12 @@ export default function useMediaUpload() {
     [mediaArray].map((mediaItem: Blob | any) => {
       return uploadImage(mediaItem)
         .then((response) => {
-          console.log("upload-response", response.data);
-          updateToast(toastID, "success", "document upload, successful");
+          console.log('upload-response', response.data);
+          updateToast(toastID, 'success', 'document upload, successful');
         })
         .catch((err) => {
-          console.log("image-upload-err", err);
-          return updateToast(toastID, "error", "upload error");
+          console.log('image-upload-err', err);
+          return updateToast(toastID, 'error', 'upload error');
         });
     });
   }
