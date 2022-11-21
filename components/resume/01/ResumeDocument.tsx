@@ -5,13 +5,15 @@ import { useAppSelector } from '@/hooks/useRedux';
 import useDebounce from '@/hooks/useDebounce';
 import ResumeAside from '@/components/resume/01/ResumeAside';
 import ResumeBody from '@/components/resume/01/ResumeBody';
-import { resumeStyle } from '@/components/resume/01/resumeStyle';
+import resumeStyle from '@/components/resume/01/resumeStyle';
 import { seeder1 } from '@/lib/seeder-1';
 import { resumeStateType } from '@/types/redux-types';
 
 function ResumeDocumentComponent() {
-  const styles = resumeStyle;
-  const { cvs, selectedResume } = useAppSelector((state) => state.resume);
+  const { cvs, selectedResume, asideBg } = useAppSelector(
+    (state) => state.resume,
+  );
+  const styles = resumeStyle(asideBg['resume-1']);
   const dCvs = useDebounce<resumeStateType['cvs']>(cvs, 2500);
   const resumeContent = selectedResume === 'resume-1' ? dCvs : seeder1;
 

@@ -12,5 +12,5 @@ export default function AsideColorPicker() {
   function onChangeHandler(color: string) {
     dispatch(updateAsideBg({ color, active: selectedResume }));
   }
-  return <HexColorPicker color={asideColor} onChange={onChangeHandler} />;
+  return <HexColorPicker color={asideColor} className="mt-4" onChange={onChangeHandler} />;
 }

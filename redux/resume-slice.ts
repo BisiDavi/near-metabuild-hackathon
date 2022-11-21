@@ -12,7 +12,7 @@ const initialState: resumeStateType = {
   selectedResume: null,
   asideBg: {
     'resume-1': 'black',
-    'resume-2': '',
+    'resume-2': 'gray',
     'resume-3': 'black',
   },
 };

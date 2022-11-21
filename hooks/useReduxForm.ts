@@ -8,13 +8,19 @@ export default function useReduxForm() {
   const { cvs }: any = useAppSelector((state) => state.resume);
 
   function onChangeHandler(e: any, id: any) {
-    const splittedId = id.split('.');
-    const group: cvsGroupType = splittedId[0];
-    const name = splittedId[1];
-    dispatch(
-      updateCV({ ...cvs, [group]: { ...cvs[group], [name]: e.target.value } }),
-    );
+    if (cvs) {
+      const splittedId = id.split('.');
+      const group: cvsGroupType = splittedId[0];
+      const name = splittedId[1];
+      dispatch(
+        updateCV({
+          ...cvs,
+          [group]: { ...cvs[group], [name]: e.target.value },
+        }),
+      );
+    }
   }
+  
   const getInputValue = (id: any, index?: number) => {
     const splittedId = id.split('.');
     const name = splittedId[1];
