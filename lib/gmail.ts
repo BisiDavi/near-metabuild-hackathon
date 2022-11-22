@@ -1,6 +1,16 @@
-import nodemailer from 'nodemailer';
 import { google } from 'googleapis';
+import nodemailer from 'nodemailer';
+
 import { auth } from '@/lib/gmail-constant';
+
+type requestType = {
+  body: {
+    subject: string;
+    title: string;
+    message: string;
+    receipent: string;
+  };
+};
 
 export default function wihGmail() {
   const oAuth2Client = new google.auth.OAuth2(
@@ -13,7 +23,7 @@ export default function wihGmail() {
     refresh_token: process.env.GMAIL_REFRESH_TOKEN,
   });
 
-  async function sendEmail(req: any, res: any) {
+  async function sendEmail(req: requestType, res: any) {
     const { subject, title, message, receipent } = req.body;
     try {
       const typedNodemailer: any = nodemailer;
