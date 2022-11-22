@@ -106,6 +106,7 @@ export default function useFirebase() {
     const auth = getAuth(app);
     return signOut(auth).then(() => {
       toast.success("You're logged out.");
+      router.reload();
     });
   }
 
