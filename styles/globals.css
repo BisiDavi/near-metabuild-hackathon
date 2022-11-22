@@ -14,7 +14,7 @@
   max-height: 60vh;
 }
 
-.toolbar {
+#mainContainer .toolbar {
   display: none;
 }
 
