@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 import { google } from 'googleapis';
 import { auth } from '@/lib/gmail-constant';
 
-function wihGmail() {
+export default function wihGmail() {
   const oAuth2Client = new google.auth.OAuth2(
     process.env.GMAIL_CLIENT_ID,
     process.env.GMAIL_CLIENT_SECRET,
@@ -13,10 +13,17 @@ function wihGmail() {
     refresh_token: process.env.GMAIL_REFRESH_TOKEN,
   });
 
-  async function sendEmail(req, res, subject, title, message) {
+  async function sendEmail(
+    req: any,
+    res: any,
+    subject: string,
+    title: string,
+    message: string,
+  ) {
     try {
+      const typedNodemailer: any = nodemailer;
       const accessToken = await oAuth2Client.getAccessToken();
-      const transport = nodemailer.createTransport({
+      const transport = typedNodemailer.createTransport({
         service: 'gmail',
         auth: {
           ...auth,
