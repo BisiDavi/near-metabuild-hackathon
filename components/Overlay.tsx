@@ -10,8 +10,10 @@ export default function Overlay() {
   const { auth } = useNav();
 
   function googleHandler() {
-    googleProvider(setShowOverlay);
+    return googleProvider(setShowOverlay);
   }
+
+  console.log('auth', auth);
 
   const displayOverlay = showOverlay ? '' : 'hidden';
 

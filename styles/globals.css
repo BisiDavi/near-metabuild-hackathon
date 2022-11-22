@@ -15,7 +15,7 @@
 }
 
 #mainContainer .toolbar {
-  display: none;
+  display: none !important;
 }
 
 .slick-prev {
