@@ -13,13 +13,8 @@ export default function wihGmail() {
     refresh_token: process.env.GMAIL_REFRESH_TOKEN,
   });
 
-  async function sendEmail(
-    req: any,
-    res: any,
-    subject: string,
-    title: string,
-    message: string,
-  ) {
+  async function sendEmail(req: any, res: any) {
+    const { subject, title, message, receipent } = req.body;
     try {
       const typedNodemailer: any = nodemailer;
       const accessToken = await oAuth2Client.getAccessToken();
@@ -32,8 +27,8 @@ export default function wihGmail() {
       });
 
       const mailOptions = {
-        from: 'Meeting & Polls for Confluence  <oludavidconnect@gmail.com>',
-        to: req.body.receipent,
+        from: 'NEAR RESUMÉ  <oludavidconnect@gmail.com>',
+        to: receipent,
         subject: `${subject} - ${title}`,
         text: `${message} \n\n\n\n\n Powered by NEAR-RESUMÉ`,
       };
