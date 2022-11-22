@@ -74,21 +74,16 @@ export default function useFirebase() {
   }
 
   function googleProviderReviewer() {
-    const authDetails = getAuthdetails();
-    if (authDetails === undefined) {
-      const app = initFB();
-      const auth = getAuth(app);
-      const provider = new GoogleAuthProvider();
-      return signInWithPopup(auth, provider).then((result) => {
-        const user = result.user;
-        writeData(JSON.stringify(user), `/reviewers/${user.uid}/`).then(() => {
-          toast.success(`Welcome reviewer, ${user?.displayName}`);
-        });
-        router.push('/cv/reviewer/dashboard');
+    const app = initFB();
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+    return signInWithPopup(auth, provider).then((result) => {
+      const user = result.user;
+      writeData(JSON.stringify(user), `/reviewers/${user.uid}/`).then(() => {
+        toast.success(`Welcome reviewer, ${user?.displayName}`);
       });
-    } else {
-      return router.push('/cv/reviewer/dashboard');
-    }
+      router.push('/cv/reviewer/dashboard');
+    });
   }
 
   function authSignOut() {
