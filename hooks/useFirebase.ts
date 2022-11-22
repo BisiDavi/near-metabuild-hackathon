@@ -7,9 +7,9 @@ import {
 } from 'firebase/auth';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
+import axios from 'axios';
 
 import { createFirebaseApp } from '@/lib/firebaseConfig';
-import axios from 'axios';
 
 export default function useFirebase() {
   const router = useRouter();
@@ -92,7 +92,7 @@ export default function useFirebase() {
           subject: 'Welcome, NEAR-RESUMÉ Reviewer',
           title: 'Thanks for log in to NEAR-RESUMÉ',
           message:
-            'Glad you chose NEAR-RESUMÉ, as the platform to review resumes. \n Review resumes and suggest tips to make your clients ace their interviews, earn your payment in NEAR tokens.',
+            'Glad you chose NEAR-RESUMÉ, as the platform to review resumes. \n Review resumes and suggest tips to make your clients ace their interviews, earn your payment in NEAR tokens. \n Rate our resume and stand a chance to earn 0.1 NEAR token',
           receipent: user.email,
         });
         toast.success(`Welcome reviewer, ${user?.displayName}`);
