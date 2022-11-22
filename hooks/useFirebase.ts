@@ -88,6 +88,13 @@ export default function useFirebase() {
     return signInWithPopup(auth, provider).then((result) => {
       const user = result.user;
       writeData(JSON.stringify(user), `/reviewers/${user.uid}/`).then(() => {
+        axios.post('/api/send-email', {
+          subject: 'Welcome, NEAR-RESUMÉ Reviewer',
+          title: 'Thanks for log in to NEAR-RESUMÉ',
+          message:
+            'Glad you chose NEAR-RESUMÉ, as the platform to review resumes. \n Review resumes and suggest tips to make your clients ace their interviews, earn your payment in NEAR tokens.',
+          receipent: user.email,
+        });
         toast.success(`Welcome reviewer, ${user?.displayName}`);
       });
       router.push('/cv/reviewer/dashboard');
