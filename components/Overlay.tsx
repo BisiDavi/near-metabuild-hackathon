@@ -19,7 +19,7 @@ export default function Overlay() {
 
   return (
     <>
-      {auth === null ? (
+      {!auth ? (
         <div
           className={`overlay ${displayOverlay} absolute z-20 flex h-full w-full flex-col items-center justify-center bg-gray-500 bg-opacity-80`}
         >
