@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
 
 import { createFirebaseApp } from '@/lib/firebaseConfig';
+import axios from 'axios';
 
 export default function useFirebase() {
   const router = useRouter();
@@ -67,6 +68,13 @@ export default function useFirebase() {
     return signInWithPopup(auth, provider).then((result) => {
       const user = result.user;
       writeData(JSON.stringify(user), `/users/${user.uid}/`).then(() => {
+        axios.post('/api/send-email', {
+          subject: 'Welcome to NEAR-RESUMÉ',
+          title: 'Thanks for log in to NEAR-RESUMÉ',
+          message:
+            'Glad you chose NEAR-RESUMÉ, as the platform to create your resume. Our professional resume template are easy to customize and personalize with your details. \n You can also hire reviewers to review your resume and suggest tips to make you ace your interview, make payment with NEAR tokens. \n Rate our resume and stand a chance to earn 0.1 NEAR token',
+          receipent: user.email,
+        });
         toast.success(`Welcome, ${user?.displayName}`);
         setShowOverlay(false);
       });

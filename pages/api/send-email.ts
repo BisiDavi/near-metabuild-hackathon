@@ -6,7 +6,6 @@ export default async function sendEmailHandler(
   res: NextApiResponse,
 ) {
   const { sendEmail } = withGmail();
-  //   req.body<
   switch (req.method) {
     case 'POST': {
       return await sendEmail(req, res);
