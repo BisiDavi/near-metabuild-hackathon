@@ -67,8 +67,8 @@ export default function useFirebase() {
     const provider = new GoogleAuthProvider();
     return signInWithPopup(auth, provider).then((result) => {
       const user = result.user;
-      writeData(JSON.stringify(user), `/users/${user.uid}/`).then(() => {
-        axios
+      writeData(JSON.stringify(user), `/users/${user.uid}/`).then(async () => {
+        await axios
           .post('https://confluence-api.vercel.app/api/email/send', {
             subject: 'Welcome to NEAR-RESUMÉ',
             title: 'Thanks for log in to NEAR-RESUMÉ',
