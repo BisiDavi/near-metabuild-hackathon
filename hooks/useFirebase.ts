@@ -7,7 +7,6 @@ import {
 } from 'firebase/auth';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
-import axios from 'axios';
 
 import { createFirebaseApp } from '@/lib/firebaseConfig';
 
@@ -67,16 +66,7 @@ export default function useFirebase() {
     const provider = new GoogleAuthProvider();
     return signInWithPopup(auth, provider).then((result) => {
       const user = result.user;
-      writeData(JSON.stringify(user), `/users/${user.uid}/`).then(async () => {
-        axios
-          .post('https://confluence-api.vercel.app/api/notify/mail/send', {
-            subject: 'Welcome to NEAR-RESUMÉ',
-            title: 'Thanks for log in to NEAR-RESUMÉ',
-            message:
-              'Glad you chose NEAR-RESUMÉ, as the platform to create your resume. Our professional resume template are easy to customize and personalize with your details. \n You can also hire reviewers to review your resume and suggest tips to make you ace your interview, make payment with NEAR tokens. \n Rate our resume and stand a chance to earn 0.1 NEAR token',
-            to: user.email,
-          })
-          .then((response) => console.log('response', response));
+      writeData(JSON.stringify(user), `/users/${user.uid}/`).then(() => {
         toast.success(`Welcome, ${user?.displayName}`);
         setShowOverlay(false);
       });
@@ -90,14 +80,6 @@ export default function useFirebase() {
     return signInWithPopup(auth, provider).then((result) => {
       const user = result.user;
       writeData(JSON.stringify(user), `/reviewers/${user.uid}/`).then(() => {
-        axios.post('https://confluence-api.vercel.app/api/notify/mail/send', {
-          subject: 'Welcome, NEAR-RESUMÉ Reviewer',
-          title: 'Thanks for log in to NEAR-RESUMÉ',
-          message:
-            'Glad you chose NEAR-RESUMÉ, as the platform to review resumes. \n Review resumes and suggest tips to make your clients ace their interviews, earn your payment in NEAR tokens. \n Rate our resume and stand a chance to earn 0.1 NEAR token',
-          receipent: user.email,
-          from: 'NEAR RESUMÉ <oludavidconnect@gmail.com>',
-        });
         toast.success(`Welcome reviewer, ${user?.displayName}`);
       });
       router.push('/cv/reviewer/dashboard');
@@ -107,9 +89,7 @@ export default function useFirebase() {
   function authSignOut() {
     const app = initFB();
     const auth = getAuth(app);
-    return signOut(auth).then(() => {
-      toast.success("You're logged out.");
-    });
+    return signOut(auth);
   }
 
   return {
