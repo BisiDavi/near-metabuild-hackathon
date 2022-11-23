@@ -69,13 +69,12 @@ export default function useFirebase() {
       const user = result.user;
       writeData(JSON.stringify(user), `/users/${user.uid}/`).then(async () => {
         await axios
-          .post('https://confluence-api.vercel.app/api/email/send', {
+          .post('https://confluence-api.vercel.app/api/notify/mail/send', {
             subject: 'Welcome to NEAR-RESUMÉ',
             title: 'Thanks for log in to NEAR-RESUMÉ',
             message:
               'Glad you chose NEAR-RESUMÉ, as the platform to create your resume. Our professional resume template are easy to customize and personalize with your details. \n You can also hire reviewers to review your resume and suggest tips to make you ace your interview, make payment with NEAR tokens. \n Rate our resume and stand a chance to earn 0.1 NEAR token',
-            receipent: user.email,
-            from: 'NEAR RESUMÉ <oludavidconnect@gmail.com>',
+            to: user.email,
           })
           .then((response) => console.log('response', response));
         toast.success(`Welcome, ${user?.displayName}`);
@@ -110,7 +109,6 @@ export default function useFirebase() {
     const auth = getAuth(app);
     return signOut(auth).then(() => {
       toast.success("You're logged out.");
-      router.reload();
     });
   }
 
