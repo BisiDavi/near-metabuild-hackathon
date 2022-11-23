@@ -6,6 +6,7 @@ import ResumeSliderItem from '@/components/slider/ResumeSliderItem';
 import type { resumeType } from '@/types';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import ResumeSlideLoader from '@/components/loader/ResumeSlideLoader';
 
 export default function ResumeSlider() {
   const { fetchResumes } = useResume();
@@ -20,19 +21,17 @@ export default function ResumeSlider() {
     swipeToSlide: true,
   };
 
-  console.log('data', data);
-
   return (
     <div id="get-started" className="resume-grid relative my-6">
-      {data && (
+      {status === 'error' ? (
+        'unable to fetch resumes'
+      ) : status === 'loading' ? (
+        <ResumeSlideLoader />
+      ) : (
         <Slider {...settings}>
-          {status === 'error'
-            ? 'unable to fetch resumes'
-            : status === 'loading'
-            ? 'loading, fetching resumes ...'
-            : data.map((item: resumeType) => (
-                <ResumeSliderItem key={item.name} item={item} />
-              ))}
+          {data.map((item: resumeType) => (
+            <ResumeSliderItem key={item.name} item={item} />
+          ))}
         </Slider>
       )}
     </div>
