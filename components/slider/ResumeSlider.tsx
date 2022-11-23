@@ -3,10 +3,10 @@ import Slider from 'react-slick';
 
 import useResume from '@/hooks/useResume';
 import ResumeSliderItem from '@/components/slider/ResumeSliderItem';
+import ResumeSlideLoader from '@/components/loader/ResumeSlideLoader';
 import type { resumeType } from '@/types';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import ResumeSlideLoader from '@/components/loader/ResumeSlideLoader';
 
 export default function ResumeSlider() {
   const { fetchResumes } = useResume();
