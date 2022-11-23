@@ -7,19 +7,21 @@ import useNav from '@/hooks/useNav';
 export default function Overlay() {
   const { googleProvider } = useFirebase();
   const [showOverlay, setShowOverlay] = useState(true);
-  const { auth } = useNav();
+  const { authData, authStatus } = useNav();
 
   function googleHandler() {
     return googleProvider(setShowOverlay);
   }
 
-  console.log('auth', auth);
-
   const displayOverlay = showOverlay ? '' : 'hidden';
 
   return (
     <>
-      {!auth ? (
+      {authStatus === 'error' ? (
+        'unable to fetch auth status'
+      ) : authStatus === 'loading' ? (
+        'fetching auth status...'
+      ) : !authData ? (
         <div
           className={`overlay ${displayOverlay} absolute z-20 flex h-full w-full flex-col items-center justify-center bg-gray-500 bg-opacity-80`}
         >

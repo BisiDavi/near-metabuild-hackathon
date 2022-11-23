@@ -31,7 +31,7 @@ export default function useFirebase() {
       currentUser.uid = user.uid;
       return currentUser;
     } else {
-      return undefined;
+      return null;
     }
   }
 
@@ -68,7 +68,7 @@ export default function useFirebase() {
     return signInWithPopup(auth, provider).then((result) => {
       const user = result.user;
       writeData(JSON.stringify(user), `/users/${user.uid}/`).then(async () => {
-        await axios
+        axios
           .post('https://confluence-api.vercel.app/api/notify/mail/send', {
             subject: 'Welcome to NEAR-RESUMÉ',
             title: 'Thanks for log in to NEAR-RESUMÉ',
@@ -90,7 +90,7 @@ export default function useFirebase() {
     return signInWithPopup(auth, provider).then((result) => {
       const user = result.user;
       writeData(JSON.stringify(user), `/reviewers/${user.uid}/`).then(() => {
-        axios.post('https://confluence-api.vercel.app/api/send-email/', {
+        axios.post('https://confluence-api.vercel.app/api/notify/mail/send', {
           subject: 'Welcome, NEAR-RESUMÉ Reviewer',
           title: 'Thanks for log in to NEAR-RESUMÉ',
           message:

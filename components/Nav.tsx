@@ -6,7 +6,7 @@ import LogoutIcon from '@/components/LogoutIcon';
 import useNav from '@/hooks/useNav';
 
 export default function Nav() {
-  const { pathname, name, authSignOut, auth } = useNav();
+  const { pathname, name, authSignOut, authData, authStatus } = useNav();
 
   return (
     <nav className="flex w-3/4 justify-end">
@@ -21,7 +21,7 @@ export default function Nav() {
             </li>
           );
         })}
-        {auth !== null && name && (
+        {authStatus === 'success' && authData !== null && name && (
           <>
             <li className="rounded-full border px-4 py-1 font-bold hover:border-blue-600   hover:bg-blue-600">
               👋 Hello, {name}
