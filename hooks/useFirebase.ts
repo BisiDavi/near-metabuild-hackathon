@@ -69,7 +69,7 @@ export default function useFirebase() {
       const user = result.user;
       writeData(JSON.stringify(user), `/users/${user.uid}/`).then(() => {
         axios
-          .post('https://confluence-api.vercel.app/api/send-email/', {
+          .post('https://confluence-api.vercel.app/api/email/send', {
             subject: 'Welcome to NEAR-RESUMÉ',
             title: 'Thanks for log in to NEAR-RESUMÉ',
             message:
