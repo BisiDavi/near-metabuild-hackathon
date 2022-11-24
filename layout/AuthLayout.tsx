@@ -1,8 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import useFirebase from '@/hooks/useFirebase';
 import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
 import { PropsWithChildren, useEffect } from 'react';
+
+import useFirebase from '@/hooks/useFirebase';
 
 export default function AuthLayout({ children }: PropsWithChildren) {
   const { getAuthdetails } = useFirebase();
