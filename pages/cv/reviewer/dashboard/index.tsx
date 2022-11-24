@@ -1,7 +1,10 @@
 import ReviewerProfileForm from '@/components/form/ReviewerProfileForm';
 import DashboardLayout from '@/layout/DashboardLayout';
+import { isSignedIn } from '@/lib/near';
 
 export default function ReviewerDashboard() {
+  const isNearSignedIn = isSignedIn();
+  console.log('isNearSignedIn', isNearSignedIn);
   return (
     <DashboardLayout>
       <div className="content">

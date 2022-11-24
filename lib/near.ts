@@ -1,9 +1,24 @@
-import { connect, Contract, keyStores, WalletConnection } from 'near-api-js';
+import {
+  connect,
+  Contract,
+  keyStores,
+  WalletConnection,
+  providers,
+} from 'near-api-js';
 import { formatNearAmount } from 'near-api-js/lib/utils/format';
 
 import environment from '@/lib/nearConfig';
 
 const nearEnv: any = environment('testnet');
+
+export async function getTransactionState(txtHash: string, accountId: string) {
+  const provider = new providers.JsonRpcProvider(
+    'https://archival-rpc.testnet.near.org',
+  );
+  const result = await provider.txStatus(txtHash, accountId);
+  console.log('result-getTransactionState', result);
+  return result;
+}
 
 export async function initializeContract() {
   const near = await connect(
@@ -12,7 +27,6 @@ export async function initializeContract() {
       nearEnv,
     ),
   );
-  // console.log('near', near);
   const walletConnection = new WalletConnection(near, 'NEAR-RESUME');
   const accountId = walletConnection.getAccountId();
   const contract = new Contract(
@@ -45,6 +59,15 @@ export async function login(resumeId: string) {
     contractId: nearEnv.contractName,
     successUrl: `https://near-metabuild-hackathon.vercel.app/payment?template=${resumeId}&login=successful`,
     failureUrl: `https://near-metabuild-hackathon.vercel.app/payment?template=${resumeId}&login=failure`,
+  });
+}
+
+export async function reviewerLogin() {
+  const { walletConnection } = await initializeContract();
+  walletConnection.requestSignIn({
+    contractId: nearEnv.contractName,
+    successUrl: `https://near-metabuild-hackathon.vercel.app/cv/reviewer/dashboard?login=successful`,
+    failureUrl: `https://near-metabuild-hackathon.vercel.app/cv/reviewer/dashboard?login=failure`,
   });
 }
 

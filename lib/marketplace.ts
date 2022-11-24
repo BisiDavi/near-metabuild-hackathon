@@ -27,3 +27,5 @@ export async function buyResume({ id, price }: { id: string; price: string }) {
   const { contract }: any = await initializeContract();
   return contract.buy_resume({ resume_id: id }, GAS, price);
 }
+
+
