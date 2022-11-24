@@ -1,11 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-const sidebarMenu = [
-  { title: 'Home', link: '#' },
-  { title: 'Messages', link: '?section=messages' },
-  { title: 'Settings', link: '?section=settings' },
-];
+import sidebarMenu from '@/json/sidebar.json';
 
 export default function Sidebar() {
   const router = useRouter();
@@ -18,7 +14,6 @@ export default function Sidebar() {
       <ul>
         {sidebarMenu.map((item) => {
           const activeRoute = getActiveRoute(item.link);
-
           return (
             <li
               key={item.title}

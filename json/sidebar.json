@@ -1,0 +1,5 @@
+[
+  { "title": "Home", "link": "/" },
+  { "title": "Messages", "link": "/messages" },
+  { "title": "Settings", "link": "/settings" }
+]
