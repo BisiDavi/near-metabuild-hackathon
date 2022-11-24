@@ -9,7 +9,7 @@ export default function ReviewerDashboard() {
           Get to review client&#39;s resume, offering them tips and information
           that will enable them ace their interview.
         </h4>
-        <p className="text-lg">Set up your reviewer profile</p>
+        <p className="mt-2">Set up your reviewer profile</p>
         <ReviewerProfileForm />
       </div>
     </DashboardLayout>
