@@ -10,7 +10,7 @@ import FeedbackForm from '@/components/form/FeedbackForm';
 export default function Template() {
   const router = useRouter();
   const { id }: any = router.query;
-  const { data, status } = useQuery([''], () => getResume(id), {
+  const { data, status } = useQuery(['getResume'], () => getResume(id), {
     enabled: !!id,
   });
 
@@ -20,8 +20,8 @@ export default function Template() {
 
   return (
     <Layout showHero={false}>
-      <section className="template container mx-auto flex items-center">
-        <div className="w-9/12">
+      <section className="template container mx-auto my-4 flex items-start">
+        <div className="w-9/12 px-2">
           {status === 'error' ? (
             'unable to fetch the resume template'
           ) : status === 'loading' ? (
@@ -42,7 +42,7 @@ export default function Template() {
             </div>
           )}
         </div>
-        <div className="w-3/12">
+        <div className="w-3/12 px-4">
           <FeedbackForm />
         </div>
       </section>

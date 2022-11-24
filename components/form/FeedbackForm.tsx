@@ -24,6 +24,8 @@ export default function FeedbackForm() {
     }));
   }
 
+  console.log('formData', formData);
+
   return (
     <form onSubmit={onSubmitHandler}>
       <h4>
@@ -32,9 +34,10 @@ export default function FeedbackForm() {
       </h4>
       <RatingStar ratings={ratings} setRatings={setRatings} />
       <textarea
-        value={formData.feedback}
         name="feedback"
         placeholder="we will love to hear your feedback"
+        className="my-2 w-full rounded-md border border-gray-800 p-2 focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
+        value={formData.feedback}
         onChange={onChangeHandler}
       ></textarea>
       <Button type="submit" text="Submit" className="" onClick={() => null} />
