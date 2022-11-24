@@ -18,7 +18,7 @@ export default function Reviewer() {
           </ul>
           <Link
             href="/cv/reviewer/dashboard"
-            className="mt-8 rounded border border-2 px-4 py-1 hover:border-blue-500 hover:bg-blue-500 hover:text-white"
+            className="my-8 rounded border border-2 px-4 py-1 hover:border-blue-500 hover:bg-blue-500 hover:text-white"
           >
             Get Started
           </Link>
