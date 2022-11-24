@@ -1,4 +1,7 @@
-export default function StarIcon() {
+interface Props {
+  className: string;
+}
+export default function StarIcon({ className }: Props) {
   return (
     <svg
       version="1.1"
@@ -7,7 +10,7 @@ export default function StarIcon() {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       x="0px"
       y="0px"
-      className="mr-1 w-12 hover:fill-yellow-500"
+      className={`${className} mr-1 w-12 hover:fill-yellow-500`}
       viewBox="0 0 53.867 53.867"
       xmlSpace="preserve"
     >

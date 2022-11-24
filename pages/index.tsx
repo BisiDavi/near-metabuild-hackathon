@@ -1,6 +1,6 @@
 import Layout from '@/layout';
 import ResumeSlider from '@/components/slider/ResumeSlider';
-import RateResume from '@/components/RateResume';
+import RateResume from '@/components/RatingStar';
 
 export default function Home() {
   return (
