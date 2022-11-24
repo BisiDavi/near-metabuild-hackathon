@@ -22,6 +22,7 @@ export default function RatingStar({ ratings, setRatings }: Props) {
           <button
             title={`${ratingIndex} star rating`}
             key={index}
+            type="button"
             onClick={() => rateHandler(ratingIndex)}
           >
             <StarIcon className={`${className}`} />

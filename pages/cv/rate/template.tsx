@@ -42,7 +42,7 @@ export default function Template() {
             </div>
           )}
         </div>
-        <div className="w-3/12 px-4">
+        <div className="w-3/12 px-6 py-12">
           <FeedbackForm />
         </div>
       </section>

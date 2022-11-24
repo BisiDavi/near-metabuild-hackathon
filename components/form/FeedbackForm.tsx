@@ -38,9 +38,15 @@ export default function FeedbackForm() {
         placeholder="we will love to hear your feedback"
         className="my-2 w-full rounded-md border border-gray-800 p-2 focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
         value={formData.feedback}
+        rows={6}
         onChange={onChangeHandler}
       ></textarea>
-      <Button type="submit" text="Submit" className="" onClick={() => null} />
+      <Button
+        type="submit"
+        text="Submit"
+        className="mx-auto my-2 flex rounded bg-green-500 px-4 py-1 text-white hover:bg-green-200"
+        onClick={() => null}
+      />
     </form>
   );
 }
