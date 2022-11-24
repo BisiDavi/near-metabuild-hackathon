@@ -25,7 +25,7 @@ export default function Reviewer() {
 
           <Link
             href="/cv/reviewer/listing"
-            className="hover-bg-opacity rounded bg-green-500 px-4 py-1.5 font-bold text-white"
+            className="hover:bg-opacity-80 rounded bg-green-500 px-4 py-1.5 font-bold text-white"
           >
             View Resume Reviewers
           </Link>
