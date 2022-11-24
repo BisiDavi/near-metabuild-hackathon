@@ -1,10 +1,7 @@
 import Link from 'next/link';
-import useFirebase from '@/hooks/useFirebase';
 import Layout from '@/layout';
 
 export default function Reviewer() {
-  const { googleProviderReviewer } = useFirebase();
-
   return (
     <Layout>
       <section className="container mx-auto py-4">
@@ -19,14 +16,13 @@ export default function Reviewer() {
             <li>3. People hire you to review their resumé</li>
             <li>4. Get paid (0.5 NEAR) after review in NEAR testnet token</li>
           </ul>
-          <button
-            className="hover-bg-opacity relative my-8 mx-auto flex w-auto rounded-md bg-blue-500 px-4 py-1.5 font-bold text-white"
-            onClick={googleProviderReviewer}
+          <Link
+            href="/cv/reviewer/dashboard"
+            className="mt-8 rounded border border-2 px-4 py-1 hover:border-blue-500 hover:bg-blue-500 hover:text-white"
           >
-            login/signup as Reviewer
-            <span className="absolute -right-1.5 -top-1 inline-flex h-3  w-3 animate-ping rounded-full bg-red-500"></span>
-            <span className="absolute -right-1.5 -top-1 inline-flex h-3 w-3 rounded-full bg-red-500"></span>
-          </button>
+            Get Started
+          </Link>
+
           <Link
             href="/cv/reviewer/listing"
             className="hover-bg-opacity rounded bg-green-500 px-4 py-1.5 font-bold text-white"
@@ -38,4 +34,3 @@ export default function Reviewer() {
     </Layout>
   );
 }
-
