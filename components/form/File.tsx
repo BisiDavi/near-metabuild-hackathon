@@ -1,8 +1,14 @@
-import useMediaUpload from '@/hooks/useMediaUpload';
-import type { FormElementProps } from '@/types/interfaces';
 import { useRouter } from 'next/router';
 
-export default function File({ input }: FormElementProps) {
+import useMediaUpload from '@/hooks/useMediaUpload';
+import type { FormElementProps } from '@/types/interfaces';
+
+interface Props {
+  input: FormElementProps['input'];
+  label?: string;
+}
+
+export default function File({ input, label }: Props) {
   const { uploadMedia } = useMediaUpload();
   const router = useRouter();
   const templateId = router.asPath.split('/template/')[1];
@@ -13,11 +19,13 @@ export default function File({ input }: FormElementProps) {
     }
   }
 
+  const fileLabel = label ? label : 'Upload your profile picture';
+
   return (
     <>
       {input.placeholder.includes(templateId) && (
         <>
-          <p className="mb-0">Upload your profile picture</p>
+          <p className="mb-0">{fileLabel}</p>
           <input
             type="file"
             name={input.name}

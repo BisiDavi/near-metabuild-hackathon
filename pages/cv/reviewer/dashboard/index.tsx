@@ -1,7 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
+
 import ReviewerProfileForm from '@/components/form/ReviewerProfileForm';
 import DashboardLayout from '@/layout/DashboardLayout';
-import { isSignedIn } from '@/lib/near';
+import { isSignedIn, reviewerLogin } from '@/lib/near';
 import Button from '@/components/Button';
 
 export default function ReviewerDashboard() {
@@ -23,7 +24,7 @@ export default function ReviewerDashboard() {
             <Button
               text="Login / create NEAR account"
               className="mb-4 rounded border bg-red-500 px-3 py-1 text-white hover:bg-opacity-80"
-              onClick={() => null}
+              onClick={reviewerLogin}
             />
           </>
         )}

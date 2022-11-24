@@ -22,7 +22,7 @@ export default function useMediaUpload() {
     );
   }
 
-  function uploadMedia(mediaItem: any[], type: string) {
+  function uploadMedia(mediaItem: any[], type?: string) {
     loadingToast(toastID);
     return uploadImage(mediaItem)
       .then((response) => {
@@ -31,6 +31,7 @@ export default function useMediaUpload() {
           dispatch(updateProfileImage(response.data.secure_url));
         }
         updateToast(toastID, 'success', 'image upload, successful');
+        return response.data;
       })
       .catch((err) => {
         console.log('image-upload-err', err);
