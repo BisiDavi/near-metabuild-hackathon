@@ -1,12 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import { useRouter } from 'next/router';
-import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 import Layout from '@/layout';
-import RatingStar from '@/components/RatingStar';
 import { getResume } from '@/lib/marketplace';
 import formatResumePrice from '@/lib/formatResumePrice';
+import FeedbackForm from '@/components/form/FeedbackForm';
 
 export default function Template() {
   const router = useRouter();
@@ -14,7 +13,6 @@ export default function Template() {
   const { data, status } = useQuery([''], () => getResume(id), {
     enabled: !!id,
   });
-  const [feedback, setFeedback] = useState('');
 
   const text =
     status === 'success' ? (data.bought > 1 ? 'people' : 'person') : '';
@@ -45,16 +43,7 @@ export default function Template() {
           )}
         </div>
         <div className="w-3/12">
-          <h4>
-            How was the template during usage, Rate this template and give us a
-            feedback to earn 0.1 NEAR
-          </h4>
-          <RatingStar />
-          <textarea
-            value={feedback}
-            placeholder="we will love to hear your feedback"
-            onChange={(e) => setFeedback(e.target.value)}
-          ></textarea>
+          <FeedbackForm />
         </div>
       </section>
     </Layout>

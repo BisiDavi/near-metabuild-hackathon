@@ -1,8 +1,11 @@
-import { useState } from 'react';
 import StarIcon from '@/components/StarIcon';
 
-export default function RatingStar() {
-  const [ratings, setRatings] = useState(0);
+interface Props {
+  ratings: number;
+  setRatings: any;
+}
+
+export default function RatingStar({ ratings, setRatings }: Props) {
   const ratingArray = new Array(5).fill(0);
   let className = '';
 
