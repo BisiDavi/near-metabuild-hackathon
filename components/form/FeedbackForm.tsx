@@ -23,11 +23,11 @@ export default function FeedbackForm() {
       ratings,
     }));
   }
-
+  console.log('ratings', ratings);
   console.log('formData', formData);
 
   return (
-    <form onSubmit={onSubmitHandler}>
+    <form onSubmit={onSubmitHandler} className="my-8">
       <h4>
         How was the template during usage, Rate this template and give us a
         feedback to earn 0.1 NEAR
@@ -44,7 +44,7 @@ export default function FeedbackForm() {
       <Button
         type="submit"
         text="Submit"
-        className="mx-auto my-2 flex rounded bg-green-500 px-4 py-1 text-white hover:bg-green-200"
+        className="hover:bg-opacity-400 mx-auto my-2 flex rounded bg-green-500 px-4 py-1 text-white"
         onClick={() => null}
       />
     </form>

@@ -17,7 +17,8 @@ export default function RatingStar({ ratings, setRatings }: Props) {
     <>
       {ratingArray.map((_, index) => {
         const ratingIndex = index + 1;
-        className = ratings <= index && ratings !== 0 ? '' : 'fill-yellow-500';
+        className =
+          ratings <= index && ratings !== 0 ? 'fill-black' : 'fill-yellow-500';
         return (
           <button
             title={`${ratingIndex} star rating`}
