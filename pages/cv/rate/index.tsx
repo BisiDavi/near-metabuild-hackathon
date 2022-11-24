@@ -1,12 +1,10 @@
 import Link from 'next/link';
 import Layout from '@/layout';
-import RatingStar from '@/components/RatingStar';
 
 export default function Rate() {
   return (
     <Layout>
       <section className="container mx-auto py-4">
-        {/* <RatingStar /> */}
         <h4 className="mt-4 text-center text-3xl font-bold">
           Rate our resumé and get rewarded with 0.1 NEAR
         </h4>
