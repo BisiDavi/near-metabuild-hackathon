@@ -73,7 +73,7 @@ export async function reviewerLogin() {
 
 export async function logout() {
   const { walletConnection } = await initializeContract();
-  walletConnection.signOut();
+  return walletConnection.signOut();
 }
 
 export async function isSignedIn() {
