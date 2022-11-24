@@ -9,9 +9,10 @@ export default function AuthLayout({ children }: PropsWithChildren) {
   const { getAuthdetails } = useFirebase();
   const router = useRouter();
   const { data, status } = useQuery(['getAuthdetails'], getAuthdetails);
+  console.log('data', data);
 
   useEffect(() => {
-    if (status === 'success' && data === null) {
+    if (status === 'success' && !data) {
       router.push('/cv/reviewer/dashboard/auth');
     }
   }, [status, router]);
