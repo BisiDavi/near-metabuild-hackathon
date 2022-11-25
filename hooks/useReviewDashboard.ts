@@ -19,7 +19,6 @@ export default function useReviewDashboard() {
   useEffect(() => {
     if (profile === null) {
       readDbData(`/profiles/${authData?.uid}`).then((response) => {
-        console.log('profileResult-response', response);
         setProfile(response);
       });
     }

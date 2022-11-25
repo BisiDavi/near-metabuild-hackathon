@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
+import { useQuery } from '@tanstack/react-query';
 import ReviewerProfileForm from '@/components/form/ReviewerProfileForm';
 import DashboardLayout from '@/layout/DashboardLayout';
-import { reviewerLogin } from '@/lib/near';
+import { accountBalance, reviewerLogin } from '@/lib/near';
 import Button from '@/components/Button';
 import useReviewDashboard from '@/hooks/useReviewDashboard';
 import ReviewListing from '@/components/ReviewListing';
@@ -9,7 +10,11 @@ import ReviewListing from '@/components/ReviewListing';
 export default function ReviewerDashboard() {
   const { profile, formattedProfile, data, status, setSubmit } =
     useReviewDashboard();
-  console.log('formattedProfile', formattedProfile);
+  const { data: acctBalData, status: acctBalStatus } = useQuery(
+    ['accountBalance'],
+    accountBalance,
+  );
+  console.log('acctBalData', acctBalData);
   return (
     <DashboardLayout>
       <div className="content overflow-scroll-y h-screen">
@@ -29,12 +34,7 @@ export default function ReviewerDashboard() {
             />
           </>
         )}
-        {!profile && (
-          <>
-            <p className="mt-2">Set up your reviewer profile</p>
-            <ReviewerProfileForm setSubmit={setSubmit} />
-          </>
-        )}
+        {!profile && <ReviewerProfileForm setSubmit={setSubmit} />}
 
         {formattedProfile.length > 0 && (
           <>
