@@ -9,9 +9,9 @@ import useNav from '@/hooks/useNav';
 import useFirebase from '@/hooks/useFirebase';
 import { reviewerProfileFormSchema } from '@/components/form/schema/reviewerProfileFormSchema';
 
-export default function useReviewProfileform() {
+export default function useReviewProfileform(setSubmit: any) {
   const { authData } = useNav();
-  const { writeData } = useFirebase();
+  const { writeData, readDbData } = useFirebase();
 
   const [reviewerImage, setReviewImage] = useState({
     previewImage: '',
@@ -50,6 +50,7 @@ export default function useReviewProfileform() {
       )
         .then(() => {
           toast.success('profile created');
+          setSubmit(true);
         })
         .catch((error) => {
           console.log('error', error);

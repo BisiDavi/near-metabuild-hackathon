@@ -8,6 +8,8 @@ import useNav from '@/hooks/useNav';
 
 export default function useReviewDashboard() {
   const [profile, setProfile] = useState(null);
+  const [submit, setSubmit] = useState(false);
+
   const { readDbData } = useFirebase();
   const { authData } = useNav();
 
@@ -21,11 +23,12 @@ export default function useReviewDashboard() {
         setProfile(response);
       });
     }
-  }, []);
+  }, [submit]);
 
   return {
     profile,
     data,
     status,
+    setSubmit,
   };
 }

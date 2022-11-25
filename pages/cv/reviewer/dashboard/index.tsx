@@ -5,7 +5,7 @@ import Button from '@/components/Button';
 import useReviewDashboard from '@/hooks/useReviewDashboard';
 
 export default function ReviewerDashboard() {
-  const { profile, data, status } = useReviewDashboard();
+  const { profile, data, status, setSubmit } = useReviewDashboard();
 
   return (
     <DashboardLayout>
@@ -27,7 +27,7 @@ export default function ReviewerDashboard() {
             />
           </>
         )}
-        {!profile && <ReviewerProfileForm />}
+        {!profile && <ReviewerProfileForm setSubmit={setSubmit} />}
       </div>
     </DashboardLayout>
   );
