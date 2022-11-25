@@ -23,10 +23,20 @@ export default function useReviewDashboard() {
         setProfile(response);
       });
     }
-  }, [submit]);
+  }, [submit, authData]);
+
+  function formaReviewerProfile(rProfile: string) {
+    const parsedRProfile = JSON.parse(rProfile);
+    return [parsedRProfile];
+  }
+
+  const formattedProfile = profile ? formaReviewerProfile(profile) : [];
+
+  console.log('profile', profile);
 
   return {
     profile,
+    formattedProfile,
     data,
     status,
     setSubmit,
