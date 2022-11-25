@@ -45,12 +45,23 @@ export default function useFirebase() {
     return set(ref(db, dbNode), data);
   }
 
-  function readData(dbNode: string) {
+  async function readDbData(dbNode: string) {
+    const db = initializeDB();
+    const dataRef = ref(db, dbNode);
+    return onValue(dataRef, (snapshot) => {
+      const data = snapshot.val();
+      return data;
+    });
+  }
+
+  function readData(dbNode: string, dataValue: any, setData: any) {
     const db = initializeDB();
     const dataRef = ref(db, dbNode);
     onValue(dataRef, (snapshot) => {
       const data = snapshot.val();
-      return data;
+      if (dataValue === null) {
+        setData(data);
+      }
     });
   }
 
@@ -101,5 +112,6 @@ export default function useFirebase() {
     authSignOut,
     googleProvider,
     googleProviderReviewer,
+    readDbData,
   };
 }

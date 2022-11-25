@@ -17,3 +17,4 @@ export default function AuthLayout({ children }: PropsWithChildren) {
   }, [status, router]);
   return <>{children}</>;
 }
+

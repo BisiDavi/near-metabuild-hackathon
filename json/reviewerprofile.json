@@ -50,7 +50,7 @@
   },
   {
     "name": "profilePicture",
-    "label": "Upload your profile picture",
+    "label": "Upload your profile picture, a profile picture increases your chance of being hired",
     "placeholder": "",
     "elementType": "file"
   }
