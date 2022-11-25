@@ -7,8 +7,7 @@ type mutationDataType = {
   mutationKey: string;
   success: string;
   error: string;
-  onSuccessMethod?: () => void;
-  onSuccessMethodWithData?: (data: any) => void;
+  onSuccessMethod?: (variables: any) => void;
   onErrorMethod?: () => void;
   onSettledMethod?: () => void;
 };
@@ -27,16 +26,9 @@ export default function useRequestMutation(
     onMutate: () => {
       loadingToast(toastID);
     },
-    onSuccess: (data: any) => {
+    onSuccess: (data: any, variables) => {
       if (mutationData.onSuccessMethod) {
-        mutationData.onSuccessMethod();
-      }
-      if (mutationData.onSuccessMethodWithData) {
-        if (data?.data) {
-          mutationData.onSuccessMethodWithData(data?.data);
-        } else {
-          mutationData.onSuccessMethodWithData(data);
-        }
+        mutationData.onSuccessMethod(variables);
       }
       updateToast(toastID, 'success', mutationData.success);
     },

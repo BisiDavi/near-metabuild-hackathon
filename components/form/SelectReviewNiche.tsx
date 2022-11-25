@@ -12,21 +12,19 @@ export default function SelectReviewNiche({ niches, setNiches }: any) {
   } = useSelectReviewNiche(setNiches);
 
   return (
-    <div className="nicheDropdown flex items-center">
-      <label
-        className="flex items-center border-b border-white bg-gray-200 px-3 py-4 font-bold text-gray-900"
-        htmlFor="nicheDropdown"
-      >
-        Category
+    <div className="nicheDropdown mb-4 flex flex-col items-start">
+      <label className="mt-2" htmlFor="nicheDropdown">
+        Your Review Niche
       </label>
       <AsyncCreatableSelect
         id="nicheDropdown"
-        className="w-3/4"
+        className="w-full"
         classNamePrefix="nicheDropdown"
         placeholder="Select Review Niche"
         cacheOptions
         value={niches}
         isClearable
+        isMulti={true}
         isLoading={isLoading}
         onCreateOption={onCreateHandler}
         onChange={selectHandler}
@@ -37,11 +35,6 @@ export default function SelectReviewNiche({ niches, setNiches }: any) {
         {`
           .nicheDropdown {
             width: 100%;
-            height: 50px;
-          }
-          .nicheDropdown label {
-            width: 227px;
-            height: 50px;
           }
           .nicheDropdown select {
             width: 100%;

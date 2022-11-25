@@ -11,7 +11,6 @@ type defaultOptionsType = Array<{ label: string; value: string }>;
 export default function useSelectReviewNiche(setNiches: any) {
   const { mutate, isLoading } = useNicheMutation();
   const { readDbData } = useFirebase();
-
   const queryClient = useQueryClient();
   const [defaultOptions, setDefaultOptions] = useState<defaultOptionsType>([
     { label: 'None', value: 'NONE' },
@@ -19,21 +18,21 @@ export default function useSelectReviewNiche(setNiches: any) {
 
   async function getReviewNiche() {
     const result: any = await readDbData('/niche');
-    console.log('result-getReviewNiche', result);
     return result;
   }
-  const { data, status } = useQuery(['getReviewNiche'], () => getReviewNiche());
-
-  console.log('data-getReviewNicheuseQuery', data);
+  const { data, status } = useQuery(['getReviewNiche'], getReviewNiche);
 
   function getCategories() {
     let defaultOptionsArray = [{ label: 'None', value: 'NONE' }];
-    data?.data.map((itemData: any) => {
-      defaultOptionsArray.push({
-        label: itemData,
-        value: toSlug(itemData),
+    if (data) {
+      data?.map((itemData: any) => {
+        defaultOptionsArray.push({
+          label: itemData,
+          value: toSlug(itemData),
+        });
       });
-    });
+      return defaultOptionsArray;
+    }
     return defaultOptionsArray;
   }
 
@@ -58,18 +57,16 @@ export default function useSelectReviewNiche(setNiches: any) {
     });
 
   function selectHandler(inputValue: any) {
-    setNiches((prevValue: any) => [...prevValue, inputValue]);
+    setNiches(inputValue);
   }
 
   function onCreateHandler(inputValue: any) {
-    console.log('inputValue', inputValue);
     mutate(inputValue, {
-      onSuccess: (data: any) => {
-        console.log('data', data);
-        // setNiches({
-        //   label: parsedData.categoryData.name,
-        //   value: parsedData.id,
-        // });
+      onSuccess: (_, variables) => {
+        setDefaultOptions([
+          ...defaultOptions,
+          { label: variables, value: toSlug(variables) },
+        ]);
         queryClient.invalidateQueries(['getReviewNiche']);
       },
     });

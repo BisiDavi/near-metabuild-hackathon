@@ -1,4 +1,12 @@
-import { getDatabase, ref, set, onValue, remove } from 'firebase/database';
+import {
+  getDatabase,
+  ref,
+  set,
+  get,
+  child,
+  onValue,
+  remove,
+} from 'firebase/database';
 import {
   GoogleAuthProvider,
   getAuth,
@@ -47,17 +55,16 @@ export default function useFirebase() {
 
   async function readDbData(dbNode: string) {
     const db = initializeDB();
-    const dataRef = ref(db, dbNode);
-    return onValue(dataRef, (snapshot) => {
-      const data = snapshot.val();
-      return data;
+    const dataRef = ref(db);
+    return get(child(dataRef, dbNode)).then((snapshot) => {
+      return snapshot.val();
     });
   }
 
   function readData(dbNode: string, dataValue: any, setData: any) {
     const db = initializeDB();
     const dataRef = ref(db, dbNode);
-    onValue(dataRef, (snapshot) => {
+    return onValue(dataRef, (snapshot) => {
       const data = snapshot.val();
       if (dataValue === null) {
         setData(data);

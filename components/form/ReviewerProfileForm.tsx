@@ -4,13 +4,15 @@ import { Fragment, useState } from 'react';
 
 import useNav from '@/hooks/useNav';
 import { reviewerProfileFormSchema } from '@/components/form/schema/reviewerProfileFormSchema';
-import reviewProfile from '@/json/reviewerprofile.json';
 import displayFormElements from '@/components/Dashboard/formElements/displayFormElements';
 import File from '@/components/form/File';
+import SelectReviewNiche from '@/components/form/SelectReviewNiche';
+import reviewProfile from '@/json/reviewerprofile.json';
 
 export default function ReviewerProfileForm() {
   const { authData } = useNav();
   const [reviewerImage, setReviewImage] = useState('');
+  const [niche, setNiche] = useState([]);
   const defaultfullName = authData?.displayName ? authData?.displayName : '';
   const defaultEmail = authData?.email ? authData?.email : '';
 
@@ -24,14 +26,15 @@ export default function ReviewerProfileForm() {
   }
 
   console.log('reviewerImage', reviewerImage);
+  console.log('niche', niche);
 
   return (
     <FormProvider {...methods}>
       <form
-        className="mt-3 flex w-1/2 flex-col rounded bg-gray-100 p-6 "
+        className="mt-3 flex w-2/3 flex-col rounded bg-gray-100 p-6 "
         onSubmit={handleSubmit(onSubmitHandler)}
       >
-        {reviewProfile.map((item:any) => {
+        {reviewProfile.map((item: any) => {
           item['defaultValue'] =
             item.name === 'fullName'
               ? defaultfullName
@@ -47,6 +50,7 @@ export default function ReviewerProfileForm() {
             </Fragment>
           );
         })}
+        <SelectReviewNiche niche={niche} setNiches={setNiche} />
         <button
           type="submit"
           className="mx-auto w-24 rounded-lg border bg-blue-500 py-1 text-white hover:bg-opacity-70"
