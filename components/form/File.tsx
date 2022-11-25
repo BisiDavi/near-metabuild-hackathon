@@ -5,9 +5,10 @@ import useMediaUpload from '@/hooks/useMediaUpload';
 interface Props {
   input: { name: string; placeholder: string; label?: string };
   setImage?: any;
+  submit?: boolean;
 }
 
-export default function File({ input, setImage }: Props) {
+export default function File({ input, setImage, submit }: Props) {
   const { uploadMedia } = useMediaUpload();
   const router = useRouter();
   const templateId = router.asPath.split('/template/')[1];
@@ -17,7 +18,10 @@ export default function File({ input, setImage }: Props) {
     if (e.target.files) {
       uploadMedia(e.target.files[0], labelType).then((response) => {
         if (setImage) {
-          setImage(response);
+          setImage({
+            main: response,
+            preview: '',
+          });
         }
       });
     }

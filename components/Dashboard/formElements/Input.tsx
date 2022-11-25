@@ -19,15 +19,15 @@ export default function Input({ input }: Props) {
   const defaultInputValue = defaultValue ? { defaultValue } : '';
   const inputProps = { ...inputType, ...defaultInputValue };
   return (
-    <div>
+    <div className='my-1'>
       <input
-        className="my-2 w-full rounded-md border border-gray-300 p-2 focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
+        className="w-full rounded-md border border-gray-300 p-2 focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
         placeholder={placeholder}
         {...inputProps}
         {...register(name)}
       />
       {errors[name] && (
-        <p className="p-0 text-xs  text-red-500">{errors[name]?.message}</p>
+        <p className="text-xs  text-red-500">{errors[name]?.message}</p>
       )}
     </div>
   );

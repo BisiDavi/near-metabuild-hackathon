@@ -11,8 +11,9 @@ import reviewProfile from '@/json/reviewerprofile.json';
 
 export default function ReviewerProfileForm() {
   const { authData } = useNav();
-  const [reviewerImage, setReviewImage] = useState('');
+  const [reviewerImage, setReviewImage] = useState(null);
   const [niche, setNiche] = useState([]);
+  
   const defaultfullName = authData?.displayName ? authData?.displayName : '';
   const defaultEmail = authData?.email ? authData?.email : '';
 

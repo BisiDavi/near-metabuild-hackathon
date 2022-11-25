@@ -14,9 +14,9 @@ export default function Select({ input }: Props) {
     formState: { errors },
   }: any = useFormContext();
   return (
-    <div>
+    <div className='my-2'>
       <select
-        className="my-2 w-full rounded-md border border-gray-300 p-2 focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
+        className="w-full rounded-md border border-gray-300 p-2 focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
         {...register(name)}
       >
         {options.map((option) => (
@@ -26,7 +26,7 @@ export default function Select({ input }: Props) {
         ))}
       </select>
       {errors[name] && (
-        <p className="p-0 text-xs  text-red-500">{errors[name]?.message}</p>
+        <p className="text-xs  text-red-500">{errors[name]?.message}</p>
       )}
     </div>
   );
