@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 
 import useNav from '@/hooks/useNav';
@@ -10,14 +11,17 @@ import { reviewerProfileFormSchema } from '@/components/form/schema/reviewerProf
 
 export default function useReviewProfileform() {
   const { authData } = useNav();
-  const { writeData, readDbData } = useFirebase();
+  const { writeData } = useFirebase();
 
   const [reviewerImage, setReviewImage] = useState({
     previewImage: '',
     mainImage: '',
   });
   const [niche, setNiche] = useState([]);
-  const [submit, setSubmit] = useState(false);
+  const [uploadImage, setUploadImage] = useState(false);
+  const [formData, setFormData] = useState<{ [key: string]: string } | null>(
+    null,
+  );
 
   const defaultfullName = authData?.displayName ? authData?.displayName : '';
   const defaultEmail = authData?.email ? authData?.email : '';
@@ -26,36 +30,40 @@ export default function useReviewProfileform() {
     resolver: yupResolver(reviewerProfileFormSchema),
   });
 
-  async function getProfileHandler() {
-    const result = await readDbData(`/profiles/${authData?.uid}`);
-    return result;
+  function onSubmitHandler(data: any) {
+    setUploadImage(true);
+    setFormData({
+      ...data,
+      niche,
+      type: 'reviewer',
+    });
   }
 
-  function onSubmitHandler(data: any) {
-    setSubmit(true);
-    writeData(
-      JSON.stringify({
-        ...data,
-        niche,
-        ...reviewerImage,
-        type: 'reviewer',
-      }),
-      `/profiles/${authData?.uid}`,
-    )
-      .then(() => toast.success('profile created'))
-      .catch((error) => {
-        console.log('error', error);
-        toast.error('error creating profile');
-      });
-  }
+  useEffect(() => {
+    if (formData && reviewerImage.mainImage)
+      writeData(
+        JSON.stringify({
+          ...formData,
+          image: reviewerImage.mainImage,
+        }),
+        `/profiles/${authData?.uid}`,
+      )
+        .then(() => {
+          toast.success('profile created');
+        })
+        .catch((error) => {
+          console.log('error', error);
+          toast.error('error creating profile');
+        });
+  }, [uploadImage, formData, reviewerImage.mainImage]);
 
   const setStates = {
     setReviewImage,
     setNiche,
-    setSubmit,
+    setUploadImage,
   };
   const data = {
-    submit,
+    uploadImage,
     defaultEmail,
     defaultfullName,
     niche,
@@ -63,7 +71,6 @@ export default function useReviewProfileform() {
   };
 
   const handlers = {
-    getProfileHandler,
     onSubmitHandler,
   };
 

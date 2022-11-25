@@ -7,17 +7,17 @@ import { useEffect, useState } from 'react';
 interface Props {
   input: { name: string; placeholder: string; label?: string };
   setImage?: any;
-  submit?: boolean;
+  uploadImage?: boolean;
   reviewerImage?: any;
-  setSubmit?: any;
+  setUploadImage?: any;
 }
 
 export default function File({
   input,
   setImage,
-  submit,
+  setUploadImage,
   reviewerImage,
-  setSubmit,
+  uploadImage,
 }: Props) {
   const { uploadMedia } = useMediaUpload();
   const [mediaFile, setMediaFile] = useState([]);
@@ -25,16 +25,16 @@ export default function File({
   const templateId = router.asPath.split('/template/')[1];
 
   useEffect(() => {
-    if (submit) {
+    if (uploadImage) {
       uploadMedia(mediaFile).then((response) => {
         setImage({
           ...reviewerImage,
           mainImage: response.secure_url,
         });
-        setSubmit(false);
+        setUploadImage(false);
       });
     }
-  }, [submit]);
+  }, [uploadImage]);
 
   async function onClickHandler(e: any) {
     const labelType = !input?.label ? 'profile' : '';

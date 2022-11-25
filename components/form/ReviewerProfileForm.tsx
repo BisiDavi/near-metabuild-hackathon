@@ -12,8 +12,8 @@ import reviewProfile from '@/json/reviewerprofile.json';
 export default function ReviewerProfileForm() {
   const { handlers, methods, setStates, data } = useReviewProfileform();
   const { onSubmitHandler } = handlers;
-  const { setReviewImage, setSubmit, setNiche } = setStates;
-  const { submit, defaultEmail, defaultfullName, niche, reviewerImage } = data;
+  const { setReviewImage, setUploadImage, setNiche } = setStates;
+  const { uploadImage, defaultEmail, defaultfullName, niche, reviewerImage } = data;
 
   const { handleSubmit } = methods;
 
@@ -42,8 +42,8 @@ export default function ReviewerProfileForm() {
                       input={item}
                       setImage={setReviewImage}
                       reviewerImage={reviewerImage}
-                      submit={submit}
-                      setSubmit={setSubmit}
+                      uploadImage={uploadImage}
+                      setUploadImage={setUploadImage}
                     />
                     {reviewerImage?.previewImage && (
                       <img
