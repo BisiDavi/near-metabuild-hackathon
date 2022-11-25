@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { FormProvider } from 'react-hook-form';
 import { Fragment } from 'react';
 

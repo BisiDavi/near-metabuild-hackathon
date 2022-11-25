@@ -11,7 +11,7 @@ import { reviewerProfileFormSchema } from '@/components/form/schema/reviewerProf
 
 export default function useReviewProfileform(setSubmit: any) {
   const { authData } = useNav();
-  const { writeData, readDbData } = useFirebase();
+  const { writeData } = useFirebase();
 
   const [reviewerImage, setReviewImage] = useState({
     previewImage: '',
@@ -31,6 +31,7 @@ export default function useReviewProfileform(setSubmit: any) {
   });
 
   function onSubmitHandler(data: any) {
+    console.log('data', data);
     setUploadImage(true);
     setFormData({
       ...data,

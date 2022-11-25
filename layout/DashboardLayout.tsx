@@ -10,7 +10,7 @@ export default function DashboardLayout({ children }: PropsWithChildren) {
       <Layout showHero={false}>
         <section className="container mx-auto flex py-4">
           <Sidebar />
-          <div className="w-10/12 p-4">{children}</div>
+          <div className="min-h-screen w-10/12 p-4">{children}</div>
         </section>
       </Layout>
     </AuthLayout>
