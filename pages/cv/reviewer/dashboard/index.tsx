@@ -49,7 +49,8 @@ export default function ReviewerDashboard() {
                   <h4>{item.email}</h4>
                   <h4>{item.intro}</h4>
                   <h4>{item.price} NEAR</h4>
-                  <ul className="my-3 flex items-center">
+                  <ul className="my-2 flex items-center">
+                    <li className="mr-1 font-medium">Niche:</li>
                     {item?.niche.map(
                       (nicheItem: { value: string; label: string }) => (
                         <li
