@@ -11,7 +11,7 @@ export default function ReviewListing({ item }: any) {
         className="mr-4 w-20 rounded-full"
       />
       <div className="content">
-        <h4>{item.fullName}</h4>
+        <h4 className="font-medium">{item.fullName}</h4>
         <h4>{item.email}</h4>
         <h4>{item.intro}</h4>
         <h4>{item.price} NEAR</h4>
