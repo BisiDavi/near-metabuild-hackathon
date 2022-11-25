@@ -39,7 +39,18 @@ export default function AccountBalance({ data, status }: any) {
       ) : acctBalStatus === 'loading' ? (
         'fetching account balance'
       ) : (
-        <h4 className="my-2 text-xl font-bold">{acctBalData} NEAR</h4>
+        <>
+          {acctDetailsStatus === 'success' && (
+            <h4 className="my-2 text-xl ">
+              Account Id :{' '}
+              <span className="ml-1 font-bold">{acctDetails?.accountId}</span>
+            </h4>
+          )}
+          <h4 className="my-2 text-xl ">
+            Account Balance :{' '}
+            <span className="ml-1 font-bold">{acctBalData} NEAR</span>
+          </h4>
+        </>
       )}
     </div>
   );
