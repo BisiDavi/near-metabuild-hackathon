@@ -1,0 +1,57 @@
+[
+  {
+    "name": "fullName",
+    "placeholder": "Full Name",
+    "type": "text",
+    "elementType": "input",
+    "defaultValue": ""
+  },
+  {
+    "name": "email",
+    "placeholder": "Email Address",
+    "type": "email",
+    "elementType": "input",
+    "defaultValue": ""
+  },
+  {
+    "name": "intro",
+    "placeholder": "A short description about you as a recruiter and resume reviewer",
+    "elementType": "textarea"
+  },
+  {
+    "name": "price",
+    "options": [
+      {
+        "text": "Hire rate (how much in NEAR do you charge for resume review)",
+        "value": ""
+      },
+      {
+        "text": "1 NEAR",
+        "value": 1
+      },
+      {
+        "text": "2 NEAR",
+        "value": 2
+      },
+      {
+        "text": "3 NEAR",
+        "value": 3
+      },
+      {
+        "text": "4 NEAR",
+        "value": 4
+      },
+      {
+        "text": "5 NEAR",
+        "value": 5
+      }
+    ],
+    "elementType": "select"
+  },
+  {
+    "name": "profilePicture",
+    "label": "Upload your profile picture",
+    "placeholder": "",
+    "elementType": "file"
+  }
+]

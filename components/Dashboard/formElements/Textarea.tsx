@@ -1,11 +1,14 @@
 import { useFormContext } from 'react-hook-form';
 
 interface Props {
-  name: string;
-  placeholder: string;
+  input: {
+    name: string;
+    placeholder: string;
+  };
 }
 
-export default function Textarea({ name, placeholder }: Props) {
+export default function Textarea({ input }: Props) {
+  const { name, placeholder } = input;
   const {
     register,
     formState: { errors },

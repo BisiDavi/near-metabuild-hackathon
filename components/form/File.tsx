@@ -1,21 +1,19 @@
 import { useRouter } from 'next/router';
 
 import useMediaUpload from '@/hooks/useMediaUpload';
-import type { FormElementProps } from '@/types/interfaces';
 
 interface Props {
-  input: FormElementProps['input'];
-  label?: string;
+  input: { name: string; placeholder: string; label?: string };
   setImage?: any;
 }
 
-export default function File({ input, label, setImage }: Props) {
+export default function File({ input, setImage }: Props) {
   const { uploadMedia } = useMediaUpload();
   const router = useRouter();
   const templateId = router.asPath.split('/template/')[1];
 
   function onClickHandler(e: any) {
-    const labelType = !label ? 'profile' : '';
+    const labelType = !input?.label ? 'profile' : '';
     if (e.target.files) {
       uploadMedia(e.target.files[0], labelType).then((response) => {
         if (setImage) {
@@ -25,11 +23,11 @@ export default function File({ input, label, setImage }: Props) {
     }
   }
 
-  const fileLabel = label ? label : 'Upload your profile picture';
+  const fileLabel = input?.label ? input?.label : 'Upload your profile picture';
 
   return (
     <>
-      {(input.placeholder.includes(templateId) || label) && (
+      {(input.placeholder.includes(templateId) || input?.label) && (
         <>
           <p className="mb-0">{fileLabel}</p>
           <input

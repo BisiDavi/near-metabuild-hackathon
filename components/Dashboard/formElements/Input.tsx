@@ -1,22 +1,20 @@
 import { useFormContext } from 'react-hook-form';
 
 interface Props {
-  name: string;
-  defaultValue?: string;
-  placeholder: string;
-  type?: string;
+  input: {
+    name: string;
+    defaultValue?: string;
+    placeholder: string;
+    type?: string;
+  };
 }
 
-export default function Input({
-  defaultValue,
-  name,
-  placeholder,
-  type,
-}: Props) {
+export default function Input({ input }: Props) {
   const {
     register,
     formState: { errors },
   }: any = useFormContext();
+  const { defaultValue, name, placeholder, type } = input;
   const inputType = type ? { type } : { type: 'text' };
   const defaultInputValue = defaultValue ? { defaultValue } : '';
   const inputProps = { ...inputType, ...defaultInputValue };

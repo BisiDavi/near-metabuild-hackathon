@@ -1,11 +1,14 @@
 import { useFormContext } from 'react-hook-form';
 
 interface Props {
-  name: string;
-  options: Array<{ value: string; text: string }>;
+  input: {
+    name: string;
+    options: Array<{ value: string; text: string }>;
+  };
 }
 
-export default function Select({ name, options }: Props) {
+export default function Select({ input }: Props) {
+  const { name, options } = input;
   const {
     register,
     formState: { errors },
