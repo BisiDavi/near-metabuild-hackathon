@@ -12,7 +12,6 @@ export default function Listing() {
 
   const listing = status === 'success' ? formatData(data) : [];
 
-  console.log('listing', listing);
   function formatData(listing: string) {
     const listingValues = Object.values(listing);
     let listingArray: any[] = [];
