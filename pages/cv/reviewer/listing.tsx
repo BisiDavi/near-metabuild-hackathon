@@ -29,36 +29,44 @@ export default function Listing() {
         ) : status === 'loading' ? (
           'fetching reviews'
         ) : (
-          <ul>
-            {listing.map((item) => {
-              return (
-                <li key={item.name} className="my-3 px-4 py-1 flex items-center rounded-lg border shadow">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-20 rounded-full mr-4"
-                  />
-                  <div className="content">
-                    <h4>{item.fullName}</h4>
-                    <h4>{item.email}</h4>
-                    <h4>{item.intro}</h4>
-                    <ul className="my-3 flex items-center">
-                      {item.niche.map(
-                        (nicheItem: { value: string; label: string }) => (
-                          <li
-                            key={nicheItem.value}
-                            className="mr-2 rounded-lg border px-2 py-0"
-                          >
-                            {nicheItem.label}
-                          </li>
-                        ),
-                      )}
-                    </ul>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+          <>
+            <h2 className="mt-4 text-center text-xl font-bold">
+              Meet our reviewers
+            </h2>
+            <ul>
+              {listing.map((item) => {
+                return (
+                  <li
+                    key={item.name}
+                    className="my-3 flex items-center rounded-lg border px-4 py-1 shadow hover:bg-gray-200"
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="mr-4 w-20 rounded-full"
+                    />
+                    <div className="content">
+                      <h4>{item.fullName}</h4>
+                      <h4>{item.email}</h4>
+                      <h4>{item.intro}</h4>
+                      <ul className="my-3 flex items-center">
+                        {item.niche.map(
+                          (nicheItem: { value: string; label: string }) => (
+                            <li
+                              key={nicheItem.value}
+                              className="mr-2 rounded-lg border px-2 py-0"
+                            >
+                              {nicheItem.label}
+                            </li>
+                          ),
+                        )}
+                      </ul>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </>
         )}
       </section>
     </Layout>
