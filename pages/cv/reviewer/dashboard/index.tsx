@@ -4,6 +4,7 @@ import DashboardLayout from '@/layout/DashboardLayout';
 import { reviewerLogin } from '@/lib/near';
 import Button from '@/components/Button';
 import useReviewDashboard from '@/hooks/useReviewDashboard';
+import ReviewListing from '@/components/ReviewListing';
 
 export default function ReviewerDashboard() {
   const { profile, formattedProfile, data, status, setSubmit } =
@@ -16,7 +17,6 @@ export default function ReviewerDashboard() {
           Get to review client&#39;s resume, offering them tips and information
           that will enable them ace their interview.
         </h4>
-        <p className="mt-2">Set up your reviewer profile</p>
         {!data && status === 'success' && (
           <>
             <h4 className="mt-4 text-xl">
@@ -29,41 +29,18 @@ export default function ReviewerDashboard() {
             />
           </>
         )}
-        {!profile && <ReviewerProfileForm setSubmit={setSubmit} />}
+        {!profile && (
+          <>
+            <p className="mt-2">Set up your reviewer profile</p>
+            <ReviewerProfileForm setSubmit={setSubmit} />
+          </>
+        )}
 
         {formattedProfile.length > 0 && (
           <>
             <h4 className="text-center text-xl font-bold">Profile Details</h4>
             {formattedProfile.map((item: any) => (
-              <li
-                key={item.name}
-                className="my-1 flex flex-col items-center rounded-lg border  p-4 shadow"
-              >
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="mr-4 w-20 rounded-full"
-                />
-                <div className="content">
-                  <h4>{item.fullName}</h4>
-                  <h4>{item.email}</h4>
-                  <h4>{item.intro}</h4>
-                  <h4>{item.price} NEAR</h4>
-                  <ul className="my-2 flex items-center">
-                    <li className="mr-1 font-medium">Niche:</li>
-                    {item?.niche.map(
-                      (nicheItem: { value: string; label: string }) => (
-                        <li
-                          key={nicheItem.value}
-                          className="mr-2 rounded-lg border px-2 py-0"
-                        >
-                          {nicheItem.label}
-                        </li>
-                      ),
-                    )}
-                  </ul>
-                </div>
-              </li>
+              <ReviewListing key={item.name} item={item} />
             ))}
           </>
         )}
