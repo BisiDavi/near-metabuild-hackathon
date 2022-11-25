@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { accountBalance, reviewerLogin } from '@/lib/near';
+import { accountBalance, accountDetails, reviewerLogin } from '@/lib/near';
 import Button from '@/components/Button';
 
 export default function AccountBalance({ data, status }: any) {
@@ -7,8 +7,18 @@ export default function AccountBalance({ data, status }: any) {
     ['accountBalance'],
     accountBalance,
   );
+  const { data: acctDetails, status: acctDetailsStatus } = useQuery(
+    ['accountDetails'],
+    accountDetails,
+  );
 
   console.log('acctBalData', acctBalData, 'acctBalStatus', acctBalStatus);
+  console.log(
+    'acctDetails',
+    acctDetails,
+    'acctDetailsStatus',
+    acctDetailsStatus,
+  );
 
   return (
     <div>
@@ -23,6 +33,13 @@ export default function AccountBalance({ data, status }: any) {
             onClick={reviewerLogin}
           />
         </>
+      )}
+      {acctBalStatus === 'error' ? (
+        'error fetching account balance'
+      ) : acctBalStatus === 'loading' ? (
+        'fetching account balance'
+      ) : (
+        <h4 className="my-2 text-xl font-bold">{acctBalData} NEAR</h4>
       )}
     </div>
   );

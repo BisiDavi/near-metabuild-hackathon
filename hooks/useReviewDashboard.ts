@@ -14,7 +14,6 @@ export default function useReviewDashboard() {
   const { authData } = useNav();
 
   const { data, status } = useQuery(['isSignedIn'], isSignedIn);
-  console.log('isNearSignedIn', data, 'status', status);
 
   useEffect(() => {
     if (profile === null) {
@@ -30,8 +29,6 @@ export default function useReviewDashboard() {
   }
 
   const formattedProfile = profile ? formaReviewerProfile(profile) : [];
-
-  console.log('profile', profile);
 
   return {
     profile,

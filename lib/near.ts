@@ -48,7 +48,12 @@ export async function accountBalance() {
   );
 }
 
-export async function getAccountId() {         
+export async function accountDetails() {
+  const { walletConnection } = await initializeContract();
+  return await walletConnection.account();
+}
+
+export async function getAccountId() {
   const { walletConnection } = await initializeContract();
   return walletConnection.getAccountId();
 }
