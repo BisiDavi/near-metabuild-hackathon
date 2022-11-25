@@ -20,7 +20,7 @@ export default function SelectReviewNiche({ niches, setNiches }: any) {
         id="nicheDropdown"
         className="w-full"
         classNamePrefix="nicheDropdown"
-        placeholder="Select Review Niche"
+        placeholder="Select / Create Review Niche"
         cacheOptions
         value={niches}
         isClearable

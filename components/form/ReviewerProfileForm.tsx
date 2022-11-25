@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Fragment, useState } from 'react';
@@ -11,9 +12,14 @@ import reviewProfile from '@/json/reviewerprofile.json';
 
 export default function ReviewerProfileForm() {
   const { authData } = useNav();
-  const [reviewerImage, setReviewImage] = useState(null);
+  const [reviewerImage, setReviewImage] = useState({
+    previewImage: '',
+    mainImage: '',
+  });
+  const [formData, setFormData] = useState(null);
   const [niche, setNiche] = useState([]);
-  
+  const [submit, setSubmit] = useState(false);
+
   const defaultfullName = authData?.displayName ? authData?.displayName : '';
   const defaultEmail = authData?.email ? authData?.email : '';
 
@@ -24,10 +30,16 @@ export default function ReviewerProfileForm() {
 
   function onSubmitHandler(data: any) {
     console.log('data', data);
+    setSubmit(true);
+    setFormData({
+      ...data,
+      niche, 
+      ...reviewerImage,
+    });
   }
 
+  console.log('formData', formData);
   console.log('reviewerImage', reviewerImage);
-  console.log('niche', niche);
 
   return (
     <FormProvider {...methods}>
@@ -46,7 +58,18 @@ export default function ReviewerProfileForm() {
               {item.name !== 'profilePicture' ? (
                 displayFormElements(item)
               ) : (
-                <File input={item} setImage={setReviewImage} />
+                <>
+                  <File
+                    input={item}
+                    setImage={setReviewImage}
+                    reviewerImage={reviewerImage}
+                    submit={submit}
+                    setSubmit={setSubmit}
+                  />
+                  {reviewerImage?.previewImage && (
+                    <img src={reviewerImage.previewImage} alt="preview image" className='h-20 w-20' />
+                  )}
+                </>
               )}
             </Fragment>
           );

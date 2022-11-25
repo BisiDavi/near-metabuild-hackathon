@@ -1,29 +1,55 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useRouter } from 'next/router';
 
 import useMediaUpload from '@/hooks/useMediaUpload';
+import { useEffect, useState } from 'react';
 
 interface Props {
   input: { name: string; placeholder: string; label?: string };
   setImage?: any;
   submit?: boolean;
+  reviewerImage?: any;
+  setSubmit?: any;
 }
 
-export default function File({ input, setImage, submit }: Props) {
+export default function File({
+  input,
+  setImage,
+  submit,
+  reviewerImage,
+  setSubmit,
+}: Props) {
   const { uploadMedia } = useMediaUpload();
+  const [mediaFile, setMediaFile] = useState([]);
   const router = useRouter();
   const templateId = router.asPath.split('/template/')[1];
 
-  function onClickHandler(e: any) {
-    const labelType = !input?.label ? 'profile' : '';
-    if (e.target.files) {
-      uploadMedia(e.target.files[0], labelType).then((response) => {
-        if (setImage) {
-          setImage({
-            main: response,
-            preview: '',
-          });
-        }
+  useEffect(() => {
+    if (submit) {
+      uploadMedia(mediaFile).then((response) => {
+        setImage({
+          ...reviewerImage,
+          mainImage: response.secure_url,
+        });
+        setSubmit(false);
       });
+    }
+  }, [submit]);
+
+  async function onClickHandler(e: any) {
+    const labelType = !input?.label ? 'profile' : '';
+    console.log('labelType', labelType);
+    if (e.target.files) {
+      if (setImage) {
+        const previewImage = URL.createObjectURL(e.target.files[0]);
+        setImage({
+          previewImage,
+          mainImage: null,
+        });
+        setMediaFile(e.target.files[0]);
+      } else {
+        uploadMedia(e.target.files[0], labelType);
+      }
     }
   }
 
