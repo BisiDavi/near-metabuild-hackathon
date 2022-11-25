@@ -56,7 +56,7 @@ export default function useFirebase() {
   async function readDbData(dbNode: string) {
     const db = initializeDB();
     const dataRef = ref(db);
-    return get(child(dataRef, dbNode)).then((snapshot) => {
+    return await get(child(dataRef, dbNode)).then((snapshot) => {
       return snapshot.val();
     });
   }

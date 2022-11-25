@@ -16,10 +16,10 @@ export default function getInitials(admin: adminType) {
     const nameArray = admin?.displayName.split(' ');
     const firstLetter = getFirstLetter(nameArray[0]);
     const secondLetter = getFirstLetter(nameArray[1]);
-    displayNameInitials = `${firstLetter}.${secondLetter}`;
+    displayNameInitials = `${firstLetter}.${secondLetter}`.toUpperCase();
   } else if (admin?.email) {
     const nameArray = admin?.email.split('');
-    displayNameInitials = `${nameArray[0]} . ${nameArray[1]}`;
+    displayNameInitials = `${nameArray[0]} . ${nameArray[1]}`.toUpperCase();
   }
   return displayNameInitials;
 }

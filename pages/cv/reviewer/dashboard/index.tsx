@@ -1,13 +1,12 @@
-import { useQuery } from '@tanstack/react-query';
-
 import ReviewerProfileForm from '@/components/form/ReviewerProfileForm';
 import DashboardLayout from '@/layout/DashboardLayout';
-import { isSignedIn, reviewerLogin } from '@/lib/near';
+import { reviewerLogin } from '@/lib/near';
 import Button from '@/components/Button';
+import useReviewDashboard from '@/hooks/useReviewDashboard';
 
 export default function ReviewerDashboard() {
-  const { data, status } = useQuery(['isSignedIn'], isSignedIn);
-  console.log('isNearSignedIn', data, 'status', status);
+  const { profile, data, status } = useReviewDashboard();
+
   return (
     <DashboardLayout>
       <div className="content">
@@ -28,7 +27,7 @@ export default function ReviewerDashboard() {
             />
           </>
         )}
-        <ReviewerProfileForm />
+        {!profile && <ReviewerProfileForm />}
       </div>
     </DashboardLayout>
   );
