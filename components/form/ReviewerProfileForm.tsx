@@ -17,8 +17,6 @@ export default function ReviewerProfileForm() {
 
   const { handleSubmit } = methods;
 
-  console.log('reviewerImage', reviewerImage);
-
   return (
     <>
       <FormProvider {...methods}>
@@ -40,8 +38,8 @@ export default function ReviewerProfileForm() {
                   <>
                     <File
                       input={item}
+                      image={reviewerImage}
                       setImage={setReviewImage}
-                      reviewerImage={reviewerImage}
                       uploadImage={uploadImage}
                       setUploadImage={setUploadImage}
                     />

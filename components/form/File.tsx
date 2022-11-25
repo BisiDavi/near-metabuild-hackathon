@@ -6,9 +6,9 @@ import { useEffect, useState } from 'react';
 
 interface Props {
   input: { name: string; placeholder: string; label?: string };
+  image?: any;
   setImage?: any;
   uploadImage?: boolean;
-  reviewerImage?: any;
   setUploadImage?: any;
 }
 
@@ -16,7 +16,7 @@ export default function File({
   input,
   setImage,
   setUploadImage,
-  reviewerImage,
+  image,
   uploadImage,
 }: Props) {
   const { uploadMedia } = useMediaUpload();
@@ -28,7 +28,7 @@ export default function File({
     if (uploadImage) {
       uploadMedia(mediaFile).then((response) => {
         setImage({
-          ...reviewerImage,
+          ...image,
           mainImage: response.secure_url,
         });
         setUploadImage(false);
