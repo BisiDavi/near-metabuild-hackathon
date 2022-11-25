@@ -32,14 +32,14 @@ export default function Listing() {
           <ul>
             {listing.map((item) => {
               return (
-                <li key={item.name} className="my-3 rounded-lg border shadow">
+                <li key={item.name} className="my-3 px-4 py-1 flex items-center rounded-lg border shadow">
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-20 rounded-full"
+                    className="w-20 rounded-full mr-4"
                   />
                   <div className="content">
-                    <h4>{item.name}</h4>
+                    <h4>{item.fullName}</h4>
                     <h4>{item.email}</h4>
                     <h4>{item.intro}</h4>
                     <ul className="my-3 flex items-center">
@@ -47,7 +47,7 @@ export default function Listing() {
                         (nicheItem: { value: string; label: string }) => (
                           <li
                             key={nicheItem.value}
-                            className="mr-2 rounded-lg border"
+                            className="mr-2 rounded-lg border px-2 py-0"
                           >
                             {nicheItem.label}
                           </li>
