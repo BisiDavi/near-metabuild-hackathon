@@ -48,7 +48,7 @@ export async function accountBalance() {
   );
 }
 
-export async function getAccountId() {
+export async function getAccountId() {         
   const { walletConnection } = await initializeContract();
   return walletConnection.getAccountId();
 }

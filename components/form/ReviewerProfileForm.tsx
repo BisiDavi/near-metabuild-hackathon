@@ -1,11 +1,16 @@
 import { FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useState } from 'react';
 
 import useNav from '@/hooks/useNav';
 import { reviewerProfileFormSchema } from '@/components/form/schema/reviewerProfileFormSchema';
+import File from '@/components/form/File';
+import Input from '@/components/Dashboard/formElements/Input';
+import Textarea from '../Dashboard/formElements/Textarea';
 
 export default function ReviewerProfileForm() {
   const { authData } = useNav();
+  const [reviewerImage, setReviewImage] = useState('');
   const defaultfullName = authData?.displayName ? authData?.displayName : '';
   const defaultEmail = authData?.email ? authData?.email : '';
 
@@ -18,31 +23,29 @@ export default function ReviewerProfileForm() {
     console.log('data', data);
   }
 
+  console.log('reviewerImage', reviewerImage);
+
   return (
     <FormProvider {...methods}>
       <form
         className="mt-3 flex w-1/2 flex-col rounded bg-gray-100 p-6 "
         onSubmit={handleSubmit(onSubmitHandler)}
       >
-        <input
-          className="my-2 w-full rounded-md border border-gray-300 p-2 focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
+        <Input
+          name="fullName"
           placeholder="Full name"
           defaultValue={defaultfullName}
-          {...register('fullName')}
         />
-        <input
-          type="email"
-          className="my-2 w-full rounded-md border border-gray-300 p-2 focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
+        <Input
+          name="email"
           placeholder="Email Address"
           defaultValue={defaultEmail}
-          {...register('email')}
+          type="email"
         />
-        <textarea
+        <Textarea
+          name="intro"
           placeholder="A short description about you as a recruiter and resume reviewer"
-          className="my-2 w-full rounded-md border border-gray-300 p-2 focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
-          rows={3}
-          {...register('intro')}
-        ></textarea>
+        />
         <select
           className="my-2 w-full rounded-md border border-gray-300 p-2 focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
           {...register('price')}
@@ -56,7 +59,19 @@ export default function ReviewerProfileForm() {
           <option>4 NEAR</option>
           <option>5 NEAR</option>
         </select>
-        <button className="mx-auto w-24 rounded-lg border bg-blue-500 py-1 text-white hover:bg-opacity-70">
+        <File
+          label="Upload your profile picture"
+          input={{
+            name: 'profilePicture',
+            placeholder: '',
+            id: 'profilePicture',
+          }}
+          setImage={setReviewImage}
+        />
+        <button
+          type="submit"
+          className="mx-auto w-24 rounded-lg border bg-blue-500 py-1 text-white hover:bg-opacity-70"
+        >
           Submit
         </button>
       </form>

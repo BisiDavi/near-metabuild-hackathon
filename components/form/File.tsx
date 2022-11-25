@@ -6,16 +6,22 @@ import type { FormElementProps } from '@/types/interfaces';
 interface Props {
   input: FormElementProps['input'];
   label?: string;
+  setImage?: any;
 }
 
-export default function File({ input, label }: Props) {
+export default function File({ input, label, setImage }: Props) {
   const { uploadMedia } = useMediaUpload();
   const router = useRouter();
   const templateId = router.asPath.split('/template/')[1];
 
   function onClickHandler(e: any) {
+    const labelType = !label ? 'profile' : '';
     if (e.target.files) {
-      uploadMedia(e.target.files[0], 'profile');
+      uploadMedia(e.target.files[0], labelType).then((response) => {
+        if (setImage) {
+          setImage(response);
+        }
+      });
     }
   }
 
@@ -23,7 +29,7 @@ export default function File({ input, label }: Props) {
 
   return (
     <>
-      {input.placeholder.includes(templateId) && (
+      {(input.placeholder.includes(templateId) || label) && (
         <>
           <p className="mb-0">{fileLabel}</p>
           <input
