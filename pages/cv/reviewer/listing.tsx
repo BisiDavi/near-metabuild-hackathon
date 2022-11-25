@@ -49,6 +49,7 @@ export default function Listing() {
                       <h4>{item.fullName}</h4>
                       <h4>{item.email}</h4>
                       <h4>{item.intro}</h4>
+                      <h4>{item.price} NEAR</h4>
                       <ul className="my-3 flex items-center">
                         {item.niche.map(
                           (nicheItem: { value: string; label: string }) => (
