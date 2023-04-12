@@ -9,7 +9,7 @@ export default function Nav() {
   const { pathname, name, signOutMutate, authData, authStatus } = useNav();
 
   return (
-    <nav className="flex w-3/4 justify-end">
+    <nav className="w-3/4 justify-end hidden lg:flex">
       <ul className="list-style-none flex items-center space-x-4">
         {navcontent.map((item) => {
           const activeLink = pathname?.includes(item.link)
