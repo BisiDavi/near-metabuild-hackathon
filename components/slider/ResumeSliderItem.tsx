@@ -29,14 +29,14 @@ export default function ResumeSliderItem({ item }: Props) {
     <div className="relative  mx-3 flex flex-col items-center justify-center rounded border">
       <img src={item.image} alt={item.name} className="z-10 rounded-md" />
       <Button
-        className="absolute z-50 mx-auto flex items-center justify-center rounded-lg bg-blue-500 px-4 py-1 text-white hover:bg-opacity-80"
+        className="absolute z-50 mx-auto lg:text-sm text-xs flex items-center justify-center rounded-lg bg-blue-500 px-4 py-1 text-white hover:bg-opacity-80"
         text="Use this Template"
         onClick={() => selectResumeHandler(item.id)}
       />
-      <div className="absolute bottom-2 z-10 rounded-md bg-gray-400 px-2 py-0.5 text-sm text-white">
+      <div className="absolute bottom-2 z-10  rounded-md bg-gray-400 px-2 py-0.5 lg:text-sm text-xs text-white">
         Price: {price} NEAR, {item.bought} {text} chose this template
       </div>
-      <div className="absolute top-2 right-4 z-10 rounded-md bg-gray-400 px-2 py-0.5 text-sm text-white">
+      <div className="absolute top-2 right-4 z-10 rounded-md bg-gray-400 px-2 py-0.5 lg:text-sm text-xs text-white">
         {item.name}
       </div>
     </div>

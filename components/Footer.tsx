@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="footer flex lg:h-14 py-4 pb-8 w-full items-center bg-black text-white">
-      <div className="content flex-col container mx-auto flex justify-between text-sm lg:flex-row">
+      <div className="content flex-col container mx-auto flex justify-between px-2 lg:px-0 text-sm lg:flex-row">
         <p className="text-center text-xs my-2">Copyright © 2022</p>
         <div className="text-xs text-center">
           Built with ❤️ for{' '}

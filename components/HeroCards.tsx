@@ -17,8 +17,8 @@ export default function HeroCards() {
         >
           <span className="w-10 text-3xl absolute top-2 right-0 lg:relative">❂</span>
           <div className="w-11/12">
-            <h4 className="my-0 font-bold">{card.title}</h4>
-            <p className="my-0">{card.text}</p>
+            <h4 className="lg:my-0 my-1 font-bold">{card.title}</h4>
+            <p className="my-0 lg:text-base text-sm">{card.text}</p>
           </div>
         </li>
       ))}
