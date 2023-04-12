@@ -38,8 +38,8 @@ export default function Payment() {
           : status === 'loading'
           ? 'loading, fetching payment details...'
           : data && (
-              <div className="content payment-view flex h-full w-full items-center">
-                <div className="mx-auto  flex h-full w-3/12 flex-col items-center bg-gray-400 px-4 py-20">
+              <div className="content payment-view flex flex-col lg:flex-row h-full w-full items-center">
+                <div className="mx-autoflex lg:h-full lg:w-3/12 flex-col items-center bg-gray-400 px-4 py-20">
                   <h4 className="border p-2 text-center text-lg text-white">
                     Thanks for using {data.name} template from{' '}
                     <span className="font-bold">Near-Resumé</span> in making
@@ -57,7 +57,7 @@ export default function Payment() {
                   />
                 </div>
                 {selectedResume && (
-                  <div className="h-full w-9/12">
+                  <div className="h-full lg:w-9/12">
                     {displayResumeDocument(selectedResume)}
                   </div>
                 )}
