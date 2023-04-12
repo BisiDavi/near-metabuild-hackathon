@@ -17,7 +17,7 @@ export default function PaymentStatusNotification({ status, id }: Props) {
   const resumeName = getResumeName(id);
   const { cvs, asideBg } = useAppSelector((state) => state.resume);
   return (
-    <div className="flex h-full flex-col items-center justify-center">
+    <div className="flex h-full flex-col items-center mt-14 lg:mt-0 lg:justify-center">
       {status === 'successful' ? (
         <>
           <img

@@ -9,7 +9,7 @@ export default function PaymentStatus() {
   const id: any = router?.query?.template;
   return (
     <Layout showHero={false}>
-      <section className="paymentStatus container mx-auto h-screen ">
+      <section className="paymentStatus container mx-auto h-screen">
         {status && id && <PaymentStatusNotification status={status} id={id} />}
       </section>
     </Layout>

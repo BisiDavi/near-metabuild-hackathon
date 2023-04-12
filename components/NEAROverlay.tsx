@@ -17,9 +17,9 @@ export default function NEAROverlay() {
 
   return (
     <div
-      className={`overlay left-0 ${loginSuccess} absolute z-20 flex h-full w-full flex-col flex-col items-center justify-center bg-gray-400 bg-opacity-80`}
+      className={`overlay left-0 ${loginSuccess} px-2 absolute z-20 flex h-full w-full flex-col items-center justify-center bg-gray-400 bg-opacity-80`}
     >
-      <div className="flex items-center text-xl font-bold text-white">
+      <div className="flex items-center text-sm lg:text-xl font-bold text-white">
         Connect to <img src="/near.png" className="mx-1 w-8" alt="near-icon" />{' '}
         NEAR TEST-WALLET to make payment{' '}
       </div>
