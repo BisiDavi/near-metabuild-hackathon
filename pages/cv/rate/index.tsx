@@ -4,12 +4,12 @@ import Layout from '@/layout';
 export default function Rate() {
   return (
     <Layout>
-      <section className="container mx-auto py-4">
-        <h4 className="mt-4 text-center text-3xl font-bold">
+      <section className="container mx-auto py-4 mb-8 px-6">
+        <h4 className="mt-4 text-center lg:text-3xl text-lg font-bold">
           Rate our resumé and get rewarded with 0.1 NEAR
         </h4>
-        <div className="how my-4 mx-auto flex flex-col items-center justify-center">
-          <h6 className="text-right text-xl font-bold underline">Procedure</h6>
+        <div className="my-4 mx-auto flex flex-col items-center justify-center">
+          <h6 className="text-right lg:text-xl text-lg font-bold underline">Procedure</h6>
           <ul>
             <li className="my-1">
               1. Select a resumé template from the{' '}

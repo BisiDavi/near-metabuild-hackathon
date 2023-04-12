@@ -4,12 +4,12 @@ import Layout from '@/layout';
 export default function Reviewer() {
   return (
     <Layout>
-      <section className="container mx-auto py-4">
-        <h4 className="mt-4 text-center text-3xl font-bold">
+      <section className="container mx-auto py-4  mb-8 lg:px-0 px-6">
+        <h4 className="mt-4 text-center lg:text-3xl text-xl font-bold">
           Earn as a Reviewer{' '}
         </h4>
-        <div className="how my-4 mx-auto flex flex-col items-center justify-center">
-          <h6 className="text-right text-xl font-bold underline">Procedure</h6>
+        <div className="my-4 mx-auto flex flex-col items-center justify-center">
+          <h6 className="text-right lg:text-xl font-bold underline">Procedure</h6>
           <ul className="mt-2">
             <li>1. Create a reviewer account</li>
             <li>2. Get listed as a reviewer</li>
