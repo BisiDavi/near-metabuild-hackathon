@@ -48,7 +48,7 @@ export default function ResumeSlider() {
   };
 
   return (
-    <div id="get-started" className="resume-grid relative lg:my-6 mt-6 mb-20">
+    <div id="get-started" className="resume-grid relativ mt-6 mb-20">
       {status === 'error' ? (
         'unable to fetch resumes'
       ) : status === 'loading' ? (

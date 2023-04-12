@@ -19,11 +19,11 @@
 }
 
 button.slick-prev {
-  left: -5px;
+  left: 0px;
   z-index: 60;
 }
 button.slick-next {
-  right: 15px;
+  right: 20px;
   z-index: 60;
 }
 
