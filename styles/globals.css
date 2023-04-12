@@ -56,4 +56,7 @@ button.slick-arrow {
   .slick-slider button.slick-prev::before {
     font-size: 20px;
   }
+  .pdfviewer {
+    height: 500px;
+  }
 }
