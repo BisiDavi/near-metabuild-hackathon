@@ -11,7 +11,7 @@ export default function Hero() {
   return (
     <section className="hero ">
       <div className="content bg-skyblue h-96 lg:h-52">
-        <div className="container mx-auto flex flex-col py-20 text-center text-white">
+        <div className="container px-4 lg:px-0 mx-auto flex flex-col py-20 text-center text-white">
           <h1 className="my-2 text-xl font-bold lg:my-0 lg:text-3xl">
             {heroContent.home.main}{' '}
           </h1>

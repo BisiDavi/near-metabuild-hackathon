@@ -13,7 +13,7 @@ export default function HeroCards() {
       {cards.map((card) => (
         <li
           key={card.icon}
-          className="cards lg:my-2.5 my-3 relative flex items-center rounded-lg border bg-white py-4 px-6 shadow-lg"
+          className="cards lg:my-2.5 my-3 relative flex items-center rounded-lg border bg-white p-4 lg:px-6 shadow-lg"
         >
           <span className="w-10 text-3xl absolute top-2 right-0 lg:relative">❂</span>
           <div className="w-11/12">
