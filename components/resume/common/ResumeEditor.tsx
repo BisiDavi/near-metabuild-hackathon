@@ -12,7 +12,7 @@ export default function ResumeEditor({ colorPicker = true }: Props) {
   const { currentStage } = resume;
 
   return (
-    <aside className="mr-6">
+    <aside className="lg:mr-6">
       <h5 className="text-center text-xl font-bold">Edit Resume</h5>
       <FormProgress currentStage={currentStage} />
       <Resumeform resume={resume} />
