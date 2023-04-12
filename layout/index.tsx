@@ -17,7 +17,6 @@ export default function Layout({
       <Header />
       {showHero && <Hero />}
       <main className="mx-auto py-6">{children}</main>
-
       <Footer />
     </>
   );
