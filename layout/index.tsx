@@ -15,8 +15,10 @@ export default function Layout({
   return (
     <>
       <Header />
-      {showHero && <Hero />}
-      <main className="mx-auto py-6">{children}</main>
+      <main className="mx-auto py-6">
+        {showHero && <Hero />}
+        {children}
+      </main>
       <Footer />
     </>
   );
